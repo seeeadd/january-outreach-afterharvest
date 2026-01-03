@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Personal Brand Reset | Sina Port</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== CSS RESET & BASE ===== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            /* Backgrounds */
+            --bg-primary: #F7F4F1;
+            --bg-secondary: #EDE5DF;
+            --bg-dark: #5C3D3D;
+            --bg-card: #FFFFFF;
+
+            /* Text */
+            --text-primary: #2A2422;
+            --text-body: #4A4340;
+            --text-secondary: #7A706A;
+            --text-muted: #9A918B;
+            --text-on-dark: #FAF8F6;
+
+            /* Accent */
+            --accent-primary: #8B4F5C;
+            --accent-hover: #6D3B47;
+            --accent-secondary: #C9A98C;
+            --accent-highlight: #D4B8A0;
+
+            /* Borders */
+            --border-light: #E8E0DA;
+            --border-medium: #D4CAC2;
+
+            /* Typography */
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            --font-script: 'Cormorant Garamond', Georgia, serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-body);
+            background-color: var(--bg-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== UTILITY CLASSES ===== */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .content-narrow {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.15;
+        }
+
+        h1 {
+            font-size: clamp(36px, 5vw, 56px);
+        }
+
+        h2 {
+            font-size: clamp(28px, 4vw, 44px);
+        }
+
+        h3 {
+            font-size: clamp(22px, 3vw, 32px);
+        }
+
+        .script-accent {
+            font-family: var(--font-script);
+            font-style: italic;
+            color: var(--accent-primary);
+        }
+
+        .eyebrow {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-secondary);
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 40px;
+            min-width: 200px;
+            background-color: var(--accent-primary);
+            color: white;
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(139, 79, 92, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 79, 92, 0.3);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 40px;
+            min-width: 200px;
+            background-color: transparent;
+            color: var(--accent-primary);
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid var(--accent-primary);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(139, 79, 92, 0.06);
+        }
+
+        .btn-light {
+            background-color: white;
+            color: var(--bg-dark);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-light:hover {
+            background-color: var(--bg-secondary);
+            transform: translateY(-2px);
+        }
+
+        .btn-large {
+            padding: 20px 48px;
+            min-width: 240px;
+            font-size: 17px;
+        }
+
+        /* ===== SECTION 1: TOP BAR ===== */
+        .top-bar {
+            background-color: var(--bg-secondary);
+            padding: 14px 24px;
+            text-align: center;
+        }
+
+        .top-bar p {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--bg-dark);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .top-bar p {
+                font-size: 13px;
+            }
+        }
+
+        /* ===== SECTION 2: HERO ===== */
+        .hero {
+            padding: 80px 0 100px;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(237, 229, 223, 0.3) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.02;
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 55% 45%;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-eyebrow {
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            margin-bottom: 24px;
+            max-width: 580px;
+        }
+
+        .hero-subhead {
+            font-size: 19px;
+            color: var(--text-body);
+            max-width: 520px;
+            margin-bottom: 28px;
+            line-height: 1.65;
+        }
+
+        .credibility-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 32px;
+        }
+
+        .chip {
+            background-color: var(--bg-secondary);
+            color: var(--bg-dark);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .hero-cta {
+            margin-bottom: 16px;
+        }
+
+        .hero-microcopy {
+            font-size: 13px;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image-wrapper {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            background-color: var(--bg-secondary);
+        }
+
+        @media (max-width: 968px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero h1, .hero-subhead {
+                max-width: 100%;
+            }
+
+            .credibility-chips {
+                justify-content: center;
+            }
+
+            .hero-image-wrapper {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        /* ===== SECTION 3: IS THIS FOR YOU ===== */
+        .is-for-you {
+            padding: 100px 0;
+            background-color: var(--bg-primary);
+        }
+
+        .is-for-you-grid {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .is-for-you-image {
+            position: relative;
+        }
+
+        .is-for-you-image-wrapper {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid var(--accent-highlight);
+        }
+
+        .is-for-you-image img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            background-color: var(--bg-secondary);
+        }
+
+        .is-for-you-content h2 {
+            margin-bottom: 8px;
+        }
+
+        .is-for-you-content h2 .script-accent {
+            font-size: 44px;
+            display: inline-block;
+            transform: rotate(-2deg);
+        }
+
+        .is-for-you-intro {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+
+        .qualifier-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .qualifier-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 17px;
+            margin-bottom: 16px;
+            color: var(--text-body);
+        }
+
+        .check-icon {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            background-color: var(--accent-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .check-icon svg {
+            width: 12px;
+            height: 12px;
+            fill: white;
+        }
+
+        .is-for-you-closing {
+            font-size: 17px;
+            font-style: italic;
+            color: var(--bg-dark);
+        }
+
+        @media (max-width: 868px) {
+            .is-for-you-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .is-for-you-content {
+                order: 1;
+            }
+
+            .is-for-you-image {
+                order: 2;
+                max-width: 320px;
+                margin: 0 auto;
+            }
+
+            .is-for-you-content h2 .script-accent {
+                font-size: 36px;
+            }
+        }
+
+        /* ===== SECTION 4: PUT YOUR NAME DOWN ===== */
+        .put-name-down {
+            padding: 100px 0;
+            background-color: var(--bg-dark);
+            position: relative;
+        }
+
+        .put-name-down::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        .put-name-down .content-narrow {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .put-name-down h2 {
+            color: var(--text-on-dark);
+            margin-bottom: 16px;
+        }
+
+        .put-name-down-subhead {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 32px;
+        }
+
+        .outcomes-list {
+            list-style: none;
+            text-align: left;
+            max-width: 540px;
+            margin: 0 auto 40px;
+        }
+
+        .outcomes-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 17px;
+            color: white;
+            margin-bottom: 14px;
+        }
+
+        .outcomes-list .check-icon {
+            background-color: var(--accent-highlight);
+        }
+
+        .differentiator {
+            margin-bottom: 40px;
+            padding: 24px;
+            background-color: rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+        }
+
+        .differentiator p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .differentiator p:last-child {
+            margin-bottom: 0;
+        }
+
+        .x-icon {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .x-icon svg {
+            width: 10px;
+            height: 10px;
+            stroke: rgba(255, 255, 255, 0.6);
+            stroke-width: 2;
+        }
+
+        .testimonial-line {
+            font-family: var(--font-script);
+            font-style: italic;
+            font-size: 20px;
+            color: var(--accent-highlight);
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .put-name-down {
+                padding: 60px 0;
+            }
+        }
+
+        /* ===== SECTION 5: SOCIAL PROOF TICKER ===== */
+        .social-ticker {
+            background-color: var(--bg-secondary);
+            padding: 16px 0;
+            overflow: hidden;
+        }
+
+        .ticker-track {
+            display: flex;
+            animation: scroll 30s linear infinite;
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 24px;
+            white-space: nowrap;
+        }
+
+        .ticker-avatar {
+            width: 28px;
+            height: 28px;
+            background-color: var(--accent-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .ticker-text {
+            font-size: 13px;
+            color: var(--text-body);
+        }
+
+        .ticker-check {
+            color: var(--accent-secondary);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* ===== SECTION 6: FOUNDER STORY ===== */
+        .founder-story {
+            padding: 100px 0;
+            background-color: var(--bg-primary);
+        }
+
+        .founder-story-grid {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .founder-story-content .eyebrow {
+            color: var(--accent-primary);
+            font-family: var(--font-script);
+            font-style: italic;
+            font-size: 24px;
+            letter-spacing: 0;
+            text-transform: none;
+            margin-bottom: 8px;
+        }
+
+        .founder-story-content h2 {
+            font-size: clamp(36px, 4vw, 48px);
+            color: var(--bg-dark);
+            margin-bottom: 32px;
+        }
+
+        .founder-story-content p {
+            margin-bottom: 20px;
+            color: var(--text-body);
+            line-height: 1.75;
+        }
+
+        .founder-story-content .highlight {
+            font-weight: 600;
+            color: var(--bg-dark);
+        }
+
+        .founder-image-wrapper {
+            position: sticky;
+            top: 100px;
+            background-color: white;
+            padding: 8px;
+            border-radius: 4px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transform: rotate(-3deg);
+        }
+
+        .founder-image-wrapper img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            background-color: var(--bg-secondary);
+        }
+
+        @media (max-width: 868px) {
+            .founder-story-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .founder-image-wrapper {
+                position: relative;
+                top: 0;
+                max-width: 280px;
+                margin: 0 auto;
+            }
+        }
+
+        /* ===== SECTION 7: FAST FORWARD / MILESTONE ===== */
+        .milestone {
+            padding: 100px 0;
+            background-color: var(--bg-primary);
+        }
+
+        .milestone-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--bg-dark);
+            border-radius: 24px;
+            padding: 48px;
+            text-align: center;
+            box-shadow: 0 16px 48px rgba(92, 61, 61, 0.2);
+        }
+
+        .milestone-card .eyebrow {
+            color: var(--accent-highlight);
+            margin-bottom: 16px;
+        }
+
+        .milestone-number {
+            font-family: var(--font-display);
+            font-size: clamp(56px, 8vw, 72px);
+            font-weight: 700;
+            color: white;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .milestone-label {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 32px;
+        }
+
+        .credential-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .credential-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 13px;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        /* ===== SECTION 8: WHAT YOU WILL HAVE / WITHOUT ===== */
+        .have-without {
+            padding: 100px 0;
+            background-color: var(--bg-primary);
+        }
+
+        .have-without-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto 48px;
+        }
+
+        .have-card, .without-card {
+            padding: 40px;
+            border-radius: 16px;
+        }
+
+        .have-card {
+            background-color: #FBF8F5;
+            border-left: 4px solid var(--accent-secondary);
+        }
+
+        .without-card {
+            background-color: var(--bg-primary);
+            border-left: 4px solid var(--border-medium);
+        }
+
+        .have-card h3 {
+            color: var(--accent-secondary);
+            margin-bottom: 24px;
+        }
+
+        .without-card h3 {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .have-list, .without-list {
+            list-style: none;
+        }
+
+        .have-list li, .without-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .have-list li:last-child, .without-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .without-list .x-icon {
+            background-color: var(--border-medium);
+        }
+
+        .without-list .x-icon svg {
+            stroke: var(--text-muted);
+        }
+
+        .have-without .cta-wrapper {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .have-without-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== SECTION 9: 3-DAY BREAKDOWN ===== */
+        .day-breakdown {
+            padding: 100px 0;
+            background-color: var(--bg-secondary);
+        }
+
+        .day-breakdown h2 {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .day-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .day-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 32px;
+            align-items: start;
+        }
+
+        .day-badge {
+            display: inline-block;
+            background-color: var(--accent-primary);
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+
+        .day-card h3 {
+            margin-bottom: 20px;
+        }
+
+        .day-list {
+            list-style: none;
+        }
+
+        .day-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            color: var(--text-body);
+            margin-bottom: 12px;
+        }
+
+        .day-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .day-number {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .day-graphic {
+            width: 80px;
+            height: 80px;
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .day-graphic svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--accent-primary);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .day-card {
+                grid-template-columns: 1fr;
+            }
+
+            .day-graphic {
+                display: none;
+            }
+        }
+
+        /* ===== SECTION 10: URGENCY ===== */
+        .urgency {
+            padding: 80px 0;
+            background-color: var(--bg-primary);
+            text-align: center;
+        }
+
+        .urgency-badge {
+            display: inline-block;
+            background-color: var(--bg-dark);
+            color: white;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            margin-bottom: 24px;
+        }
+
+        .urgency h2 {
+            font-size: clamp(28px, 4vw, 36px);
+            margin-bottom: 12px;
+        }
+
+        .urgency-subhead {
+            font-size: 18px;
+            color: var(--text-body);
+            margin-bottom: 32px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .countdown-item {
+            background-color: var(--bg-dark);
+            color: white;
+            padding: 16px 20px;
+            border-radius: 10px;
+            min-width: 70px;
+        }
+
+        .countdown-number {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        /* ===== SECTION 11: PROOF WALL ===== */
+        .proof-wall {
+            padding: 100px 0;
+            background-color: var(--bg-secondary);
+        }
+
+        .proof-wall h2 {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .proof-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .proof-card:nth-child(odd) {
+            transform: rotate(-1deg);
+        }
+
+        .proof-card:nth-child(even) {
+            transform: rotate(1deg);
+        }
+
+        .proof-card:nth-child(3n) {
+            grid-row: span 2;
+        }
+
+        .proof-text {
+            font-size: 15px;
+            color: var(--text-body);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .proof-author {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .proof-stars {
+            color: var(--accent-secondary);
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .proof-annotation {
+            text-align: center;
+            margin-top: 40px;
+            font-family: var(--font-script);
+            font-style: italic;
+            font-size: 24px;
+            color: var(--accent-primary);
+            transform: rotate(-2deg);
+        }
+
+        @media (max-width: 968px) {
+            .proof-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 568px) {
+            .proof-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .proof-card {
+                transform: none !important;
+            }
+        }
+
+        /* ===== SECTION 12: BEFORE/AFTER ===== */
+        .before-after {
+            padding: 100px 0;
+            background-color: var(--bg-primary);
+        }
+
+        .before-after h2 {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .before-after-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .before-card, .after-card {
+            padding: 40px;
+            border-radius: 16px;
+        }
+
+        .before-card {
+            background-color: #F0EDEB;
+            filter: saturate(0.8);
+        }
+
+        .after-card {
+            background-color: #FBF8F3;
+            box-shadow: 0 8px 32px rgba(201, 169, 140, 0.15);
+        }
+
+        .ba-header {
+            margin-bottom: 20px;
+        }
+
+        .ba-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .before-card .ba-label {
+            color: var(--text-muted);
+        }
+
+        .after-card .ba-label {
+            color: var(--accent-primary);
+        }
+
+        .ba-tagline {
+            font-family: var(--font-script);
+            font-style: italic;
+            font-size: 20px;
+        }
+
+        .before-card .ba-tagline {
+            color: var(--text-secondary);
+        }
+
+        .after-card .ba-tagline {
+            color: var(--accent-primary);
+        }
+
+        .ba-list {
+            list-style: none;
+        }
+
+        .ba-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            margin-bottom: 14px;
+            color: var(--text-body);
+        }
+
+        @media (max-width: 768px) {
+            .before-after-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== SECTION 13: FINAL CLOSE ===== */
+        .final-close {
+            padding: 100px 0;
+            background-color: var(--bg-primary);
+        }
+
+        .final-close-content {
+            max-width: 650px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .final-close p {
+            font-size: 19px;
+            color: var(--text-primary);
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .final-close .script-accent {
+            font-size: 22px;
+        }
+
+        .final-close .cta-wrapper {
+            margin-top: 40px;
+            margin-bottom: 32px;
+        }
+
+        .signature {
+            font-family: var(--font-script);
+            font-style: italic;
+            font-size: 32px;
+            color: var(--bg-dark);
+        }
+
+        .signature-heart {
+            color: var(--accent-primary);
+            margin-left: 8px;
+        }
+
+        /* ===== SECTION 14: FOOTER ===== */
+        .footer {
+            background-color: var(--bg-secondary);
+            padding: 32px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        /* ===== RESPONSIVE UTILITIES ===== */
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SECTION 1: TOP BAR -->
+    <div class="top-bar">
+        <p>We start Day 1 on: January 15, 2025 at 11:00 AM EST</p>
+    </div>
+
+    <!-- SECTION 2: HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <p class="eyebrow hero-eyebrow">THE PERSONAL BRAND RESET</p>
+                    <h1>In 3 days, you will learn how to build a personal brand that attracts the right clients, even if showing up online has felt confusing or exhausting.</h1>
+                    <p class="hero-subhead">This live experience is for women who want to get paid for who they are, without forcing content, chasing trends, or burning themselves out.</p>
+                    <div class="credibility-chips">
+                        <span class="chip">Featured in Forbes</span>
+                        <span class="chip">467K+ Community</span>
+                        <span class="chip">Fortune 500 Speaker</span>
+                        <span class="chip">7-Figure Brand</span>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#register" class="btn-primary">Save my free spot</a>
+                    </div>
+                    <p class="hero-microcopy">Live training. Free to attend. You do not need to prepare anything.</p>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=750&fit=crop" alt="Sina Port - Brand Strategist">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: IS THIS FOR YOU -->
+    <section class="is-for-you">
+        <div class="container">
+            <div class="is-for-you-grid">
+                <div class="is-for-you-image">
+                    <div class="is-for-you-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&h=667&fit=crop" alt="Sina Port casual portrait">
+                    </div>
+                </div>
+                <div class="is-for-you-content">
+                    <h2>Is This <span class="script-accent">Perfect</span> For You?</h2>
+                    <p class="is-for-you-intro">YES! This is for you if...</p>
+                    <ul class="qualifier-list">
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                            <span>You have skills, experience, or knowledge but struggle to communicate your value online</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                            <span>You feel exhausted by the pressure to constantly create content and show up everywhere</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                            <span>You want clients to come to you instead of chasing them</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                            <span>You are done with strategies that feel forced, fake, or out of alignment</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                            <span>You want to build something sustainable that does not require burning out</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                            <span>You are ready to be paid for who you are, not just what you do</span>
+                        </li>
+                    </ul>
+                    <p class="is-for-you-closing">If you want something calm, honest, and sustainable, you are in the right place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: PUT YOUR NAME DOWN -->
+    <section class="put-name-down" id="register">
+        <div class="container">
+            <div class="content-narrow">
+                <h2>Put Your Name Down For Free Today...</h2>
+                <p class="put-name-down-subhead">By the end of these 3 days, you will:</p>
+                <ul class="outcomes-list">
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                        <span>Know exactly what makes your personal brand magnetic and different</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                        <span>Have a clear message that attracts ideal clients without feeling salesy</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                        <span>Understand how to show up authentically without exhausting yourself</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                        <span>See the path from personal brand to paid offers</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                        <span>Feel calm, clear, and confident about your next steps</span>
+                    </li>
+                </ul>
+                <div class="differentiator">
+                    <p>
+                        <span class="x-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                        <span>This is NOT about going viral or gaming algorithms</span>
+                    </p>
+                    <p>
+                        <span class="x-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                        <span>This is NOT about posting every day or becoming an influencer</span>
+                    </p>
+                    <p>
+                        <span class="x-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                        <span>This is NOT about following trends that don't feel like you</span>
+                    </p>
+                </div>
+                <p class="testimonial-line">"Women inside my world often tell me this is the first time business feels calm and clear."</p>
+                <a href="#" class="btn-primary btn-light btn-large">Yes, save my free spot</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: SOCIAL PROOF TICKER -->
+    <div class="social-ticker">
+        <div class="ticker-track">
+            <div class="ticker-item"><span class="ticker-avatar">SJ</span><span class="ticker-text">Sarah J. registered <span class="ticker-check">2m ago</span></span></div>
+            <div class="ticker-item"><span class="ticker-avatar">MK</span><span class="ticker-text">Maria K. registered <span class="ticker-check">5m ago</span></span></div>
+            <div class="ticker-item"><span class="ticker-avatar">LP</span><span class="ticker-text">Lauren P. registered <span class="ticker-check">8m ago</span></span></div>
+            <div class="ticker-item"><span class="ticker-avatar">AC</span><span class="ticker-text">Amanda C. registered <span class="ticker-check">12m ago</span></span></div>
+            <div class="ticker-item"><span class="ticker-avatar">RB</span><span class="ticker-text">Rachel B. registered <span class="ticker-check">15m ago</span></span></div>
+            <div class="ticker-item"><span class="ticker-avatar">JT</span><span class="ticker-text">Jessica T. registered <span class="ticker-check">18m ago</span></span></div>
+            <div class="ticker-item"><span class="ticker-avatar">NW</span><span class="ticker-text">Nicole W. registered <span class="ticker-check">21m ago</span></span></div>
+            <div class="ticker-item"><span class="ticker-avatar">EM</span><span class="ticker-text">Emily M. registered <span class="ticker-check">24m ago</span></span></div>
+            <!-- Duplicate for seamless loop -->
+            <div class="ticker-item"><span class="ticker-avatar">SJ</span><span class="ticker-text">Sarah J. registered <span class="ticker-check">2m ago</span></span></div>
+            <div class="ticker-item"><span class="ticker-avatar">MK</span><span class="ticker-text">Maria K. registered <span class="ticker-check">5m ago</span></span></div>
+            <div class="ticker-item"><span class="ticker-avatar">LP</span><span class="ticker-text">Lauren P. registered <span class="ticker-check">8m ago</span></span></div>
+            <div class="ticker-item"><span class="ticker-avatar">AC</span><span class="ticker-text">Amanda C. registered <span class="ticker-check">12m ago</span></span></div>
+            <div class="ticker-item"><span class="ticker-avatar">RB</span><span class="ticker-text">Rachel B. registered <span class="ticker-check">15m ago</span></span></div>
+            <div class="ticker-item"><span class="ticker-avatar">JT</span><span class="ticker-text">Jessica T. registered <span class="ticker-check">18m ago</span></span></div>
+            <div class="ticker-item"><span class="ticker-avatar">NW</span><span class="ticker-text">Nicole W. registered <span class="ticker-check">21m ago</span></span></div>
+            <div class="ticker-item"><span class="ticker-avatar">EM</span><span class="ticker-text">Emily M. registered <span class="ticker-check">24m ago</span></span></div>
+        </div>
+    </div>
+
+    <!-- SECTION 6: FOUNDER STORY -->
+    <section class="founder-story">
+        <div class="container">
+            <div class="founder-story-grid">
+                <div class="founder-story-content">
+                    <p class="eyebrow">From Stay-at-Home Mom to...</p>
+                    <h2>7-Figure Brand Strategist</h2>
+                    <p>A few years ago, I was a stay-at-home mom with big dreams but no idea how to make them real. I didn't have a business background, connections, or a clear path forward.</p>
+                    <p>What I did have was a deep knowing that I was meant for something more, and the willingness to figure it out one step at a time.</p>
+                    <p>I started by sharing what I knew. Not perfectly, not with a fancy strategy, just honestly. I talked about building a life and business that felt aligned. I showed up as myself, even when it felt scary.</p>
+                    <p>And something shifted. People started listening. They started reaching out. They wanted to work with me, not because I had the flashiest brand or the most followers, but because <span class="highlight">something about my message resonated.</span></p>
+                    <p>Today, I've built a 7-figure business, spoken for Fortune 500 companies, and created a community of nearly half a million women, all while raising my family and protecting my peace.</p>
+                    <p><span class="highlight">"Success without freedom isn't success at all."</span></p>
+                    <p>That's why I created this challenge. Because I know firsthand that you don't need to hustle yourself into the ground to build something meaningful. You just need clarity, a method that works, and permission to do it your way.</p>
+                </div>
+                <div class="founder-image">
+                    <div class="founder-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=500&h=625&fit=crop" alt="Sina Port lifestyle">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: FAST FORWARD / MILESTONE -->
+    <section class="milestone">
+        <div class="container">
+            <div class="milestone-card">
+                <p class="eyebrow">FAST FORWARD TO TODAY</p>
+                <p class="milestone-number">467K+</p>
+                <p class="milestone-label">women across my online platforms</p>
+                <div class="credential-list">
+                    <span class="credential-item">Fortune 500 Speaker</span>
+                    <span class="credential-item">7-Figure Business</span>
+                    <span class="credential-item">Featured in Forbes</span>
+                    <span class="credential-item">International Brand Strategist</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: WHAT YOU WILL HAVE / WITHOUT -->
+    <section class="have-without">
+        <div class="container">
+            <div class="have-without-grid">
+                <div class="have-card">
+                    <h3>You will have:</h3>
+                    <ul class="have-list">
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                            <span>A clear, magnetic message that attracts your ideal clients</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                            <span>Confidence to show up authentically online</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                            <span>A sustainable approach that doesn't lead to burnout</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                            <span>A pathway from brand to paid offers</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="without-card">
+                    <h3>Without needing:</h3>
+                    <ul class="without-list">
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                            <span>To post content every single day</span>
+                        </li>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                            <span>To chase trends or go viral</span>
+                        </li>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                            <span>To become someone you're not</span>
+                        </li>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                            <span>To sacrifice your wellbeing for success</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cta-wrapper">
+                <a href="#register" class="btn-primary">Save my free spot</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: 3-DAY BREAKDOWN -->
+    <section class="day-breakdown">
+        <div class="container">
+            <h2>What You'll Learn Each Day</h2>
+            <div class="day-cards">
+                <div class="day-card">
+                    <div class="day-content">
+                        <span class="day-badge">DAY 1</span>
+                        <h3>Clarity Reset</h3>
+                        <ul class="day-list">
+                            <li><span class="day-number">1</span><span>Identify what makes you uniquely valuable in your market</span></li>
+                            <li><span class="day-number">2</span><span>Get clear on who you're really meant to serve</span></li>
+                            <li><span class="day-number">3</span><span>Uncover the message only you can deliver</span></li>
+                            <li><span class="day-number">4</span><span>Release the confusion that's been holding you back</span></li>
+                        </ul>
+                    </div>
+                    <div class="day-graphic">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-content">
+                        <span class="day-badge">DAY 2</span>
+                        <h3>The Magnetic Brand Method</h3>
+                        <ul class="day-list">
+                            <li><span class="day-number">1</span><span>Learn the framework for building a brand that attracts</span></li>
+                            <li><span class="day-number">2</span><span>Craft messaging that resonates without feeling salesy</span></li>
+                            <li><span class="day-number">3</span><span>Discover how to show up consistently without burning out</span></li>
+                            <li><span class="day-number">4</span><span>Build trust with your audience authentically</span></li>
+                        </ul>
+                    </div>
+                    <div class="day-graphic">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-content">
+                        <span class="day-badge">DAY 3</span>
+                        <h3>From Brand to Paid</h3>
+                        <ul class="day-list">
+                            <li><span class="day-number">1</span><span>Understand the path from visibility to revenue</span></li>
+                            <li><span class="day-number">2</span><span>Learn how to structure offers your audience actually wants</span></li>
+                            <li><span class="day-number">3</span><span>Create a simple strategy that converts followers to clients</span></li>
+                            <li><span class="day-number">4</span><span>Map out your next 90 days with clarity and confidence</span></li>
+                        </ul>
+                    </div>
+                    <div class="day-graphic">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: URGENCY -->
+    <section class="urgency">
+        <div class="container">
+            <span class="urgency-badge">Limited Spots Available</span>
+            <h2>This experience is live and space is limited.</h2>
+            <p class="urgency-subhead">Once registration is full, doors will close.</p>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number">02</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number">14</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number">37</span>
+                    <span class="countdown-label">Mins</span>
+                </div>
+            </div>
+            <a href="#register" class="btn-primary btn-large">Save my free spot now</a>
+        </div>
+    </section>
+
+    <!-- SECTION 11: PROOF WALL -->
+    <section class="proof-wall">
+        <div class="container">
+            <h2>What Others Are Saying</h2>
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <p class="proof-text">"This completely changed how I think about showing up online. I finally feel like I can be myself AND grow my business."</p>
+                    <p class="proof-author">- Jennifer M.</p>
+                    <p class="proof-stars">* * * * *</p>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-text">"I've taken so many courses, but this is the first time something actually clicked. Sina's approach is refreshingly different."</p>
+                    <p class="proof-author">- Amanda R.</p>
+                    <p class="proof-stars">* * * * *</p>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-text">"Within weeks of implementing what I learned, I had my first $5K month. And I didn't feel burned out doing it. That's the real win."</p>
+                    <p class="proof-author">- Michelle T.</p>
+                    <p class="proof-stars">* * * * *</p>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-text">"Finally, someone who understands that success doesn't have to mean sacrificing everything else. This felt like permission to do it my way."</p>
+                    <p class="proof-author">- Sarah K.</p>
+                    <p class="proof-stars">* * * * *</p>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-text">"I was so tired of the hustle culture messaging everywhere else. Sina's approach is calm, strategic, and actually works."</p>
+                    <p class="proof-author">- Rachel B.</p>
+                    <p class="proof-stars">* * * * *</p>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-text">"My DMs are full of dream clients now. The clarity I got from this challenge changed everything."</p>
+                    <p class="proof-author">- Nicole W.</p>
+                    <p class="proof-stars">* * * * *</p>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-text">"I went from confused and overwhelmed to confident and clear. Worth every minute."</p>
+                    <p class="proof-author">- Lisa P.</p>
+                    <p class="proof-stars">* * * * *</p>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-text">"The way Sina breaks things down makes it feel so achievable. I'm finally excited about my business again."</p>
+                    <p class="proof-author">- Christina M.</p>
+                    <p class="proof-stars">* * * * *</p>
+                </div>
+            </div>
+            <p class="proof-annotation">...and so much more!</p>
+        </div>
+    </section>
+
+    <!-- SECTION 12: BEFORE/AFTER -->
+    <section class="before-after">
+        <div class="container">
+            <h2>The Transformation</h2>
+            <div class="before-after-grid">
+                <div class="before-card">
+                    <div class="ba-header">
+                        <p class="ba-label">Before this challenge:</p>
+                        <p class="ba-tagline">struggling & stuck...</p>
+                    </div>
+                    <ul class="ba-list">
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                            <span>Confused about what makes you different</span>
+                        </li>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                            <span>Exhausted by constant content creation</span>
+                        </li>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                            <span>Chasing clients who aren't the right fit</span>
+                        </li>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                            <span>Feeling like success requires burnout</span>
+                        </li>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                            <span>Showing up as someone you're not</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="after-card">
+                    <div class="ba-header">
+                        <p class="ba-label">After this challenge:</p>
+                        <p class="ba-tagline">thriving and free!</p>
+                    </div>
+                    <ul class="ba-list">
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                            <span>Crystal clear on your unique value</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                            <span>Creating content that feels natural</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                            <span>Attracting dream clients who get you</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                            <span>Building sustainably without sacrifice</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg></span>
+                            <span>Getting paid for being authentically you</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 13: FINAL CLOSE -->
+    <section class="final-close">
+        <div class="container">
+            <div class="final-close-content">
+                <p>You do not need to become someone else.</p>
+                <p>You do not need to push harder, post more, or pretend to be further along than you are.</p>
+                <p>You do not need a bigger audience, a perfect website, or years of experience to start getting paid for who you are.</p>
+                <p>What you need is <span class="script-accent">clarity</span>, a method that works, and permission to do it your way.</p>
+                <p>That's exactly what this 3-day experience will give you.</p>
+                <p><strong>If this resonates, trust that.</strong></p>
+                <div class="cta-wrapper">
+                    <a href="#register" class="btn-primary btn-large">Save my free spot</a>
+                </div>
+                <p class="signature">Sina <span class="signature-heart">x</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 14: FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-logo">Sina Port</p>
+            <p>&copy; 2025 Sina Port. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
