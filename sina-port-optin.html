@@ -8,6 +8,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <style>
+        /* ============================================================
+           ARTISTIC STRATEGY OVERVIEW
+           ============================================================
+
+           SOPHISTICATION PRINCIPLES:
+           1. Texture adds warmth without looking "filtered" or dirty
+           2. Hand-drawn elements are refined, not sketchy/childish
+           3. Organic shapes feel intentional, not random blobs
+           4. Color washes are subtle (3-8% opacity), never overpowering
+           5. Contrast between decorated and minimal areas creates rhythm
+
+           PINTEREST-SOPHISTICATION (not craft-fair):
+           - Think Kinfolk, Cereal Magazine, Glossier aesthetic
+           - Muted, warm color palette with intentional pops
+           - Editorial typography moments, not "cute" fonts
+           - Organic shapes feel architectural, not bubbly
+
+           CONVERSION-SERVING FLAIR:
+           - Decorative elements guide the eye to CTAs
+           - Texture builds trust (feels real, not templated)
+           - Visual rhythm creates natural reading flow
+           - Signature moments create memorability (screenshot-worthy)
+
+           ============================================================ */
+
         /* CSS Reset & Base */
         *, *::before, *::after {
             box-sizing: border-box;
@@ -16,9 +41,10 @@
         }
 
         :root {
-            /* Backgrounds */
+            /* Backgrounds - FLAIR: Slight warmth variation for depth */
             --bg-primary: #F7F4F1;
             --bg-secondary: #EDE5DF;
+            --bg-tertiary: #FBF8F5; /* FLAIR: Cream-white for card warmth */
             --bg-dark: #5C3D3D;
             --bg-card: #FFFFFF;
 
@@ -29,11 +55,14 @@
             --text-muted: #9A918B;
             --text-on-dark: #FAF8F6;
 
-            /* Accent */
+            /* Accent - FLAIR: Expanded palette for decorative elements */
             --accent-primary: #8B4F5C;
             --accent-primary-hover: #6D3B47;
             --accent-secondary: #C9A98C;
             --accent-highlight: #D4B8A0;
+            --accent-blush: #E8C4C4; /* FLAIR: Soft blush for organic shapes */
+            --accent-sage: #C5CDB8; /* FLAIR: Sage green for botanical accents */
+            --accent-cream: #F5EDE4; /* FLAIR: Warm cream for layered backgrounds */
 
             /* Borders */
             --border-light: #E8E0DA;
@@ -55,6 +84,9 @@
             line-height: 1.7;
             color: var(--text-body);
             background-color: var(--bg-primary);
+            /* FLAIR: Subtle paper texture across entire page for warmth */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-blend-mode: overlay;
         }
 
         img {
@@ -74,7 +106,9 @@
             margin: 0 auto;
         }
 
-        /* Buttons */
+        /* ============================================================
+           BUTTONS - RESTRAINT: Keep CTAs clean for conversion clarity
+           ============================================================ */
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -82,7 +116,7 @@
             min-width: 200px;
             height: 56px;
             padding: 0 32px;
-            background-color: var(--accent-primary);
+            background: linear-gradient(135deg, var(--accent-primary) 0%, #7A4452 100%);
             color: white;
             font-family: var(--font-body);
             font-size: 16px;
@@ -91,14 +125,39 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(139, 79, 92, 0.2);
+            /* FLAIR: Layered shadow for depth - feels tactile, not flat */
+            box-shadow:
+                0 4px 12px rgba(139, 79, 92, 0.25),
+                0 1px 3px rgba(139, 79, 92, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* FLAIR: Subtle shimmer effect on hover - sophisticated, not flashy */
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::after {
+            left: 100%;
         }
 
         .btn-primary:hover {
-            background-color: var(--accent-primary-hover);
+            background: linear-gradient(135deg, var(--accent-primary-hover) 0%, #5D2D3A 100%);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(139, 79, 92, 0.3);
+            box-shadow:
+                0 8px 24px rgba(139, 79, 92, 0.35),
+                0 2px 6px rgba(139, 79, 92, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
         }
 
         .btn-primary-large {
@@ -131,13 +190,16 @@
         }
 
         .btn-white {
-            background-color: white;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FAF8F6 100%);
             color: var(--bg-dark);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            box-shadow:
+                0 4px 16px rgba(0, 0, 0, 0.12),
+                0 1px 3px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
         }
 
         .btn-white:hover {
-            background-color: var(--bg-secondary);
+            background: linear-gradient(135deg, #FAF8F6 0%, #F0EBE5 100%);
             transform: translateY(-2px);
         }
 
@@ -187,11 +249,134 @@
             font-size: 44px;
         }
 
-        /* Section 1: Top Bar */
+        /* ============================================================
+           DECORATIVE SVG ELEMENTS - Sophisticated hand-drawn feel
+           ============================================================ */
+
+        /* FLAIR: Organic blob shapes - architectural, not bubbly */
+        .organic-shape {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* FLAIR: Hand-drawn style underline for emphasis */
+        .hand-underline {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hand-underline::after {
+            content: '';
+            position: absolute;
+            left: -5%;
+            bottom: -4px;
+            width: 110%;
+            height: 12px;
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='12' viewBox='0 0 200 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 8C20 4 40 6 60 7C80 8 100 5 120 6C140 7 160 4 180 6C190 6.5 198 7 198 7' stroke='%23C9A98C' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+        }
+
+        /* FLAIR: Decorative sparkle/star elements */
+        .sparkle {
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .sparkle svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* FLAIR: Editorial quotation marks */
+        .decorative-quote {
+            position: relative;
+        }
+
+        .decorative-quote::before {
+            content: '"';
+            font-family: var(--font-script);
+            font-size: 72px;
+            color: var(--accent-blush);
+            position: absolute;
+            top: -20px;
+            left: -15px;
+            line-height: 1;
+            opacity: 0.6;
+        }
+
+        /* ============================================================
+           SECTION DIVIDERS - Creative transitions between sections
+           ============================================================ */
+
+        /* FLAIR: Wavy organic divider */
+        .wave-divider {
+            width: 100%;
+            height: 60px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .wave-divider svg {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* FLAIR: Scattered dots divider - editorial feel */
+        .dots-divider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            padding: 40px 0;
+        }
+
+        .dots-divider span {
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-secondary);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .dots-divider span:nth-child(2) {
+            width: 8px;
+            height: 8px;
+            opacity: 0.7;
+        }
+
+        .dots-divider span:nth-child(3) {
+            width: 4px;
+            height: 4px;
+            opacity: 0.4;
+        }
+
+        /* ============================================================
+           SECTION 1: TOP BAR - Subtle texture for premium feel
+           ============================================================ */
         .top-bar {
-            background-color: var(--bg-secondary);
+            background: linear-gradient(90deg, var(--bg-secondary) 0%, #E8DDD5 50%, var(--bg-secondary) 100%);
             padding: 14px 24px;
             text-align: center;
+            position: relative;
+            /* FLAIR: Subtle grain texture */
+            background-blend-mode: overlay;
+        }
+
+        /* FLAIR: Decorative border bottom with organic feel */
+        .top-bar::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--accent-secondary) 50%, transparent 100%);
+            opacity: 0.4;
         }
 
         .top-bar p {
@@ -203,16 +388,28 @@
 
         .top-bar strong {
             font-weight: 600;
+            /* FLAIR: Subtle text gradient for date emphasis */
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--accent-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        /* Section 2: Hero */
+        /* ============================================================
+           SECTION 2: HERO - Layered textures and organic shapes
+           ============================================================ */
         .hero {
             padding: 80px 0 100px;
-            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            /* FLAIR: Multi-layer gradient for depth */
+            background:
+                radial-gradient(ellipse at 80% 20%, rgba(232, 196, 196, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 20% 80%, rgba(212, 184, 160, 0.12) 0%, transparent 40%),
+                linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
             position: relative;
             overflow: hidden;
         }
 
+        /* FLAIR: Paper grain texture at 3% - adds warmth without looking dirty */
         .hero::before {
             content: '';
             position: absolute;
@@ -220,9 +417,24 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.02;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
             pointer-events: none;
+        }
+
+        /* FLAIR: Organic blob shape - top right, architectural feel */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -150px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(ellipse, var(--accent-blush) 0%, transparent 70%);
+            opacity: 0.25;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            pointer-events: none;
+            /* STRATEGIC: Creates visual weight pulling eye toward hero image */
         }
 
         .hero-grid {
@@ -239,11 +451,42 @@
 
         .hero-eyebrow {
             margin-bottom: 20px;
+            /* FLAIR: Decorative dots before/after */
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hero-eyebrow::before,
+        .hero-eyebrow::after {
+            content: '·';
+            font-size: 18px;
+            color: var(--accent-secondary);
         }
 
         .hero h1 {
             margin-bottom: 24px;
             max-width: 580px;
+            position: relative;
+        }
+
+        /* FLAIR: Subtle highlight marker effect on key phrase */
+        .hero h1 .highlight-marker {
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .hero h1 .highlight-marker::before {
+            content: '';
+            position: absolute;
+            left: -4px;
+            right: -4px;
+            bottom: 4px;
+            height: 35%;
+            background: linear-gradient(90deg, rgba(232, 196, 196, 0.4), rgba(212, 184, 160, 0.3));
+            z-index: -1;
+            transform: rotate(-0.5deg);
+            border-radius: 2px;
         }
 
         .hero-subhead {
@@ -262,16 +505,36 @@
         }
 
         .chip {
-            background-color: var(--bg-secondary);
+            /* FLAIR: Slight gradient and border for tactile feel */
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, #E5DDD6 100%);
             color: var(--bg-dark);
             font-size: 13px;
             font-weight: 500;
             padding: 8px 16px;
             border-radius: 20px;
+            border: 1px solid rgba(212, 184, 160, 0.3);
+            /* FLAIR: Subtle inner shadow for pressed/badge feel */
+            box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5);
         }
 
         .hero-cta {
             margin-bottom: 16px;
+            position: relative;
+        }
+
+        /* FLAIR: Hand-drawn arrow pointing to CTA - guides eye naturally */
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 180px;
+            width: 50px;
+            height: 30px;
+            background-image: url("data:image/svg+xml,%3Csvg width='50' height='30' viewBox='0 0 50 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 5C15 8 25 15 40 12M40 12C38 8 35 5 35 5M40 12C42 15 43 20 43 20' stroke='%23C9A98C' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+            transform: rotate(15deg);
         }
 
         .hero-microcopy {
@@ -288,7 +551,26 @@
         .hero-image-wrapper {
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+            /* FLAIR: Layered shadow with warm tint for cohesion */
+            box-shadow:
+                0 24px 48px rgba(92, 61, 61, 0.15),
+                0 8px 16px rgba(92, 61, 61, 0.08),
+                -8px 8px 0 var(--accent-cream);
+            position: relative;
+        }
+
+        /* FLAIR: Decorative corner accent - editorial feel */
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--accent-secondary);
+            border-radius: 0 20px 0 0;
+            z-index: 10;
+            opacity: 0.5;
         }
 
         .hero-image-wrapper img {
@@ -299,10 +581,51 @@
             background-color: var(--bg-secondary);
         }
 
-        /* Section 3: Is This For You */
+        /* FLAIR: Floating decorative elements around hero image */
+        .hero-decoration {
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .hero-decoration.sparkle-1 {
+            top: 20px;
+            right: -20px;
+            width: 24px;
+            height: 24px;
+            color: var(--accent-secondary);
+        }
+
+        .hero-decoration.sparkle-2 {
+            bottom: 60px;
+            left: -30px;
+            width: 32px;
+            height: 32px;
+            color: var(--accent-blush);
+            opacity: 0.7;
+        }
+
+        /* ============================================================
+           SECTION 3: IS THIS FOR YOU - Warm with botanical accent
+           ============================================================ */
         .for-you {
             padding: 100px 0;
             background-color: var(--bg-primary);
+            position: relative;
+        }
+
+        /* FLAIR: Subtle botanical pattern in background corner */
+        .for-you::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            background-image: url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 250C80 200 100 150 80 100' stroke='%23C5CDB8' stroke-width='1.5' opacity='0.3'/%3E%3Cpath d='M30 280C60 230 90 180 70 130' stroke='%23C5CDB8' stroke-width='1' opacity='0.2'/%3E%3Cellipse cx='80' cy='100' rx='8' ry='12' fill='%23C5CDB8' opacity='0.15'/%3E%3Cellipse cx='75' cy='115' rx='6' ry='10' fill='%23C5CDB8' opacity='0.12'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.6;
+            pointer-events: none;
         }
 
         .for-you-grid {
@@ -316,11 +639,29 @@
             position: relative;
         }
 
+        /* FLAIR: Organic frame with offset shadow */
         .for-you-image-wrapper {
             border-radius: 16px;
             overflow: hidden;
-            border: 2px solid var(--accent-highlight);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+            border: 3px solid var(--accent-highlight);
+            box-shadow:
+                0 12px 32px rgba(0, 0, 0, 0.06),
+                12px 12px 0 var(--accent-cream);
+            position: relative;
+        }
+
+        /* FLAIR: Decorative tape/pin effect - scrapbook editorial */
+        .for-you-image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 20px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(212, 184, 160, 0.4));
+            border-radius: 3px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .for-you-image-wrapper img {
@@ -337,6 +678,20 @@
         .for-you-content h2 .script-accent {
             display: inline-block;
             transform: rotate(-2deg);
+            /* FLAIR: Hand-drawn underline under "Perfect" */
+            position: relative;
+        }
+
+        .for-you-content h2 .script-accent::after {
+            content: '';
+            position: absolute;
+            left: -5%;
+            bottom: 2px;
+            width: 110%;
+            height: 8px;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='8' viewBox='0 0 100 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 5C15 3 30 5 50 4C70 3 85 5 98 4' stroke='%238B4F5C' stroke-width='2' stroke-linecap='round' opacity='0.4'/%3E%3C/svg%3E");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
         }
 
         .for-you-intro {
@@ -364,12 +719,14 @@
             flex-shrink: 0;
             width: 24px;
             height: 24px;
-            background-color: var(--accent-secondary);
+            /* FLAIR: Gradient fill for richness */
+            background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-highlight) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-top: 2px;
+            box-shadow: 0 2px 4px rgba(201, 169, 140, 0.3);
         }
 
         .check-icon svg {
@@ -385,19 +742,67 @@
             color: var(--bg-dark);
             padding-left: 40px;
             border-left: 3px solid var(--accent-highlight);
+            position: relative;
         }
 
-        /* Section 4: Put Your Name Down (Dark Section) */
+        /* FLAIR: Decorative quotation mark */
+        .for-you-closing::before {
+            content: '"';
+            font-family: var(--font-script);
+            font-size: 48px;
+            color: var(--accent-blush);
+            position: absolute;
+            left: 12px;
+            top: -8px;
+            line-height: 1;
+            opacity: 0.5;
+        }
+
+        /* ============================================================
+           SECTION 4: PUT YOUR NAME DOWN - Rich dark with texture
+           ============================================================ */
         .name-down {
             padding: 100px 0;
-            background-color: var(--bg-dark);
+            /* FLAIR: Multi-layer dark gradient for depth */
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(139, 79, 92, 0.15) 0%, transparent 50%),
+                linear-gradient(180deg, #5C3D3D 0%, #4A2F2F 100%);
             position: relative;
+            overflow: hidden;
+        }
+
+        /* FLAIR: Noise texture on dark section - adds materiality */
+        .name-down::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+            pointer-events: none;
+        }
+
+        /* FLAIR: Organic shape accent - softer than hero, balances */
+        .name-down::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(ellipse, rgba(212, 184, 160, 0.08) 0%, transparent 70%);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            pointer-events: none;
         }
 
         .name-down-content {
             max-width: 700px;
             margin: 0 auto;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .name-down h2 {
@@ -428,14 +833,17 @@
         }
 
         .name-down-outcomes .check-icon {
-            background-color: var(--accent-highlight);
+            background: linear-gradient(135deg, var(--accent-highlight) 0%, var(--accent-secondary) 100%);
         }
 
         .differentiator {
             margin-bottom: 40px;
             padding: 24px 32px;
-            background-color: rgba(0, 0, 0, 0.15);
-            border-radius: 12px;
+            /* FLAIR: Glass-morphism effect for modern premium feel */
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(4px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .differentiator-title {
@@ -464,7 +872,7 @@
             flex-shrink: 0;
             width: 20px;
             height: 20px;
-            background-color: var(--border-medium);
+            background-color: rgba(255, 255, 255, 0.15);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -474,25 +882,54 @@
         .x-icon svg {
             width: 10px;
             height: 10px;
-            stroke: white;
-            stroke-width: 3;
+            stroke: rgba(255, 255, 255, 0.6);
+            stroke-width: 2;
         }
 
         .testimonial-line {
             font-family: var(--font-script);
             font-style: italic;
-            font-size: 20px;
+            font-size: 22px;
             color: var(--accent-highlight);
             margin-bottom: 36px;
+            position: relative;
+            display: inline-block;
         }
 
-        /* Section 5: Social Proof Ticker */
+        /* FLAIR: Decorative sparkles around testimonial */
+        .testimonial-line::before,
+        .testimonial-line::after {
+            content: '✦';
+            font-size: 12px;
+            color: var(--accent-secondary);
+            opacity: 0.5;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .testimonial-line::before {
+            left: -24px;
+        }
+
+        .testimonial-line::after {
+            right: -24px;
+        }
+
+        /* ============================================================
+           SECTION 5: SOCIAL PROOF TICKER - Refined animation
+           ============================================================ */
         .ticker {
-            background-color: var(--bg-secondary);
+            /* FLAIR: Gradient background with subtle pattern */
+            background:
+                repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(212, 184, 160, 0.05) 100px, rgba(212, 184, 160, 0.05) 101px),
+                linear-gradient(90deg, var(--bg-secondary) 0%, #E5DDD5 50%, var(--bg-secondary) 100%);
             height: 60px;
             display: flex;
             align-items: center;
             overflow: hidden;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
         }
 
         .ticker-track {
@@ -512,7 +949,9 @@
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-secondary), var(--accent-highlight));
+            /* FLAIR: Richer gradient for depth */
+            background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-highlight) 50%, var(--accent-blush) 100%);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .ticker-text {
@@ -537,10 +976,27 @@
             }
         }
 
-        /* Section 6: Founder Story */
+        /* ============================================================
+           SECTION 6: FOUNDER STORY - Editorial with personality
+           ============================================================ */
         .founder-story {
             padding: 100px 0;
             background-color: var(--bg-primary);
+            position: relative;
+        }
+
+        /* FLAIR: Subtle dot pattern for editorial texture */
+        .founder-story::before {
+            content: '';
+            position: absolute;
+            top: 60px;
+            right: 40px;
+            width: 150px;
+            height: 150px;
+            background-image: radial-gradient(var(--accent-blush) 1px, transparent 1px);
+            background-size: 12px 12px;
+            opacity: 0.4;
+            pointer-events: none;
         }
 
         .founder-grid {
@@ -564,6 +1020,19 @@
             font-size: 48px;
             color: var(--bg-dark);
             margin-bottom: 32px;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* FLAIR: Decorative line accent */
+        .founder-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-secondary), transparent);
         }
 
         .founder-content p {
@@ -576,18 +1045,39 @@
         .founder-content .highlight {
             font-weight: 600;
             color: var(--accent-primary);
+            /* FLAIR: Subtle background highlight */
+            background: linear-gradient(transparent 60%, rgba(232, 196, 196, 0.3) 60%);
+            padding: 0 4px;
         }
 
         .founder-image {
             position: relative;
         }
 
+        /* FLAIR: Polaroid-style frame with hand-written feel */
         .founder-image-wrapper {
-            background-color: white;
-            padding: 8px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FAF8F6 100%);
+            padding: 12px 12px 40px 12px;
             border-radius: 4px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow:
+                0 12px 40px rgba(0, 0, 0, 0.12),
+                0 4px 12px rgba(0, 0, 0, 0.08);
             transform: rotate(-3deg);
+            position: relative;
+        }
+
+        /* FLAIR: Handwritten caption feel */
+        .founder-image-wrapper::after {
+            content: 'My story';
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--font-script);
+            font-style: italic;
+            font-size: 16px;
+            color: var(--text-secondary);
+            opacity: 0.7;
         }
 
         .founder-image-wrapper img {
@@ -597,7 +1087,24 @@
             background-color: var(--bg-secondary);
         }
 
-        /* Section 7: Fast Forward / Milestone */
+        /* FLAIR: Decorative washi tape effect */
+        .founder-image::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 80px;
+            height: 24px;
+            background: linear-gradient(135deg, rgba(197, 205, 184, 0.6), rgba(197, 205, 184, 0.3));
+            border-radius: 2px;
+            z-index: 10;
+        }
+
+        /* ============================================================
+           SECTION 7: MILESTONE - SIGNATURE FLAIR MOMENT #1
+           Numbers with sparkle and decorative frame
+           ============================================================ */
         .milestone {
             padding: 80px 0;
             background-color: var(--bg-primary);
@@ -606,25 +1113,95 @@
         .milestone-card {
             max-width: 600px;
             margin: 0 auto;
-            background-color: var(--bg-dark);
+            /* FLAIR: Rich dark gradient with multiple layers */
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(212, 184, 160, 0.1) 0%, transparent 60%),
+                radial-gradient(ellipse at 0% 100%, rgba(139, 79, 92, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, var(--bg-dark) 0%, #4A2F2F 100%);
             border-radius: 24px;
-            padding: 48px;
+            padding: 56px 48px;
             text-align: center;
-            box-shadow: 0 16px 48px rgba(92, 61, 61, 0.2);
+            box-shadow:
+                0 24px 64px rgba(92, 61, 61, 0.25),
+                0 8px 24px rgba(92, 61, 61, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* FLAIR: Decorative corner ornaments */
+        .milestone-card::before,
+        .milestone-card::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(212, 184, 160, 0.2);
+        }
+
+        .milestone-card::before {
+            top: 16px;
+            left: 16px;
+            border-right: none;
+            border-bottom: none;
+            border-radius: 8px 0 0 0;
+        }
+
+        .milestone-card::after {
+            bottom: 16px;
+            right: 16px;
+            border-left: none;
+            border-top: none;
+            border-radius: 0 0 8px 0;
         }
 
         .milestone-card .eyebrow {
             color: var(--accent-highlight);
             margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
         }
 
         .milestone-number {
             font-family: var(--font-display);
-            font-size: 72px;
+            font-size: 80px;
             font-weight: 700;
-            color: white;
+            /* FLAIR: Gradient text for visual richness */
+            background: linear-gradient(135deg, #FFFFFF 0%, var(--accent-highlight) 50%, var(--accent-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             line-height: 1;
             margin-bottom: 8px;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* FLAIR: Decorative sparkles around number */
+        .milestone-number::before {
+            content: '✦';
+            position: absolute;
+            top: 0;
+            right: -30px;
+            font-size: 18px;
+            -webkit-text-fill-color: var(--accent-secondary);
+            opacity: 0.7;
+            animation: sparkle-pulse 2s ease-in-out infinite;
+        }
+
+        .milestone-number::after {
+            content: '✧';
+            position: absolute;
+            bottom: 10px;
+            left: -25px;
+            font-size: 14px;
+            -webkit-text-fill-color: var(--accent-highlight);
+            opacity: 0.5;
+            animation: sparkle-pulse 2s ease-in-out infinite 0.5s;
+        }
+
+        @keyframes sparkle-pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
         }
 
         .milestone-label {
@@ -642,17 +1219,24 @@
         }
 
         .milestone-credentials li {
-            background-color: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(4px);
             color: rgba(255, 255, 255, 0.9);
             font-size: 13px;
             padding: 8px 16px;
             border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Section 8: What You Will Have / Without */
+        /* ============================================================
+           SECTION 8: HAVE/WITHOUT - Clean with subtle texture
+           RESTRAINT: Content-heavy section stays cleaner
+           ============================================================ */
         .have-without {
             padding: 100px 0;
-            background-color: var(--bg-secondary);
+            background:
+                radial-gradient(ellipse at 80% 20%, rgba(212, 184, 160, 0.08) 0%, transparent 40%),
+                var(--bg-secondary);
         }
 
         .have-without-header {
@@ -670,17 +1254,34 @@
 
         .have-card, .without-card {
             padding: 40px;
-            border-radius: 16px;
+            border-radius: 20px;
+            position: relative;
         }
 
         .have-card {
-            background-color: #FBF8F5;
+            /* FLAIR: Warm gradient with linen-like texture effect */
+            background: linear-gradient(135deg, #FBF8F5 0%, #F7F0E8 100%);
             border-left: 4px solid var(--accent-secondary);
+            box-shadow:
+                0 8px 24px rgba(201, 169, 140, 0.1),
+                inset 0 0 60px rgba(255, 255, 255, 0.5);
+        }
+
+        /* FLAIR: Subtle checkmark accent in corner */
+        .have-card::after {
+            content: '✓';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 32px;
+            color: var(--accent-secondary);
+            opacity: 0.15;
         }
 
         .without-card {
-            background-color: var(--bg-primary);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #F0EBE5 100%);
             border-left: 4px solid var(--border-medium);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
         }
 
         .have-card h4 {
@@ -717,15 +1318,33 @@
             text-align: center;
         }
 
-        /* Section 9: 3-Day Breakdown */
+        /* ============================================================
+           SECTION 9: 3-DAY BREAKDOWN - Editorial day cards
+           ============================================================ */
         .breakdown {
             padding: 100px 0;
             background-color: var(--bg-primary);
+            position: relative;
+        }
+
+        /* FLAIR: Subtle vertical line connecting days - timeline feel */
+        .breakdown::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 200px;
+            bottom: 100px;
+            width: 2px;
+            background: linear-gradient(180deg, transparent, var(--accent-cream), var(--accent-cream), transparent);
+            opacity: 0.5;
+            z-index: 0;
         }
 
         .breakdown-header {
             text-align: center;
             margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
         }
 
         .breakdown-header h2 {
@@ -740,31 +1359,55 @@
         .day-cards {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 32px;
             max-width: 900px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .day-card {
-            background-color: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            background: linear-gradient(135deg, #FFFFFF 0%, #FDFCFA 100%);
+            border-radius: 24px;
+            padding: 44px;
+            /* FLAIR: Layered shadow with warm tint */
+            box-shadow:
+                0 12px 32px rgba(92, 61, 61, 0.06),
+                0 4px 12px rgba(0, 0, 0, 0.03),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
             display: grid;
             grid-template-columns: 70% 30%;
             gap: 32px;
             align-items: center;
+            position: relative;
+            /* FLAIR: Subtle border for definition */
+            border: 1px solid rgba(232, 224, 218, 0.5);
+        }
+
+        /* FLAIR: Alternating accent colors for visual rhythm */
+        .day-card:nth-child(1) {
+            border-top: 3px solid var(--accent-primary);
+        }
+
+        .day-card:nth-child(2) {
+            border-top: 3px solid var(--accent-secondary);
+        }
+
+        .day-card:nth-child(3) {
+            border-top: 3px solid var(--accent-highlight);
         }
 
         .day-badge {
             display: inline-block;
-            background-color: var(--accent-primary);
+            /* FLAIR: Gradient badge */
+            background: linear-gradient(135deg, var(--accent-primary) 0%, #7A4452 100%);
             color: white;
             font-size: 12px;
             font-weight: 600;
             padding: 6px 14px;
             border-radius: 6px;
             margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(139, 79, 92, 0.25);
         }
 
         .day-card h4 {
@@ -791,7 +1434,8 @@
             flex-shrink: 0;
             width: 24px;
             height: 24px;
-            background-color: var(--accent-secondary);
+            /* FLAIR: Gradient number circles */
+            background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-highlight) 100%);
             color: white;
             font-size: 12px;
             font-weight: 600;
@@ -799,6 +1443,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 2px 4px rgba(201, 169, 140, 0.3);
         }
 
         .day-graphic {
@@ -810,11 +1455,17 @@
         .day-icon {
             width: 100px;
             height: 100px;
-            background: linear-gradient(135deg, var(--bg-secondary), var(--accent-highlight));
+            /* FLAIR: Multi-layer gradient with glow */
+            background:
+                radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%),
+                linear-gradient(135deg, var(--bg-secondary) 0%, var(--accent-highlight) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow:
+                0 8px 24px rgba(212, 184, 160, 0.3),
+                inset 0 2px 4px rgba(255, 255, 255, 0.5);
         }
 
         .day-icon svg {
@@ -825,10 +1476,15 @@
             fill: none;
         }
 
-        /* Section 10: Urgency */
+        /* ============================================================
+           SECTION 10: URGENCY - Clean with focus on countdown
+           RESTRAINT: Let countdown boxes be the visual focus
+           ============================================================ */
         .urgency {
             padding: 80px 0;
-            background-color: var(--bg-secondary);
+            background:
+                radial-gradient(ellipse at 50% 100%, rgba(232, 196, 196, 0.1) 0%, transparent 50%),
+                var(--bg-secondary);
         }
 
         .urgency-content {
@@ -839,13 +1495,14 @@
 
         .urgency-badge {
             display: inline-block;
-            background-color: var(--bg-dark);
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #4A2F2F 100%);
             color: white;
             font-size: 12px;
             font-weight: 600;
             padding: 8px 16px;
             border-radius: 6px;
             margin-bottom: 24px;
+            box-shadow: 0 4px 12px rgba(92, 61, 61, 0.2);
         }
 
         .urgency h2 {
@@ -867,70 +1524,178 @@
         }
 
         .countdown-box {
-            background-color: var(--bg-dark);
+            /* FLAIR: Rich gradient with layered shadows */
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #4A2F2F 100%);
             color: white;
-            padding: 16px 20px;
-            border-radius: 10px;
-            min-width: 70px;
+            padding: 18px 22px;
+            border-radius: 12px;
+            min-width: 75px;
             text-align: center;
+            box-shadow:
+                0 8px 20px rgba(92, 61, 61, 0.25),
+                0 2px 6px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
         }
 
         .countdown-number {
             font-family: var(--font-display);
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 700;
             line-height: 1;
+            /* FLAIR: Subtle text gradient */
+            background: linear-gradient(135deg, #FFFFFF 0%, rgba(255, 255, 255, 0.85) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .countdown-label {
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            opacity: 0.8;
+            opacity: 0.7;
             margin-top: 4px;
         }
 
-        /* Section 11: Proof Wall */
+        /* ============================================================
+           SECTION 11: PROOF WALL - SIGNATURE FLAIR MOMENT #2
+           Pinterest-style masonry with editorial touches
+           ============================================================ */
         .proof-wall {
             padding: 100px 0;
             background-color: var(--bg-primary);
+            position: relative;
+        }
+
+        /* FLAIR: Scattered dots pattern - editorial pinboard feel */
+        .proof-wall::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(var(--accent-blush) 1px, transparent 1px),
+                radial-gradient(var(--accent-cream) 1px, transparent 1px);
+            background-size: 40px 40px, 60px 60px;
+            background-position: 0 0, 20px 20px;
+            opacity: 0.15;
+            pointer-events: none;
         }
 
         .proof-wall-header {
             text-align: center;
             margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .proof-wall-header h2 {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* FLAIR: Decorative underline flourish */
+        .proof-wall-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 8px;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='8' viewBox='0 0 100 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 4C20 2 35 6 50 4C65 2 80 6 95 4' stroke='%23C9A98C' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-size: 100% 100%;
         }
 
         .proof-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .proof-card {
-            background-color: white;
+            /* FLAIR: Warm paper texture effect */
+            background: linear-gradient(135deg, #FFFFFF 0%, #FDFBF8 100%);
             border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            padding: 24px;
+            box-shadow:
+                0 6px 20px rgba(0, 0, 0, 0.06),
+                0 2px 6px rgba(0, 0, 0, 0.03);
+            position: relative;
+            /* FLAIR: Subtle border for tactile feel */
+            border: 1px solid rgba(232, 224, 218, 0.5);
         }
 
-        .proof-card:nth-child(odd) {
-            transform: rotate(-1deg);
-        }
+        /* FLAIR: Varied rotations for organic scrapbook feel */
+        .proof-card:nth-child(1) { transform: rotate(-1.5deg); }
+        .proof-card:nth-child(2) { transform: rotate(1deg); }
+        .proof-card:nth-child(3) { transform: rotate(-0.5deg); }
+        .proof-card:nth-child(4) { transform: rotate(1.5deg); }
+        .proof-card:nth-child(5) { transform: rotate(0.5deg); }
+        .proof-card:nth-child(6) { transform: rotate(-1deg); }
+        .proof-card:nth-child(7) { transform: rotate(1deg); }
+        .proof-card:nth-child(8) { transform: rotate(-0.5deg); }
 
-        .proof-card:nth-child(even) {
-            transform: rotate(1deg);
-        }
-
-        .proof-card:nth-child(3n) {
+        /* FLAIR: Some cards span 2 rows for visual interest */
+        .proof-card:nth-child(3),
+        .proof-card:nth-child(6) {
             grid-row: span 2;
+        }
+
+        /* FLAIR: Decorative pin/tape effects on select cards */
+        .proof-card:nth-child(1)::before,
+        .proof-card:nth-child(4)::before,
+        .proof-card:nth-child(7)::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 24px;
+            background: radial-gradient(circle, var(--accent-primary) 30%, transparent 30%);
+            opacity: 0.6;
+        }
+
+        /* FLAIR: Tape effect on other cards */
+        .proof-card:nth-child(2)::before,
+        .proof-card:nth-child(5)::before,
+        .proof-card:nth-child(8)::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            right: 20px;
+            width: 50px;
+            height: 18px;
+            background: linear-gradient(135deg, rgba(197, 205, 184, 0.5), rgba(197, 205, 184, 0.2));
+            border-radius: 2px;
+            transform: rotate(15deg);
+        }
+
+        /* FLAIR: Large decorative quotation mark */
+        .proof-card::after {
+            content: '"';
+            font-family: var(--font-script);
+            font-size: 56px;
+            color: var(--accent-blush);
+            position: absolute;
+            top: 8px;
+            right: 16px;
+            line-height: 1;
+            opacity: 0.3;
         }
 
         .proof-quote {
             font-size: 15px;
             color: var(--text-body);
             margin-bottom: 16px;
-            line-height: 1.6;
+            line-height: 1.65;
+            position: relative;
+            z-index: 1;
         }
 
         .proof-author {
@@ -943,21 +1708,28 @@
             color: var(--accent-secondary);
             font-size: 14px;
             margin-top: 8px;
+            letter-spacing: 2px;
         }
 
         .proof-more {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 48px;
             font-family: var(--font-script);
             font-style: italic;
-            font-size: 24px;
+            font-size: 26px;
             color: var(--accent-primary);
+            position: relative;
+            z-index: 1;
         }
 
-        /* Section 12: Before/After Transformation */
+        /* ============================================================
+           SECTION 12: TRANSFORMATION - Visual contrast
+           ============================================================ */
         .transformation {
             padding: 100px 0;
-            background-color: var(--bg-secondary);
+            background:
+                radial-gradient(ellipse at 0% 50%, rgba(212, 184, 160, 0.1) 0%, transparent 50%),
+                var(--bg-secondary);
         }
 
         .transformation-header {
@@ -971,21 +1743,76 @@
             gap: 32px;
             max-width: 900px;
             margin: 0 auto;
+            position: relative;
+        }
+
+        /* FLAIR: Arrow connecting before/after */
+        .transformation-grid::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 30px;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='30' viewBox='0 0 60 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 15H50M50 15L40 8M50 15L40 22' stroke='%23C9A98C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 10;
         }
 
         .before-card, .after-card {
-            padding: 40px;
-            border-radius: 20px;
+            padding: 44px;
+            border-radius: 24px;
+            position: relative;
         }
 
         .before-card {
-            background-color: #EFEBE8;
-            filter: saturate(0.8);
+            /* FLAIR: Desaturated, muted feel */
+            background: linear-gradient(135deg, #EFEBE8 0%, #E5E0DC 100%);
+            filter: saturate(0.85);
+        }
+
+        /* FLAIR: Torn edge effect suggestion */
+        .before-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -2px;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg,
+                var(--bg-secondary) 0%,
+                transparent 10%,
+                var(--bg-secondary) 20%,
+                transparent 30%,
+                var(--bg-secondary) 40%,
+                transparent 50%,
+                var(--bg-secondary) 60%,
+                transparent 70%,
+                var(--bg-secondary) 80%,
+                transparent 90%,
+                var(--bg-secondary) 100%
+            );
         }
 
         .after-card {
-            background-color: #FBF8F5;
+            /* FLAIR: Warm, vibrant feel with golden glow */
+            background: linear-gradient(135deg, #FBF8F5 0%, #F7F0E8 100%);
             border: 2px solid var(--accent-highlight);
+            box-shadow:
+                0 12px 32px rgba(212, 184, 160, 0.2),
+                inset 0 0 60px rgba(255, 255, 255, 0.4);
+        }
+
+        /* FLAIR: Sparkle accent on after card */
+        .after-card::before {
+            content: '✦';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            font-size: 20px;
+            color: var(--accent-secondary);
         }
 
         .transformation-label {
@@ -1039,10 +1866,42 @@
             color: var(--text-body);
         }
 
-        /* Section 13: Final Close */
+        /* ============================================================
+           SECTION 13: FINAL CLOSE - SIGNATURE FLAIR MOMENT #3
+           Minimal with elegant signature flourish
+           RESTRAINT: Breathing room, minimal decoration
+           ============================================================ */
         .final-close {
-            padding: 100px 0;
-            background-color: var(--bg-primary);
+            padding: 120px 0;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(232, 196, 196, 0.08) 0%, transparent 40%),
+                var(--bg-primary);
+            position: relative;
+        }
+
+        /* FLAIR: Subtle decorative frame corners */
+        .final-close::before,
+        .final-close::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 1px solid var(--accent-cream);
+            opacity: 0.5;
+        }
+
+        .final-close::before {
+            top: 60px;
+            left: 60px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .final-close::after {
+            bottom: 60px;
+            right: 60px;
+            border-left: none;
+            border-top: none;
         }
 
         .final-close-content {
@@ -1062,6 +1921,20 @@
             display: block;
             font-size: 28px;
             margin: 8px 0;
+            position: relative;
+        }
+
+        /* FLAIR: Underline flourish on script text */
+        .final-close .script-accent::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 6px;
+            background-image: url("data:image/svg+xml,%3Csvg width='150' height='6' viewBox='0 0 150 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 3C30 1 60 5 75 3C90 1 120 5 145 3' stroke='%23E8C4C4' stroke-width='2' stroke-linecap='round' opacity='0.6'/%3E%3C/svg%3E");
+            background-size: 100% 100%;
         }
 
         .final-close .lead {
@@ -1072,19 +1945,36 @@
         }
 
         .final-close .btn-primary {
-            margin-bottom: 32px;
+            margin-bottom: 40px;
         }
 
         .signature {
             font-family: var(--font-script);
             font-style: italic;
-            font-size: 32px;
+            font-size: 36px;
             color: var(--bg-dark);
+            position: relative;
+            display: inline-block;
         }
 
-        /* Section 14: Footer */
+        /* FLAIR: Decorative flourish under signature */
+        .signature::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='12' viewBox='0 0 100 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 6C15 4 25 8 35 6C45 4 55 8 65 6C75 4 85 8 95 6' stroke='%23C9A98C' stroke-width='1.5' stroke-linecap='round' opacity='0.5'/%3E%3C/svg%3E");
+            background-size: 100% 100%;
+        }
+
+        /* ============================================================
+           SECTION 14: FOOTER - Minimal, clean
+           ============================================================ */
         footer {
-            background-color: var(--bg-secondary);
+            /* FLAIR: Subtle gradient */
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, #E5DDD5 100%);
             padding: 32px 0;
             text-align: center;
         }
@@ -1094,7 +1984,9 @@
             color: var(--text-secondary);
         }
 
-        /* Responsive */
+        /* ============================================================
+           RESPONSIVE DESIGN - Maintain flair at all sizes
+           ============================================================ */
         @media (max-width: 1024px) {
             .hero-grid,
             .for-you-grid,
@@ -1129,8 +2021,19 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .proof-card:nth-child(3n) {
+            .proof-card:nth-child(3n),
+            .proof-card:nth-child(6) {
                 grid-row: span 1;
+            }
+
+            /* FLAIR: Hide some decorative elements on tablet */
+            .hero-cta::before,
+            .breakdown::before {
+                display: none;
+            }
+
+            .transformation-grid::before {
+                display: none;
             }
         }
 
@@ -1184,6 +2087,11 @@
                 grid-template-columns: 1fr;
             }
 
+            /* Simplify proof card rotations on mobile */
+            .proof-card {
+                transform: none !important;
+            }
+
             .countdown-box {
                 padding: 12px 16px;
                 min-width: 60px;
@@ -1203,6 +2111,23 @@
 
             .ticker-item {
                 padding: 0 20px;
+            }
+
+            /* FLAIR: Simplify corner decorations on mobile */
+            .final-close::before,
+            .final-close::after {
+                width: 50px;
+                height: 50px;
+            }
+
+            .final-close::before {
+                top: 30px;
+                left: 20px;
+            }
+
+            .final-close::after {
+                bottom: 30px;
+                right: 20px;
             }
         }
 
@@ -1256,6 +2181,11 @@
             .have-card, .without-card, .before-card, .after-card {
                 padding: 28px;
             }
+
+            /* Hide decorative pins/tape on small mobile */
+            .proof-card::before {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -1271,7 +2201,7 @@
             <div class="hero-grid">
                 <div class="hero-content">
                     <p class="eyebrow hero-eyebrow">THE PERSONAL BRAND RESET</p>
-                    <h1>In 3 days, you will learn how to build a personal brand that attracts the right clients, even if showing up online has felt confusing or exhausting.</h1>
+                    <h1>In 3 days, you will learn how to build a <span class="highlight-marker">personal brand</span> that attracts the right clients, even if showing up online has felt confusing or exhausting.</h1>
                     <p class="hero-subhead">This live experience is for women who want to get paid for who they are, without forcing content, chasing trends, or burning themselves out.</p>
                     <div class="credibility-chips">
                         <span class="chip">Fortune 500 Strategist</span>
@@ -1285,6 +2215,13 @@
                     <p class="hero-microcopy">Live training. Free to attend. You do not need to prepare anything.</p>
                 </div>
                 <div class="hero-image">
+                    <!-- FLAIR: Decorative sparkle elements around image -->
+                    <svg class="hero-decoration sparkle-1" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+                    </svg>
+                    <svg class="hero-decoration sparkle-2" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0L13.5 10.5L24 12L13.5 13.5L12 24L10.5 13.5L0 12L10.5 10.5L12 0Z"/>
+                    </svg>
                     <div class="hero-image-wrapper">
                         <img src="https://placehold.co/600x750/EDE5DF/5C3D3D?text=Sina+Port" alt="Sina Port - Brand Strategist">
                     </div>
@@ -1457,7 +2394,7 @@
                     <p><span class="highlight">And something unexpected happened: people started paying attention.</span></p>
                     <p>Not because I had all the answers, but because I was real. Because I was building something true to who I actually am, not who I thought I needed to be.</p>
                     <p>That honesty became my brand. And that brand became a 7-figure business that has reached over 467,000 women and worked with Fortune 500 companies.</p>
-                    <p class="highlight">Success without freedom is not success at all.</p>
+                    <p><span class="highlight">Success without freedom is not success at all.</span></p>
                 </div>
                 <div class="founder-image">
                     <div class="founder-image-wrapper">
