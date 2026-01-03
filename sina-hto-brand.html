@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q1 Brand System | Brand With Sina</title>
+    <meta name="description" content="Build a personal brand that brings clients to you, even if you hate selling and your audience still feels small.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ================================================================
+           DESIGN SYSTEM - SINA Q1 BRAND SYSTEM PAGE
+           Warm Premium Aesthetic
+           ================================================================ */
+
+        :root {
+            /* Backgrounds */
+            --bg-primary: #F7F4F1;
+            --bg-secondary: #EDE5DF;
+            --bg-tertiary: #FAF8F6;
+            --bg-dark-accent: #5C3D3D;
+            --bg-subtle-tint: #F5EDE7;
+
+            /* Text Colors */
+            --text-primary: #2A2422;
+            --text-body: #4A4340;
+            --text-secondary: #7A706A;
+            --text-muted: #9A918B;
+            --text-on-dark: #FAF8F6;
+            --text-highlight: #5C3D3D;
+
+            /* Accent Colors */
+            --accent-primary: #8B4F5C;
+            --accent-primary-hover: #6D3B47;
+            --accent-primary-glow: rgba(139, 79, 92, 0.2);
+            --accent-secondary: #9B7EC8;
+            --accent-tertiary: #1D6B6B;
+            --accent-highlight: #D4B8A0;
+
+            /* Borders & Shadows */
+            --border-light: #E8E0DA;
+            --border-medium: #D4CAC2;
+            --shadow-base: rgba(42, 36, 34, 0.08);
+
+            /* Shadows (ALWAYS LAYERED) */
+            --shadow-card:
+                0 2px 4px rgba(42, 36, 34, 0.04),
+                0 8px 16px rgba(42, 36, 34, 0.06),
+                0 16px 32px rgba(42, 36, 34, 0.04);
+            --shadow-card-elevated:
+                0 4px 8px rgba(42, 36, 34, 0.06),
+                0 12px 24px rgba(42, 36, 34, 0.08),
+                0 24px 48px rgba(42, 36, 34, 0.06);
+            --shadow-button:
+                0 4px 12px rgba(139, 79, 92, 0.2),
+                0 8px 20px rgba(139, 79, 92, 0.12);
+            --shadow-button-hover:
+                0 6px 16px rgba(139, 79, 92, 0.28),
+                0 12px 28px rgba(139, 79, 92, 0.16);
+
+            /* Spacing */
+            --section-padding: 100px;
+            --container-max: 1280px;
+            --container-padding: 48px;
+            --content-max: 720px;
+            --headline-max: 960px;
+
+            /* Radii */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+        }
+
+        /* ================================================================
+           RESET & BASE STYLES
+           ================================================================ */
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-body);
+            font-size: 18px;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ================================================================
+           TYPOGRAPHY
+           ================================================================ */
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.15;
+            color: var(--text-primary);
+        }
+
+        h1 {
+            font-size: 56px;
+        }
+
+        h2 {
+            font-size: 44px;
+        }
+
+        h3 {
+            font-size: 28px;
+        }
+
+        .script-accent {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-secondary);
+        }
+
+        .body-text {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-body);
+        }
+
+        .small-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .micro-text {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Burgundy highlight */
+        .burgundy-highlight {
+            color: var(--accent-primary);
+        }
+
+        /* Gold underline effect */
+        .gold-underline {
+            position: relative;
+            display: inline;
+        }
+
+        .gold-underline::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 2px;
+            width: 100%;
+            height: 8px;
+            background: var(--accent-highlight);
+            opacity: 0.4;
+            z-index: -1;
+        }
+
+        /* ================================================================
+           LAYOUT
+           ================================================================ */
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .content-width {
+            max-width: var(--content-max);
+        }
+
+        .headline-width {
+            max-width: var(--headline-max);
+        }
+
+        /* ================================================================
+           BUTTONS
+           ================================================================ */
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-primary);
+            color: var(--text-on-dark);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 18px 48px;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-button);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-primary-hover);
+            box-shadow: var(--shadow-button-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary-large {
+            min-width: 220px;
+            height: 56px;
+            font-size: 16px;
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            color: var(--accent-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 14px 32px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--accent-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-ghost:hover {
+            background: rgba(139, 79, 92, 0.08);
+            border-color: var(--accent-primary-hover);
+        }
+
+        .btn-small {
+            padding: 10px 24px;
+            font-size: 14px;
+            min-width: 120px;
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        /* ================================================================
+           SECTION 1: TOP BAR (Sticky)
+           ================================================================ */
+
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: rgba(250, 248, 246, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+        }
+
+        .top-bar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .top-bar-logo {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .top-bar-status {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-secondary);
+        }
+
+        .top-bar-cta {
+            background: var(--accent-primary);
+            color: var(--text-on-dark);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 10px;
+            min-width: 120px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(139, 79, 92, 0.2);
+        }
+
+        .top-bar-cta:hover {
+            background: var(--accent-primary-hover);
+            box-shadow: 0 4px 16px rgba(139, 79, 92, 0.3);
+        }
+
+        /* ================================================================
+           SECTION 2: HERO
+           ================================================================ */
+
+        .hero {
+            min-height: 100vh;
+            padding-top: 60px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-primary);
+        }
+
+        /* Atmospheric background glows */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(155, 126, 200, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -15%;
+            width: 50%;
+            height: 50%;
+            background: radial-gradient(circle, rgba(212, 184, 160, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* Grain texture overlay */
+        .hero-grain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.02;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            padding: 80px 0;
+        }
+
+        .hero-text {
+            text-align: center;
+            max-width: var(--headline-max);
+            margin: 0 auto 60px;
+        }
+
+        .hero-headline {
+            font-size: 56px;
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 28px;
+            color: var(--text-primary);
+        }
+
+        .hero-subhead {
+            font-size: 19px;
+            font-weight: 400;
+            color: var(--text-body);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto 28px;
+        }
+
+        .hero-body {
+            font-size: 17px;
+            color: var(--text-body);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-bullets {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .hero-chip {
+            background: var(--bg-secondary);
+            color: var(--bg-dark-accent);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px 18px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border-light);
+        }
+
+        .hero-ctas {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .hero-microcopy {
+            font-size: 14px;
+            color: var(--text-secondary);
+            max-width: 480px;
+            text-align: center;
+            margin: 0 auto 48px;
+        }
+
+        .hero-proof-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-tertiary);
+            padding: 10px 20px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border-light);
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+        }
+
+        .hero-proof-chip svg {
+            color: var(--accent-tertiary);
+            flex-shrink: 0;
+        }
+
+        /* Video Frame */
+        .hero-video {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .video-frame {
+            background: var(--bg-tertiary);
+            border-radius: 20px;
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+            box-shadow: var(--shadow-card-elevated);
+            position: relative;
+        }
+
+        .video-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(139, 79, 92, 0.03) 0%, rgba(212, 184, 160, 0.05) 100%);
+            pointer-events: none;
+        }
+
+        .video-placeholder {
+            aspect-ratio: 16/9;
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+            position: relative;
+        }
+
+        .video-overlay {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .video-play-btn {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            box-shadow: var(--shadow-button);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-play-btn:hover {
+            transform: scale(1.05);
+            background: var(--accent-primary-hover);
+            box-shadow: var(--shadow-button-hover);
+        }
+
+        .video-play-btn svg {
+            color: var(--text-on-dark);
+            margin-left: 4px;
+        }
+
+        .video-text {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* ================================================================
+           SECTION 3: BIG PROOF NUMBERS
+           ================================================================ */
+
+        .proof-numbers {
+            padding: var(--section-padding) 0;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .proof-numbers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .proof-left {
+            position: relative;
+        }
+
+        .proof-headline {
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .proof-headline .burgundy-highlight {
+            color: var(--accent-primary);
+        }
+
+        .proof-subhead {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-style: italic;
+            font-size: 24px;
+            color: var(--bg-dark-accent);
+            margin-bottom: 24px;
+        }
+
+        .proof-body {
+            font-size: 18px;
+            color: var(--text-body);
+            line-height: 1.8;
+            margin-bottom: 32px;
+            max-width: 560px;
+        }
+
+        /* Proof chips */
+        .proof-chips {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .proof-chip-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--text-body);
+        }
+
+        .proof-chip-item svg {
+            color: var(--accent-tertiary);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Screenshot Card */
+        .proof-right {
+            position: relative;
+        }
+
+        .screenshot-card {
+            background: var(--bg-tertiary);
+            border-radius: 20px;
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+            box-shadow: var(--shadow-card-elevated);
+        }
+
+        .screenshot-header {
+            background: var(--bg-primary);
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .screenshot-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--border-medium);
+        }
+
+        .screenshot-dot.red { background: #FF6B6B; }
+        .screenshot-dot.yellow { background: #FFD93D; }
+        .screenshot-dot.green { background: #6BCB77; }
+
+        .screenshot-placeholder {
+            aspect-ratio: 4/3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);
+            padding: 40px;
+        }
+
+        .screenshot-number {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 96px;
+            font-weight: 700;
+            color: var(--accent-primary);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .screenshot-text {
+            font-size: 16px;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* ================================================================
+           SECTION 4: WALL OF WINS
+           ================================================================ */
+
+        .wall-of-wins {
+            padding: var(--section-padding) 0;
+            background: var(--bg-primary);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 64px;
+        }
+
+        .section-headline {
+            font-size: 44px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .section-subhead {
+            font-size: 18px;
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        .section-body {
+            font-size: 17px;
+            color: var(--text-secondary);
+            margin-top: 16px;
+        }
+
+        /* Masonry Grid */
+        .wins-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .win-tile {
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+        }
+
+        .win-tile:hover {
+            border-color: var(--border-medium);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-card-elevated);
+        }
+
+        /* Varied heights for masonry effect */
+        .win-tile.tall {
+            grid-row: span 2;
+        }
+
+        .win-tile.wide {
+            grid-column: span 2;
+        }
+
+        .win-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-on-dark);
+        }
+
+        .win-quote {
+            font-size: 16px;
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .win-source {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* CTA after wall */
+        .wall-cta {
+            text-align: center;
+            margin-top: 64px;
+        }
+
+        .wall-cta .btn-primary {
+            margin-bottom: 16px;
+        }
+
+        .wall-cta-microcopy {
+            font-size: 14px;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* ================================================================
+           SECTION 5: OBJECTION BUSTERS
+           ================================================================ */
+
+        .objection-section {
+            padding: var(--section-padding) 0;
+            background: var(--bg-subtle-tint);
+        }
+
+        .objection-card {
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-xl);
+            padding: 48px;
+            border: 1px solid var(--border-light);
+            border-left: 4px solid var(--accent-secondary);
+            box-shadow: var(--shadow-card);
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .objection-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .objection-headline {
+            font-size: 40px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .objection-subhead {
+            font-size: 18px;
+            color: var(--text-body);
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .objection-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .objection-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .objection-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(139, 79, 92, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .objection-icon svg {
+            width: 14px;
+            height: 14px;
+            color: var(--accent-primary);
+        }
+
+        .objection-content h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .objection-content p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ================================================================
+           CTA SECTION
+           ================================================================ */
+
+        .final-cta {
+            padding: 120px 0;
+            background: var(--bg-dark-accent);
+            text-align: center;
+        }
+
+        .final-cta .eyebrow {
+            color: var(--accent-highlight);
+            margin-bottom: 16px;
+        }
+
+        .final-cta .section-headline {
+            color: var(--text-on-dark);
+            margin-bottom: 24px;
+        }
+
+        .final-cta .section-subhead {
+            color: rgba(250, 248, 246, 0.8);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-cta .btn-primary {
+            background: var(--text-on-dark);
+            color: var(--bg-dark-accent);
+        }
+
+        .final-cta .btn-primary:hover {
+            background: var(--accent-highlight);
+            color: var(--text-primary);
+        }
+
+        /* ================================================================
+           RESPONSIVE STYLES
+           ================================================================ */
+
+        @media (max-width: 1200px) {
+            .wins-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            :root {
+                --container-padding: 32px;
+                --section-padding: 80px;
+            }
+
+            h1, .hero-headline {
+                font-size: 44px;
+            }
+
+            h2, .section-headline {
+                font-size: 36px;
+            }
+
+            .proof-headline {
+                font-size: 40px;
+            }
+
+            .proof-numbers-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .proof-right {
+                order: -1;
+            }
+
+            .proof-chips {
+                grid-template-columns: 1fr;
+            }
+
+            .wins-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .win-tile.wide {
+                grid-column: span 1;
+            }
+
+            .objection-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .objection-card {
+                padding: 40px;
+            }
+
+            .objection-headline {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --container-padding: 20px;
+                --section-padding: 64px;
+            }
+
+            h1, .hero-headline {
+                font-size: 36px;
+            }
+
+            h2, .section-headline {
+                font-size: 30px;
+            }
+
+            h3, .proof-headline {
+                font-size: 28px;
+            }
+
+            .top-bar-status {
+                display: none;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 80px;
+            }
+
+            .hero-content {
+                padding: 40px 0 60px;
+            }
+
+            .hero-subhead {
+                font-size: 17px;
+            }
+
+            .hero-bullets {
+                gap: 8px;
+            }
+
+            .hero-chip {
+                font-size: 13px;
+                padding: 8px 14px;
+            }
+
+            .hero-ctas {
+                width: 100%;
+            }
+
+            .btn-primary-large {
+                width: 100%;
+                max-width: 360px;
+            }
+
+            .video-placeholder {
+                min-height: 280px;
+            }
+
+            .screenshot-number {
+                font-size: 64px;
+            }
+
+            .proof-subhead {
+                font-size: 20px;
+            }
+
+            .wins-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .win-tile.tall,
+            .win-tile.wide {
+                grid-row: span 1;
+                grid-column: span 1;
+            }
+
+            .objection-card {
+                padding: 32px 24px;
+            }
+
+            .objection-headline {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1, .hero-headline {
+                font-size: 32px;
+            }
+
+            h2, .section-headline {
+                font-size: 26px;
+            }
+
+            .hero-bullets {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-ghost {
+                width: 100%;
+                max-width: 360px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ================================================================
+         SECTION 1: TOP BAR (Sticky)
+         ================================================================ -->
+    <header class="top-bar">
+        <div class="top-bar-inner">
+            <a href="#" class="top-bar-logo">Brand With Sina</a>
+            <span class="top-bar-status">Q1 COHORT • LIMITED SPOTS</span>
+            <a href="#apply" class="top-bar-cta">Apply Now</a>
+        </div>
+    </header>
+
+    <!-- ================================================================
+         SECTION 2: HERO
+         ================================================================ -->
+    <section class="hero">
+        <div class="hero-grain"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-headline">
+                    Build a personal brand that <span class="gold-underline">brings clients to you</span>, even if you hate selling and your audience still feels small.
+                </h1>
+
+                <p class="hero-subhead">
+                    If you're done chasing trends and burning out in "masculine" business mode, this is the Q1 reset that installs your voice, your positioning, and a content system that actually converts.
+                </p>
+
+                <p class="hero-body">
+                    The momentum you want isn't about working harder. It's about building a system where the right people find you.
+                </p>
+
+                <div class="hero-bullets">
+                    <span class="hero-chip">Replace posting and praying with a simple weekly structure</span>
+                    <span class="hero-chip">Install your Unfair Advantage Map so your brand stops sounding generic</span>
+                    <span class="hero-chip">Create content that gets clients, not just views</span>
+                    <span class="hero-chip">Get feedback so you don't spiral for 3 days over one post</span>
+                    <span class="hero-chip">Build the "garden" so the right people come to you</span>
+                </div>
+
+                <div class="hero-ctas">
+                    <a href="#apply" class="btn-primary btn-primary-large">Apply for the Q1 Brand System</a>
+                    <a href="#video" class="btn-ghost">See what's included</a>
+                </div>
+
+                <p class="hero-microcopy">
+                    Applications close when the Q1 cohort starts. January 15th, 2026.
+                </p>
+
+                <div class="hero-proof-chip">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <circle cx="8" cy="8" r="8" fill="currentColor"/>
+                        <path d="M5 8L7 10L11 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>24 women in current cohort</span>
+                </div>
+            </div>
+
+            <div class="hero-video" id="video">
+                <div class="video-frame">
+                    <div class="video-placeholder">
+                        <div class="video-overlay">
+                            <div class="video-play-btn">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                            <p class="video-text">Watch: What's inside the Q1 Brand System</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 3: BIG PROOF NUMBERS
+         ================================================================ -->
+    <section class="proof-numbers">
+        <div class="container">
+            <div class="proof-numbers-grid">
+                <div class="proof-left">
+                    <h2 class="proof-headline">
+                        <span class="burgundy-highlight">Seven views.</span> Real clients.
+                    </h2>
+
+                    <p class="proof-subhead script-accent">
+                        This is what "right people see you" looks like in real life.
+                    </p>
+
+                    <p class="proof-body">
+                        I posted a video that got 7 views. Seven. Not 7,000. Just 7. And one of those views was from someone who messaged me asking about brand consulting. That's not luck. That's what happens when your positioning is clear and your content speaks to the right person.
+                    </p>
+
+                    <div class="proof-chips">
+                        <div class="proof-chip-item">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Worked inside Adidas and saw how real brands build trust</span>
+                        </div>
+                        <div class="proof-chip-item">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Keynote speaking and consulting experience in real rooms</span>
+                        </div>
+                        <div class="proof-chip-item">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Reels hit 300,000+ and 1.2M+ when the hook matched the audience</span>
+                        </div>
+                        <div class="proof-chip-item">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Mentee used this method and grew 10,000 followers in a week</span>
+                        </div>
+                        <div class="proof-chip-item">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Content testing beats guessing. Every time.</span>
+                        </div>
+                    </div>
+
+                    <a href="#apply" class="btn-primary btn-primary-large">Apply for the Q1 Brand System</a>
+                    <p class="micro-text" style="margin-top: 16px;">If you're serious about Q1, don't leave this to motivation.</p>
+                </div>
+
+                <div class="proof-right">
+                    <div class="screenshot-card">
+                        <div class="screenshot-header">
+                            <span class="screenshot-dot red"></span>
+                            <span class="screenshot-dot yellow"></span>
+                            <span class="screenshot-dot green"></span>
+                        </div>
+                        <div class="screenshot-placeholder">
+                            <div class="screenshot-number">7</div>
+                            <p class="screenshot-text">7 views → brand consulting request<br><span style="font-size: 14px;">[Insert actual screenshot here]</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 4: WALL OF WINS
+         ================================================================ -->
+    <section class="wall-of-wins">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-headline">This is what happens when you stop chasing and build your garden.</h2>
+                <p class="section-subhead">
+                    Real results. Real people. Real screenshots. No performing.
+                </p>
+                <p class="section-body">
+                    You don't need everyone to clap. You need the right people to recognize you.
+                </p>
+            </div>
+
+            <div class="wins-grid">
+                <!-- Row 1 -->
+                <div class="win-tile tall">
+                    <div class="win-avatar">SR</div>
+                    <p class="win-quote">"I stopped sounding like a robot. My content finally has my voice in it, and people are actually responding."</p>
+                    <p class="win-source">Brand strategist</p>
+                </div>
+
+                <div class="win-tile">
+                    <div class="win-avatar">MK</div>
+                    <p class="win-quote">"Someone DM'd me asking to work together."</p>
+                </div>
+
+                <div class="win-tile wide">
+                    <div class="win-avatar">JL</div>
+                    <p class="win-quote">"I posted my story and it finally landed. Not viral, but the right people saw it. That's what matters."</p>
+                    <p class="win-source">Life coach</p>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="win-tile">
+                    <div class="win-avatar">AT</div>
+                    <p class="win-quote">"I got clearer in one week than the whole last year."</p>
+                </div>
+
+                <div class="win-tile">
+                    <div class="win-avatar">RB</div>
+                    <p class="win-quote">"I don't dread content anymore."</p>
+                </div>
+
+                <div class="win-tile tall">
+                    <div class="win-avatar">CP</div>
+                    <p class="win-quote">"I'm not pitching. People are coming to me. The garden metaphor clicked and now I see my content completely differently."</p>
+                    <p class="win-source">Consultant</p>
+                </div>
+
+                <div class="win-tile">
+                    <div class="win-avatar">DW</div>
+                    <p class="win-quote">"My content started getting saves and real conversations."</p>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="win-tile wide">
+                    <div class="win-avatar">EM</div>
+                    <p class="win-quote">"I found my unfair advantage and it changed everything. Now I know exactly why people should work with me."</p>
+                    <p class="win-source">Wellness coach</p>
+                </div>
+
+                <div class="win-tile">
+                    <div class="win-avatar">NK</div>
+                    <p class="win-quote">"I finally finish what I start."</p>
+                </div>
+
+                <div class="win-tile">
+                    <div class="win-avatar">LT</div>
+                    <p class="win-quote">"This feels calm. That's the difference."</p>
+                    <p class="win-source">New creator</p>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="win-tile">
+                    <div class="win-avatar">VH</div>
+                    <p class="win-quote">"I got clients without going viral."</p>
+                </div>
+
+                <div class="win-tile tall">
+                    <div class="win-avatar">BC</div>
+                    <p class="win-quote">"My brand finally makes sense. I can explain what I do in one sentence and people get it immediately."</p>
+                    <p class="win-source">Agency owner</p>
+                </div>
+
+                <div class="win-tile">
+                    <div class="win-avatar">JS</div>
+                    <p class="win-quote">"No more second-guessing every post."</p>
+                </div>
+
+                <div class="win-tile">
+                    <div class="win-avatar">AH</div>
+                    <p class="win-quote">"The feedback loop is everything."</p>
+                </div>
+            </div>
+
+            <div class="wall-cta">
+                <a href="#apply" class="btn-primary btn-primary-large">Apply for the Q1 Brand System</a>
+                <p class="wall-cta-microcopy">
+                    VIP closes when the program starts. If you're a finisher, you already know what to do.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 5: OBJECTION BUSTERS
+         ================================================================ -->
+    <section class="objection-section">
+        <div class="container">
+            <div class="objection-card">
+                <div class="objection-header">
+                    <h2 class="objection-headline">You don't need a bigger audience for this to work.</h2>
+                    <p class="objection-subhead">
+                        You need clarity, positioning, and a system that makes the right people notice.
+                    </p>
+                </div>
+
+                <div class="objection-grid">
+                    <div class="objection-item">
+                        <div class="objection-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <path d="M18 6L6 18M6 6l12 12"/>
+                            </svg>
+                        </div>
+                        <div class="objection-content">
+                            <h4>You don't need to post every day</h4>
+                            <p>Consistency isn't about frequency. It's about showing up with intention when you do.</p>
+                        </div>
+                    </div>
+
+                    <div class="objection-item">
+                        <div class="objection-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <path d="M18 6L6 18M6 6l12 12"/>
+                            </svg>
+                        </div>
+                        <div class="objection-content">
+                            <h4>You don't need to go viral</h4>
+                            <p>7 views led to a consulting request. The right eyes matter more than millions.</p>
+                        </div>
+                    </div>
+
+                    <div class="objection-item">
+                        <div class="objection-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <path d="M18 6L6 18M6 6l12 12"/>
+                            </svg>
+                        </div>
+                        <div class="objection-content">
+                            <h4>You don't need to be an extrovert</h4>
+                            <p>Your garden can grow quietly. Some of the best brands are built by introverts.</p>
+                        </div>
+                    </div>
+
+                    <div class="objection-item">
+                        <div class="objection-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <path d="M18 6L6 18M6 6l12 12"/>
+                            </svg>
+                        </div>
+                        <div class="objection-content">
+                            <h4>You don't need to pitch in DMs</h4>
+                            <p>When your positioning is right, people come to you. No cold outreach required.</p>
+                        </div>
+                    </div>
+
+                    <div class="objection-item">
+                        <div class="objection-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <path d="M18 6L6 18M6 6l12 12"/>
+                            </svg>
+                        </div>
+                        <div class="objection-content">
+                            <h4>You don't need a perfect feed</h4>
+                            <p>Authenticity beats aesthetics. Real > polished.</p>
+                        </div>
+                    </div>
+
+                    <div class="objection-item">
+                        <div class="objection-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <path d="M18 6L6 18M6 6l12 12"/>
+                            </svg>
+                        </div>
+                        <div class="objection-content">
+                            <h4>You don't need to sound like everyone else</h4>
+                            <p>Your unfair advantage is that you're you. We help you find and use it.</p>
+                        </div>
+                    </div>
+
+                    <div class="objection-item">
+                        <div class="objection-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <path d="M18 6L6 18M6 6l12 12"/>
+                            </svg>
+                        </div>
+                        <div class="objection-content">
+                            <h4>You don't need a huge following</h4>
+                            <p>Small, engaged audiences convert better than large, passive ones.</p>
+                        </div>
+                    </div>
+
+                    <div class="objection-item">
+                        <div class="objection-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <path d="M18 6L6 18M6 6l12 12"/>
+                            </svg>
+                        </div>
+                        <div class="objection-content">
+                            <h4>You don't need to be "further along"</h4>
+                            <p>The best time to build your brand foundation is now, not when you feel ready.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         FINAL CTA SECTION
+         ================================================================ -->
+    <section class="final-cta" id="apply">
+        <div class="container">
+            <p class="eyebrow">READY TO BUILD YOUR BRAND?</p>
+            <h2 class="section-headline">Apply for the Q1 Brand System</h2>
+            <p class="section-subhead">
+                Limited spots because this is real mentorship, not a mass course. We review every application to ensure fit.
+            </p>
+            <a href="#" class="btn-primary btn-primary-large">Submit Your Application</a>
+        </div>
+    </section>
+</body>
+</html>
