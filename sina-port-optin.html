@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Personal Brand Reset | Sina Port</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset & Base */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            /* Backgrounds */
+            --bg-primary: #F7F4F1;
+            --bg-secondary: #EDE5DF;
+            --bg-dark: #5C3D3D;
+            --bg-card: #FFFFFF;
+
+            /* Text */
+            --text-primary: #2A2422;
+            --text-body: #4A4340;
+            --text-secondary: #7A706A;
+            --text-muted: #9A918B;
+            --text-on-dark: #FAF8F6;
+
+            /* Accent */
+            --accent-primary: #8B4F5C;
+            --accent-primary-hover: #6D3B47;
+            --accent-secondary: #C9A98C;
+            --accent-highlight: #D4B8A0;
+
+            /* Borders */
+            --border-light: #E8E0DA;
+            --border-medium: #D4CAC2;
+
+            /* Typography */
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --font-script: 'Cormorant Garamond', serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-body);
+            background-color: var(--bg-primary);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .content-narrow {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 200px;
+            height: 56px;
+            padding: 0 32px;
+            background-color: var(--accent-primary);
+            color: white;
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(139, 79, 92, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 79, 92, 0.3);
+        }
+
+        .btn-primary-large {
+            min-width: 240px;
+            height: 60px;
+            font-size: 17px;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 200px;
+            height: 56px;
+            padding: 0 32px;
+            background-color: transparent;
+            color: var(--accent-primary);
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid var(--accent-primary);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(139, 79, 92, 0.06);
+        }
+
+        .btn-white {
+            background-color: white;
+            color: var(--bg-dark);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-white:hover {
+            background-color: var(--bg-secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            color: var(--text-primary);
+            line-height: 1.15;
+        }
+
+        h1 {
+            font-size: 54px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 44px;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .eyebrow {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-secondary);
+        }
+
+        .script-accent {
+            font-family: var(--font-script);
+            font-style: italic;
+            color: var(--accent-primary);
+        }
+
+        .script-large {
+            font-size: 44px;
+        }
+
+        /* Section 1: Top Bar */
+        .top-bar {
+            background-color: var(--bg-secondary);
+            padding: 14px 24px;
+            text-align: center;
+        }
+
+        .top-bar p {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--bg-dark);
+            margin: 0;
+        }
+
+        .top-bar strong {
+            font-weight: 600;
+        }
+
+        /* Section 2: Hero */
+        .hero {
+            padding: 80px 0 100px;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.02;
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 55% 45%;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-eyebrow {
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            margin-bottom: 24px;
+            max-width: 580px;
+        }
+
+        .hero-subhead {
+            font-size: 19px;
+            color: var(--text-body);
+            max-width: 520px;
+            margin-bottom: 32px;
+            line-height: 1.65;
+        }
+
+        .credibility-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 36px;
+        }
+
+        .chip {
+            background-color: var(--bg-secondary);
+            color: var(--bg-dark);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .hero-cta {
+            margin-bottom: 16px;
+        }
+
+        .hero-microcopy {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image-wrapper {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            background-color: var(--bg-secondary);
+        }
+
+        /* Section 3: Is This For You */
+        .for-you {
+            padding: 100px 0;
+            background-color: var(--bg-primary);
+        }
+
+        .for-you-grid {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .for-you-image {
+            position: relative;
+        }
+
+        .for-you-image-wrapper {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid var(--accent-highlight);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+        }
+
+        .for-you-image-wrapper img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            background-color: var(--bg-secondary);
+        }
+
+        .for-you-content h2 {
+            margin-bottom: 8px;
+        }
+
+        .for-you-content h2 .script-accent {
+            display: inline-block;
+            transform: rotate(-2deg);
+        }
+
+        .for-you-intro {
+            font-size: 18px;
+            color: var(--accent-primary);
+            font-weight: 500;
+            margin-bottom: 28px;
+        }
+
+        .for-you-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .for-you-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 17px;
+            color: var(--text-body);
+        }
+
+        .check-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .check-icon svg {
+            width: 12px;
+            height: 12px;
+            stroke: white;
+            stroke-width: 3;
+        }
+
+        .for-you-closing {
+            font-size: 17px;
+            font-style: italic;
+            color: var(--bg-dark);
+            padding-left: 40px;
+            border-left: 3px solid var(--accent-highlight);
+        }
+
+        /* Section 4: Put Your Name Down (Dark Section) */
+        .name-down {
+            padding: 100px 0;
+            background-color: var(--bg-dark);
+            position: relative;
+        }
+
+        .name-down-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .name-down h2 {
+            color: var(--text-on-dark);
+            margin-bottom: 24px;
+        }
+
+        .name-down-subhead {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 32px;
+        }
+
+        .name-down-outcomes {
+            list-style: none;
+            text-align: left;
+            max-width: 540px;
+            margin: 0 auto 40px;
+        }
+
+        .name-down-outcomes li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 16px;
+            font-size: 17px;
+            color: white;
+        }
+
+        .name-down-outcomes .check-icon {
+            background-color: var(--accent-highlight);
+        }
+
+        .differentiator {
+            margin-bottom: 40px;
+            padding: 24px 32px;
+            background-color: rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+        }
+
+        .differentiator-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .differentiator-list {
+            list-style: none;
+        }
+
+        .differentiator-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .x-icon {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            background-color: var(--border-medium);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .x-icon svg {
+            width: 10px;
+            height: 10px;
+            stroke: white;
+            stroke-width: 3;
+        }
+
+        .testimonial-line {
+            font-family: var(--font-script);
+            font-style: italic;
+            font-size: 20px;
+            color: var(--accent-highlight);
+            margin-bottom: 36px;
+        }
+
+        /* Section 5: Social Proof Ticker */
+        .ticker {
+            background-color: var(--bg-secondary);
+            padding: 16px 0;
+            overflow: hidden;
+        }
+
+        .ticker-track {
+            display: flex;
+            animation: ticker 30s linear infinite;
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0 32px;
+            white-space: nowrap;
+        }
+
+        .ticker-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-secondary), var(--accent-highlight));
+        }
+
+        .ticker-text {
+            font-size: 13px;
+            color: var(--text-body);
+        }
+
+        .ticker-text strong {
+            color: var(--text-primary);
+        }
+
+        .ticker-check {
+            color: var(--accent-secondary);
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Section 6: Founder Story */
+        .founder-story {
+            padding: 100px 0;
+            background-color: var(--bg-primary);
+        }
+
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .founder-content .eyebrow {
+            font-family: var(--font-script);
+            font-size: 24px;
+            font-style: italic;
+            color: var(--accent-primary);
+            letter-spacing: 0;
+            text-transform: none;
+            margin-bottom: 8px;
+        }
+
+        .founder-content h2 {
+            font-size: 48px;
+            color: var(--bg-dark);
+            margin-bottom: 32px;
+        }
+
+        .founder-content p {
+            font-size: 18px;
+            line-height: 1.75;
+            color: var(--text-body);
+            margin-bottom: 24px;
+        }
+
+        .founder-content .highlight {
+            font-weight: 600;
+            color: var(--accent-primary);
+        }
+
+        .founder-image {
+            position: relative;
+        }
+
+        .founder-image-wrapper {
+            background-color: white;
+            padding: 8px;
+            border-radius: 4px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transform: rotate(-3deg);
+        }
+
+        .founder-image-wrapper img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            background-color: var(--bg-secondary);
+        }
+
+        /* Section 7: Fast Forward / Milestone */
+        .milestone {
+            padding: 80px 0;
+            background-color: var(--bg-primary);
+        }
+
+        .milestone-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--bg-dark);
+            border-radius: 24px;
+            padding: 48px;
+            text-align: center;
+            box-shadow: 0 16px 48px rgba(92, 61, 61, 0.2);
+        }
+
+        .milestone-card .eyebrow {
+            color: var(--accent-highlight);
+            margin-bottom: 16px;
+        }
+
+        .milestone-number {
+            font-family: var(--font-display);
+            font-size: 72px;
+            font-weight: 700;
+            color: white;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .milestone-label {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 24px;
+        }
+
+        .milestone-credentials {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .milestone-credentials li {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 13px;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        /* Section 8: What You Will Have / Without */
+        .have-without {
+            padding: 100px 0;
+            background-color: var(--bg-secondary);
+        }
+
+        .have-without-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .have-without-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto 48px;
+        }
+
+        .have-card, .without-card {
+            padding: 40px;
+            border-radius: 16px;
+        }
+
+        .have-card {
+            background-color: #FBF8F5;
+            border-left: 4px solid var(--accent-secondary);
+        }
+
+        .without-card {
+            background-color: var(--bg-primary);
+            border-left: 4px solid var(--border-medium);
+        }
+
+        .have-card h4 {
+            color: var(--accent-secondary);
+            margin-bottom: 24px;
+        }
+
+        .without-card h4 {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .have-card ul, .without-card ul {
+            list-style: none;
+        }
+
+        .have-card li, .without-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .have-card li {
+            color: var(--text-body);
+        }
+
+        .without-card li {
+            color: var(--text-secondary);
+        }
+
+        .have-without-cta {
+            text-align: center;
+        }
+
+        /* Section 9: 3-Day Breakdown */
+        .breakdown {
+            padding: 100px 0;
+            background-color: var(--bg-primary);
+        }
+
+        .breakdown-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .breakdown-header h2 {
+            margin-bottom: 16px;
+        }
+
+        .breakdown-header p {
+            font-size: 18px;
+            color: var(--text-secondary);
+        }
+
+        .day-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .day-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            display: grid;
+            grid-template-columns: 70% 30%;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .day-badge {
+            display: inline-block;
+            background-color: var(--accent-primary);
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+
+        .day-card h4 {
+            margin-bottom: 20px;
+        }
+
+        .day-card ol {
+            list-style: none;
+            counter-reset: day-counter;
+        }
+
+        .day-card ol li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: var(--text-body);
+            counter-increment: day-counter;
+        }
+
+        .day-card ol li::before {
+            content: counter(day-counter);
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent-secondary);
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .day-graphic {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .day-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--bg-secondary), var(--accent-highlight));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .day-icon svg {
+            width: 48px;
+            height: 48px;
+            stroke: var(--bg-dark);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        /* Section 10: Urgency */
+        .urgency {
+            padding: 80px 0;
+            background-color: var(--bg-secondary);
+        }
+
+        .urgency-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .urgency-badge {
+            display: inline-block;
+            background-color: var(--bg-dark);
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 6px;
+            margin-bottom: 24px;
+        }
+
+        .urgency h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .urgency p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .countdown-box {
+            background-color: var(--bg-dark);
+            color: white;
+            padding: 16px 20px;
+            border-radius: 10px;
+            min-width: 70px;
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+
+        /* Section 11: Proof Wall */
+        .proof-wall {
+            padding: 100px 0;
+            background-color: var(--bg-primary);
+        }
+
+        .proof-wall-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .proof-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .proof-card:nth-child(odd) {
+            transform: rotate(-1deg);
+        }
+
+        .proof-card:nth-child(even) {
+            transform: rotate(1deg);
+        }
+
+        .proof-card:nth-child(3n) {
+            grid-row: span 2;
+        }
+
+        .proof-quote {
+            font-size: 15px;
+            color: var(--text-body);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .proof-author {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .proof-stars {
+            color: var(--accent-secondary);
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .proof-more {
+            text-align: center;
+            margin-top: 40px;
+            font-family: var(--font-script);
+            font-style: italic;
+            font-size: 24px;
+            color: var(--accent-primary);
+        }
+
+        /* Section 12: Before/After Transformation */
+        .transformation {
+            padding: 100px 0;
+            background-color: var(--bg-secondary);
+        }
+
+        .transformation-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .transformation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .before-card, .after-card {
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .before-card {
+            background-color: #EFEBE8;
+            filter: saturate(0.8);
+        }
+
+        .after-card {
+            background-color: #FBF8F5;
+            border: 2px solid var(--accent-highlight);
+        }
+
+        .transformation-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .before-card .transformation-label {
+            color: var(--text-secondary);
+        }
+
+        .after-card .transformation-label {
+            color: var(--accent-primary);
+        }
+
+        .transformation-title {
+            font-family: var(--font-script);
+            font-style: italic;
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+
+        .before-card .transformation-title {
+            color: var(--text-secondary);
+        }
+
+        .after-card .transformation-title {
+            color: var(--accent-primary);
+        }
+
+        .before-card ul, .after-card ul {
+            list-style: none;
+        }
+
+        .before-card li, .after-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 16px;
+        }
+
+        .before-card li {
+            color: var(--text-secondary);
+        }
+
+        .after-card li {
+            color: var(--text-body);
+        }
+
+        /* Section 13: Final Close */
+        .final-close {
+            padding: 100px 0;
+            background-color: var(--bg-primary);
+        }
+
+        .final-close-content {
+            max-width: 650px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .final-close p {
+            font-size: 19px;
+            color: var(--text-primary);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .final-close .script-accent {
+            display: block;
+            font-size: 28px;
+            margin: 8px 0;
+        }
+
+        .final-close .lead {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 32px;
+        }
+
+        .final-close .btn-primary {
+            margin-bottom: 32px;
+        }
+
+        .signature {
+            font-family: var(--font-script);
+            font-style: italic;
+            font-size: 32px;
+            color: var(--bg-dark);
+        }
+
+        /* Section 14: Footer */
+        footer {
+            background-color: var(--bg-secondary);
+            padding: 32px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-grid,
+            .for-you-grid,
+            .founder-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .for-you-grid {
+                grid-template-areas:
+                    "content"
+                    "image";
+            }
+
+            .for-you-image {
+                grid-area: image;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .for-you-content {
+                grid-area: content;
+            }
+
+            .founder-image {
+                order: -1;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .proof-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .proof-card:nth-child(3n) {
+                grid-row: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            h3 {
+                font-size: 26px;
+            }
+
+            h4 {
+                font-size: 22px;
+            }
+
+            .hero {
+                padding: 60px 0 80px;
+            }
+
+            .hero-subhead {
+                font-size: 17px;
+            }
+
+            .for-you, .name-down, .founder-story, .breakdown, .proof-wall, .transformation, .final-close {
+                padding: 80px 0;
+            }
+
+            .have-without-grid,
+            .transformation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .day-card {
+                grid-template-columns: 1fr;
+            }
+
+            .day-graphic {
+                display: none;
+            }
+
+            .milestone-number {
+                font-size: 56px;
+            }
+
+            .proof-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .countdown-box {
+                padding: 12px 16px;
+                min-width: 60px;
+            }
+
+            .countdown-number {
+                font-size: 24px;
+            }
+
+            .script-large {
+                font-size: 32px;
+            }
+
+            .founder-content h2 {
+                font-size: 36px;
+            }
+
+            .ticker-item {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .credibility-chips {
+                gap: 8px;
+            }
+
+            .chip {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                min-width: unset;
+            }
+
+            .btn-primary-large {
+                height: 56px;
+            }
+
+            .top-bar p {
+                font-size: 13px;
+            }
+
+            .milestone-card {
+                padding: 32px 24px;
+            }
+
+            .milestone-number {
+                font-size: 48px;
+            }
+
+            .day-card {
+                padding: 28px;
+            }
+
+            .have-card, .without-card, .before-card, .after-card {
+                padding: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Section 1: Top Bar -->
+    <div class="top-bar">
+        <p>We start Day 1 on: <strong>Tuesday, January 14th at 7pm EST</strong></p>
+    </div>
+
+    <!-- Section 2: Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <p class="eyebrow hero-eyebrow">THE PERSONAL BRAND RESET</p>
+                    <h1>In 3 days, you will learn how to build a personal brand that attracts the right clients, even if showing up online has felt confusing or exhausting.</h1>
+                    <p class="hero-subhead">This live experience is for women who want to get paid for who they are, without forcing content, chasing trends, or burning themselves out.</p>
+                    <div class="credibility-chips">
+                        <span class="chip">Fortune 500 Strategist</span>
+                        <span class="chip">467K+ Community</span>
+                        <span class="chip">7-Figure Brand</span>
+                        <span class="chip">Featured in Forbes</span>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#register" class="btn-primary">Save my free spot</a>
+                    </div>
+                    <p class="hero-microcopy">Live training. Free to attend. You do not need to prepare anything.</p>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-wrapper">
+                        <img src="https://placehold.co/600x750/EDE5DF/5C3D3D?text=Sina+Port" alt="Sina Port - Brand Strategist">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Is This For You -->
+    <section class="for-you">
+        <div class="container">
+            <div class="for-you-grid">
+                <div class="for-you-image">
+                    <div class="for-you-image-wrapper">
+                        <img src="https://placehold.co/500x500/EDE5DF/5C3D3D?text=Sina" alt="Sina Port">
+                    </div>
+                </div>
+                <div class="for-you-content">
+                    <h2>Is This <span class="script-accent script-large">Perfect</span> For You?</h2>
+                    <p class="for-you-intro">YES! This is for you if...</p>
+                    <ul class="for-you-list">
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                            <span>You are tired of conflicting advice and want ONE proven system to follow instead of 10 different strategies that all contradict each other</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                            <span>You have been "trying everything" but your online presence still feels like a chaotic mess of random posts that do not connect</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                            <span>You only have 60-90 minutes in the evenings or weekends, and you are done wasting that precious time on content nobody engages with</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                            <span>You are ready to let your authentic self do the heavy lifting instead of trying to be someone you are not online</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                            <span>You want a personal brand that feels calm and sustainable, not one that requires you to post constantly or go viral</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                            <span>You believe you have something valuable to offer, you just need the right framework to communicate it clearly</span>
+                        </li>
+                    </ul>
+                    <p class="for-you-closing">If you want something calm, honest, and sustainable, you are in the right place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Put Your Name Down (Dark Section) -->
+    <section class="name-down" id="register">
+        <div class="container">
+            <div class="name-down-content">
+                <h2>Put Your Name Down For Free Today...</h2>
+                <p class="name-down-subhead">By the end of these 3 days, you will:</p>
+                <ul class="name-down-outcomes">
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                        <span>Have crystal clarity on what makes you different and how to communicate it in a way that attracts ideal clients</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                        <span>Know exactly what content to create (and what to skip) based on your unique strengths and personality</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                        <span>Understand the simple 3-hour weekly system that builds a magnetic brand without burning out</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                        <span>Walk away with a personal brand blueprint you can start implementing immediately</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                        <span>Feel confident and excited about showing up online, maybe for the first time ever</span>
+                    </li>
+                </ul>
+                <div class="differentiator">
+                    <p class="differentiator-title">This is NOT:</p>
+                    <ul class="differentiator-list">
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" fill="none"/></svg></span>
+                            <span>Another "post 3x a day" content strategy that leaves you exhausted</span>
+                        </li>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" fill="none"/></svg></span>
+                            <span>Generic advice that works for influencers but not real business owners</span>
+                        </li>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" fill="none"/></svg></span>
+                            <span>A pitch-fest disguised as free training</span>
+                        </li>
+                    </ul>
+                </div>
+                <p class="testimonial-line">"Women inside my world often tell me this is the first time business feels calm and clear."</p>
+                <a href="#" class="btn-primary btn-white btn-primary-large">Yes, save my free spot</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Social Proof Ticker -->
+    <div class="ticker">
+        <div class="ticker-track">
+            <div class="ticker-item">
+                <div class="ticker-avatar"></div>
+                <span class="ticker-text"><strong>Sarah J.</strong> registered <span class="ticker-check">2m ago</span></span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar"></div>
+                <span class="ticker-text"><strong>Michelle T.</strong> registered <span class="ticker-check">5m ago</span></span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar"></div>
+                <span class="ticker-text"><strong>Amanda L.</strong> joined Day 1 <span class="ticker-check">6m ago</span></span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar"></div>
+                <span class="ticker-text"><strong>Rachel B.</strong> signed up <span class="ticker-check">10m ago</span></span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar"></div>
+                <span class="ticker-text"><strong>Jennifer K.</strong> registered <span class="ticker-check">12m ago</span></span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar"></div>
+                <span class="ticker-text"><strong>Laura M.</strong> joined <span class="ticker-check">15m ago</span></span>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="ticker-item">
+                <div class="ticker-avatar"></div>
+                <span class="ticker-text"><strong>Sarah J.</strong> registered <span class="ticker-check">2m ago</span></span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar"></div>
+                <span class="ticker-text"><strong>Michelle T.</strong> registered <span class="ticker-check">5m ago</span></span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar"></div>
+                <span class="ticker-text"><strong>Amanda L.</strong> joined Day 1 <span class="ticker-check">6m ago</span></span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar"></div>
+                <span class="ticker-text"><strong>Rachel B.</strong> signed up <span class="ticker-check">10m ago</span></span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar"></div>
+                <span class="ticker-text"><strong>Jennifer K.</strong> registered <span class="ticker-check">12m ago</span></span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar"></div>
+                <span class="ticker-text"><strong>Laura M.</strong> joined <span class="ticker-check">15m ago</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 6: Founder Story -->
+    <section class="founder-story">
+        <div class="container">
+            <div class="founder-grid">
+                <div class="founder-content">
+                    <p class="eyebrow">From Stay-at-Home Mom to...</p>
+                    <h2>7-Figure Brand Strategist</h2>
+                    <p>Seven years ago, I was a stay-at-home mom with zero business experience and a dream that felt almost embarrassing to say out loud.</p>
+                    <p>I did not have connections. I did not have a following. I did not even have a clear idea of what I wanted to do. All I had was this quiet knowing that I was meant for something more.</p>
+                    <p>So I started showing up online. Not perfectly. Not strategically. Just honestly.</p>
+                    <p>I shared what I was learning. I talked about my journey. I was myself, even when "myself" felt messy and uncertain.</p>
+                    <p><span class="highlight">And something unexpected happened: people started paying attention.</span></p>
+                    <p>Not because I had all the answers, but because I was real. Because I was building something true to who I actually am, not who I thought I needed to be.</p>
+                    <p>That honesty became my brand. And that brand became a 7-figure business that has reached over 467,000 women and worked with Fortune 500 companies.</p>
+                    <p class="highlight">Success without freedom is not success at all.</p>
+                </div>
+                <div class="founder-image">
+                    <div class="founder-image-wrapper">
+                        <img src="https://placehold.co/500x625/EDE5DF/5C3D3D?text=Sina's+Story" alt="Sina Port">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Fast Forward / Milestone -->
+    <section class="milestone">
+        <div class="container">
+            <div class="milestone-card">
+                <p class="eyebrow">FAST FORWARD TO TODAY</p>
+                <p class="milestone-number">467K+</p>
+                <p class="milestone-label">women across my online platforms</p>
+                <ul class="milestone-credentials">
+                    <li>Fortune 500 Brand Strategist</li>
+                    <li>Featured in Forbes</li>
+                    <li>7-Figure Business Owner</li>
+                    <li>TEDx Speaker</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: What You Will Have / Without -->
+    <section class="have-without">
+        <div class="container">
+            <div class="have-without-header">
+                <h2>What This Challenge Gives You</h2>
+            </div>
+            <div class="have-without-grid">
+                <div class="have-card">
+                    <h4>You will have:</h4>
+                    <ul>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                            <span>A clear personal brand message that feels authentic</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                            <span>A simple content system that takes 3 hours per week</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                            <span>Confidence in how you show up online</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                            <span>A strategy that attracts aligned clients</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                            <span>A sustainable approach that does not burn you out</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="without-card">
+                    <h4>Without needing:</h4>
+                    <ul>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" fill="none"/></svg></span>
+                            <span>A large existing audience or following</span>
+                        </li>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" fill="none"/></svg></span>
+                            <span>To post multiple times per day</span>
+                        </li>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" fill="none"/></svg></span>
+                            <span>To become an "influencer" or go viral</span>
+                        </li>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" fill="none"/></svg></span>
+                            <span>To pretend to be someone you are not</span>
+                        </li>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" fill="none"/></svg></span>
+                            <span>Expensive tools or complicated tech</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="have-without-cta">
+                <a href="#register" class="btn-primary">Save my free spot</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 9: 3-Day Breakdown -->
+    <section class="breakdown">
+        <div class="container">
+            <div class="breakdown-header">
+                <h2>Your 3-Day Journey</h2>
+                <p>Here is exactly what we will cover together</p>
+            </div>
+            <div class="day-cards">
+                <div class="day-card">
+                    <div class="day-content">
+                        <span class="day-badge">DAY 1</span>
+                        <h4>CLARITY RESET</h4>
+                        <ol>
+                            <li>Uncover what makes you uniquely valuable (your unfair advantage)</li>
+                            <li>Identify your ideal client and what they actually need to hear from you</li>
+                            <li>Create your core brand message that feels true and attracts the right people</li>
+                            <li>Map out your personal brand foundation so everything else becomes easier</li>
+                        </ol>
+                    </div>
+                    <div class="day-graphic">
+                        <div class="day-icon">
+                            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20"/><path d="M24 12v12l8 8"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-content">
+                        <span class="day-badge">DAY 2</span>
+                        <h4>THE MAGNETIC BRAND METHOD</h4>
+                        <ol>
+                            <li>Learn the content framework that builds trust without constant posting</li>
+                            <li>Discover your authentic voice and how to use it consistently</li>
+                            <li>Understand the psychology of what makes people want to work with you</li>
+                            <li>Build your 3-hour weekly system for sustainable visibility</li>
+                        </ol>
+                    </div>
+                    <div class="day-graphic">
+                        <div class="day-icon">
+                            <svg viewBox="0 0 48 48"><path d="M24 4l6 12 13 2-9 9 2 13-12-6-12 6 2-13-9-9 13-2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-content">
+                        <span class="day-badge">DAY 3</span>
+                        <h4>FROM BRAND TO PAID</h4>
+                        <ol>
+                            <li>Connect your personal brand directly to revenue (without being salesy)</li>
+                            <li>Learn how to turn followers into clients with grace and integrity</li>
+                            <li>Create your 90-day action plan for building momentum</li>
+                            <li>Set up your personal brand for long-term, sustainable growth</li>
+                        </ol>
+                    </div>
+                    <div class="day-graphic">
+                        <div class="day-icon">
+                            <svg viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="32" rx="4"/><path d="M16 24h16M24 16v16"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 10: Urgency -->
+    <section class="urgency">
+        <div class="container">
+            <div class="urgency-content">
+                <span class="urgency-badge">LIMITED SPOTS AVAILABLE</span>
+                <h2>This experience is live and space is limited.</h2>
+                <p>Once registration is full, doors will close.</p>
+                <div class="countdown">
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="days">00</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-label">Min</div>
+                    </div>
+                </div>
+                <a href="#register" class="btn-primary btn-primary-large">Save my free spot now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 11: Proof Wall -->
+    <section class="proof-wall">
+        <div class="container">
+            <div class="proof-wall-header">
+                <h2>What Women Are Saying</h2>
+            </div>
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <p class="proof-quote">"For the first time, I actually understand what makes me different. Sina's approach is so refreshing - no hype, just real strategy."</p>
+                    <p class="proof-author">- Jessica M.</p>
+                    <p class="proof-stars">*****</p>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-quote">"I went from posting randomly to having a clear system. My engagement has doubled and I actually enjoy showing up now."</p>
+                    <p class="proof-author">- Amanda R.</p>
+                    <p class="proof-stars">*****</p>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-quote">"This changed everything for me. I was so burned out trying to do what everyone else was doing. Sina showed me how to build something that actually fits my life. I landed my first client within 2 weeks of implementing her framework."</p>
+                    <p class="proof-author">- Michelle K.</p>
+                    <p class="proof-stars">*****</p>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-quote">"Finally, someone who gets it. Not everyone wants to be an influencer. I just want to help people and get paid for my expertise."</p>
+                    <p class="proof-author">- Rachel T.</p>
+                    <p class="proof-stars">*****</p>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-quote">"The 3-hour weekly system is a game changer. As a mom of 3, I don't have time for complicated strategies."</p>
+                    <p class="proof-author">- Sarah L.</p>
+                    <p class="proof-stars">*****</p>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-quote">"I've taken so many courses. This is the first one that actually felt doable AND effective. Sina keeps it real."</p>
+                    <p class="proof-author">- Jennifer B.</p>
+                    <p class="proof-stars">*****</p>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-quote">"My business feels calm for the first time. I'm attracting better clients and working less. This is what I always wanted."</p>
+                    <p class="proof-author">- Laura H.</p>
+                    <p class="proof-stars">*****</p>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-quote">"Sina's framework helped me see that I don't need to be everywhere. I just need to be intentional. Total mindset shift."</p>
+                    <p class="proof-author">- Christina P.</p>
+                    <p class="proof-stars">*****</p>
+                </div>
+            </div>
+            <p class="proof-more">...and so much more!</p>
+        </div>
+    </section>
+
+    <!-- Section 12: Before/After Transformation -->
+    <section class="transformation">
+        <div class="container">
+            <div class="transformation-header">
+                <h2>Your Transformation</h2>
+            </div>
+            <div class="transformation-grid">
+                <div class="before-card">
+                    <p class="transformation-label">BEFORE this challenge:</p>
+                    <p class="transformation-title">struggling & stuck...</p>
+                    <ul>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" fill="none"/></svg></span>
+                            <span>Confused about what makes you different</span>
+                        </li>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" fill="none"/></svg></span>
+                            <span>Posting inconsistently with no clear strategy</span>
+                        </li>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" fill="none"/></svg></span>
+                            <span>Overwhelmed by conflicting advice</span>
+                        </li>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" fill="none"/></svg></span>
+                            <span>Dreading showing up online</span>
+                        </li>
+                        <li>
+                            <span class="x-icon"><svg viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" fill="none"/></svg></span>
+                            <span>Watching others succeed while you stay stuck</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="after-card">
+                    <p class="transformation-label">AFTER this challenge:</p>
+                    <p class="transformation-title">thriving and free!</p>
+                    <ul>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                            <span>Crystal clear on your unique value</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                            <span>A simple 3-hour weekly content system</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                            <span>One proven framework to follow</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                            <span>Excited and confident about visibility</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" fill="none"/></svg></span>
+                            <span>Attracting aligned clients with ease</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 13: Final Close -->
+    <section class="final-close">
+        <div class="container">
+            <div class="final-close-content">
+                <p class="lead">You do not need to become someone else.</p>
+                <p>You do not need to push harder, post more, or pretend to have it all figured out.</p>
+                <p>You just need to finally see <span class="script-accent">what has been there all along</span> and learn how to share it in a way that feels good and attracts the right people.</p>
+                <p>That is what this challenge is about.</p>
+                <p>Not hustle. Not hype. Just clarity, strategy, and a path forward that actually fits your life.</p>
+                <p><strong>If this resonates, trust that.</strong></p>
+                <a href="#register" class="btn-primary btn-primary-large">Save my free spot</a>
+                <p class="signature">Sina x</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 14: Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Sina Port. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple countdown timer
+        function updateCountdown() {
+            const targetDate = new Date('2026-01-14T19:00:00-05:00');
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            }
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+    </script>
+</body>
+</html>
