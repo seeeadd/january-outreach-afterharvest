@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Personal Brand Reset | Sina Port</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F7F4F1;
+            color: #2A2422;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .content-narrow {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Grain texture overlay */
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.02;
+            z-index: 1000;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Button styles */
+        .btn-primary {
+            display: inline-block;
+            background-color: #8B4F5C;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 18px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(139, 79, 92, 0.2);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background-color: #6D3B47;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 79, 92, 0.3);
+        }
+        .btn-secondary {
+            display: inline-block;
+            background-color: white;
+            color: #5C3D3D;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 18px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+        }
+        .btn-large {
+            padding: 20px 60px;
+            font-size: 17px;
+        }
+
+        /* Section 1: Top Bar */
+        .top-bar {
+            background-color: #EDE5DF;
+            padding: 14px 24px;
+            text-align: center;
+        }
+        .top-bar p {
+            color: #5C3D3D;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        /* Section 2: Hero */
+        .hero {
+            padding: 80px 0 100px;
+            background: linear-gradient(180deg, #F7F4F1 0%, #FAF8F6 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 55% 45%;
+            gap: 60px;
+            align-items: center;
+        }
+        .hero-eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #C9A98C;
+            margin-bottom: 20px;
+        }
+        .hero-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 54px;
+            font-weight: 600;
+            color: #2A2422;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+        .hero-headline-accent {
+            position: relative;
+            display: inline;
+        }
+        .hero-headline-accent::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #D4B8A0;
+        }
+        .hero-subhead {
+            font-size: 19px;
+            color: #4A4340;
+            line-height: 1.65;
+            max-width: 520px;
+            margin-bottom: 28px;
+        }
+        .credibility-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 32px;
+        }
+        .chip {
+            background-color: #EDE5DF;
+            color: #5C3D3D;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+        .hero-cta-wrapper {
+            margin-bottom: 16px;
+        }
+        .hero-microcopy {
+            font-size: 13px;
+            color: #7A706A;
+            font-style: italic;
+        }
+        .hero-image {
+            position: relative;
+        }
+        .hero-image img {
+            border-radius: 24px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .hero-image-placeholder {
+            background: linear-gradient(135deg, #EDE5DF 0%, #D4CAC2 100%);
+            border-radius: 24px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            aspect-ratio: 4/5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7A706A;
+            font-size: 14px;
+        }
+
+        /* Section 3: Is This For You */
+        .is-this-for-you {
+            padding: 100px 0;
+            background-color: #F7F4F1;
+        }
+        .is-this-grid {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            gap: 60px;
+            align-items: center;
+        }
+        .is-this-image {
+            position: relative;
+        }
+        .is-this-image-placeholder {
+            background: linear-gradient(135deg, #EDE5DF 0%, #D4CAC2 100%);
+            border-radius: 16px;
+            border: 2px solid #D4B8A0;
+            width: 100%;
+            aspect-ratio: 3/4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7A706A;
+            font-size: 14px;
+        }
+        .is-this-header {
+            margin-bottom: 32px;
+        }
+        .is-this-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-weight: 600;
+            color: #2A2422;
+            display: inline;
+        }
+        .script-accent {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 44px;
+            color: #8B4F5C;
+            display: inline;
+            transform: rotate(-2deg);
+        }
+        .is-this-intro {
+            font-size: 17px;
+            color: #4A4340;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+        .check-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+        .check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 17px;
+            color: #4A4340;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        .check-icon {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            background-color: #C9A98C;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+        .check-icon svg {
+            width: 12px;
+            height: 12px;
+            stroke: white;
+            stroke-width: 3;
+            fill: none;
+        }
+        .is-this-closing {
+            font-size: 17px;
+            color: #5C3D3D;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        /* Section 4: Put Your Name Down */
+        .put-name-down {
+            padding: 100px 0;
+            background-color: #5C3D3D;
+            position: relative;
+        }
+        .put-name-down::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .put-name-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .put-name-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 44px;
+            font-weight: 600;
+            color: #FAF8F6;
+            margin-bottom: 20px;
+        }
+        .put-name-content .subhead {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 32px;
+        }
+        .outcomes-list {
+            list-style: none;
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+        .outcomes-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 17px;
+            color: white;
+            margin-bottom: 14px;
+            line-height: 1.5;
+        }
+        .gold-check {
+            flex-shrink: 0;
+            color: #D4B8A0;
+            font-size: 18px;
+        }
+        .differentiator {
+            margin: 40px 0;
+            padding: 24px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .differentiator-list {
+            list-style: none;
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .differentiator-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .x-mark {
+            flex-shrink: 0;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+        }
+        .testimonial-line {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 20px;
+            color: #D4B8A0;
+            margin: 40px 0 48px;
+            line-height: 1.6;
+        }
+
+        /* Section 5: Social Proof Ticker */
+        .social-ticker {
+            background-color: #EDE5DF;
+            padding: 16px 0;
+            overflow: hidden;
+        }
+        .ticker-wrapper {
+            display: flex;
+            animation: ticker-scroll 30s linear infinite;
+        }
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 20px;
+            background-color: white;
+            border-radius: 30px;
+            margin-right: 16px;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        .ticker-avatar {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #C9A98C 0%, #D4B8A0 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: white;
+            font-weight: 600;
+        }
+        .ticker-text {
+            font-size: 13px;
+            color: #4A4340;
+        }
+        .ticker-check {
+            color: #C9A98C;
+            font-size: 14px;
+        }
+        @keyframes ticker-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Section 6: Founder Story */
+        .founder-story {
+            padding: 100px 0;
+            background-color: #FAF8F6;
+        }
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            gap: 60px;
+            align-items: center;
+        }
+        .founder-eyebrow {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 24px;
+            color: #8B4F5C;
+            margin-bottom: 8px;
+        }
+        .founder-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #5C3D3D;
+            margin-bottom: 32px;
+        }
+        .founder-story-text p {
+            font-size: 18px;
+            color: #4A4340;
+            line-height: 1.75;
+            margin-bottom: 24px;
+        }
+        .founder-highlight {
+            font-weight: 600;
+            color: #5C3D3D;
+        }
+        .founder-image {
+            position: relative;
+        }
+        .founder-image-placeholder {
+            background: linear-gradient(135deg, #EDE5DF 0%, #D4CAC2 100%);
+            border: 8px solid white;
+            border-radius: 4px;
+            width: 100%;
+            aspect-ratio: 4/5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7A706A;
+            font-size: 14px;
+            transform: rotate(-3deg);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section 7: Fast Forward / Milestone */
+        .milestone {
+            padding: 100px 0;
+            background-color: #F7F4F1;
+        }
+        .milestone-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #5C3D3D;
+            border-radius: 24px;
+            padding: 48px;
+            text-align: center;
+            box-shadow: 0 16px 48px rgba(92, 61, 61, 0.2);
+        }
+        .milestone-eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #D4B8A0;
+            margin-bottom: 16px;
+        }
+        .milestone-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+        .milestone-supporting {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 32px;
+        }
+        .credential-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+        .credential-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 10px 18px;
+            border-radius: 8px;
+        }
+
+        /* Section 8: What You Will Have / Without */
+        .have-without {
+            padding: 100px 0;
+            background-color: #FAF8F6;
+        }
+        .have-without-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto 48px;
+        }
+        .have-card {
+            background-color: #FBF8F5;
+            border-left: 4px solid #D4B8A0;
+            border-radius: 16px;
+            padding: 40px;
+        }
+        .without-card {
+            background-color: #F7F4F1;
+            border-left: 4px solid #D4CAC2;
+            border-radius: 16px;
+            padding: 40px;
+        }
+        .have-without-header {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #2A2422;
+            margin-bottom: 24px;
+        }
+        .have-without-header span {
+            color: #C9A98C;
+        }
+        .have-list, .without-list {
+            list-style: none;
+        }
+        .have-list li, .without-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            color: #4A4340;
+            margin-bottom: 14px;
+            line-height: 1.5;
+        }
+        .have-list .check-icon {
+            width: 20px;
+            height: 20px;
+        }
+        .without-x {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #D4CAC2;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .have-without-cta {
+            text-align: center;
+        }
+
+        /* Section 9: 3-Day Breakdown */
+        .three-day {
+            padding: 100px 0;
+            background-color: #F7F4F1;
+        }
+        .three-day-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .three-day-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 44px;
+            font-weight: 600;
+            color: #2A2422;
+        }
+        .day-cards {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .day-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            display: grid;
+            grid-template-columns: 70% 30%;
+            gap: 32px;
+            align-items: center;
+            position: relative;
+        }
+        .day-badge {
+            display: inline-block;
+            background-color: #8B4F5C;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .day-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #2A2422;
+            margin-bottom: 20px;
+        }
+        .day-list {
+            list-style: none;
+        }
+        .day-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            color: #4A4340;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .day-number {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background-color: #C9A98C;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .day-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .day-icon-placeholder {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #EDE5DF 0%, #D4CAC2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: #8B4F5C;
+        }
+
+        /* Section 10: Urgency */
+        .urgency {
+            padding: 80px 0;
+            background-color: #EDE5DF;
+            text-align: center;
+        }
+        .urgency-badge {
+            display: inline-block;
+            background-color: #5C3D3D;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 6px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .urgency h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #2A2422;
+            margin-bottom: 12px;
+        }
+        .urgency-subhead {
+            font-size: 17px;
+            color: #4A4340;
+            margin-bottom: 40px;
+        }
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        .countdown-box {
+            background-color: #5C3D3D;
+            color: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            min-width: 80px;
+        }
+        .countdown-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        .countdown-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        /* Section 11: Proof Wall */
+        .proof-wall {
+            padding: 100px 0;
+            background-color: #FAF8F6;
+        }
+        .proof-wall-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .proof-wall-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-weight: 600;
+            color: #2A2422;
+        }
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 24px;
+        }
+        .proof-card {
+            break-inside: avoid;
+            background-color: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+        .proof-card:nth-child(odd) {
+            transform: rotate(-1deg);
+        }
+        .proof-card:nth-child(even) {
+            transform: rotate(1deg);
+        }
+        .proof-card-placeholder {
+            background: linear-gradient(135deg, #EDE5DF 0%, #D4CAC2 100%);
+            border-radius: 8px;
+            padding: 40px 24px;
+            text-align: center;
+            color: #7A706A;
+            font-size: 14px;
+        }
+        .proof-text {
+            font-size: 15px;
+            color: #4A4340;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        .proof-author {
+            margin-top: 16px;
+            font-size: 13px;
+            color: #7A706A;
+            font-weight: 500;
+        }
+        .proof-stars {
+            color: #C9A98C;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+        .proof-more {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .proof-more-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 24px;
+            color: #8B4F5C;
+            transform: rotate(-2deg);
+            display: inline-block;
+        }
+
+        /* Section 12: Before/After Transformation */
+        .before-after {
+            padding: 100px 0;
+            background-color: #F7F4F1;
+        }
+        .before-after-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .before-card {
+            background-color: #F0EDEA;
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+        }
+        .before-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(128, 128, 128, 0.05);
+            border-radius: 20px;
+            pointer-events: none;
+        }
+        .after-card {
+            background: linear-gradient(135deg, #FBF8F5 0%, #F9F5F0 100%);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid #E8E0DA;
+        }
+        .transform-header {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .before-card .transform-header {
+            color: #7A706A;
+        }
+        .after-card .transform-header {
+            color: #2A2422;
+        }
+        .transform-subhead {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 20px;
+            margin-bottom: 24px;
+        }
+        .before-card .transform-subhead {
+            color: #9A918B;
+        }
+        .after-card .transform-subhead {
+            color: #8B4F5C;
+        }
+        .transform-list {
+            list-style: none;
+        }
+        .transform-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            margin-bottom: 14px;
+            line-height: 1.5;
+        }
+        .before-card .transform-list li {
+            color: #7A706A;
+        }
+        .after-card .transform-list li {
+            color: #4A4340;
+        }
+        .before-x {
+            flex-shrink: 0;
+            color: #9A918B;
+            font-size: 16px;
+        }
+        .after-check {
+            flex-shrink: 0;
+            color: #C9A98C;
+            font-size: 16px;
+        }
+
+        /* Section 13: Final Close */
+        .final-close {
+            padding: 100px 0;
+            background-color: #FAF8F6;
+            text-align: center;
+        }
+        .final-close-content {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .final-close p {
+            font-size: 19px;
+            color: #2A2422;
+            line-height: 1.75;
+            margin-bottom: 24px;
+        }
+        .final-close .emphasis {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 22px;
+            color: #5C3D3D;
+        }
+        .final-close .cta-wrapper {
+            margin: 48px 0 32px;
+        }
+        .signature {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 28px;
+            color: #8B4F5C;
+            margin-top: 32px;
+        }
+        .signature-heart {
+            color: #C9A98C;
+        }
+
+        /* Section 14: Footer */
+        .footer {
+            background-color: #EDE5DF;
+            padding: 32px 24px;
+            text-align: center;
+        }
+        .footer p {
+            font-size: 13px;
+            color: #7A706A;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 968px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            .hero-headline {
+                font-size: 42px;
+            }
+            .hero-image {
+                order: 2;
+            }
+            .is-this-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            .is-this-image {
+                order: 2;
+            }
+            .founder-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            .founder-image {
+                order: -1;
+            }
+            .have-without-grid {
+                grid-template-columns: 1fr;
+            }
+            .before-after-grid {
+                grid-template-columns: 1fr;
+            }
+            .day-card {
+                grid-template-columns: 1fr;
+            }
+            .day-visual {
+                order: -1;
+            }
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .top-bar p {
+                font-size: 13px;
+            }
+            .hero {
+                padding: 60px 0 80px;
+                min-height: auto;
+            }
+            .hero-headline {
+                font-size: 36px;
+            }
+            .hero-subhead {
+                font-size: 17px;
+            }
+            .is-this-header h2 {
+                font-size: 32px;
+            }
+            .script-accent {
+                font-size: 36px;
+            }
+            .put-name-content h2 {
+                font-size: 32px;
+            }
+            .founder-headline {
+                font-size: 36px;
+            }
+            .milestone-number {
+                font-size: 56px;
+            }
+            .three-day-header h2 {
+                font-size: 32px;
+            }
+            .day-title {
+                font-size: 24px;
+            }
+            .urgency h2 {
+                font-size: 28px;
+            }
+            .countdown {
+                gap: 8px;
+            }
+            .countdown-box {
+                padding: 12px 16px;
+                min-width: 60px;
+            }
+            .countdown-number {
+                font-size: 24px;
+            }
+            .masonry-grid {
+                column-count: 1;
+            }
+            .proof-wall-header h2 {
+                font-size: 32px;
+            }
+            .final-close p {
+                font-size: 17px;
+            }
+            .credential-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .put-name-down {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Section 1: Top Bar -->
+    <section class="top-bar">
+        <p>We start Day 1 on: <strong>January 15, 2025 at 12:00 PM EST</strong></p>
+    </section>
+
+    <!-- Section 2: Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <p class="hero-eyebrow">THE PERSONAL BRAND RESET</p>
+                    <h1 class="hero-headline">In 3 days, you will learn how to build a personal brand that <span class="hero-headline-accent">attracts the right clients</span>, even if showing up online has felt confusing or exhausting.</h1>
+                    <p class="hero-subhead">This live experience is for women who want to get paid for who they are, without forcing content, chasing trends, or burning themselves out.</p>
+                    <div class="credibility-chips">
+                        <span class="chip">Fortune 500 Experience</span>
+                        <span class="chip">467K+ Community</span>
+                        <span class="chip">7-Figure Brand Strategist</span>
+                        <span class="chip">Featured in Forbes</span>
+                    </div>
+                    <div class="hero-cta-wrapper">
+                        <a href="#register" class="btn-primary">Save my free spot</a>
+                    </div>
+                    <p class="hero-microcopy">Live training. Free to attend. You do not need to prepare anything.</p>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-placeholder">
+                        [Sina Photo - Editorial Style]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Is This For You -->
+    <section class="is-this-for-you">
+        <div class="container">
+            <div class="is-this-grid">
+                <div class="is-this-image">
+                    <div class="is-this-image-placeholder">
+                        [Sina Photo - Casual, Approachable]
+                    </div>
+                </div>
+                <div class="is-this-content">
+                    <div class="is-this-header">
+                        <h2>Is This</h2> <span class="script-accent">Perfect</span> <h2>For You?</h2>
+                    </div>
+                    <p class="is-this-intro">YES! This is for you if...</p>
+                    <ul class="check-list">
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>
+                            <span>You are ready to build a personal brand but have no idea where to start</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>
+                            <span>You have been posting content but it feels scattered and exhausting</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>
+                            <span>You want to attract premium clients without feeling salesy or pushy</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>
+                            <span>You are tired of chasing trends and want a sustainable approach</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>
+                            <span>You have expertise and experience but struggle to communicate your value</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>
+                            <span>You want to get paid to be yourself, not perform as someone you are not</span>
+                        </li>
+                    </ul>
+                    <p class="is-this-closing">If you want something calm, honest, and sustainable, you are in the right place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Put Your Name Down -->
+    <section class="put-name-down" id="register">
+        <div class="container">
+            <div class="put-name-content">
+                <h2>Put Your Name Down For Free Today...</h2>
+                <p class="subhead">By the end of these 3 days, you will:</p>
+                <ul class="outcomes-list">
+                    <li>
+                        <span class="gold-check">&#10003;</span>
+                        <span>Have complete clarity on your unique personal brand positioning</span>
+                    </li>
+                    <li>
+                        <span class="gold-check">&#10003;</span>
+                        <span>Know exactly what content to create and how to create it authentically</span>
+                    </li>
+                    <li>
+                        <span class="gold-check">&#10003;</span>
+                        <span>Understand how to attract your ideal clients without chasing or convincing</span>
+                    </li>
+                    <li>
+                        <span class="gold-check">&#10003;</span>
+                        <span>Have a simple, sustainable system that does not require constant hustle</span>
+                    </li>
+                    <li>
+                        <span class="gold-check">&#10003;</span>
+                        <span>Feel confident showing up online as the real you</span>
+                    </li>
+                </ul>
+                <div class="differentiator">
+                    <ul class="differentiator-list">
+                        <li>
+                            <span class="x-mark">&#10007;</span>
+                            <span>This is NOT about becoming an influencer</span>
+                        </li>
+                        <li>
+                            <span class="x-mark">&#10007;</span>
+                            <span>This is NOT about posting every day or going viral</span>
+                        </li>
+                        <li>
+                            <span class="x-mark">&#10007;</span>
+                            <span>This is NOT about pretending to be someone you are not</span>
+                        </li>
+                    </ul>
+                </div>
+                <p class="testimonial-line">"Women inside my world often tell me this is the first time business feels calm and clear."</p>
+                <a href="#" class="btn-secondary btn-large">Yes, save my free spot</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Social Proof Ticker -->
+    <section class="social-ticker">
+        <div class="ticker-wrapper">
+            <div class="ticker-item">
+                <div class="ticker-avatar">SJ</div>
+                <span class="ticker-text">Sarah J. registered 2m ago</span>
+                <span class="ticker-check">&#10003;</span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">MK</div>
+                <span class="ticker-text">Michelle K. registered 5m ago</span>
+                <span class="ticker-check">&#10003;</span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">AL</div>
+                <span class="ticker-text">Amanda L. registered 8m ago</span>
+                <span class="ticker-check">&#10003;</span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">RC</div>
+                <span class="ticker-text">Rachel C. registered 12m ago</span>
+                <span class="ticker-check">&#10003;</span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">JW</div>
+                <span class="ticker-text">Jennifer W. registered 15m ago</span>
+                <span class="ticker-check">&#10003;</span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">KT</div>
+                <span class="ticker-text">Katie T. registered 18m ago</span>
+                <span class="ticker-check">&#10003;</span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">LM</div>
+                <span class="ticker-text">Lauren M. registered 22m ago</span>
+                <span class="ticker-check">&#10003;</span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">EB</div>
+                <span class="ticker-text">Emily B. registered 25m ago</span>
+                <span class="ticker-check">&#10003;</span>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="ticker-item">
+                <div class="ticker-avatar">SJ</div>
+                <span class="ticker-text">Sarah J. registered 2m ago</span>
+                <span class="ticker-check">&#10003;</span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">MK</div>
+                <span class="ticker-text">Michelle K. registered 5m ago</span>
+                <span class="ticker-check">&#10003;</span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">AL</div>
+                <span class="ticker-text">Amanda L. registered 8m ago</span>
+                <span class="ticker-check">&#10003;</span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">RC</div>
+                <span class="ticker-text">Rachel C. registered 12m ago</span>
+                <span class="ticker-check">&#10003;</span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">JW</div>
+                <span class="ticker-text">Jennifer W. registered 15m ago</span>
+                <span class="ticker-check">&#10003;</span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">KT</div>
+                <span class="ticker-text">Katie T. registered 18m ago</span>
+                <span class="ticker-check">&#10003;</span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">LM</div>
+                <span class="ticker-text">Lauren M. registered 22m ago</span>
+                <span class="ticker-check">&#10003;</span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">EB</div>
+                <span class="ticker-text">Emily B. registered 25m ago</span>
+                <span class="ticker-check">&#10003;</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Founder Story -->
+    <section class="founder-story">
+        <div class="container">
+            <div class="founder-grid">
+                <div class="founder-story-text">
+                    <p class="founder-eyebrow">From Stay-at-Home Mom to...</p>
+                    <h2 class="founder-headline">7-Figure Brand Strategist</h2>
+                    <p>I started my journey at the kitchen table while my kids napped. No connections, no business degree, no idea what I was doing. Just a deep knowing that I had something valuable to offer.</p>
+                    <p>The early days were messy. I tried every strategy, posted content that felt forced, and constantly questioned whether this would ever work. I was exhausted, scattered, and on the verge of giving up.</p>
+                    <p>Then everything changed when I stopped trying to be like everyone else and started building a brand around <span class="founder-highlight">who I actually am</span>. Not a polished version. Not a performance. Just me.</p>
+                    <p><span class="founder-highlight">"Success without freedom isn't success at all."</span></p>
+                    <p>That belief became the foundation of everything I teach. Because your personal brand should give you more life, not take it away.</p>
+                </div>
+                <div class="founder-image">
+                    <div class="founder-image-placeholder">
+                        [Sina Photo - Lifestyle Setting]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Fast Forward / Milestone -->
+    <section class="milestone">
+        <div class="container">
+            <div class="milestone-card">
+                <p class="milestone-eyebrow">FAST FORWARD TO TODAY</p>
+                <p class="milestone-number">467K+</p>
+                <p class="milestone-supporting">women across my online platforms</p>
+                <div class="credential-list">
+                    <span class="credential-item">Fortune 500 Strategist</span>
+                    <span class="credential-item">Featured in Forbes</span>
+                    <span class="credential-item">7-Figure Business</span>
+                    <span class="credential-item">Global Community</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: What You Will Have / Without -->
+    <section class="have-without">
+        <div class="container">
+            <div class="have-without-grid">
+                <div class="have-card">
+                    <h3 class="have-without-header">You will have<span>:</span></h3>
+                    <ul class="have-list">
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>
+                            <span>A clear, magnetic personal brand message</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>
+                            <span>Content that feels natural and attracts ideal clients</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>
+                            <span>A sustainable system that works for your life</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>
+                            <span>Confidence in your unique value and expertise</span>
+                        </li>
+                        <li>
+                            <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></span>
+                            <span>A path to getting paid to be yourself</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="without-card">
+                    <h3 class="have-without-header">Without needing:</h3>
+                    <ul class="without-list">
+                        <li>
+                            <span class="without-x">&#10005;</span>
+                            <span>To post content every single day</span>
+                        </li>
+                        <li>
+                            <span class="without-x">&#10005;</span>
+                            <span>To chase trends or viral moments</span>
+                        </li>
+                        <li>
+                            <span class="without-x">&#10005;</span>
+                            <span>A huge following to get started</span>
+                        </li>
+                        <li>
+                            <span class="without-x">&#10005;</span>
+                            <span>To become someone you are not</span>
+                        </li>
+                        <li>
+                            <span class="without-x">&#10005;</span>
+                            <span>Complicated funnels or tech overwhelm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="have-without-cta">
+                <a href="#register" class="btn-primary">Save my free spot</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 9: 3-Day Breakdown -->
+    <section class="three-day">
+        <div class="container">
+            <div class="three-day-header">
+                <h2>Your 3-Day Transformation</h2>
+            </div>
+            <div class="day-cards">
+                <div class="day-card">
+                    <div class="day-content">
+                        <span class="day-badge">Day 1</span>
+                        <h3 class="day-title">Clarity Reset</h3>
+                        <ul class="day-list">
+                            <li>
+                                <span class="day-number">1</span>
+                                <span>Uncover your unique brand positioning that sets you apart</span>
+                            </li>
+                            <li>
+                                <span class="day-number">2</span>
+                                <span>Identify your ideal client and what they truly want from you</span>
+                            </li>
+                            <li>
+                                <span class="day-number">3</span>
+                                <span>Clarify your core message that resonates and attracts</span>
+                            </li>
+                            <li>
+                                <span class="day-number">4</span>
+                                <span>Release the confusion and doubt holding you back</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="day-visual">
+                        <div class="day-icon-placeholder">&#9672;</div>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-content">
+                        <span class="day-badge">Day 2</span>
+                        <h3 class="day-title">The Magnetic Brand Method</h3>
+                        <ul class="day-list">
+                            <li>
+                                <span class="day-number">1</span>
+                                <span>Learn the content framework that feels natural and authentic</span>
+                            </li>
+                            <li>
+                                <span class="day-number">2</span>
+                                <span>Discover how to show up consistently without burnout</span>
+                            </li>
+                            <li>
+                                <span class="day-number">3</span>
+                                <span>Build trust and authority with your audience organically</span>
+                            </li>
+                            <li>
+                                <span class="day-number">4</span>
+                                <span>Create a sustainable rhythm that works with your life</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="day-visual">
+                        <div class="day-icon-placeholder">&#9733;</div>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-content">
+                        <span class="day-badge">Day 3</span>
+                        <h3 class="day-title">From Brand to Paid</h3>
+                        <ul class="day-list">
+                            <li>
+                                <span class="day-number">1</span>
+                                <span>Turn your personal brand into a revenue-generating asset</span>
+                            </li>
+                            <li>
+                                <span class="day-number">2</span>
+                                <span>Learn how to attract clients without feeling salesy</span>
+                            </li>
+                            <li>
+                                <span class="day-number">3</span>
+                                <span>Create offers that feel aligned and valuable</span>
+                            </li>
+                            <li>
+                                <span class="day-number">4</span>
+                                <span>Build a path to getting paid to be yourself</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="day-visual">
+                        <div class="day-icon-placeholder">&#9670;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 10: Urgency -->
+    <section class="urgency">
+        <div class="container">
+            <span class="urgency-badge">Limited Spots Available</span>
+            <h2>This experience is live and space is limited.</h2>
+            <p class="urgency-subhead">Once registration is full, doors will close.</p>
+            <div class="countdown">
+                <div class="countdown-box">
+                    <div class="countdown-number" id="days">02</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-number" id="hours">18</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-number" id="minutes">45</div>
+                    <div class="countdown-label">Min</div>
+                </div>
+            </div>
+            <a href="#register" class="btn-primary btn-large">Save my free spot now</a>
+        </div>
+    </section>
+
+    <!-- Section 11: Proof Wall -->
+    <section class="proof-wall">
+        <div class="container">
+            <div class="proof-wall-header">
+                <h2>What Women Are Saying</h2>
+            </div>
+            <div class="masonry-grid">
+                <div class="proof-card">
+                    <p class="proof-text">"Finally, someone who understands that we don't all want to become influencers. Sina's approach is refreshingly calm and actually works."</p>
+                    <p class="proof-author">- Christina M., Business Coach</p>
+                    <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-card-placeholder">[Screenshot - DM Testimonial]</div>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-text">"I went from posting randomly and hoping for the best to having a clear strategy that feels like ME. My engagement has doubled and I actually enjoy showing up now."</p>
+                    <p class="proof-author">- Rebecca T., Interior Designer</p>
+                    <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-text">"This is the first time building my brand hasn't felt exhausting. I finally have clarity."</p>
+                    <p class="proof-author">- Jessica L., Health Coach</p>
+                    <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-card-placeholder">[Screenshot - Client Win]</div>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-text">"Sina taught me that I don't need to be everywhere doing everything. I can be successful being exactly who I am. Game changer."</p>
+                    <p class="proof-author">- Amanda K., Consultant</p>
+                    <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-card-placeholder">[Screenshot - Instagram Comment]</div>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-text">"I signed my first premium client within weeks of implementing what Sina taught. And it felt so natural!"</p>
+                    <p class="proof-author">- Lauren W., Brand Strategist</p>
+                    <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+                <div class="proof-card">
+                    <p class="proof-text">"The calm, grounded energy of everything Sina teaches is exactly what I needed. No hype. Just real results."</p>
+                    <p class="proof-author">- Michelle R., Life Coach</p>
+                    <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+            </div>
+            <div class="proof-more">
+                <span class="proof-more-text">...and so much more!</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 12: Before/After Transformation -->
+    <section class="before-after">
+        <div class="container">
+            <div class="before-after-grid">
+                <div class="before-card">
+                    <h3 class="transform-header">BEFORE this challenge:</h3>
+                    <p class="transform-subhead">struggling & stuck...</p>
+                    <ul class="transform-list">
+                        <li>
+                            <span class="before-x">&#10007;</span>
+                            <span>Confused about what makes you different</span>
+                        </li>
+                        <li>
+                            <span class="before-x">&#10007;</span>
+                            <span>Posting content that feels scattered and random</span>
+                        </li>
+                        <li>
+                            <span class="before-x">&#10007;</span>
+                            <span>Exhausted from trying to keep up with trends</span>
+                        </li>
+                        <li>
+                            <span class="before-x">&#10007;</span>
+                            <span>Doubting whether your expertise is valuable</span>
+                        </li>
+                        <li>
+                            <span class="before-x">&#10007;</span>
+                            <span>Feeling invisible to your ideal clients</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="after-card">
+                    <h3 class="transform-header">AFTER this challenge:</h3>
+                    <p class="transform-subhead">thriving and free!</p>
+                    <ul class="transform-list">
+                        <li>
+                            <span class="after-check">&#10003;</span>
+                            <span>Crystal clear on your unique brand positioning</span>
+                        </li>
+                        <li>
+                            <span class="after-check">&#10003;</span>
+                            <span>Creating content that feels natural and attracts</span>
+                        </li>
+                        <li>
+                            <span class="after-check">&#10003;</span>
+                            <span>A sustainable system that fits your life</span>
+                        </li>
+                        <li>
+                            <span class="after-check">&#10003;</span>
+                            <span>Confident in the value you bring to clients</span>
+                        </li>
+                        <li>
+                            <span class="after-check">&#10003;</span>
+                            <span>Attracting ideal clients who are ready to pay</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 13: Final Close -->
+    <section class="final-close">
+        <div class="container">
+            <div class="final-close-content">
+                <p class="emphasis">You do not need to become someone else.</p>
+                <p>You do not need to push harder, post more, or perform a version of yourself that feels exhausting and untrue.</p>
+                <p>The women who build brands that last are the ones who finally give themselves permission to be exactly who they are.</p>
+                <p>Your expertise is enough. Your story matters. Your voice deserves to be heard.</p>
+                <p class="emphasis">If this resonates, trust that.</p>
+                <div class="cta-wrapper">
+                    <a href="#register" class="btn-primary btn-large">Save my free spot</a>
+                </div>
+                <p class="signature">Sina <span class="signature-heart">x</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 14: Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Sina Port. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Countdown Timer Script -->
+    <script>
+        // Set the target date (adjust as needed)
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + 2);
+        targetDate.setHours(targetDate.getHours() + 18);
+        targetDate.setMinutes(targetDate.getMinutes() + 45);
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            }
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+    </script>
+</body>
+</html>
