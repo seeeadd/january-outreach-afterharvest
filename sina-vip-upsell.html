@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Experience | Q1 Personal Brand System</title>
+    <meta name="description" content="Upgrade to VIP for the complete support system that makes finishing feel normal. Templates, Q&A, recordings, and accountability.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ================================================================
+           DESIGN SYSTEM - SINA VIP UPSELL PAGE
+           Q1 Brand System - Warm Premium VIP Aesthetic
+           ================================================================ */
+
+        :root {
+            /* Backgrounds */
+            --bg-primary: #F7F4F1;
+            --bg-secondary: #EDE5DF;
+            --bg-tertiary: #FAF8F6;
+            --bg-card: #FFFFFF;
+            --bg-dark-accent: #5C3D3D;
+            --bg-urgency: #F5E8E8;
+
+            /* Text Colors */
+            --text-primary: #2A2422;
+            --text-body: #4A4340;
+            --text-secondary: #7A706A;
+            --text-muted: #9A918B;
+            --text-on-dark: #FAF8F6;
+
+            /* Accent Colors */
+            --accent-primary: #8B4F5C;
+            --accent-primary-hover: #6D3B47;
+            --accent-secondary: #1D6B6B;
+            --accent-tertiary: #9B7EC8;
+            --accent-highlight: #D4B8A0;
+            --accent-success: #1D6B6B;
+            --accent-muted-x: #C4BAB2;
+
+            /* Borders */
+            --border-light: #E8E0DA;
+            --border-medium: #D4CAC2;
+            --border-vip-accent: rgba(139, 79, 92, 0.3);
+
+            /* Shadows (ALWAYS LAYERED) */
+            --shadow-card:
+                0 2px 4px rgba(42, 36, 34, 0.04),
+                0 8px 16px rgba(42, 36, 34, 0.06),
+                0 16px 32px rgba(42, 36, 34, 0.04);
+            --shadow-card-elevated:
+                0 4px 8px rgba(42, 36, 34, 0.06),
+                0 12px 24px rgba(42, 36, 34, 0.08),
+                0 24px 48px rgba(42, 36, 34, 0.06);
+            --shadow-button:
+                0 4px 12px rgba(139, 79, 92, 0.2),
+                0 8px 20px rgba(139, 79, 92, 0.12);
+            --shadow-button-hover:
+                0 6px 16px rgba(139, 79, 92, 0.28),
+                0 12px 28px rgba(139, 79, 92, 0.16);
+            --shadow-price-box:
+                0 4px 8px rgba(42, 36, 34, 0.06),
+                0 16px 32px rgba(42, 36, 34, 0.08),
+                0 32px 64px rgba(42, 36, 34, 0.06);
+
+            /* Spacing */
+            --section-padding: 100px;
+            --container-max: 1100px;
+            --container-padding: 48px;
+            --content-max: 720px;
+            --headline-max: 800px;
+
+            /* Radii */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+        }
+
+        /* ================================================================
+           RESET & BASE STYLES
+           ================================================================ */
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-body);
+            font-size: 18px;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ================================================================
+           TYPOGRAPHY
+           ================================================================ */
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.15;
+            color: var(--text-primary);
+        }
+
+        h1 {
+            font-size: 52px;
+        }
+
+        h2 {
+            font-size: 44px;
+        }
+
+        h3 {
+            font-size: 28px;
+        }
+
+        .script-accent {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+        }
+
+        .burgundy-highlight {
+            color: var(--accent-primary);
+        }
+
+        .micro-text {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* ================================================================
+           LAYOUT
+           ================================================================ */
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        /* ================================================================
+           BUTTONS
+           ================================================================ */
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-primary);
+            color: var(--text-on-dark);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 18px 48px;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-button);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-primary-hover);
+            box-shadow: var(--shadow-button-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary-large {
+            min-width: 220px;
+            height: 56px;
+            font-size: 16px;
+        }
+
+        .btn-primary-full {
+            width: 100%;
+            height: 56px;
+        }
+
+        .decline-link {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: underline;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            background: none;
+            border: none;
+        }
+
+        .decline-link:hover {
+            color: var(--text-secondary);
+        }
+
+        /* ================================================================
+           BADGES
+           ================================================================ */
+
+        .badge-teal {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-secondary);
+            color: var(--text-on-dark);
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+        }
+
+        .badge-burgundy {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-primary);
+            color: var(--text-on-dark);
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+        }
+
+        /* ================================================================
+           SECTION 1: URGENCY TOP BAR (Progress Strip)
+           ================================================================ */
+
+        .urgency-bar {
+            background: var(--bg-urgency);
+            border-bottom: 1px dotted var(--border-medium);
+            padding: 16px 0;
+            text-align: center;
+        }
+
+        .urgency-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .urgency-headline {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--bg-dark-accent);
+        }
+
+        .urgency-subtext {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .urgency-progress {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .progress-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--border-medium);
+        }
+
+        .progress-dot.active {
+            background: var(--accent-primary);
+        }
+
+        .progress-line {
+            width: 40px;
+            height: 2px;
+            border-top: 2px dotted var(--border-medium);
+        }
+
+        .progress-marker {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            border: 2px solid var(--bg-urgency);
+            box-shadow: 0 0 0 2px var(--accent-primary);
+        }
+
+        /* ================================================================
+           SECTION 2: HERO (VIP Badge + Video)
+           ================================================================ */
+
+        .hero {
+            padding: 80px 0;
+            background: var(--bg-primary);
+            text-align: center;
+        }
+
+        .hero-badge {
+            margin-bottom: 24px;
+        }
+
+        .hero-headline {
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            max-width: var(--headline-max);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-headline-accent {
+            display: block;
+            color: var(--accent-primary);
+        }
+
+        .hero-subhead {
+            font-size: 18px;
+            color: var(--text-body);
+            max-width: 640px;
+            margin: 0 auto 24px;
+            line-height: 1.7;
+        }
+
+        .hero-body {
+            font-size: 17px;
+            color: var(--text-body);
+            max-width: 640px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-bullets {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .hero-bullet {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            color: var(--text-body);
+        }
+
+        .hero-bullet svg {
+            color: var(--accent-success);
+            flex-shrink: 0;
+        }
+
+        /* Video Frame */
+        .hero-video {
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .video-frame {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card-elevated);
+            position: relative;
+        }
+
+        .video-placeholder {
+            aspect-ratio: 16/9;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-urgency);
+            position: relative;
+        }
+
+        .video-overlay {
+            text-align: center;
+        }
+
+        .video-play-btn {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            box-shadow: var(--shadow-button);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-play-btn:hover {
+            transform: scale(1.05);
+            background: var(--accent-primary-hover);
+            box-shadow: var(--shadow-button-hover);
+        }
+
+        .video-play-btn svg {
+            color: var(--text-on-dark);
+            margin-left: 4px;
+        }
+
+        .video-resume-options {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .video-resume-btn {
+            font-size: 14px;
+            color: var(--accent-primary);
+            text-decoration: underline;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .video-resume-btn:hover {
+            color: var(--accent-primary-hover);
+        }
+
+        /* Hero CTAs */
+        .hero-ctas {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .hero-microcopy {
+            font-size: 14px;
+            color: var(--text-secondary);
+            max-width: 480px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        /* ================================================================
+           SECTION 3: PRICE BOX (First Conversion Point)
+           ================================================================ */
+
+        .price-section {
+            padding: var(--section-padding) 0;
+            background: var(--bg-secondary);
+        }
+
+        .price-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 48px;
+            max-width: 480px;
+            margin: 0 auto;
+            border: 2px solid var(--border-light);
+            box-shadow: var(--shadow-price-box);
+            text-align: center;
+        }
+
+        .price-card-eyebrow {
+            margin-bottom: 8px;
+        }
+
+        .price-card-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--accent-secondary);
+            margin-bottom: 16px;
+        }
+
+        .price-card-label svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .price-display {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--accent-primary);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .price-benefit-line {
+            font-size: 16px;
+            color: var(--text-body);
+            margin-bottom: 24px;
+        }
+
+        .price-body {
+            font-size: 16px;
+            color: var(--text-body);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .price-bullets {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: left;
+            margin-bottom: 32px;
+        }
+
+        .price-bullet {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            color: var(--text-body);
+        }
+
+        .price-bullet svg {
+            color: var(--accent-success);
+            flex-shrink: 0;
+        }
+
+        .price-cta {
+            margin-bottom: 16px;
+        }
+
+        .price-microcopy {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 16px;
+        }
+
+        /* ================================================================
+           SECTION 4: COMPARISON ("Choose Your Experience")
+           ================================================================ */
+
+        .comparison-section {
+            padding: var(--section-padding) 0;
+            background: var(--bg-primary);
+        }
+
+        .comparison-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 64px;
+        }
+
+        .comparison-headline {
+            font-size: 44px;
+            margin-bottom: 16px;
+        }
+
+        .comparison-subhead {
+            font-size: 18px;
+            color: var(--text-body);
+            margin-bottom: 12px;
+        }
+
+        .comparison-body {
+            font-size: 17px;
+            color: var(--text-secondary);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Free Column */
+        .comparison-card-free {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            border: 1px solid var(--border-light);
+        }
+
+        .comparison-card-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .comparison-card-price {
+            font-family: 'Inter', sans-serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .comparison-features {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 32px;
+        }
+
+        .comparison-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        .comparison-feature svg {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .comparison-feature.included svg {
+            color: var(--accent-success);
+        }
+
+        .comparison-feature.excluded svg {
+            color: var(--accent-muted-x);
+        }
+
+        .comparison-feature.partial svg {
+            color: var(--text-muted);
+        }
+
+        .comparison-card-free .decline-link {
+            display: block;
+            text-align: center;
+        }
+
+        /* VIP Column */
+        .comparison-card-vip {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            border: 1px solid var(--border-light);
+            border-left: 3px solid var(--accent-secondary);
+            box-shadow: var(--shadow-card-elevated);
+            position: relative;
+        }
+
+        .comparison-card-vip .badge-teal {
+            position: absolute;
+            top: -12px;
+            left: 32px;
+        }
+
+        .comparison-card-vip .comparison-card-title {
+            margin-top: 8px;
+        }
+
+        .comparison-card-vip .comparison-card-price {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 48px;
+            color: var(--accent-primary);
+        }
+
+        .comparison-card-vip .comparison-feature {
+            color: var(--text-primary);
+        }
+
+        .comparison-card-vip .comparison-feature strong {
+            font-weight: 600;
+        }
+
+        .comparison-cta {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        /* ================================================================
+           SECTION 5: VIP STACK ("Everything You Get Inside VIP")
+           ================================================================ */
+
+        .vip-stack-section {
+            padding: var(--section-padding) 0;
+            background: var(--bg-secondary);
+        }
+
+        .vip-stack-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 64px;
+        }
+
+        .vip-stack-badge {
+            margin-bottom: 24px;
+        }
+
+        .vip-stack-headline {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+
+        .vip-stack-subhead {
+            font-size: 17px;
+            color: var(--text-body);
+        }
+
+        .vip-stack-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .vip-stack-item {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 24px;
+            align-items: flex-start;
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .vip-stack-number {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-secondary);
+            color: var(--text-on-dark);
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 24px;
+            font-weight: 600;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .vip-stack-content {
+            flex: 1;
+        }
+
+        .vip-stack-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--accent-secondary);
+            margin-bottom: 8px;
+        }
+
+        .vip-stack-outcome {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-bottom: 12px;
+        }
+
+        .vip-stack-description {
+            font-size: 16px;
+            color: var(--text-body);
+            line-height: 1.6;
+        }
+
+        .vip-stack-mockup {
+            width: 180px;
+            height: 120px;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-card);
+        }
+
+        .vip-stack-mockup-text {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .vip-stack-cta {
+            text-align: center;
+            margin-top: 64px;
+        }
+
+        .vip-stack-cta .btn-primary {
+            margin-bottom: 16px;
+        }
+
+        .vip-stack-cta-microcopy {
+            font-size: 14px;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto 16px;
+        }
+
+        /* ================================================================
+           FINAL CTA SECTION
+           ================================================================ */
+
+        .final-cta {
+            padding: 120px 0;
+            background: var(--bg-dark-accent);
+            text-align: center;
+        }
+
+        .final-cta .eyebrow {
+            color: var(--accent-highlight);
+            margin-bottom: 16px;
+        }
+
+        .final-cta-headline {
+            font-size: 44px;
+            color: var(--text-on-dark);
+            margin-bottom: 24px;
+        }
+
+        .final-cta-subhead {
+            font-size: 18px;
+            color: rgba(250, 248, 246, 0.8);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .final-cta .btn-primary {
+            background: var(--text-on-dark);
+            color: var(--bg-dark-accent);
+            margin-bottom: 16px;
+        }
+
+        .final-cta .btn-primary:hover {
+            background: var(--accent-highlight);
+            color: var(--text-primary);
+        }
+
+        .final-cta .decline-link {
+            color: rgba(250, 248, 246, 0.6);
+        }
+
+        .final-cta .decline-link:hover {
+            color: rgba(250, 248, 246, 0.8);
+        }
+
+        /* ================================================================
+           RESPONSIVE STYLES
+           ================================================================ */
+
+        @media (max-width: 992px) {
+            :root {
+                --container-padding: 32px;
+                --section-padding: 80px;
+            }
+
+            h1, .hero-headline {
+                font-size: 40px;
+            }
+
+            h2, .comparison-headline, .vip-stack-headline {
+                font-size: 36px;
+            }
+
+            .price-display {
+                font-size: 56px;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .comparison-card-vip {
+                order: -1;
+            }
+
+            .vip-stack-item {
+                grid-template-columns: auto 1fr;
+            }
+
+            .vip-stack-mockup {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --container-padding: 20px;
+                --section-padding: 64px;
+            }
+
+            h1, .hero-headline {
+                font-size: 32px;
+            }
+
+            h2, .comparison-headline, .vip-stack-headline {
+                font-size: 30px;
+            }
+
+            .hero {
+                padding: 48px 0;
+            }
+
+            .hero-subhead,
+            .hero-body {
+                font-size: 16px;
+            }
+
+            .video-placeholder {
+                min-height: 240px;
+            }
+
+            .price-card {
+                padding: 32px 24px;
+            }
+
+            .price-display {
+                font-size: 48px;
+            }
+
+            .comparison-card-vip .comparison-card-price {
+                font-size: 40px;
+            }
+
+            .vip-stack-item {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .vip-stack-number {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+
+            .vip-stack-title {
+                font-size: 20px;
+            }
+
+            .final-cta {
+                padding: 80px 0;
+            }
+
+            .final-cta-headline {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1, .hero-headline {
+                font-size: 28px;
+            }
+
+            h2, .comparison-headline, .vip-stack-headline {
+                font-size: 26px;
+            }
+
+            .urgency-bar {
+                padding: 12px 0;
+            }
+
+            .urgency-headline {
+                font-size: 12px;
+            }
+
+            .btn-primary-large {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .comparison-card-free,
+            .comparison-card-vip {
+                padding: 24px 20px;
+            }
+
+            .vip-stack-item {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ================================================================
+         SECTION 1: URGENCY TOP BAR (Progress Strip)
+         ================================================================ -->
+    <div class="urgency-bar">
+        <div class="container">
+            <div class="urgency-content">
+                <p class="urgency-headline">Your registration isn't complete yet.</p>
+                <p class="urgency-subtext">One last choice before you lock your seat.</p>
+                <div class="urgency-progress">
+                    <span class="progress-dot active"></span>
+                    <span class="progress-line"></span>
+                    <span class="progress-marker"></span>
+                    <span class="progress-line"></span>
+                    <span class="progress-dot"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================================
+         SECTION 2: HERO (VIP Badge + Video)
+         ================================================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <span class="badge-teal">VIP EXPERIENCE</span>
+            </div>
+
+            <h1 class="hero-headline">
+                VIP is how you stop collecting information
+                <span class="hero-headline-accent">and start becoming visible.</span>
+            </h1>
+
+            <p class="hero-subhead">
+                If you know you tend to fall off, overthink, or get overwhelmed, VIP keeps you steady. Calm system. Clear steps. Real support.
+            </p>
+
+            <p class="hero-body">
+                You do not need more motivation. You need a container that makes finishing feel normal. VIP is for the women who are done with forcing "masculine" hustle, but still want real results. We build the garden. The right people start noticing you.
+            </p>
+
+            <div class="hero-bullets">
+                <div class="hero-bullet">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                        <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Faster clarity when you get stuck</span>
+                </div>
+                <div class="hero-bullet">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                        <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Support so you do not spiral alone</span>
+                </div>
+                <div class="hero-bullet">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                        <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Tools so you do not start from scratch every day</span>
+                </div>
+                <div class="hero-bullet">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                        <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>A pace you can actually keep</span>
+                </div>
+            </div>
+
+            <div class="hero-video">
+                <div class="video-frame">
+                    <div class="video-placeholder">
+                        <div class="video-overlay">
+                            <div class="video-play-btn">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                            <div class="video-resume-options">
+                                <button class="video-resume-btn">Continue watching?</button>
+                                <button class="video-resume-btn">Start from beginning</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-ctas">
+                <a href="#upgrade" class="btn-primary btn-primary-large">Upgrade to VIP</a>
+                <button class="decline-link">No thanks, keep my free seat</button>
+            </div>
+
+            <p class="hero-microcopy">
+                VIP closes when Day 1 starts. If you are a finisher, you will be glad you did this now.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 3: PRICE BOX (First Conversion Point)
+         ================================================================ -->
+    <section class="price-section" id="upgrade">
+        <div class="container">
+            <div class="price-card">
+                <p class="eyebrow price-card-eyebrow">Q1 PERSONAL BRAND SYSTEM</p>
+
+                <div class="price-card-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4L2 9.4h7.6z"/>
+                    </svg>
+                    VIP Experience
+                </div>
+
+                <div class="price-display">[VIP_PRICE]</div>
+
+                <p class="price-benefit-line">Small price. Big difference in follow-through.</p>
+
+                <p class="price-body">
+                    This is not about "more lessons." It's about removing the hidden effort that makes people quit. You can stay free. Or you can choose the version of you that finishes.
+                </p>
+
+                <div class="price-bullets">
+                    <div class="price-bullet">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                            <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Support when you get stuck</span>
+                    </div>
+                    <div class="price-bullet">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                            <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Tools when you feel behind</span>
+                    </div>
+                    <div class="price-bullet">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                            <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Structure when life gets busy</span>
+                    </div>
+                </div>
+
+                <div class="price-cta">
+                    <a href="#" class="btn-primary btn-primary-full">Yes, upgrade me to VIP</a>
+                </div>
+
+                <button class="decline-link">No thanks, I'll do the free version</button>
+
+                <p class="price-microcopy">
+                    VIP closes when Day 1 starts. No pressure. Just choose your experience.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 4: COMPARISON ("Choose Your Experience")
+         ================================================================ -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="comparison-header">
+                <h2 class="comparison-headline">Choose your experience.</h2>
+                <p class="comparison-subhead">Free is access. VIP is completion.</p>
+                <p class="comparison-body">
+                    Free is great if you already know you will show up, take notes, and implement. VIP is for everyone else who wants support, speed, and certainty.
+                </p>
+            </div>
+
+            <div class="comparison-grid">
+                <!-- Free Column -->
+                <div class="comparison-card-free">
+                    <h3 class="comparison-card-title">Free</h3>
+                    <div class="comparison-card-price">$0</div>
+
+                    <div class="comparison-features">
+                        <div class="comparison-feature included">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Live sessions</span>
+                        </div>
+                        <div class="comparison-feature included">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Workbook</span>
+                        </div>
+                        <div class="comparison-feature excluded">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <path d="M6 6l6 6M12 6l-6 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Recordings (limited)</span>
+                        </div>
+                        <div class="comparison-feature excluded">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <path d="M6 6l6 6M12 6l-6 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Templates/tools</span>
+                        </div>
+                        <div class="comparison-feature excluded">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <path d="M6 6l6 6M12 6l-6 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Support/Q&A</span>
+                        </div>
+                        <div class="comparison-feature partial">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <circle cx="9" cy="9" r="3" fill="#FAF8F6"/>
+                            </svg>
+                            <span>Basic reminders</span>
+                        </div>
+                        <div class="comparison-feature excluded">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <path d="M6 6l6 6M12 6l-6 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Implementation help</span>
+                        </div>
+                    </div>
+
+                    <button class="decline-link">No, I'll keep the free ticket</button>
+                </div>
+
+                <!-- VIP Column -->
+                <div class="comparison-card-vip">
+                    <span class="badge-teal">COMPLETE VIP EXPERIENCE</span>
+
+                    <h3 class="comparison-card-title">Complete VIP Experience</h3>
+                    <div class="comparison-card-price">[VIP_PRICE]</div>
+
+                    <div class="comparison-features">
+                        <div class="comparison-feature included">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Live sessions</span>
+                        </div>
+                        <div class="comparison-feature included">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Workbook</span>
+                        </div>
+                        <div class="comparison-feature included">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>Recordings</strong> (organized, easy to find)</span>
+                        </div>
+                        <div class="comparison-feature included">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>Templates/tools</strong> (so you do not start from zero)</span>
+                        </div>
+                        <div class="comparison-feature included">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>Support/Q&A</strong> (ask questions, get unstuck)</span>
+                        </div>
+                        <div class="comparison-feature included">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>Accountability reminders</strong> (finish what you start)</span>
+                        </div>
+                        <div class="comparison-feature included">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="9" r="9" fill="currentColor"/>
+                                <path d="M5.5 9L7.5 11L12.5 6" stroke="#FAF8F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span><strong>Implementation help</strong> (turn ideas into posts, offers, actions)</span>
+                        </div>
+                    </div>
+
+                    <a href="#" class="btn-primary btn-primary-full">Yes, I want the VIP Experience</a>
+                </div>
+            </div>
+
+            <div class="comparison-cta">
+                <a href="#" class="btn-primary btn-primary-large">Upgrade to VIP</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 5: VIP STACK ("Everything You Get Inside VIP")
+         ================================================================ -->
+    <section class="vip-stack-section">
+        <div class="container">
+            <div class="vip-stack-header">
+                <div class="vip-stack-badge">
+                    <span class="badge-burgundy">VIP ACCESS UNLOCKED</span>
+                </div>
+                <h2 class="vip-stack-headline">Everything you get inside VIP.</h2>
+                <p class="vip-stack-subhead">Built for follow-through. Not for information hoarding.</p>
+            </div>
+
+            <div class="vip-stack-grid">
+                <!-- Item 1: VIP Implementation Pack -->
+                <div class="vip-stack-item">
+                    <div class="vip-stack-number">1</div>
+                    <div class="vip-stack-content">
+                        <h3 class="vip-stack-title">VIP Implementation Pack</h3>
+                        <p class="vip-stack-outcome">You do not start from scratch.</p>
+                        <p class="vip-stack-description">
+                            Templates for the key exercises, fill-in prompts for clarity and positioning, simple checklist per day
+                        </p>
+                    </div>
+                    <div class="vip-stack-mockup">
+                        <span class="vip-stack-mockup-text">[INSERT MOCKUP]</span>
+                    </div>
+                </div>
+
+                <!-- Item 2: VIP Office Hours -->
+                <div class="vip-stack-item">
+                    <div class="vip-stack-number">2</div>
+                    <div class="vip-stack-content">
+                        <h3 class="vip-stack-title">VIP Office Hours (Live Q&A)</h3>
+                        <p class="vip-stack-outcome">You get unstuck fast.</p>
+                        <p class="vip-stack-description">
+                            Ask your question live, get a clear next step, save hours of spiraling
+                        </p>
+                    </div>
+                    <div class="vip-stack-mockup">
+                        <span class="vip-stack-mockup-text">[INSERT MOCKUP]</span>
+                    </div>
+                </div>
+
+                <!-- Item 3: Recording Vault -->
+                <div class="vip-stack-item">
+                    <div class="vip-stack-number">3</div>
+                    <div class="vip-stack-content">
+                        <h3 class="vip-stack-title">Recording Vault (Organized)</h3>
+                        <p class="vip-stack-outcome">You can catch up without stress.</p>
+                        <p class="vip-stack-description">
+                            Replays in one place, time-stamped highlights, "if you're behind, watch this" guide
+                        </p>
+                    </div>
+                    <div class="vip-stack-mockup">
+                        <span class="vip-stack-mockup-text">[INSERT MOCKUP]</span>
+                    </div>
+                </div>
+
+                <!-- Item 4: Daily Accountability Nudges -->
+                <div class="vip-stack-item">
+                    <div class="vip-stack-number">4</div>
+                    <div class="vip-stack-content">
+                        <h3 class="vip-stack-title">Daily Accountability Nudges</h3>
+                        <p class="vip-stack-outcome">You show up even when life is busy.</p>
+                        <p class="vip-stack-description">
+                            Short reminders, one small action per day, completion-focused prompts
+                        </p>
+                    </div>
+                    <div class="vip-stack-mockup">
+                        <span class="vip-stack-mockup-text">[INSERT MOCKUP]</span>
+                    </div>
+                </div>
+
+                <!-- Item 5: Content Conversion Mini Library -->
+                <div class="vip-stack-item">
+                    <div class="vip-stack-number">5</div>
+                    <div class="vip-stack-content">
+                        <h3 class="vip-stack-title">Content Conversion Mini Library</h3>
+                        <p class="vip-stack-outcome">You post with purpose.</p>
+                        <p class="vip-stack-description">
+                            Views vs followers vs clients examples, hook testing prompts, simple iteration tracker
+                        </p>
+                    </div>
+                    <div class="vip-stack-mockup">
+                        <span class="vip-stack-mockup-text">[INSERT MOCKUP]</span>
+                    </div>
+                </div>
+
+                <!-- Item 6: Story to Positioning Worksheet -->
+                <div class="vip-stack-item">
+                    <div class="vip-stack-number">6</div>
+                    <div class="vip-stack-content">
+                        <h3 class="vip-stack-title">Story to Positioning Worksheet</h3>
+                        <p class="vip-stack-outcome">Turn your story into your unfair advantage.</p>
+                        <p class="vip-stack-description">
+                            Find your angle, make it clear not dramatic, translate it into content themes
+                        </p>
+                    </div>
+                    <div class="vip-stack-mockup">
+                        <span class="vip-stack-mockup-text">[INSERT MOCKUP]</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vip-stack-cta">
+                <a href="#" class="btn-primary btn-primary-large">Upgrade to VIP</a>
+                <p class="vip-stack-cta-microcopy">
+                    VIP closes when Day 1 starts. Upgrade now so you start Day 1 with everything ready.
+                </p>
+                <button class="decline-link">No thanks, keep my free seat</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         FINAL CTA SECTION
+         ================================================================ -->
+    <section class="final-cta">
+        <div class="container">
+            <p class="eyebrow">READY TO FINISH WHAT YOU START?</p>
+            <h2 class="final-cta-headline">This is your moment to choose completion.</h2>
+            <p class="final-cta-subhead">
+                VIP is the container that makes finishing feel normal. Not more content. Just the right support at the right time.
+            </p>
+            <a href="#" class="btn-primary btn-primary-large">Yes, upgrade me to VIP</a>
+            <br><br>
+            <button class="decline-link">No thanks, I'll keep my free seat</button>
+        </div>
+    </section>
+</body>
+</html>
