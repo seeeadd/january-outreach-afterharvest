@@ -1,0 +1,2268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Food Noise Reset | Free 3-Day Challenge with Duru Bilimlier</title>
+    <meta name="description" content="In 3 days, shut off food noise and follow a simple protocol. Free challenge for women tired of binge/restrict cycles.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Clash Display & Satoshi via CDN -->
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,600,700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           CSS CUSTOM PROPERTIES / DESIGN TOKENS
+           ======================================== */
+        :root {
+            /* PRIMARY - Dark Foundation */
+            --black-rich: #0A0A0A;
+            --black-soft: #111111;
+            --gray-900: #1A1A1A;
+            --gray-800: #262626;
+            --gray-700: #333333;
+            --gray-600: #4A4A4A;
+            --gray-500: #666666;
+            --gray-400: #888888;
+            --gray-300: #AAAAAA;
+            --gray-100: #E5E5E5;
+
+            /* WHITE/LIGHT */
+            --white-pure: #FFFFFF;
+            --white-off: #FAFAFA;
+            --cream: #F5F5F0;
+
+            /* ACCENT - Violet (Primary Brand) */
+            --violet-primary: #7B4DFF;
+            --violet-dark: #5B2EDF;
+            --violet-light: #9B6DFF;
+            --violet-muted: #6B4DE0;
+            --violet-glow: rgba(123, 77, 255, 0.15);
+            --violet-glow-strong: rgba(123, 77, 255, 0.3);
+
+            /* SECONDARY ACCENTS */
+            --success-green: #10B981;
+            --error-red: #EF4444;
+            --warning-gold: #F59E0B;
+            --pink-soft: #FFE4EC;
+
+            /* GRADIENTS */
+            --gradient-violet: linear-gradient(135deg, #7B4DFF 0%, #9B6DFF 100%);
+            --gradient-dark: linear-gradient(180deg, #0A0A0A 0%, #1A1A1A 100%);
+            --gradient-hero: linear-gradient(135deg, #0A0A0A 0%, #111111 50%, #0A0A0A 100%);
+            --gradient-glow: radial-gradient(circle at center, rgba(123,77,255,0.2) 0%, transparent 70%);
+
+            /* SHADOWS */
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.1);
+            --shadow-card: 0 4px 6px rgba(0,0,0,0.07), 0 10px 20px rgba(0,0,0,0.1);
+            --shadow-elevated: 0 8px 16px rgba(0,0,0,0.12), 0 20px 40px rgba(0,0,0,0.18);
+            --shadow-violet-sm: 0 4px 12px rgba(123, 77, 255, 0.25);
+            --shadow-violet-lg: 0 8px 24px rgba(123, 77, 255, 0.35), 0 0 60px rgba(123, 77, 255, 0.15);
+            --shadow-button: 0 4px 12px rgba(123, 77, 255, 0.4), inset 0 1px 0 rgba(255,255,255,0.15);
+            --shadow-button-hover: 0 8px 24px rgba(123, 77, 255, 0.5), 0 0 40px rgba(123, 77, 255, 0.2), inset 0 1px 0 rgba(255,255,255,0.2);
+
+            /* RADII */
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-2xl: 32px;
+            --radius-full: 9999px;
+
+            /* SPACING */
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 12px;
+            --space-4: 16px;
+            --space-5: 24px;
+            --space-6: 32px;
+            --space-8: 48px;
+            --space-10: 64px;
+            --space-12: 80px;
+            --space-14: 100px;
+            --space-16: 120px;
+
+            /* TYPOGRAPHY */
+            --font-display: 'Clash Display', 'Satoshi', 'Inter', system-ui, sans-serif;
+            --font-body: 'Satoshi', 'Inter', system-ui, -apple-system, sans-serif;
+            --font-script: 'Caveat', cursive;
+
+            --text-xs: 12px;
+            --text-sm: 14px;
+            --text-base: 18px;
+            --text-lg: 20px;
+            --text-xl: 22px;
+            --text-2xl: 28px;
+            --text-3xl: 36px;
+            --text-4xl: 48px;
+            --text-5xl: 56px;
+            --text-6xl: 64px;
+            --text-7xl: 72px;
+
+            --leading-none: 1;
+            --leading-tight: 1.1;
+            --leading-snug: 1.25;
+            --leading-normal: 1.5;
+            --leading-relaxed: 1.65;
+
+            --tracking-tighter: -0.03em;
+            --tracking-tight: -0.02em;
+            --tracking-normal: 0;
+            --tracking-wide: 0.05em;
+            --tracking-wider: 0.1em;
+            --tracking-widest: 0.15em;
+        }
+
+        /* ========================================
+           RESET & BASE STYLES
+           ======================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            line-height: var(--leading-relaxed);
+            color: var(--gray-700);
+            background-color: var(--white-pure);
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        /* ========================================
+           UTILITY CLASSES
+           ======================================== */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-5);
+        }
+
+        .container--narrow {
+            max-width: 800px;
+        }
+
+        .container--tight {
+            max-width: 700px;
+        }
+
+        .container--extra-tight {
+            max-width: 600px;
+        }
+
+        .eyebrow {
+            font-family: var(--font-body);
+            font-size: var(--text-xs);
+            font-weight: 500;
+            color: var(--violet-primary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: var(--space-4);
+        }
+
+        .script-text {
+            font-family: var(--font-script);
+            color: var(--violet-primary);
+        }
+
+        .violet-text {
+            color: var(--violet-primary);
+        }
+
+        /* ========================================
+           BUTTON COMPONENTS
+           ======================================== */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 240px;
+            height: 64px;
+            padding: 0 var(--space-6);
+            background: var(--gradient-violet);
+            color: var(--white-pure);
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            font-weight: 700;
+            border: none;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-button);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-button-hover);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 240px;
+            height: 64px;
+            padding: 0 var(--space-6);
+            background: var(--white-pure);
+            color: var(--violet-primary);
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            font-weight: 700;
+            border: 2px solid var(--violet-primary);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--violet-primary);
+            color: var(--white-pure);
+        }
+
+        /* ========================================
+           SECTION 1: TOP BAR (Countdown Strip)
+           ======================================== */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: 56px;
+            background: var(--black-soft);
+            border-bottom: 1px solid rgba(123, 77, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .top-bar__content {
+            display: flex;
+            align-items: center;
+            gap: var(--space-6);
+        }
+
+        .top-bar__text {
+            font-size: var(--text-sm);
+            font-weight: 500;
+            color: var(--gray-300);
+        }
+
+        .top-bar__date {
+            font-weight: 600;
+            color: var(--white-pure);
+        }
+
+        .countdown {
+            display: flex;
+            gap: var(--space-2);
+        }
+
+        .countdown__box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--gray-900);
+            border-radius: var(--radius-sm);
+        }
+
+        .countdown__number {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--violet-primary);
+            line-height: 1;
+        }
+
+        .countdown__label {
+            font-size: 10px;
+            font-weight: 500;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        /* ========================================
+           SECTION 2: HERO
+           ======================================== */
+        .hero {
+            min-height: 100vh;
+            padding-top: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle at center, rgba(123, 77, 255, 0.2) 0%, transparent 70%);
+            filter: blur(100px);
+            pointer-events: none;
+        }
+
+        .hero__content {
+            text-align: center;
+            max-width: 900px;
+            padding: var(--space-10) var(--space-5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero__eyebrow {
+            font-size: var(--text-xs);
+            font-weight: 500;
+            color: var(--violet-primary);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: var(--space-5);
+        }
+
+        .hero__headline {
+            font-family: var(--font-display);
+            font-size: var(--text-5xl);
+            font-weight: 700;
+            color: var(--white-pure);
+            line-height: var(--leading-tight);
+            margin-bottom: var(--space-5);
+            letter-spacing: var(--tracking-tight);
+        }
+
+        .hero__headline .violet-text {
+            color: var(--violet-primary);
+        }
+
+        .hero__subheadline {
+            font-size: var(--text-lg);
+            color: var(--gray-300);
+            line-height: var(--leading-relaxed);
+            max-width: 700px;
+            margin: 0 auto var(--space-6);
+        }
+
+        .hero__chips {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--space-3);
+            margin-bottom: var(--space-8);
+        }
+
+        .hero__chip {
+            background: var(--gray-800);
+            padding: var(--space-3) var(--space-4);
+            border-radius: var(--radius-sm);
+            font-size: var(--text-sm);
+            color: var(--gray-300);
+        }
+
+        .hero__cta-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-4);
+        }
+
+        .hero__microcopy {
+            font-size: var(--text-sm);
+            color: var(--gray-500);
+            font-style: italic;
+        }
+
+        .hero__micro-proof {
+            font-family: var(--font-script);
+            font-size: var(--text-base);
+            color: var(--violet-primary);
+            margin-top: var(--space-2);
+        }
+
+        .hero__micro-proof::before {
+            content: '"';
+        }
+
+        .hero__micro-proof::after {
+            content: '"';
+        }
+
+        /* ========================================
+           SECTION 3: IS THIS PERFECT FOR YOU?
+           ======================================== */
+        .qualifier {
+            background: var(--white-pure);
+            padding: var(--space-14) 0;
+        }
+
+        .qualifier__grid {
+            display: grid;
+            grid-template-columns: 45% 55%;
+            gap: var(--space-10);
+            align-items: center;
+        }
+
+        .qualifier__image-wrapper {
+            position: relative;
+        }
+
+        .qualifier__image {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-elevated);
+            background: var(--gray-100);
+        }
+
+        .qualifier__content {
+            padding-right: var(--space-6);
+        }
+
+        .qualifier__headline {
+            font-family: var(--font-display);
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--black-rich);
+            line-height: var(--leading-tight);
+            margin-bottom: var(--space-3);
+        }
+
+        .qualifier__headline .script-text {
+            font-size: 52px;
+            display: inline-block;
+            transform: rotate(-2deg);
+        }
+
+        .qualifier__subhead {
+            font-size: var(--text-lg);
+            color: var(--gray-600);
+            margin-bottom: var(--space-6);
+        }
+
+        .qualifier__list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-5);
+            margin-bottom: var(--space-6);
+        }
+
+        .qualifier__item {
+            display: flex;
+            gap: var(--space-4);
+            align-items: flex-start;
+        }
+
+        .qualifier__check {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background: var(--violet-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .qualifier__check svg {
+            width: 14px;
+            height: 14px;
+            color: var(--white-pure);
+        }
+
+        .qualifier__item-text {
+            font-size: var(--text-base);
+            color: var(--gray-700);
+            line-height: var(--leading-relaxed);
+        }
+
+        .qualifier__item-text strong {
+            font-weight: 600;
+        }
+
+        .qualifier__closing {
+            font-family: var(--font-script);
+            font-size: 28px;
+            color: var(--violet-primary);
+            transform: rotate(-2deg);
+            display: inline-block;
+        }
+
+        /* ========================================
+           SECTION 4: PUT YOUR NAME DOWN
+           ======================================== */
+        .name-down {
+            background: var(--black-rich);
+            padding: var(--space-14) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .name-down::after {
+            content: '';
+            position: absolute;
+            bottom: -200px;
+            left: -200px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle at center, rgba(123, 77, 255, 0.15) 0%, transparent 70%);
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .name-down__content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .name-down__headline {
+            font-family: var(--font-display);
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--white-pure);
+            line-height: var(--leading-tight);
+            text-align: center;
+            margin-bottom: var(--space-8);
+        }
+
+        .name-down__headline .violet-text {
+            color: var(--violet-primary);
+        }
+
+        .name-down__benefits {
+            margin-bottom: var(--space-8);
+        }
+
+        .name-down__benefits-head {
+            font-size: var(--text-lg);
+            font-weight: 500;
+            color: var(--gray-300);
+            margin-bottom: var(--space-5);
+        }
+
+        .name-down__benefits-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .name-down__benefit-item {
+            display: flex;
+            gap: var(--space-4);
+            align-items: flex-start;
+        }
+
+        .name-down__benefit-check {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            color: var(--success-green);
+            margin-top: 3px;
+        }
+
+        .name-down__benefit-text {
+            font-size: var(--text-base);
+            color: var(--white-pure);
+            line-height: var(--leading-relaxed);
+        }
+
+        .name-down__not {
+            margin-bottom: var(--space-8);
+            padding-top: var(--space-6);
+            border-top: 1px solid var(--gray-800);
+        }
+
+        .name-down__not-head {
+            font-size: var(--text-base);
+            font-weight: 500;
+            color: var(--gray-400);
+            margin-bottom: var(--space-4);
+        }
+
+        .name-down__not-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        .name-down__not-item {
+            display: flex;
+            gap: var(--space-3);
+            align-items: flex-start;
+        }
+
+        .name-down__not-x {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            color: rgba(239, 68, 68, 0.7);
+            margin-top: 3px;
+        }
+
+        .name-down__not-text {
+            font-size: 17px;
+            color: var(--gray-400);
+            line-height: var(--leading-relaxed);
+        }
+
+        .name-down__cta-wrapper {
+            text-align: center;
+            margin-top: var(--space-8);
+        }
+
+        .name-down__cta {
+            min-width: 300px;
+        }
+
+        .name-down__microcopy {
+            font-size: var(--text-sm);
+            color: var(--gray-500);
+            margin-top: var(--space-4);
+        }
+
+        /* ========================================
+           SECTION 5: SOCIAL PROOF TICKER
+           ======================================== */
+        .ticker {
+            background: var(--black-soft);
+            height: 56px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker__track {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            animation: ticker-scroll 40s linear infinite;
+        }
+
+        .ticker__item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: 0 var(--space-6);
+            white-space: nowrap;
+        }
+
+        .ticker__avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--gradient-violet);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-xs);
+            font-weight: 600;
+            color: var(--white-pure);
+        }
+
+        .ticker__text {
+            font-size: var(--text-sm);
+            color: var(--gray-300);
+        }
+
+        .ticker__time {
+            font-size: var(--text-sm);
+            color: var(--gray-500);
+        }
+
+        .ticker__divider {
+            width: 4px;
+            height: 4px;
+            background: var(--gray-700);
+            border-radius: 50%;
+        }
+
+        @keyframes ticker-scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* ========================================
+           SECTION 6: FOUNDER STORY
+           ======================================== */
+        .founder {
+            background: var(--white-pure);
+            padding: var(--space-14) 0;
+        }
+
+        .founder__grid {
+            display: grid;
+            grid-template-columns: 55% 45%;
+            gap: var(--space-10);
+            align-items: center;
+        }
+
+        .founder__content {
+            padding-left: var(--space-4);
+        }
+
+        .founder__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            background: var(--gray-100);
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-full);
+            font-size: var(--text-xs);
+            color: var(--gray-600);
+            margin-bottom: var(--space-5);
+        }
+
+        .founder__badge svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .founder__script {
+            font-family: var(--font-script);
+            font-size: 24px;
+            color: var(--violet-primary);
+            margin-bottom: var(--space-3);
+        }
+
+        .founder__headline {
+            font-family: var(--font-display);
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--black-rich);
+            line-height: var(--leading-tight);
+            margin-bottom: var(--space-6);
+        }
+
+        .founder__text {
+            font-size: var(--text-base);
+            color: var(--gray-700);
+            line-height: 1.7;
+            margin-bottom: var(--space-5);
+        }
+
+        .founder__text strong {
+            font-weight: 600;
+        }
+
+        .founder__closing {
+            font-size: var(--text-base);
+            color: var(--violet-primary);
+            font-weight: 500;
+        }
+
+        .founder__images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-4);
+        }
+
+        .founder__img {
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-card);
+            background: var(--gray-100);
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+
+        .founder__img:first-child {
+            transform: translateY(-20px);
+        }
+
+        .founder__img:last-child {
+            transform: translateY(20px);
+        }
+
+        /* ========================================
+           SECTION 7: MILESTONE PROOF BLOCK
+           ======================================== */
+        .milestone {
+            background: var(--cream);
+            padding: var(--space-14) 0;
+        }
+
+        .milestone__card {
+            background: var(--gradient-dark);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            box-shadow: var(--shadow-elevated);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .milestone__eyebrow {
+            font-size: var(--text-xs);
+            font-weight: 500;
+            color: var(--violet-primary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: var(--space-4);
+        }
+
+        .milestone__stat {
+            font-family: var(--font-display);
+            font-size: 64px;
+            font-weight: 700;
+            color: var(--violet-primary);
+            line-height: 1;
+            margin-bottom: var(--space-6);
+        }
+
+        .milestone__list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+            margin-bottom: var(--space-6);
+        }
+
+        .milestone__item {
+            font-size: var(--text-base);
+            color: var(--gray-300);
+            line-height: var(--leading-relaxed);
+            padding-left: var(--space-5);
+            position: relative;
+        }
+
+        .milestone__item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background: var(--violet-primary);
+            border-radius: 50%;
+        }
+
+        .milestone__why {
+            background: rgba(255, 255, 255, 0.05);
+            padding: var(--space-5);
+            border-radius: var(--radius-lg);
+            margin-top: var(--space-5);
+        }
+
+        .milestone__why-text {
+            font-size: var(--text-base);
+            color: var(--white-pure);
+            line-height: var(--leading-relaxed);
+        }
+
+        /* ========================================
+           SECTION 8: BENEFITS VS WITHOUT
+           ======================================== */
+        .comparison {
+            background: var(--white-pure);
+            padding: var(--space-14) 0;
+        }
+
+        .comparison__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-6);
+            max-width: 1000px;
+            margin: 0 auto var(--space-8);
+        }
+
+        .comparison__card {
+            padding: var(--space-6);
+            border-radius: var(--radius-lg);
+        }
+
+        .comparison__card--have {
+            background: var(--white-pure);
+            border-left: 4px solid var(--violet-primary);
+            box-shadow: var(--shadow-card);
+        }
+
+        .comparison__card--without {
+            background: var(--white-off);
+            border-left: 4px solid var(--gray-400);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .comparison__header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            margin-bottom: var(--space-5);
+        }
+
+        .comparison__header-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .comparison__card--have .comparison__header-icon {
+            color: var(--violet-primary);
+        }
+
+        .comparison__card--without .comparison__header-icon {
+            color: var(--gray-500);
+        }
+
+        .comparison__title {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            font-weight: 600;
+        }
+
+        .comparison__card--have .comparison__title {
+            color: var(--violet-primary);
+        }
+
+        .comparison__card--without .comparison__title {
+            color: var(--gray-600);
+        }
+
+        .comparison__list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .comparison__item {
+            display: flex;
+            gap: var(--space-3);
+            align-items: flex-start;
+        }
+
+        .comparison__item-icon {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            margin-top: 3px;
+        }
+
+        .comparison__card--have .comparison__item-icon {
+            color: var(--success-green);
+        }
+
+        .comparison__card--without .comparison__item-icon {
+            color: rgba(239, 68, 68, 0.6);
+        }
+
+        .comparison__item-text {
+            font-size: 17px;
+            line-height: var(--leading-relaxed);
+        }
+
+        .comparison__card--have .comparison__item-text {
+            color: var(--gray-700);
+        }
+
+        .comparison__card--without .comparison__item-text {
+            color: var(--gray-500);
+        }
+
+        .comparison__cta-wrapper {
+            text-align: center;
+        }
+
+        .comparison__microcopy {
+            font-size: var(--text-sm);
+            color: var(--gray-500);
+            margin-top: var(--space-4);
+        }
+
+        /* ========================================
+           SECTION 9: 3-DAY CURRICULUM
+           ======================================== */
+        .curriculum {
+            background: var(--cream);
+            padding: var(--space-14) 0;
+        }
+
+        .curriculum__headline {
+            font-family: var(--font-display);
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--black-rich);
+            text-align: center;
+            margin-bottom: var(--space-10);
+        }
+
+        .curriculum__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-6);
+        }
+
+        .curriculum__card {
+            background: var(--white-pure);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            box-shadow: var(--shadow-card);
+        }
+
+        .curriculum__day-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--space-4);
+        }
+
+        .curriculum__day-label {
+            font-family: var(--font-display);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            color: var(--violet-primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .curriculum__date-badge {
+            background: var(--gray-100);
+            padding: var(--space-1) var(--space-3);
+            border-radius: var(--radius-full);
+            font-size: var(--text-xs);
+            color: var(--gray-600);
+        }
+
+        .curriculum__title {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--black-rich);
+            line-height: var(--leading-snug);
+            margin-bottom: var(--space-2);
+        }
+
+        .curriculum__subtitle {
+            font-size: var(--text-base);
+            font-weight: 500;
+            color: var(--gray-600);
+            margin-bottom: var(--space-5);
+        }
+
+        .curriculum__list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        .curriculum__item {
+            display: flex;
+            gap: var(--space-3);
+            align-items: flex-start;
+        }
+
+        .curriculum__item-num {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--violet-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-xs);
+            font-weight: 600;
+            color: var(--violet-primary);
+            margin-top: 1px;
+        }
+
+        .curriculum__item-text {
+            font-size: var(--text-base);
+            color: var(--gray-700);
+            line-height: var(--leading-relaxed);
+        }
+
+        .curriculum__cta-wrapper {
+            text-align: center;
+            margin-top: var(--space-10);
+        }
+
+        .curriculum__microcopy {
+            font-size: var(--text-sm);
+            color: var(--gray-500);
+            margin-top: var(--space-4);
+        }
+
+        /* ========================================
+           SECTION 10: URGENCY BLOCK
+           ======================================== */
+        .urgency {
+            background: var(--gradient-dark);
+            padding: var(--space-14) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .urgency::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle at center, rgba(123, 77, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .urgency__content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .urgency__badge {
+            display: inline-block;
+            background: var(--violet-primary);
+            color: var(--white-pure);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-full);
+            margin-bottom: var(--space-5);
+        }
+
+        .urgency__headline {
+            font-family: var(--font-display);
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--white-pure);
+            line-height: var(--leading-tight);
+            margin-bottom: var(--space-5);
+        }
+
+        .urgency__text {
+            font-size: var(--text-base);
+            color: var(--gray-300);
+            line-height: 1.7;
+            margin-bottom: var(--space-8);
+        }
+
+        .urgency__text .muted {
+            color: var(--gray-500);
+        }
+
+        .urgency__cta-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-6);
+        }
+
+        .urgency__countdown {
+            display: flex;
+            gap: var(--space-3);
+        }
+
+        /* ========================================
+           SECTION 11: PROOF WALL
+           ======================================== */
+        .proof {
+            background: var(--white-pure);
+            padding: var(--space-14) 0;
+        }
+
+        .proof__headline {
+            font-family: var(--font-display);
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--black-rich);
+            text-align: center;
+            margin-bottom: var(--space-10);
+        }
+
+        .proof__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-5);
+        }
+
+        .proof__card {
+            background: var(--white-pure);
+            border-radius: var(--radius-lg);
+            padding: var(--space-5);
+            box-shadow: var(--shadow-card);
+        }
+
+        .proof__card--featured {
+            grid-row: span 2;
+        }
+
+        .proof__image {
+            width: 100%;
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-4);
+            background: var(--gray-100);
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+
+        .proof__card--featured .proof__image {
+            aspect-ratio: 3/4;
+        }
+
+        .proof__quote {
+            font-size: var(--text-base);
+            color: var(--gray-700);
+            line-height: var(--leading-relaxed);
+            margin-bottom: var(--space-3);
+        }
+
+        .proof__highlight {
+            background: linear-gradient(180deg, transparent 60%, rgba(123, 77, 255, 0.2) 60%);
+        }
+
+        .proof__author {
+            font-size: var(--text-sm);
+            color: var(--gray-500);
+            font-weight: 500;
+        }
+
+        /* ========================================
+           SECTION 12: TRANSFORMATION BLOCK
+           ======================================== */
+        .transformation {
+            background: var(--white-pure);
+            padding: var(--space-14) 0;
+        }
+
+        .transformation__content {
+            text-align: center;
+        }
+
+        .transformation__headline {
+            font-family: var(--font-display);
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--black-rich);
+            line-height: var(--leading-tight);
+            margin-bottom: var(--space-8);
+        }
+
+        .transformation__headline .violet-text {
+            color: var(--violet-primary);
+        }
+
+        .transformation__list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-5);
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .transformation__item {
+            display: flex;
+            gap: var(--space-4);
+            align-items: flex-start;
+        }
+
+        .transformation__diamond {
+            flex-shrink: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--violet-primary);
+            transform: rotate(45deg);
+            margin-top: 6px;
+        }
+
+        .transformation__item-text {
+            font-size: var(--text-lg);
+            color: var(--gray-700);
+            line-height: var(--leading-relaxed);
+        }
+
+        /* ========================================
+           SECTION 13: FINAL CLOSE
+           ======================================== */
+        .final {
+            background: var(--gradient-violet);
+            padding: var(--space-14) 0;
+            position: relative;
+        }
+
+        .final__content {
+            text-align: center;
+        }
+
+        .final__headline {
+            font-family: var(--font-display);
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--white-pure);
+            line-height: var(--leading-tight);
+            margin-bottom: var(--space-6);
+        }
+
+        .final__cta {
+            background: var(--white-pure);
+            color: var(--violet-primary);
+            min-width: 300px;
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .final__cta:hover {
+            background: var(--white-off);
+            transform: translateY(-2px);
+        }
+
+        .final__microcopy {
+            font-size: var(--text-base);
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: var(--space-5);
+        }
+
+        .final__signature {
+            font-family: var(--font-script);
+            font-size: 32px;
+            color: var(--white-pure);
+            margin-top: var(--space-4);
+        }
+
+        /* ========================================
+           SECTION 14: FOOTER
+           ======================================== */
+        .footer {
+            background: var(--black-rich);
+            padding: var(--space-8) 0;
+        }
+
+        .footer__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-4);
+        }
+
+        .footer__social {
+            display: flex;
+            gap: var(--space-5);
+        }
+
+        .footer__social-link {
+            color: var(--gray-400);
+            transition: color 0.3s ease;
+        }
+
+        .footer__social-link:hover {
+            color: var(--violet-primary);
+        }
+
+        .footer__social-link svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .footer__copy {
+            font-size: var(--text-sm);
+            color: var(--gray-500);
+        }
+
+        /* ========================================
+           MOBILE RESPONSIVE STYLES
+           ======================================== */
+        @media (max-width: 1024px) {
+            .curriculum__grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .proof__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .proof__card--featured {
+                grid-row: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Top Bar Mobile */
+            .top-bar {
+                height: 48px;
+            }
+
+            .top-bar__content {
+                flex-direction: column;
+                gap: var(--space-1);
+            }
+
+            .top-bar__text {
+                font-size: var(--text-xs);
+            }
+
+            .countdown__box {
+                width: 40px;
+                height: 40px;
+            }
+
+            .countdown__number {
+                font-size: 16px;
+            }
+
+            /* Hero Mobile */
+            .hero {
+                padding-top: 48px;
+            }
+
+            .hero__headline {
+                font-size: var(--text-3xl);
+            }
+
+            .hero__subheadline {
+                font-size: var(--text-base);
+            }
+
+            .hero__chips {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero__cta-wrapper .btn-primary {
+                width: 100%;
+                min-width: unset;
+            }
+
+            /* Qualifier Mobile */
+            .qualifier__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .qualifier__image {
+                max-height: 400px;
+                width: 100%;
+            }
+
+            .qualifier__content {
+                padding-right: 0;
+            }
+
+            .qualifier__headline {
+                font-size: var(--text-3xl);
+            }
+
+            .qualifier__headline .script-text {
+                font-size: 42px;
+            }
+
+            /* Name Down Mobile */
+            .name-down__headline {
+                font-size: var(--text-2xl);
+            }
+
+            .name-down__cta {
+                width: 100%;
+                min-width: unset;
+            }
+
+            /* Ticker Mobile */
+            .ticker {
+                height: 48px;
+            }
+
+            /* Founder Mobile */
+            .founder__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .founder__images {
+                order: -1;
+                margin-bottom: var(--space-6);
+            }
+
+            .founder__content {
+                padding-left: 0;
+            }
+
+            .founder__headline {
+                font-size: var(--text-2xl);
+            }
+
+            .founder__img:first-child,
+            .founder__img:last-child {
+                transform: none;
+            }
+
+            /* Milestone Mobile */
+            .milestone__card {
+                padding: var(--space-6);
+            }
+
+            .milestone__stat {
+                font-size: 48px;
+            }
+
+            /* Comparison Mobile */
+            .comparison__grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Curriculum Mobile */
+            .curriculum__headline {
+                font-size: var(--text-3xl);
+            }
+
+            /* Urgency Mobile */
+            .urgency__headline {
+                font-size: var(--text-2xl);
+            }
+
+            .urgency__cta-wrapper .btn-primary {
+                width: 100%;
+                min-width: unset;
+            }
+
+            /* Proof Mobile */
+            .proof__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .proof__headline {
+                font-size: var(--text-3xl);
+            }
+
+            /* Transformation Mobile */
+            .transformation__headline {
+                font-size: var(--text-2xl);
+            }
+
+            /* Final Mobile */
+            .final__headline {
+                font-size: var(--text-2xl);
+            }
+
+            .final__cta {
+                width: 100%;
+                min-width: unset;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero__chips {
+                grid-template-columns: 1fr;
+            }
+
+            .hero__chip {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SECTION 1: TOP BAR -->
+    <div class="top-bar">
+        <div class="top-bar__content">
+            <span class="top-bar__text">We start Day 1 on: <span class="top-bar__date" id="start-date">January 13, 2026 @ 7PM EST</span></span>
+            <div class="countdown">
+                <div class="countdown__box">
+                    <span class="countdown__number" id="countdown-days">00</span>
+                    <span class="countdown__label">Days</span>
+                </div>
+                <div class="countdown__box">
+                    <span class="countdown__number" id="countdown-hours">00</span>
+                    <span class="countdown__label">Hrs</span>
+                </div>
+                <div class="countdown__box">
+                    <span class="countdown__number" id="countdown-mins">00</span>
+                    <span class="countdown__label">Min</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 2: HERO -->
+    <section class="hero">
+        <div class="hero__content">
+            <p class="hero__eyebrow">The Food Noise Reset</p>
+            <h1 class="hero__headline">In 3 days, you'll be able to shut off food noise and follow a simple protocol, even if you've failed <span class="violet-text">"moderation"</span> a hundred times.</h1>
+            <p class="hero__subheadline">If you're tired of counting, tracking, bargaining with yourself, and then binging anyway, this is for you. You will leave with a starter protocol you can actually follow in real life.</p>
+            <div class="hero__chips">
+                <span class="hero__chip">8-week coaching clients coached</span>
+                <span class="hero__chip">Epigenetic Upgrade ecosystem</span>
+                <span class="hero__chip">367-member paid Skool community</span>
+                <span class="hero__chip">378K+ TikTok followers</span>
+            </div>
+            <div class="hero__cta-wrapper">
+                <a href="#register" class="btn-primary">Save My Seat (Free)</a>
+                <p class="hero__microcopy">Takes 10 seconds. If you are not serious, please do not join.</p>
+                <p class="hero__micro-proof">Fast results are motivating results.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: IS THIS PERFECT FOR YOU? -->
+    <section class="qualifier">
+        <div class="container">
+            <div class="qualifier__grid">
+                <div class="qualifier__image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=600&h=750&fit=crop" alt="Duru Bilimlier" class="qualifier__image">
+                </div>
+                <div class="qualifier__content">
+                    <p class="eyebrow">Is The Food Noise Reset Perfect For You?</p>
+                    <h2 class="qualifier__headline">YES! This challenge is especially for you if<span class="script-text">...</span></h2>
+                    <ul class="qualifier__list">
+                        <li class="qualifier__item">
+                            <span class="qualifier__check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </span>
+                            <span class="qualifier__item-text">You are sick of <strong>"just track your macros"</strong> advice because it never fixed the binging.</span>
+                        </li>
+                        <li class="qualifier__item">
+                            <span class="qualifier__check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </span>
+                            <span class="qualifier__item-text">You feel like <strong>food takes up too much space</strong> in your brain.</span>
+                        </li>
+                        <li class="qualifier__item">
+                            <span class="qualifier__check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </span>
+                            <span class="qualifier__item-text">You want <strong>rules that make decisions easy</strong>, not "balance" that turns into excuses.</span>
+                        </li>
+                        <li class="qualifier__item">
+                            <span class="qualifier__check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </span>
+                            <span class="qualifier__item-text">You can <strong>commit to 3 short sessions</strong> in 3 days.</span>
+                        </li>
+                        <li class="qualifier__item">
+                            <span class="qualifier__check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </span>
+                            <span class="qualifier__item-text">You want a <strong>protocol you can repeat</strong>, not a motivational speech.</span>
+                        </li>
+                        <li class="qualifier__item">
+                            <span class="qualifier__check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </span>
+                            <span class="qualifier__item-text">You would rather be <strong>uncomfortable for a week</strong> than stuck for another year.</span>
+                        </li>
+                    </ul>
+                    <p class="qualifier__closing">If you nodded yes, keep reading...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: PUT YOUR NAME DOWN -->
+    <section class="name-down">
+        <div class="container container--narrow">
+            <div class="name-down__content">
+                <h2 class="name-down__headline">Put your name down today if you want the <span class="violet-text">noise gone</span>.</h2>
+
+                <div class="name-down__benefits">
+                    <p class="name-down__benefits-head">What you will be able to do by the end of 3 days:</p>
+                    <ul class="name-down__benefits-list">
+                        <li class="name-down__benefit-item">
+                            <svg class="name-down__benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="name-down__benefit-text">Build your "allowed foods" list so you stop negotiating with yourself.</span>
+                        </li>
+                        <li class="name-down__benefit-item">
+                            <svg class="name-down__benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="name-down__benefit-text">Set up a simple day structure that removes decision fatigue.</span>
+                        </li>
+                        <li class="name-down__benefit-item">
+                            <svg class="name-down__benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="name-down__benefit-text">Know what to do after a slip so it does not turn into a 7-day spiral.</span>
+                        </li>
+                        <li class="name-down__benefit-item">
+                            <svg class="name-down__benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="name-down__benefit-text">Spot the exact traps that keep triggering you.</span>
+                        </li>
+                        <li class="name-down__benefit-item">
+                            <svg class="name-down__benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="name-down__benefit-text">Walk away with a starter plan you can follow immediately.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="name-down__not">
+                    <p class="name-down__not-head">This is NOT:</p>
+                    <ul class="name-down__not-list">
+                        <li class="name-down__not-item">
+                            <svg class="name-down__not-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            <span class="name-down__not-text">A macro-counting workshop.</span>
+                        </li>
+                        <li class="name-down__not-item">
+                            <svg class="name-down__not-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            <span class="name-down__not-text">A "you can have everything in moderation" pep talk.</span>
+                        </li>
+                        <li class="name-down__not-item">
+                            <svg class="name-down__not-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            <span class="name-down__not-text">A 97-step recipe lifestyle.</span>
+                        </li>
+                        <li class="name-down__not-item">
+                            <svg class="name-down__not-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            <span class="name-down__not-text">A program for people who want comfort more than results.</span>
+                        </li>
+                        <li class="name-down__not-item">
+                            <svg class="name-down__not-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            <span class="name-down__not-text">Medical advice. If you have a condition, talk to your clinician first.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="name-down__cta-wrapper">
+                    <a href="#register" class="btn-primary name-down__cta">Yes, I Want The Reset</a>
+                    <p class="name-down__microcopy">Free training. No fluff. No coddling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: SOCIAL PROOF TICKER -->
+    <div class="ticker">
+        <div class="ticker__track" id="ticker-track">
+            <!-- Ticker items will be duplicated by JS for infinite scroll -->
+            <div class="ticker__item">
+                <span class="ticker__avatar">SL</span>
+                <span class="ticker__text">Sarah L. joined the challenge</span>
+                <span class="ticker__time">2 min ago</span>
+                <span class="ticker__divider"></span>
+            </div>
+            <div class="ticker__item">
+                <span class="ticker__avatar">MK</span>
+                <span class="ticker__text">Maya K. started Day 1</span>
+                <span class="ticker__time">5 min ago</span>
+                <span class="ticker__divider"></span>
+            </div>
+            <div class="ticker__item">
+                <span class="ticker__avatar">JR</span>
+                <span class="ticker__text">Jessica R. joined the challenge</span>
+                <span class="ticker__time">8 min ago</span>
+                <span class="ticker__divider"></span>
+            </div>
+            <div class="ticker__item">
+                <span class="ticker__avatar">AT</span>
+                <span class="ticker__text">Amanda T. started Day 1</span>
+                <span class="ticker__time">12 min ago</span>
+                <span class="ticker__divider"></span>
+            </div>
+            <div class="ticker__item">
+                <span class="ticker__avatar">LC</span>
+                <span class="ticker__text">Lauren C. joined the challenge</span>
+                <span class="ticker__time">15 min ago</span>
+                <span class="ticker__divider"></span>
+            </div>
+            <div class="ticker__item">
+                <span class="ticker__avatar">EB</span>
+                <span class="ticker__text">Emily B. started Day 2</span>
+                <span class="ticker__time">18 min ago</span>
+                <span class="ticker__divider"></span>
+            </div>
+            <div class="ticker__item">
+                <span class="ticker__avatar">KM</span>
+                <span class="ticker__text">Katie M. joined the challenge</span>
+                <span class="ticker__time">22 min ago</span>
+                <span class="ticker__divider"></span>
+            </div>
+            <div class="ticker__item">
+                <span class="ticker__avatar">RH</span>
+                <span class="ticker__text">Rachel H. started Day 1</span>
+                <span class="ticker__time">25 min ago</span>
+                <span class="ticker__divider"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 6: FOUNDER STORY -->
+    <section class="founder">
+        <div class="container">
+            <div class="founder__grid">
+                <div class="founder__content">
+                    <div class="founder__badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        11 PM. YouTube Rabbit Hole.
+                    </div>
+                    <p class="founder__script">From Binge-Restrict Cycle to...</p>
+                    <h2 class="founder__headline">I did the mainstream way. It made me worse.</h2>
+                    <p class="founder__text">I got sucked into the same loop you're in. Track, restrict, look "disciplined", then snap and binge. The worse it got, the more I tried to control it with numbers.</p>
+                    <p class="founder__text">Then I realized the real problem was not my willpower. It was <strong>the system I was following</strong>.</p>
+                    <p class="founder__text">So I rebuilt everything around a simple protocol that <strong>kills food noise at the source</strong> and makes adherence feel obvious.</p>
+                    <p class="founder__closing">That is what I'm teaching you inside The Food Noise Reset.</p>
+                </div>
+                <div class="founder__images">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=400&fit=crop" alt="Duru lifestyle" class="founder__img">
+                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=400&fit=crop" alt="Healthy food" class="founder__img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: MILESTONE PROOF BLOCK -->
+    <section class="milestone">
+        <div class="container">
+            <div class="milestone__card">
+                <p class="milestone__eyebrow">Fast Forward to Today</p>
+                <p class="milestone__stat">367+ Members</p>
+                <ul class="milestone__list">
+                    <li class="milestone__item">I run an 8-week coaching container built around a structured protocol and weekly support.</li>
+                    <li class="milestone__item">I built the "Epigenetic Upgrade" ecosystem and publish guides and resources for this method.</li>
+                    <li class="milestone__item">The community is where people go when they want rules, structure, and momentum, not vibes.</li>
+                </ul>
+                <div class="milestone__why">
+                    <p class="milestone__why-text">The internet is louder than ever. Ultra-palatable food is everywhere. "Moderation" advice is not built for addiction-level inputs. You need a protocol that assumes the environment is hostile.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: BENEFITS VS WITHOUT -->
+    <section class="comparison">
+        <div class="container">
+            <div class="comparison__grid">
+                <div class="comparison__card comparison__card--have">
+                    <div class="comparison__header">
+                        <svg class="comparison__header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <h3 class="comparison__title">You'll have</h3>
+                    </div>
+                    <ul class="comparison__list">
+                        <li class="comparison__item">
+                            <svg class="comparison__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="comparison__item-text">A starter protocol that tells you what to do today</span>
+                        </li>
+                        <li class="comparison__item">
+                            <svg class="comparison__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="comparison__item-text">A relapse plan for when life hits</span>
+                        </li>
+                        <li class="comparison__item">
+                            <svg class="comparison__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="comparison__item-text">A structure that makes discipline simpler</span>
+                        </li>
+                        <li class="comparison__item">
+                            <svg class="comparison__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span class="comparison__item-text">A clear next step if you want deeper support</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="comparison__card comparison__card--without">
+                    <div class="comparison__header">
+                        <svg class="comparison__header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        <h3 class="comparison__title">Without needing...</h3>
+                    </div>
+                    <ul class="comparison__list">
+                        <li class="comparison__item">
+                            <svg class="comparison__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            <span class="comparison__item-text">Counting every bite</span>
+                        </li>
+                        <li class="comparison__item">
+                            <svg class="comparison__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            <span class="comparison__item-text">"Cheat meals" that turn into cheat weeks</span>
+                        </li>
+                        <li class="comparison__item">
+                            <svg class="comparison__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            <span class="comparison__item-text">Perfect motivation</span>
+                        </li>
+                        <li class="comparison__item">
+                            <svg class="comparison__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            <span class="comparison__item-text">A whole new personality</span>
+                        </li>
+                        <li class="comparison__item">
+                            <svg class="comparison__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            <span class="comparison__item-text">Cooking complicated influencer meals</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="comparison__cta-wrapper">
+                <a href="#register" class="btn-primary">Join Free, Start Day 1</a>
+                <p class="comparison__microcopy">If you are all in, you will love this.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: 3-DAY CURRICULUM -->
+    <section class="curriculum">
+        <div class="container">
+            <h2 class="curriculum__headline">What Happens in the 3 Days</h2>
+            <div class="curriculum__grid">
+                <!-- Day 1 -->
+                <div class="curriculum__card">
+                    <div class="curriculum__day-row">
+                        <span class="curriculum__day-label">Day 1</span>
+                        <span class="curriculum__date-badge">Jan 13 @ 7PM</span>
+                    </div>
+                    <h3 class="curriculum__title">The Food Noise Diagnosis + Fast Win</h3>
+                    <p class="curriculum__subtitle">Why you keep binging even when you "know better"</p>
+                    <ul class="curriculum__list">
+                        <li class="curriculum__item">
+                            <span class="curriculum__item-num">1</span>
+                            <span class="curriculum__item-text">The 3 triggers that start most spirals</span>
+                        </li>
+                        <li class="curriculum__item">
+                            <span class="curriculum__item-num">2</span>
+                            <span class="curriculum__item-text">The fast win: your first 24-hour structure</span>
+                        </li>
+                        <li class="curriculum__item">
+                            <span class="curriculum__item-num">3</span>
+                            <span class="curriculum__item-text">Your "allowed foods" baseline so decisions stop draining you</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="curriculum__card">
+                    <div class="curriculum__day-row">
+                        <span class="curriculum__day-label">Day 2</span>
+                        <span class="curriculum__date-badge">Jan 14 @ 7PM</span>
+                    </div>
+                    <h3 class="curriculum__title">The Mechanism Install</h3>
+                    <p class="curriculum__subtitle">The protocol that makes discipline feel less emotional</p>
+                    <ul class="curriculum__list">
+                        <li class="curriculum__item">
+                            <span class="curriculum__item-num">1</span>
+                            <span class="curriculum__item-text">How to design your environment so cravings lose power</span>
+                        </li>
+                        <li class="curriculum__item">
+                            <span class="curriculum__item-num">2</span>
+                            <span class="curriculum__item-text">The replacement system so you do not white-knuckle</span>
+                        </li>
+                        <li class="curriculum__item">
+                            <span class="curriculum__item-num">3</span>
+                            <span class="curriculum__item-text">What to do when family and friends pressure you</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="curriculum__card">
+                    <div class="curriculum__day-row">
+                        <span class="curriculum__day-label">Day 3</span>
+                        <span class="curriculum__date-badge">Jan 15 @ 7PM</span>
+                    </div>
+                    <h3 class="curriculum__title">The 30-Day Plan</h3>
+                    <p class="curriculum__subtitle">Turn the reset into momentum that sticks</p>
+                    <ul class="curriculum__list">
+                        <li class="curriculum__item">
+                            <span class="curriculum__item-num">1</span>
+                            <span class="curriculum__item-text">Your simple weekly rhythm</span>
+                        </li>
+                        <li class="curriculum__item">
+                            <span class="curriculum__item-num">2</span>
+                            <span class="curriculum__item-text">How to recover from slips instantly</span>
+                        </li>
+                        <li class="curriculum__item">
+                            <span class="curriculum__item-num">3</span>
+                            <span class="curriculum__item-text">The path: community support vs coaching support, and who needs what</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="curriculum__cta-wrapper">
+                <a href="#register" class="btn-primary">Save My Seat (Free)</a>
+                <p class="curriculum__microcopy">You can stay stuck, or you can install a system.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: URGENCY BLOCK -->
+    <section class="urgency">
+        <div class="container container--tight">
+            <div class="urgency__content">
+                <span class="urgency__badge">Limited Spots Available</span>
+                <h2 class="urgency__headline">This is not for everyone, and that's the point.</h2>
+                <p class="urgency__text">If you want "balance" that really means excuses, <span class="muted">skip this</span>. If you want a cookie plan, <span class="muted">skip this</span>. If you want results and you are willing to follow rules, join us on Day 1.</p>
+                <div class="urgency__cta-wrapper">
+                    <a href="#register" class="btn-primary">I'm In. Send Me Day 1.</a>
+                    <div class="urgency__countdown">
+                        <div class="countdown__box">
+                            <span class="countdown__number" id="urgency-days">00</span>
+                            <span class="countdown__label">Days</span>
+                        </div>
+                        <div class="countdown__box">
+                            <span class="countdown__number" id="urgency-hours">00</span>
+                            <span class="countdown__label">Hrs</span>
+                        </div>
+                        <div class="countdown__box">
+                            <span class="countdown__number" id="urgency-mins">00</span>
+                            <span class="countdown__label">Min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 11: PROOF WALL -->
+    <section class="proof">
+        <div class="container">
+            <h2 class="proof__headline">Receipts</h2>
+            <div class="proof__grid">
+                <div class="proof__card proof__card--featured">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=500&fit=crop" alt="Transformation" class="proof__image">
+                    <p class="proof__quote">"I went from binging every weekend to <span class="proof__highlight">3 weeks clean</span>. The protocol actually works because it's simple enough to follow."</p>
+                    <p class="proof__author">— Sarah M., Challenge Graduate</p>
+                </div>
+                <div class="proof__card">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=300&fit=crop" alt="Testimonial" class="proof__image">
+                    <p class="proof__quote">"<span class="proof__highlight">Food noise is actually gone.</span> I don't think about snacks 24/7 anymore."</p>
+                    <p class="proof__author">— Maya K.</p>
+                </div>
+                <div class="proof__card">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=300&fit=crop" alt="Testimonial" class="proof__image">
+                    <p class="proof__quote">"Finally someone who doesn't tell me to <span class="proof__highlight">'just eat intuitively'</span>. I needed rules. This gave me rules."</p>
+                    <p class="proof__author">— Jessica R.</p>
+                </div>
+                <div class="proof__card">
+                    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&h=300&fit=crop" alt="Testimonial" class="proof__image">
+                    <p class="proof__quote">"The <span class="proof__highlight">relapse protocol alone</span> was worth it. Now when I slip, I know exactly what to do."</p>
+                    <p class="proof__author">— Amanda T.</p>
+                </div>
+                <div class="proof__card">
+                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=300&fit=crop" alt="Testimonial" class="proof__image">
+                    <p class="proof__quote">"Down 8 lbs in 3 weeks without counting a single calorie. <span class="proof__highlight">The structure works.</span>"</p>
+                    <p class="proof__author">— Lauren C.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 12: TRANSFORMATION BLOCK -->
+    <section class="transformation">
+        <div class="container container--tight">
+            <div class="transformation__content">
+                <h2 class="transformation__headline">The real transformation is not just weight. It's <span class="violet-text">silence</span>.</h2>
+                <ul class="transformation__list">
+                    <li class="transformation__item">
+                        <span class="transformation__diamond"></span>
+                        <span class="transformation__item-text">You stop thinking about food all day.</span>
+                    </li>
+                    <li class="transformation__item">
+                        <span class="transformation__diamond"></span>
+                        <span class="transformation__item-text">You stop bargaining with yourself.</span>
+                    </li>
+                    <li class="transformation__item">
+                        <span class="transformation__diamond"></span>
+                        <span class="transformation__item-text">You stop "starting over" every Monday.</span>
+                    </li>
+                    <li class="transformation__item">
+                        <span class="transformation__diamond"></span>
+                        <span class="transformation__item-text">You trust yourself again.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 13: FINAL CLOSE -->
+    <section class="final" id="register">
+        <div class="container container--extra-tight">
+            <div class="final__content">
+                <h2 class="final__headline">Join the free reset. Get the protocol. Start Day 1.</h2>
+                <a href="#" class="btn-primary final__cta">Register Free Now</a>
+                <p class="final__microcopy">If you are ready to live in reality, I'll see you inside.</p>
+                <p class="final__signature">xoxo, Duru</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 14: FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__social">
+                    <a href="https://tiktok.com/@durudiet" class="footer__social-link" aria-label="TikTok">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/durudiet" class="footer__social-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://youtube.com/@durudiet" class="footer__social-link" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+                <p class="footer__copy">© 2026 The Duru Diet. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========================================
+        // COUNTDOWN TIMER FUNCTIONALITY
+        // ========================================
+        (function() {
+            // Set the target date (January 13, 2026 at 7PM EST)
+            const targetDate = new Date('2026-01-13T19:00:00-05:00').getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                // Calculate time units
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+                // Update top bar countdown
+                document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('countdown-mins').textContent = minutes.toString().padStart(2, '0');
+
+                // Update urgency section countdown
+                document.getElementById('urgency-days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('urgency-hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('urgency-mins').textContent = minutes.toString().padStart(2, '0');
+
+                // If countdown is finished
+                if (distance < 0) {
+                    document.getElementById('countdown-days').textContent = '00';
+                    document.getElementById('countdown-hours').textContent = '00';
+                    document.getElementById('countdown-mins').textContent = '00';
+                    document.getElementById('urgency-days').textContent = '00';
+                    document.getElementById('urgency-hours').textContent = '00';
+                    document.getElementById('urgency-mins').textContent = '00';
+                }
+            }
+
+            // Update immediately and then every minute
+            updateCountdown();
+            setInterval(updateCountdown, 60000);
+        })();
+
+        // ========================================
+        // SOCIAL PROOF TICKER - DUPLICATE ITEMS
+        // ========================================
+        (function() {
+            const track = document.getElementById('ticker-track');
+            if (track) {
+                // Clone all items and append for seamless infinite scroll
+                const items = track.innerHTML;
+                track.innerHTML = items + items;
+            }
+        })();
+
+        // ========================================
+        // SMOOTH SCROLL FOR CTA BUTTONS
+        // ========================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
