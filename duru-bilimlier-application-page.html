@@ -1,0 +1,2381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Duru Diet | Health & Aesthetics Through Real Biology</title>
+    <meta name="description" content="Transform your body through proper human diet protocols. Limited spots for private 1-1 coaching with Duru Bilimlier.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           CSS CUSTOM PROPERTIES / DESIGN TOKENS
+           ============================================ */
+        :root {
+            /* Primary Colors */
+            --violet-primary: #7B4DFF;
+            --violet-dark: #5B2EDF;
+            --violet-light: #9B6DFF;
+            --violet-glow: rgba(123, 77, 255, 0.15);
+
+            /* Neutrals */
+            --black-rich: #0A0A0A;
+            --black-soft: #141414;
+            --gray-900: #1A1A1A;
+            --gray-700: #2D2D2D;
+            --gray-600: #444444;
+            --gray-500: #666666;
+            --gray-400: #888888;
+            --gray-300: #999999;
+            --gray-100: #E5E5E5;
+            --white-pure: #FFFFFF;
+            --white-off: #FAFAFA;
+
+            /* Accents */
+            --success-green: #10B981;
+            --result-gold: #F59E0B;
+            --pink-soft: #FFE4EC;
+            --error-red: #E85A4F;
+
+            /* Gradients */
+            --gradient-violet: linear-gradient(135deg, #7B4DFF 0%, #9B6DFF 100%);
+            --gradient-dark: linear-gradient(180deg, #0A0A0A 0%, #1A1A1A 100%);
+
+            /* Typography */
+            --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-script: 'Caveat', cursive;
+
+            /* Font Sizes */
+            --text-hero: clamp(48px, 8vw, 80px);
+            --text-h1: clamp(36px, 5vw, 64px);
+            --text-h2: clamp(28px, 4vw, 48px);
+            --text-h3: clamp(24px, 3vw, 36px);
+            --text-body-lg: 20px;
+            --text-body: 18px;
+            --text-small: 16px;
+            --text-xs: 14px;
+            --text-label: 12px;
+
+            /* Line Heights */
+            --leading-tight: 1.1;
+            --leading-snug: 1.25;
+            --leading-normal: 1.5;
+            --leading-relaxed: 1.65;
+
+            /* Letter Spacing */
+            --tracking-tight: -0.02em;
+            --tracking-wide: 0.05em;
+            --tracking-wider: 0.12em;
+
+            /* Spacing */
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 12px;
+            --space-4: 16px;
+            --space-5: 24px;
+            --space-6: 32px;
+            --space-8: 48px;
+            --space-10: 64px;
+            --space-12: 80px;
+            --space-16: 120px;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.1);
+            --shadow-card: 0 4px 6px rgba(0,0,0,0.05), 0 10px 20px rgba(0,0,0,0.08);
+            --shadow-elevated: 0 8px 16px rgba(0,0,0,0.1), 0 20px 40px rgba(0,0,0,0.15);
+            --shadow-violet-glow: 0 0 40px rgba(123, 77, 255, 0.3), 0 0 80px rgba(123, 77, 255, 0.15);
+            --shadow-button: 0 4px 12px rgba(123, 77, 255, 0.4), inset 0 1px 0 rgba(255,255,255,0.15);
+            --shadow-button-hover: 0 8px 24px rgba(123, 77, 255, 0.5), inset 0 1px 0 rgba(255,255,255,0.2);
+
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+        }
+
+        /* ============================================
+           RESET & BASE STYLES
+           ============================================ */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: var(--text-body);
+            line-height: var(--leading-relaxed);
+            color: var(--gray-700);
+            background-color: var(--white-pure);
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ============================================
+           UTILITY CLASSES
+           ============================================ */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-5);
+        }
+
+        .container-narrow {
+            max-width: 800px;
+        }
+
+        .container-wide {
+            max-width: 1400px;
+        }
+
+        .text-violet {
+            color: var(--violet-primary);
+        }
+
+        .text-white {
+            color: var(--white-pure);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* ============================================
+           TYPOGRAPHY
+           ============================================ */
+        .eyebrow {
+            font-size: var(--text-label);
+            font-weight: 500;
+            letter-spacing: var(--tracking-wider);
+            text-transform: uppercase;
+            color: var(--violet-primary);
+        }
+
+        .headline-hero {
+            font-size: var(--text-hero);
+            font-weight: 700;
+            line-height: var(--leading-tight);
+            letter-spacing: var(--tracking-tight);
+        }
+
+        .headline-section {
+            font-size: var(--text-h2);
+            font-weight: 700;
+            line-height: var(--leading-snug);
+            letter-spacing: var(--tracking-tight);
+        }
+
+        .headline-card {
+            font-size: var(--text-h3);
+            font-weight: 700;
+            line-height: var(--leading-snug);
+        }
+
+        .subheadline {
+            font-size: var(--text-body-lg);
+            line-height: var(--leading-relaxed);
+            color: var(--gray-500);
+        }
+
+        .script-text {
+            font-family: var(--font-script);
+            font-size: 28px;
+            color: var(--violet-primary);
+        }
+
+        /* ============================================
+           BUTTONS
+           ============================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 var(--space-6);
+            height: 64px;
+            font-family: var(--font-body);
+            font-size: var(--text-small);
+            font-weight: 600;
+            letter-spacing: var(--tracking-wide);
+            text-transform: uppercase;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--gradient-violet);
+            color: var(--white-pure);
+            box-shadow: var(--shadow-button);
+            min-width: 240px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-button-hover);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(123, 77, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--violet-primary);
+            border: 2px solid var(--violet-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--violet-primary);
+            color: var(--white-pure);
+        }
+
+        .btn-full-width {
+            width: 100%;
+        }
+
+        /* ============================================
+           SECTION 1: HERO
+           ============================================ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--gradient-dark);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translate(0, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(123, 77, 255, 0.25) 0%, transparent 70%);
+            filter: blur(60px);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-8);
+            padding: var(--space-12) var(--space-5);
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            margin-bottom: var(--space-5);
+            flex-wrap: wrap;
+        }
+
+        .hero-eyebrow span {
+            font-size: var(--text-xs);
+            font-weight: 500;
+            letter-spacing: var(--tracking-wider);
+            text-transform: uppercase;
+            color: var(--violet-primary);
+        }
+
+        .hero-eyebrow .divider {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--violet-primary);
+            opacity: 0.5;
+        }
+
+        .hero-headline {
+            font-size: clamp(40px, 8vw, 72px);
+            font-weight: 700;
+            line-height: var(--leading-tight);
+            color: var(--white-pure);
+            margin-bottom: var(--space-5);
+        }
+
+        .hero-headline .highlight {
+            color: var(--violet-primary);
+        }
+
+        .hero-subheadline {
+            font-size: var(--text-body-lg);
+            line-height: var(--leading-relaxed);
+            color: var(--gray-400);
+            max-width: 500px;
+            margin-bottom: var(--space-8);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-height: 60vh;
+            object-fit: cover;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .hero-image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-700) 100%);
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-500);
+            font-size: var(--text-small);
+            border: 1px dashed var(--gray-600);
+        }
+
+        @media (min-width: 768px) {
+            .hero-container {
+                grid-template-columns: 55% 45%;
+                padding: var(--space-16) var(--space-8);
+                gap: var(--space-10);
+            }
+
+            .hero-image-placeholder {
+                height: 100%;
+                min-height: 500px;
+            }
+        }
+
+        /* ============================================
+           SECTION 2: CREDIBILITY BAR
+           ============================================ */
+        .credibility-bar {
+            background: var(--black-soft);
+            position: relative;
+            padding: var(--space-8) 0;
+        }
+
+        .credibility-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--violet-primary) 50%, transparent 100%);
+        }
+
+        .credibility-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-6);
+            text-align: center;
+        }
+
+        .credibility-stat {
+            transition: transform 0.2s ease;
+        }
+
+        .credibility-stat:hover {
+            transform: scale(1.05);
+        }
+
+        .credibility-number {
+            font-size: clamp(32px, 5vw, 44px);
+            font-weight: 700;
+            color: var(--white-pure);
+            line-height: var(--leading-tight);
+        }
+
+        .credibility-label {
+            font-size: var(--text-xs);
+            color: var(--gray-500);
+            margin-top: var(--space-2);
+        }
+
+        @media (min-width: 768px) {
+            .credibility-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* ============================================
+           SECTION 3: QUALIFIER (Is This For You)
+           ============================================ */
+        .qualifier {
+            background: var(--white-pure);
+            padding: var(--space-16) 0;
+        }
+
+        .qualifier-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-10);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-5);
+        }
+
+        .qualifier-image-wrapper {
+            position: relative;
+        }
+
+        .qualifier-image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--gray-100) 0%, var(--white-off) 100%);
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-500);
+            font-size: var(--text-small);
+            border: 1px dashed var(--gray-300);
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .qualifier-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .qualifier-eyebrow {
+            margin-bottom: var(--space-4);
+        }
+
+        .qualifier-headline {
+            font-size: clamp(32px, 4vw, 40px);
+            font-weight: 700;
+            color: var(--black-rich);
+            margin-bottom: var(--space-6);
+            line-height: var(--leading-snug);
+        }
+
+        .qualifier-list {
+            list-style: none;
+            margin-bottom: var(--space-6);
+        }
+
+        .qualifier-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-4);
+            margin-bottom: var(--space-4);
+            font-size: var(--text-body);
+            color: var(--gray-700);
+        }
+
+        .qualifier-list .check-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background: var(--violet-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .qualifier-list .check-icon svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--white-pure);
+            stroke-width: 3;
+            fill: none;
+        }
+
+        .qualifier-script {
+            font-family: var(--font-script);
+            font-size: 26px;
+            color: var(--violet-primary);
+            transform: rotate(-2deg);
+            display: inline-block;
+        }
+
+        @media (min-width: 768px) {
+            .qualifier-container {
+                grid-template-columns: 45% 55%;
+                gap: var(--space-12);
+            }
+
+            .qualifier-image-placeholder {
+                height: 100%;
+                min-height: 500px;
+                aspect-ratio: 4/5;
+            }
+        }
+
+        /* ============================================
+           SECTION 4: CLIENT WINS / TRANSFORMATIONS
+           ============================================ */
+        .client-wins {
+            background: var(--white-off);
+            padding: var(--space-16) 0;
+        }
+
+        .client-wins-header {
+            text-align: center;
+            margin-bottom: var(--space-10);
+        }
+
+        .client-wins-headline {
+            font-size: var(--text-h2);
+            font-weight: 700;
+            color: var(--black-rich);
+            margin-top: var(--space-4);
+        }
+
+        .wins-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-5);
+        }
+
+        /* Win Card Base */
+        .win-card {
+            background: var(--white-pure);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .win-card-badge {
+            position: absolute;
+            top: var(--space-4);
+            left: var(--space-4);
+            font-family: var(--font-script);
+            font-size: 26px;
+            color: var(--violet-primary);
+            transform: rotate(-3deg);
+            z-index: 10;
+            text-shadow: 0 2px 4px rgba(255,255,255,0.8);
+        }
+
+        .win-card-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+        }
+
+        .win-card-image {
+            aspect-ratio: 3/4;
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-500);
+            font-size: var(--text-xs);
+        }
+
+        .win-card-image.before {
+            filter: saturate(0.7);
+        }
+
+        .win-card-image-label {
+            position: absolute;
+            bottom: var(--space-2);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: var(--tracking-wider);
+            text-transform: uppercase;
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--radius-sm);
+        }
+
+        .win-card-image-label.before-label {
+            left: var(--space-2);
+            background: rgba(0,0,0,0.5);
+            color: var(--white-pure);
+        }
+
+        .win-card-image-label.after-label {
+            right: var(--space-2);
+            background: var(--violet-primary);
+            color: var(--white-pure);
+        }
+
+        .win-card-content {
+            padding: var(--space-5);
+        }
+
+        .win-card-result {
+            font-size: clamp(28px, 4vw, 36px);
+            font-weight: 700;
+            color: var(--black-rich);
+            margin-bottom: var(--space-4);
+            line-height: var(--leading-tight);
+        }
+
+        .win-card-bullets {
+            list-style: none;
+        }
+
+        .win-card-bullets li {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            font-size: var(--text-small);
+            color: var(--gray-600);
+            margin-bottom: var(--space-2);
+        }
+
+        .win-card-bullets li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--violet-primary);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* Large Feature Card */
+        .win-card-large {
+            grid-column: 1 / -1;
+        }
+
+        /* Stat Highlight Card */
+        .win-card-stat {
+            background: var(--gray-900);
+            padding: var(--space-8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .win-card-stat .stat-number {
+            font-size: clamp(48px, 8vw, 64px);
+            font-weight: 700;
+            color: var(--violet-primary);
+            line-height: 1;
+            margin-bottom: var(--space-3);
+        }
+
+        .win-card-stat .stat-text {
+            font-size: var(--text-small);
+            color: var(--gray-400);
+        }
+
+        /* Testimonial Card */
+        .win-card-testimonial {
+            background: linear-gradient(135deg, #FFF8FA 0%, var(--white-pure) 100%);
+            padding: var(--space-6);
+        }
+
+        .win-card-testimonial .testimonial-text {
+            font-size: var(--text-body);
+            color: var(--gray-700);
+            font-style: italic;
+            line-height: var(--leading-relaxed);
+            margin-bottom: var(--space-4);
+        }
+
+        .win-card-testimonial .testimonial-author {
+            font-size: var(--text-xs);
+            font-weight: 600;
+            color: var(--gray-600);
+        }
+
+        @media (min-width: 768px) {
+            .wins-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-6);
+            }
+
+            .win-card-large .win-card-images {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .wins-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* ============================================
+           SECTION 5: THE PROBLEM
+           ============================================ */
+        .problem {
+            background: var(--gradient-dark);
+            position: relative;
+            padding: var(--space-16) 0;
+            overflow: hidden;
+        }
+
+        .problem::before {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(123, 77, 255, 0.15) 0%, transparent 70%);
+            filter: blur(60px);
+            pointer-events: none;
+        }
+
+        .problem-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-10);
+            position: relative;
+            z-index: 2;
+        }
+
+        .problem-headline-wrapper {
+            max-width: 500px;
+        }
+
+        .problem-headline {
+            font-size: var(--text-h2);
+            font-weight: 700;
+            color: var(--white-pure);
+            margin-bottom: var(--space-4);
+            line-height: var(--leading-snug);
+        }
+
+        .problem-subhead {
+            font-size: var(--text-body-lg);
+            color: var(--gray-400);
+        }
+
+        .problem-list {
+            list-style: none;
+        }
+
+        .problem-list li {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            font-size: var(--text-body);
+            color: var(--gray-400);
+            margin-bottom: var(--space-4);
+            text-decoration: line-through;
+            text-decoration-color: var(--error-red);
+            text-decoration-thickness: 2px;
+        }
+
+        .problem-list .x-icon {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            color: var(--error-red);
+            opacity: 0.7;
+        }
+
+        @media (min-width: 768px) {
+            .problem-container {
+                grid-template-columns: 40% 60%;
+                gap: var(--space-12);
+                align-items: center;
+            }
+        }
+
+        /* ============================================
+           SECTION 6: THE MECHANISM / BIOLOGY APPROACH
+           ============================================ */
+        .mechanism {
+            background: var(--white-pure);
+            padding: var(--space-16) 0;
+        }
+
+        .mechanism-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto var(--space-12);
+        }
+
+        .mechanism-headline {
+            font-size: var(--text-h2);
+            font-weight: 700;
+            color: var(--black-rich);
+            margin-top: var(--space-4);
+            margin-bottom: var(--space-5);
+        }
+
+        .mechanism-subhead {
+            font-size: var(--text-body-lg);
+            color: var(--gray-500);
+            line-height: var(--leading-relaxed);
+        }
+
+        .mechanism-pillars {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-5);
+        }
+
+        .pillar-card {
+            background: var(--white-pure);
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-card);
+        }
+
+        .pillar-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto var(--space-4);
+            color: var(--violet-primary);
+        }
+
+        .pillar-title {
+            font-size: var(--text-body-lg);
+            font-weight: 600;
+            color: var(--black-rich);
+            margin-bottom: var(--space-3);
+        }
+
+        .pillar-description {
+            font-size: var(--text-small);
+            color: var(--gray-600);
+            line-height: var(--leading-relaxed);
+        }
+
+        @media (min-width: 768px) {
+            .mechanism-pillars {
+                grid-template-columns: repeat(3, 1fr);
+                gap: var(--space-6);
+            }
+        }
+
+        /* ============================================
+           SECTION 7: TESTIMONIAL DEEP DIVES
+           ============================================ */
+        .testimonials {
+            background: var(--white-off);
+            padding: var(--space-16) 0;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: var(--space-12);
+        }
+
+        .testimonial-block {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-8);
+            margin-bottom: var(--space-12);
+            position: relative;
+        }
+
+        .testimonial-image-wrapper {
+            position: relative;
+        }
+
+        .testimonial-image-placeholder {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, var(--gray-100) 0%, var(--white-off) 100%);
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-500);
+            font-size: var(--text-small);
+            border: 1px dashed var(--gray-300);
+        }
+
+        .testimonial-stat-badge {
+            position: absolute;
+            bottom: -12px;
+            right: 20px;
+            background: var(--gradient-violet);
+            color: var(--white-pure);
+            padding: var(--space-3) var(--space-5);
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: var(--text-body-lg);
+            box-shadow: var(--shadow-card);
+        }
+
+        .testimonial-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .testimonial-quote-wrapper {
+            position: relative;
+            margin-bottom: var(--space-5);
+        }
+
+        .testimonial-quote-mark {
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-size: 80px;
+            color: var(--violet-primary);
+            opacity: 0.15;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-pull-quote {
+            font-size: clamp(24px, 3vw, 28px);
+            font-weight: 700;
+            color: var(--violet-primary);
+            line-height: var(--leading-snug);
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-full-text {
+            font-size: var(--text-body);
+            color: var(--gray-700);
+            line-height: var(--leading-relaxed);
+            margin-bottom: var(--space-5);
+            max-width: 550px;
+        }
+
+        .testimonial-attribution {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+        }
+
+        .testimonial-thumbs {
+            display: flex;
+            gap: var(--space-2);
+        }
+
+        .testimonial-thumb {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gray-200);
+            border: 2px solid var(--white-pure);
+        }
+
+        .testimonial-name {
+            font-size: var(--text-xs);
+            font-weight: 600;
+            color: var(--black-rich);
+        }
+
+        .testimonial-timeframe {
+            font-size: var(--text-xs);
+            color: var(--gray-500);
+        }
+
+        @media (min-width: 768px) {
+            .testimonial-block {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-10);
+            }
+
+            .testimonial-block:nth-child(even) .testimonial-image-wrapper {
+                order: 2;
+            }
+
+            .testimonial-image-placeholder {
+                height: 100%;
+                min-height: 400px;
+            }
+        }
+
+        /* ============================================
+           SECTION 8: WHAT YOU GET / PROGRAM
+           ============================================ */
+        .program {
+            background: var(--white-pure);
+            padding: var(--space-16) 0;
+        }
+
+        .program-header {
+            text-align: center;
+            margin-bottom: var(--space-12);
+        }
+
+        .program-headline {
+            font-size: var(--text-h2);
+            font-weight: 700;
+            color: var(--black-rich);
+            margin-top: var(--space-4);
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-5);
+        }
+
+        .program-card {
+            background: var(--white-pure);
+            border-top: 3px solid var(--violet-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            box-shadow: var(--shadow-card);
+            transition: transform 0.2s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .program-card-icon {
+            width: 48px;
+            height: 48px;
+            color: var(--violet-primary);
+            margin-bottom: var(--space-4);
+        }
+
+        .program-card-title {
+            font-size: var(--text-body-lg);
+            font-weight: 600;
+            color: var(--black-rich);
+            margin-bottom: var(--space-3);
+        }
+
+        .program-card-description {
+            font-size: var(--text-small);
+            color: var(--gray-600);
+            line-height: var(--leading-relaxed);
+        }
+
+        @media (min-width: 768px) {
+            .program-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-6);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .program-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* ============================================
+           SECTION 9: BEFORE/AFTER GALLERY
+           ============================================ */
+        .gallery {
+            background: var(--white-off);
+            padding: var(--space-16) 0;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: var(--space-10);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-4);
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .gallery-item-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--gray-100) 0%, var(--white-off) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-500);
+            font-size: var(--text-xs);
+        }
+
+        .gallery-item-labels {
+            position: absolute;
+            bottom: var(--space-2);
+            left: var(--space-2);
+            right: var(--space-2);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .gallery-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: var(--tracking-wide);
+            text-transform: uppercase;
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--radius-sm);
+            background: rgba(0,0,0,0.6);
+            color: var(--white-pure);
+        }
+
+        .gallery-label.after {
+            background: var(--violet-primary);
+        }
+
+        @media (min-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* ============================================
+           SECTION 10: APPLICATION CTA
+           ============================================ */
+        .application-cta {
+            background: var(--gradient-dark);
+            position: relative;
+            padding: var(--space-16) 0;
+            overflow: hidden;
+        }
+
+        .application-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        .application-cta-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .application-cta-headline {
+            font-size: var(--text-h2);
+            font-weight: 700;
+            color: var(--white-pure);
+            margin-bottom: var(--space-8);
+        }
+
+        .qualification-lists {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-8);
+            margin-bottom: var(--space-10);
+            text-align: left;
+        }
+
+        .qualification-list h3 {
+            font-size: var(--text-body);
+            font-weight: 600;
+            color: var(--white-pure);
+            margin-bottom: var(--space-4);
+        }
+
+        .qualification-list ul {
+            list-style: none;
+        }
+
+        .qualification-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-3);
+            font-size: var(--text-small);
+            margin-bottom: var(--space-3);
+        }
+
+        .qualification-list.for-you li {
+            color: var(--white-pure);
+        }
+
+        .qualification-list.not-for-you li {
+            color: var(--gray-400);
+        }
+
+        .qualification-icon {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+        }
+
+        .qualification-icon.check {
+            color: var(--success-green);
+        }
+
+        .qualification-icon.x {
+            color: var(--error-red);
+            opacity: 0.7;
+        }
+
+        .application-cta .btn-primary {
+            min-width: 280px;
+            margin-bottom: var(--space-4);
+        }
+
+        .application-microcopy {
+            font-size: var(--text-xs);
+            color: var(--gray-500);
+        }
+
+        @media (min-width: 768px) {
+            .qualification-lists {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* ============================================
+           SECTION 11: FAQ
+           ============================================ */
+        .faq {
+            background: var(--white-off);
+            padding: var(--space-16) 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: var(--space-10);
+        }
+
+        .faq-headline {
+            font-size: var(--text-h2);
+            font-weight: 700;
+            color: var(--black-rich);
+            margin-top: var(--space-4);
+        }
+
+        .faq-list {
+            border-top: 1px solid var(--gray-100);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-5) 0;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-family: var(--font-body);
+            font-size: var(--text-body);
+            font-weight: 500;
+            color: var(--black-rich);
+            transition: color 0.2s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--violet-primary);
+        }
+
+        .faq-question[aria-expanded="true"] {
+            color: var(--violet-primary);
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            color: var(--violet-primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question[aria-expanded="true"] .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-answer-content {
+            padding-bottom: var(--space-5);
+            font-size: var(--text-body);
+            color: var(--gray-600);
+            line-height: var(--leading-relaxed);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        /* ============================================
+           SECTION 12: FINAL CTA & FOOTER
+           ============================================ */
+        .final-cta {
+            background: var(--gray-100);
+            padding: var(--space-12) 0;
+        }
+
+        .final-cta-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-8);
+            align-items: center;
+        }
+
+        .final-cta-testimonial {
+            position: relative;
+            padding-left: var(--space-5);
+        }
+
+        .final-cta-testimonial::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--violet-primary);
+            border-radius: var(--radius-full);
+        }
+
+        .final-cta-testimonial-text {
+            font-size: var(--text-body);
+            font-style: italic;
+            color: var(--gray-700);
+            margin-bottom: var(--space-3);
+        }
+
+        .final-cta-testimonial-author {
+            font-size: var(--text-xs);
+            font-weight: 600;
+            color: var(--gray-600);
+        }
+
+        .final-cta-content {
+            text-align: center;
+        }
+
+        .final-cta-headline {
+            font-size: var(--text-h3);
+            font-weight: 700;
+            color: var(--black-rich);
+            margin-bottom: var(--space-5);
+        }
+
+        @media (min-width: 768px) {
+            .final-cta-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .final-cta-content {
+                text-align: right;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            padding: var(--space-8) 0;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-5);
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-size: var(--text-body-lg);
+            font-weight: 700;
+            color: var(--white-pure);
+        }
+
+        .footer-brand span {
+            color: var(--violet-primary);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: var(--space-4);
+        }
+
+        .footer-social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gray-700);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white-pure);
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .footer-social-link:hover {
+            background: var(--violet-primary);
+            transform: translateY(-2px);
+        }
+
+        .footer-social-link svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: var(--space-6);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-link {
+            font-size: var(--text-xs);
+            color: var(--gray-400);
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--violet-primary);
+        }
+
+        .footer-copyright {
+            font-size: var(--text-xs);
+            color: var(--gray-500);
+        }
+
+        @media (min-width: 768px) {
+            .footer-container {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+
+            .footer-links {
+                order: 2;
+            }
+        }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Scroll animations - add via JS */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- ============================================
+         SECTION 1: HERO
+         ============================================ -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-eyebrow">
+                    <span>Limited Spots</span>
+                    <span class="divider"></span>
+                    <span>Private Access</span>
+                    <span class="divider"></span>
+                    <span>Application Only</span>
+                </div>
+                <h1 class="hero-headline">
+                    Health & aesthetics<br>Through <span class="highlight">real Biology</span>
+                </h1>
+                <p class="hero-subheadline">
+                    Transform your body, heal your hormones, and achieve lasting results through proper human diet protocols. No calorie counting. No endless cardio. Just real science.
+                </p>
+                <a href="#apply" class="btn btn-primary">Apply Now</a>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="hero-image-placeholder">
+                    [Hero Image: Duru Lifestyle Photo]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 2: CREDIBILITY BAR
+         ============================================ -->
+    <section class="credibility-bar">
+        <div class="container">
+            <div class="credibility-grid">
+                <div class="credibility-stat">
+                    <div class="credibility-number">378K+</div>
+                    <div class="credibility-label">TikTok Followers</div>
+                </div>
+                <div class="credibility-stat">
+                    <div class="credibility-number">21.7M+</div>
+                    <div class="credibility-label">Total Likes</div>
+                </div>
+                <div class="credibility-stat">
+                    <div class="credibility-number">97K+</div>
+                    <div class="credibility-label">Instagram Community</div>
+                </div>
+                <div class="credibility-stat">
+                    <div class="credibility-number">500+</div>
+                    <div class="credibility-label">Transformations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 3: QUALIFIER
+         ============================================ -->
+    <section class="qualifier">
+        <div class="qualifier-container">
+            <div class="qualifier-image-wrapper">
+                <div class="qualifier-image-placeholder">
+                    [Image: Duru approachable lifestyle shot]
+                </div>
+            </div>
+            <div class="qualifier-content">
+                <p class="eyebrow qualifier-eyebrow">Is This Perfect For You?</p>
+                <h2 class="qualifier-headline">This private coaching is for you if...</h2>
+                <ul class="qualifier-list">
+                    <li>
+                        <span class="check-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>You've tried every diet and nothing stuck long-term</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>You want to transform your body without obsessing over calories</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>You're ready to invest in real coaching, not another course</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>You want aesthetic results: lean face, clear skin, hair growth</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        <span>You believe food should be medicine, not punishment</span>
+                    </li>
+                </ul>
+                <p class="qualifier-script">If you nodded yes, keep reading...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 4: CLIENT WINS / TRANSFORMATIONS
+         ============================================ -->
+    <section class="client-wins">
+        <div class="container">
+            <header class="client-wins-header">
+                <p class="eyebrow">Real Results</p>
+                <h2 class="client-wins-headline">Client Transformations</h2>
+            </header>
+            <div class="wins-grid">
+                <!-- Large Feature Card 1 -->
+                <div class="win-card win-card-large">
+                    <span class="win-card-badge">Client WIN</span>
+                    <div class="win-card-images">
+                        <div class="win-card-image before">Before</div>
+                        <div class="win-card-image">After</div>
+                        <span class="win-card-image-label before-label">Before</span>
+                        <span class="win-card-image-label after-label">After</span>
+                    </div>
+                    <div class="win-card-content">
+                        <h3 class="win-card-result">30 POUNDS LOST</h3>
+                        <ul class="win-card-bullets">
+                            <li>Chest size grown</li>
+                            <li>Period regained (missing 3 years)</li>
+                            <li>Food noise completely gone</li>
+                            <li>Lean, sculpted face</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Stat Card -->
+                <div class="win-card win-card-stat">
+                    <div class="stat-number">-57 LBS</div>
+                    <p class="stat-text">Hair loss reversed. Clear skin. Food obsession gone.</p>
+                </div>
+
+                <!-- Testimonial Card -->
+                <div class="win-card win-card-testimonial">
+                    <p class="testimonial-text">"I got my period back after 3 years. My skin cleared up. I feel like myself again for the first time in years."</p>
+                    <p class="testimonial-author">— Client, 8 weeks in</p>
+                </div>
+
+                <!-- Standard Card 2 -->
+                <div class="win-card">
+                    <span class="win-card-badge">Client WIN</span>
+                    <div class="win-card-images">
+                        <div class="win-card-image before">Before</div>
+                        <div class="win-card-image">After</div>
+                        <span class="win-card-image-label before-label">Before</span>
+                        <span class="win-card-image-label after-label">After</span>
+                    </div>
+                    <div class="win-card-content">
+                        <h3 class="win-card-result">28 POUNDS LOST</h3>
+                        <ul class="win-card-bullets">
+                            <li>Period regained</li>
+                            <li>High energy all day</li>
+                            <li>Chronic bloat gone</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Standard Card 3 -->
+                <div class="win-card">
+                    <span class="win-card-badge">Client WIN</span>
+                    <div class="win-card-images">
+                        <div class="win-card-image before">Before</div>
+                        <div class="win-card-image">After</div>
+                        <span class="win-card-image-label before-label">Before</span>
+                        <span class="win-card-image-label after-label">After</span>
+                    </div>
+                    <div class="win-card-content">
+                        <h3 class="win-card-result">17.6 LBS IN 8 WEEKS</h3>
+                        <ul class="win-card-bullets">
+                            <li>Ovarian cysts gone</li>
+                            <li>Clear, glowing skin</li>
+                            <li>PCOS symptoms resolved</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Stat Card 2 -->
+                <div class="win-card win-card-stat">
+                    <div class="stat-number">-31 LBS</div>
+                    <p class="stat-text">Arms slimmed. Waist shrunk. No junk cravings.</p>
+                </div>
+
+                <!-- Standard Card 4 -->
+                <div class="win-card">
+                    <span class="win-card-badge">Client WIN</span>
+                    <div class="win-card-images">
+                        <div class="win-card-image before">Before</div>
+                        <div class="win-card-image">After</div>
+                        <span class="win-card-image-label before-label">Before</span>
+                        <span class="win-card-image-label after-label">After</span>
+                    </div>
+                    <div class="win-card-content">
+                        <h3 class="win-card-result">26.3 LBS IN 8 WEEKS</h3>
+                        <ul class="win-card-bullets">
+                            <li>Fatty liver reversed</li>
+                            <li>Clear skin</li>
+                            <li>Facial bloat gone</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Testimonial Card 2 -->
+                <div class="win-card win-card-testimonial">
+                    <p class="testimonial-text">"The food noise is GONE. I don't think about food constantly anymore. I eat when I'm hungry and stop when I'm full. This is freedom."</p>
+                    <p class="testimonial-author">— Client, 12 weeks in</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 5: THE PROBLEM
+         ============================================ -->
+    <section class="problem">
+        <div class="container">
+            <div class="problem-container">
+                <div class="problem-headline-wrapper">
+                    <h2 class="problem-headline">You've tried everything. Nothing worked.</h2>
+                    <p class="problem-subhead">It's not your fault. It's the approach.</p>
+                </div>
+                <ul class="problem-list">
+                    <li>
+                        <svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        Counting calories obsessively
+                    </li>
+                    <li>
+                        <svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        Hours of cardio that drain you
+                    </li>
+                    <li>
+                        <svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        Restrictive diets that kill your social life
+                    </li>
+                    <li>
+                        <svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        Supplements that promise everything
+                    </li>
+                    <li>
+                        <svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        Motivation that disappears by week 2
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 6: THE MECHANISM
+         ============================================ -->
+    <section class="mechanism">
+        <div class="container">
+            <header class="mechanism-header">
+                <p class="eyebrow">The Method</p>
+                <h2 class="mechanism-headline">Through <span class="text-violet">real Biology</span></h2>
+                <p class="mechanism-subhead">
+                    Your body isn't broken. It's been fed the wrong fuel. The Duru Diet works with your biology, not against it, using proper human diet protocols backed by real science.
+                </p>
+            </header>
+            <div class="mechanism-pillars">
+                <div class="pillar-card">
+                    <svg class="pillar-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="24" cy="24" r="20"></circle>
+                        <path d="M24 14v20M14 24h20"></path>
+                    </svg>
+                    <h3 class="pillar-title">Proper Human Diet</h3>
+                    <p class="pillar-description">
+                        Animal-based nutrition your body was designed for. No processed foods, no seed oils, no guessing.
+                    </p>
+                </div>
+                <div class="pillar-card">
+                    <svg class="pillar-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M24 4v40M4 24h40M12 12l24 24M36 12L12 36"></path>
+                    </svg>
+                    <h3 class="pillar-title">No Counting, No Restricting</h3>
+                    <p class="pillar-description">
+                        Eat until satisfied. Listen to your body. No calorie apps, no food scales, no anxiety.
+                    </p>
+                </div>
+                <div class="pillar-card">
+                    <svg class="pillar-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M8 24c0-8.837 7.163-16 16-16s16 7.163 16 16-7.163 16-16 16"></path>
+                        <path d="M24 16v8l6 6"></path>
+                    </svg>
+                    <h3 class="pillar-title">Real Results, Real Science</h3>
+                    <p class="pillar-description">
+                        Biology-based protocols that heal hormones, reduce inflammation, and transform your body from the inside out.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 7: TESTIMONIAL DEEP DIVES
+         ============================================ -->
+    <section class="testimonials">
+        <div class="container">
+            <header class="testimonials-header">
+                <p class="eyebrow">Success Stories</p>
+                <h2 class="headline-section">Real Women, Real Results</h2>
+            </header>
+
+            <!-- Testimonial 1 -->
+            <div class="testimonial-block">
+                <div class="testimonial-image-wrapper">
+                    <div class="testimonial-image-placeholder">[Before/After Image]</div>
+                    <span class="testimonial-stat-badge">-30 lbs</span>
+                </div>
+                <div class="testimonial-content">
+                    <div class="testimonial-quote-wrapper">
+                        <span class="testimonial-quote-mark">"</span>
+                        <p class="testimonial-pull-quote">I got my period back after 3 years of it being missing.</p>
+                    </div>
+                    <p class="testimonial-full-text">
+                        "I've tried every diet out there. Keto, vegan, intermittent fasting, calorie counting. Nothing worked long-term. Within 8 weeks with Duru, I lost 30 pounds, my period came back after being missing for 3 years, and the food noise in my head is completely gone. I finally feel free."
+                    </p>
+                    <div class="testimonial-attribution">
+                        <div class="testimonial-thumbs">
+                            <div class="testimonial-thumb"></div>
+                            <div class="testimonial-thumb"></div>
+                        </div>
+                        <div>
+                            <p class="testimonial-name">Anonymous Client</p>
+                            <p class="testimonial-timeframe">8 week transformation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-block">
+                <div class="testimonial-image-wrapper">
+                    <div class="testimonial-image-placeholder">[Before/After Image]</div>
+                    <span class="testimonial-stat-badge">-57 lbs</span>
+                </div>
+                <div class="testimonial-content">
+                    <div class="testimonial-quote-wrapper">
+                        <span class="testimonial-quote-mark">"</span>
+                        <p class="testimonial-pull-quote">My hair stopped falling out and my skin cleared up completely.</p>
+                    </div>
+                    <p class="testimonial-full-text">
+                        "I was losing hair, breaking out constantly, and couldn't lose weight no matter how little I ate. Duru showed me it wasn't about eating less—it was about eating right. 57 pounds down, my hair is growing back thick, and my skin is the clearest it's been since I was a teenager."
+                    </p>
+                    <div class="testimonial-attribution">
+                        <div class="testimonial-thumbs">
+                            <div class="testimonial-thumb"></div>
+                            <div class="testimonial-thumb"></div>
+                        </div>
+                        <div>
+                            <p class="testimonial-name">Anonymous Client</p>
+                            <p class="testimonial-timeframe">16 week transformation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 8: WHAT YOU GET
+         ============================================ -->
+    <section class="program">
+        <div class="container">
+            <header class="program-header">
+                <p class="eyebrow">What's Included</p>
+                <h2 class="program-headline">Your Complete Transformation</h2>
+            </header>
+            <div class="program-grid">
+                <div class="program-card">
+                    <svg class="program-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="24" cy="14" r="8"></circle>
+                        <path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16"></path>
+                    </svg>
+                    <h3 class="program-card-title">1-1 Private Coaching</h3>
+                    <p class="program-card-description">
+                        Direct access to Duru for personalized guidance, protocol adjustments, and accountability tailored to your unique biology.
+                    </p>
+                </div>
+                <div class="program-card">
+                    <svg class="program-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="6" y="10" width="36" height="28" rx="2"></rect>
+                        <path d="M6 18h36M14 10V6M34 10V6"></path>
+                    </svg>
+                    <h3 class="program-card-title">Custom Protocol</h3>
+                    <p class="program-card-description">
+                        A personalized proper human diet protocol designed specifically for your goals, lifestyle, and current health situation.
+                    </p>
+                </div>
+                <div class="program-card">
+                    <svg class="program-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M24 4v8M24 36v8M4 24h8M36 24h8M10 10l6 6M32 32l6 6M10 38l6-6M32 16l6-6"></path>
+                    </svg>
+                    <h3 class="program-card-title">Weekly Check-ins</h3>
+                    <p class="program-card-description">
+                        Regular progress reviews, troubleshooting, and protocol refinements to keep you on track toward your transformation.
+                    </p>
+                </div>
+                <div class="program-card">
+                    <svg class="program-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="16" cy="20" r="6"></circle>
+                        <circle cx="32" cy="20" r="6"></circle>
+                        <circle cx="24" cy="34" r="6"></circle>
+                        <path d="M20 24l4 6M28 24l-4 6"></path>
+                    </svg>
+                    <h3 class="program-card-title">Community Access</h3>
+                    <p class="program-card-description">
+                        Join the Sol Returned Skool community. Connect with other women on the same journey, share wins, and stay motivated.
+                    </p>
+                </div>
+                <div class="program-card">
+                    <svg class="program-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M8 12v24a4 4 0 004 4h24a4 4 0 004-4V12"></path>
+                        <path d="M16 8h16M12 20h24M12 28h16"></path>
+                    </svg>
+                    <h3 class="program-card-title">Voice & Video Support</h3>
+                    <p class="program-card-description">
+                        Get answers when you need them through voice notes and video calls. No waiting days for email responses.
+                    </p>
+                </div>
+                <div class="program-card">
+                    <svg class="program-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 8h24a4 4 0 014 4v24a4 4 0 01-4 4H12a4 4 0 01-4-4V12a4 4 0 014-4z"></path>
+                        <path d="M16 16h16M16 24h16M16 32h8"></path>
+                    </svg>
+                    <h3 class="program-card-title">Meal Planning</h3>
+                    <p class="program-card-description">
+                        Simple, practical meal plans that fit your life. No complicated recipes or hard-to-find ingredients.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 9: BEFORE/AFTER GALLERY
+         ============================================ -->
+    <section class="gallery">
+        <div class="container">
+            <header class="gallery-header">
+                <p class="eyebrow">Visual Proof</p>
+                <h2 class="headline-section">Transformation Gallery</h2>
+            </header>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">B/A 1</div>
+                    <div class="gallery-item-labels">
+                        <span class="gallery-label">Before</span>
+                        <span class="gallery-label after">After</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">B/A 2</div>
+                    <div class="gallery-item-labels">
+                        <span class="gallery-label">Before</span>
+                        <span class="gallery-label after">After</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">B/A 3</div>
+                    <div class="gallery-item-labels">
+                        <span class="gallery-label">Before</span>
+                        <span class="gallery-label after">After</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">B/A 4</div>
+                    <div class="gallery-item-labels">
+                        <span class="gallery-label">Before</span>
+                        <span class="gallery-label after">After</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">B/A 5</div>
+                    <div class="gallery-item-labels">
+                        <span class="gallery-label">Before</span>
+                        <span class="gallery-label after">After</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">B/A 6</div>
+                    <div class="gallery-item-labels">
+                        <span class="gallery-label">Before</span>
+                        <span class="gallery-label after">After</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">B/A 7</div>
+                    <div class="gallery-item-labels">
+                        <span class="gallery-label">Before</span>
+                        <span class="gallery-label after">After</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-placeholder">B/A 8</div>
+                    <div class="gallery-item-labels">
+                        <span class="gallery-label">Before</span>
+                        <span class="gallery-label after">After</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 10: APPLICATION CTA
+         ============================================ -->
+    <section class="application-cta" id="apply">
+        <div class="container">
+            <div class="application-cta-container">
+                <h2 class="application-cta-headline">This isn't for everyone.</h2>
+                <div class="qualification-lists">
+                    <div class="qualification-list for-you">
+                        <h3>This IS for you if:</h3>
+                        <ul>
+                            <li>
+                                <svg class="qualification-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                You're ready to commit to real, lasting change
+                            </li>
+                            <li>
+                                <svg class="qualification-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                You understand transformation takes time and consistency
+                            </li>
+                            <li>
+                                <svg class="qualification-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                You're willing to trust the protocol and follow guidance
+                            </li>
+                            <li>
+                                <svg class="qualification-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                You're ready to invest in yourself and your health
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="qualification-list not-for-you">
+                        <h3>This is NOT for you if:</h3>
+                        <ul>
+                            <li>
+                                <svg class="qualification-icon x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                                You're looking for a quick fix or magic pill
+                            </li>
+                            <li>
+                                <svg class="qualification-icon x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                                You're not ready to change your eating habits
+                            </li>
+                            <li>
+                                <svg class="qualification-icon x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                                You want results without putting in the work
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">Apply Now</a>
+                <p class="application-microcopy">Limited spots available. Serious applicants only.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 11: FAQ
+         ============================================ -->
+    <section class="faq">
+        <div class="container faq-container">
+            <header class="faq-header">
+                <p class="eyebrow">Questions?</p>
+                <h2 class="faq-headline">Frequently Asked</h2>
+            </header>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What is the proper human diet?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer-content">
+                            The proper human diet focuses on animal-based nutrition—the foods humans evolved eating for millions of years. This includes quality meats, organs, eggs, and animal fats. It eliminates processed foods, seed oils, and plant toxins that cause inflammation and hormonal disruption.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How is this different from other diets I've tried?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer-content">
+                            Most diets focus on restriction and willpower—they're designed to fail. This protocol works with your biology, healing your hormones and eliminating the food noise that makes dieting miserable. You'll eat until satisfied, never count calories, and actually enjoy your food while transforming your body.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How quickly will I see results?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer-content">
+                            Most clients notice significant changes within the first 2-4 weeks: reduced bloating, clearer skin, better sleep, and increased energy. Visible body composition changes typically appear within 6-8 weeks. Hormonal healing (like period return or PCOS symptom reduction) varies but often occurs within 8-12 weeks.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do I need to exercise?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer-content">
+                            Exercise is not required for fat loss on this protocol—your results come from nutrition. However, if you enjoy movement, we'll guide you on what supports your goals versus what may hinder them. No hours of cardio required.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What if I have dietary restrictions or health conditions?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer-content">
+                            Every protocol is customized to your unique situation. Whether you have PCOS, thyroid issues, autoimmune conditions, or food sensitivities, your plan will be tailored accordingly. This is why 1-1 coaching is so powerful—it's not a one-size-fits-all program.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How do I apply?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer-content">
+                            Click the "Apply Now" button to submit your application. You'll answer a few questions about your goals and current situation. If you're a good fit, you'll receive next steps via email. Spots are limited and applications are reviewed personally.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 12: FINAL CTA & FOOTER
+         ============================================ -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="final-cta-container">
+                <div class="final-cta-testimonial">
+                    <p class="final-cta-testimonial-text">
+                        "This program changed my life. I finally understand what it means to eat for my biology, not against it."
+                    </p>
+                    <p class="final-cta-testimonial-author">— Duru Diet Client</p>
+                </div>
+                <div class="final-cta-content">
+                    <h2 class="final-cta-headline">Ready to transform?</h2>
+                    <a href="#apply" class="btn btn-primary">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    The Duru <span>Diet</span>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.tiktok.com/@durubilimlierr" class="footer-social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/duru_bilimlier" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@DuruBilimlier" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://thedurudiet.com" class="footer-link" target="_blank" rel="noopener noreferrer">Website</a>
+                    <a href="https://www.skool.com/solreturned" class="footer-link" target="_blank" rel="noopener noreferrer">Community</a>
+                    <a href="#" class="footer-link">Privacy</a>
+                    <a href="#" class="footer-link">Terms</a>
+                </div>
+                <p class="footer-copyright">© 2025 The Duru Diet. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    button.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with scroll-reveal class
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
