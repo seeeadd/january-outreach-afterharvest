@@ -1,0 +1,2018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Experience | Duru Bilimlier Application</title>
+    <meta name="description" content="Stop collecting information. Start becoming visible. VIP is the container that makes finishing feel normal.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ================================================================
+           CREATIVE CONCEPT: "TWO WORLDS"
+
+           The page visually contrasts two realities:
+           - FREE WORLD: Muted, grey, isolated, uncertain
+           - VIP WORLD: Warm, golden, supported, clear
+
+           You don't just READ the difference - you FEEL it.
+
+           SIGNATURE MOMENTS:
+           1. Split Reality Hero - emotional contrast
+           2. Receipt vs Golden Ticket - instant visual story
+           3. Value Tower - values dwarf the price visually
+           ================================================================ */
+
+        :root {
+            /* VIP WORLD - Warm, Premium */
+            --vip-cream: #FAF7F2;
+            --vip-gold: #D4A574;
+            --vip-gold-glow: rgba(212, 165, 116, 0.3);
+            --vip-burgundy: #8B4F5C;
+            --vip-burgundy-hover: #6D3B47;
+            --vip-warm-bg: #F5EDE4;
+            --vip-rich-brown: #5C3D3D;
+
+            /* FREE WORLD - Muted, Cold */
+            --free-grey-bg: #E8E6E3;
+            --free-grey-text: #8A8580;
+            --free-muted: #B5B0A8;
+            --free-cold-bg: #F0EEEB;
+
+            /* Shared */
+            --text-primary: #2A2422;
+            --text-body: #4A4340;
+            --text-secondary: #7A706A;
+            --text-muted: #9A918B;
+            --text-on-dark: #FAF8F6;
+            --teal-accent: #1D6B6B;
+
+            /* Shadows */
+            --shadow-soft:
+                0 4px 6px rgba(42, 36, 34, 0.03),
+                0 12px 24px rgba(42, 36, 34, 0.06);
+            --shadow-elevated:
+                0 8px 16px rgba(42, 36, 34, 0.08),
+                0 24px 48px rgba(42, 36, 34, 0.1);
+            --shadow-golden:
+                0 8px 32px rgba(212, 165, 116, 0.25),
+                0 16px 48px rgba(139, 79, 92, 0.15);
+            --shadow-button:
+                0 4px 12px rgba(139, 79, 92, 0.2),
+                0 8px 24px rgba(139, 79, 92, 0.15);
+
+            /* Layout */
+            --container-max: 1200px;
+            --section-padding: 120px;
+        }
+
+        /* ================================================================
+           RESET & BASE
+           ================================================================ */
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--vip-cream);
+            color: var(--text-body);
+            font-size: 18px;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ================================================================
+           TEXTURE OVERLAYS - Adding Warmth & Soul
+
+           FLAIR: Paper grain adds warmth to sterile digital backgrounds
+           ================================================================ */
+
+        .texture-grain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ================================================================
+           HAND-DRAWN SVG ELEMENTS - Adding Human Touch
+
+           FLAIR: Hand-drawn arrows and underlines feel personal,
+           not templated. They guide the eye naturally.
+           ================================================================ */
+
+        .hand-drawn-underline {
+            position: relative;
+            display: inline;
+        }
+
+        .hand-drawn-underline::after {
+            content: '';
+            position: absolute;
+            left: -4px;
+            right: -4px;
+            bottom: -2px;
+            height: 12px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12'%3E%3Cpath d='M2 8 Q50 2, 100 8 T198 6' stroke='%23D4A574' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center;
+            background-size: 100% 100%;
+            z-index: -1;
+        }
+
+        .hand-drawn-circle {
+            position: relative;
+        }
+
+        .hand-drawn-circle::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -12px;
+            right: -12px;
+            bottom: -8px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 50'%3E%3Cellipse cx='60' cy='25' rx='55' ry='20' stroke='%23D4A574' stroke-width='2' fill='none' stroke-dasharray='4 3'/%3E%3C/svg%3E") no-repeat center;
+            background-size: 100% 100%;
+            z-index: -1;
+        }
+
+        /* ================================================================
+           TYPOGRAPHY
+           ================================================================ */
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.15;
+            color: var(--text-primary);
+        }
+
+        .script-elegant {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* ================================================================
+           BUTTONS
+           ================================================================ */
+
+        .btn-vip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--vip-burgundy) 0%, #A65D6B 100%);
+            color: var(--text-on-dark);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 20px 48px;
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-button);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-vip::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn-vip:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow:
+                0 8px 20px rgba(139, 79, 92, 0.3),
+                0 16px 40px rgba(139, 79, 92, 0.2);
+        }
+
+        .btn-vip:hover::before {
+            left: 100%;
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            color: var(--text-muted);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .btn-ghost:hover {
+            color: var(--text-secondary);
+        }
+
+        /* ================================================================
+           SECTION 1: URGENCY BAR
+
+           CREATIVE: Styled as a "journey progress" not just a warning bar
+           ================================================================ */
+
+        .journey-bar {
+            background: linear-gradient(90deg, var(--vip-warm-bg) 0%, var(--vip-cream) 100%);
+            border-bottom: 1px solid rgba(212, 165, 116, 0.3);
+            padding: 16px 24px;
+            position: relative;
+        }
+
+        .journey-bar-inner {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+        }
+
+        .journey-step {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .journey-step.completed {
+            color: var(--teal-accent);
+        }
+
+        .journey-step.current {
+            color: var(--vip-burgundy);
+        }
+
+        .journey-step.upcoming {
+            color: var(--text-muted);
+        }
+
+        .journey-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .journey-dot.completed {
+            background: var(--teal-accent);
+        }
+
+        .journey-dot.current {
+            background: var(--vip-burgundy);
+            box-shadow: 0 0 0 4px rgba(139, 79, 92, 0.2);
+        }
+
+        .journey-dot.upcoming {
+            background: var(--free-muted);
+        }
+
+        .journey-line {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--teal-accent), var(--vip-burgundy));
+        }
+
+        .journey-line.pending {
+            background: var(--free-muted);
+        }
+
+        /* ================================================================
+           SECTION 2: HERO - SPLIT REALITY
+
+           SIGNATURE MOMENT #1: The hero shows emotional contrast
+           between staying stuck (grey/alone) vs becoming visible (warm/supported)
+
+           CREATIVE: Instead of just centered text, we use visual metaphor
+           ================================================================ */
+
+        .hero-split {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Atmospheric organic shapes */
+        .hero-blob-1 {
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 0;
+        }
+
+        .hero-blob-2 {
+            position: absolute;
+            bottom: 10%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139, 79, 92, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+        }
+
+        .hero-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 48px;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--vip-burgundy) 0%, #A65D6B 100%);
+            color: var(--text-on-dark);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 10px 20px;
+            border-radius: 100px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-button);
+        }
+
+        .hero-badge svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .hero-headline {
+            font-size: 64px;
+            max-width: 900px;
+            margin-bottom: 32px;
+            line-height: 1.1;
+        }
+
+        .hero-headline-accent {
+            display: block;
+            color: var(--vip-burgundy);
+            position: relative;
+        }
+
+        /* FLAIR: Animated underline on hero accent */
+        .hero-headline-accent::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -4px;
+            width: 80%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--vip-gold), transparent);
+            border-radius: 2px;
+        }
+
+        .hero-subhead {
+            font-size: 20px;
+            color: var(--text-body);
+            max-width: 680px;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .hero-body {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 640px;
+            margin-bottom: 48px;
+        }
+
+        /* CREATIVE: Benefits as floating "pills" with icons */
+        .hero-benefits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 56px;
+            max-width: 800px;
+        }
+
+        .benefit-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 14px 24px;
+            border-radius: 100px;
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            box-shadow: 0 2px 12px rgba(42, 36, 34, 0.04);
+            font-size: 15px;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-pill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212, 165, 116, 0.15);
+            border-color: var(--vip-gold);
+        }
+
+        .benefit-pill svg {
+            width: 18px;
+            height: 18px;
+            color: var(--teal-accent);
+        }
+
+        .hero-ctas {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .hero-microcopy {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Video section with editorial frame */
+        .hero-video-section {
+            background: var(--vip-warm-bg);
+            padding: 80px 48px;
+            position: relative;
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* FLAIR: Video frame with torn paper edge effect */
+        .video-frame {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-elevated);
+            position: relative;
+        }
+
+        .video-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--vip-burgundy), var(--vip-gold), var(--vip-burgundy));
+        }
+
+        .video-placeholder {
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--vip-cream) 0%, var(--vip-warm-bg) 100%);
+            position: relative;
+        }
+
+        .video-play-btn {
+            width: 100px;
+            height: 100px;
+            background: var(--vip-burgundy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow-golden);
+        }
+
+        .video-play-btn:hover {
+            transform: scale(1.1);
+            background: var(--vip-burgundy-hover);
+        }
+
+        .video-play-btn svg {
+            width: 36px;
+            height: 36px;
+            color: white;
+            margin-left: 4px;
+        }
+
+        /* ================================================================
+           SECTION 3: COMPARISON - RECEIPT VS GOLDEN TICKET
+
+           SIGNATURE MOMENT #2: FREE styled as a faded receipt,
+           VIP styled as a luxurious golden ticket/invitation
+
+           CREATIVE: Not two equal cards - dramatic scale & treatment difference
+           ================================================================ */
+
+        .comparison-section {
+            padding: var(--section-padding) 48px;
+            background: linear-gradient(180deg, var(--vip-cream) 0%, white 50%, var(--vip-cream) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comparison-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 80px;
+        }
+
+        .comparison-eyebrow {
+            color: var(--vip-burgundy);
+            margin-bottom: 16px;
+        }
+
+        .comparison-headline {
+            font-size: 52px;
+            margin-bottom: 20px;
+        }
+
+        .comparison-subhead {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-style: italic;
+            font-size: 24px;
+            color: var(--vip-rich-brown);
+            margin-bottom: 16px;
+        }
+
+        .comparison-body {
+            font-size: 18px;
+            color: var(--text-secondary);
+        }
+
+        /* CREATIVE: The comparison grid uses dramatic scale contrast */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        /* FREE: Styled as a small, faded receipt */
+        .receipt-card {
+            background: var(--free-grey-bg);
+            border-radius: 4px;
+            padding: 24px 20px;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transform: rotate(-2deg);
+            opacity: 0.85;
+        }
+
+        /* Receipt torn edge effect */
+        .receipt-card::before {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 16px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 16'%3E%3Cpath d='M0 0 L5 8 L10 0 L15 8 L20 0 L25 8 L30 0 L35 8 L40 0 L45 8 L50 0 L55 8 L60 0 L65 8 L70 0 L75 8 L80 0 L85 8 L90 0 L95 8 L100 0 L100 16 L0 16 Z' fill='%23E8E6E3'/%3E%3C/svg%3E") repeat-x;
+        }
+
+        .receipt-header {
+            text-align: center;
+            padding-bottom: 16px;
+            border-bottom: 1px dashed var(--free-muted);
+            margin-bottom: 16px;
+        }
+
+        .receipt-title {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--free-grey-text);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .receipt-price {
+            font-family: 'Courier New', monospace;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--free-grey-text);
+            margin-top: 8px;
+        }
+
+        .receipt-items {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .receipt-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: var(--free-grey-text);
+            line-height: 1.4;
+        }
+
+        .receipt-item-icon {
+            color: var(--free-muted);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .receipt-item.included .receipt-item-icon {
+            color: var(--teal-accent);
+        }
+
+        .receipt-item.excluded {
+            opacity: 0.5;
+            text-decoration: line-through;
+        }
+
+        .receipt-footer {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px dashed var(--free-muted);
+            text-align: center;
+        }
+
+        .receipt-decline {
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            color: var(--free-muted);
+            text-decoration: underline;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* VIP: Styled as a luxurious golden ticket/invitation */
+        .golden-ticket {
+            background: linear-gradient(135deg, #FDF9F3 0%, #FAF5EB 50%, #F5EDE0 100%);
+            border-radius: 24px;
+            padding: 48px;
+            position: relative;
+            box-shadow: var(--shadow-golden);
+            border: 2px solid var(--vip-gold);
+            overflow: hidden;
+        }
+
+        /* Golden shimmer effect */
+        .golden-ticket::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(212, 165, 116, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 165, 116, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Decorative corner flourishes */
+        .golden-ticket::after {
+            content: '';
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 60px;
+            height: 60px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath d='M60 0 L60 20 Q60 10, 50 10 L30 10 Q20 10, 20 0' stroke='%23D4A574' stroke-width='1' fill='none' opacity='0.5'/%3E%3C/svg%3E") no-repeat;
+        }
+
+        .ticket-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--teal-accent) 0%, #2A8A8A 100%);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 10px 20px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ticket-header {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 32px;
+        }
+
+        .ticket-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .ticket-price {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--vip-burgundy);
+            line-height: 1;
+        }
+
+        .ticket-price-note {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        .ticket-features {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 32px;
+        }
+
+        .ticket-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 16px;
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        .ticket-feature-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--teal-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .ticket-feature-icon svg {
+            width: 12px;
+            height: 12px;
+            color: white;
+        }
+
+        .ticket-feature strong {
+            color: var(--vip-burgundy);
+            font-weight: 600;
+        }
+
+        .ticket-cta {
+            position: relative;
+            z-index: 1;
+        }
+
+        .ticket-cta .btn-vip {
+            width: 100%;
+        }
+
+        /* Decorative divider between receipt and ticket */
+        .comparison-divider {
+            display: none;
+        }
+
+        .comparison-cta {
+            text-align: center;
+            margin-top: 64px;
+        }
+
+        /* ================================================================
+           SECTION 4: VALUE STACK - MAGAZINE SPREAD STYLE
+
+           CREATIVE: Each component gets a full-width dramatic treatment
+           with alternating asymmetric layouts. Like flipping through
+           a high-end magazine.
+           ================================================================ */
+
+        .value-stack-section {
+            padding: 0;
+            background: var(--vip-warm-bg);
+            position: relative;
+        }
+
+        .value-stack-header {
+            text-align: center;
+            padding: var(--section-padding) 48px 80px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .value-stack-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--vip-burgundy);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 10px 20px;
+            border-radius: 100px;
+            margin-bottom: 32px;
+        }
+
+        .value-stack-headline {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .value-stack-subhead {
+            font-size: 18px;
+            color: var(--text-secondary);
+        }
+
+        /* Magazine-style alternating layouts */
+        .value-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .value-item:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .value-item-content {
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: white;
+        }
+
+        .value-item-visual {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Different background colors for visual interest */
+        .value-item:nth-child(1) .value-item-visual { background: linear-gradient(135deg, #E8DDD4 0%, #F0E6DD 100%); }
+        .value-item:nth-child(2) .value-item-visual { background: linear-gradient(135deg, #DDE5E5 0%, #E8F0F0 100%); }
+        .value-item:nth-child(3) .value-item-visual { background: linear-gradient(135deg, #E5DDE5 0%, #F0E8F0 100%); }
+        .value-item:nth-child(4) .value-item-visual { background: linear-gradient(135deg, #E5E0D5 0%, #F0EBE0 100%); }
+        .value-item:nth-child(5) .value-item-visual { background: linear-gradient(135deg, #D5E0E5 0%, #E0EBF0 100%); }
+        .value-item:nth-child(6) .value-item-visual { background: linear-gradient(135deg, #E5D5D8 0%, #F0E0E3 100%); }
+
+        .value-number {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 180px;
+            font-weight: 700;
+            color: rgba(139, 79, 92, 0.08);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            line-height: 1;
+        }
+
+        .value-mockup {
+            width: 280px;
+            height: 200px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow-elevated);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .value-mockup-text {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .value-item-number {
+            width: 48px;
+            height: 48px;
+            background: var(--teal-accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .value-item-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--teal-accent);
+            margin-bottom: 12px;
+        }
+
+        .value-item-outcome {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--vip-burgundy);
+            margin-bottom: 16px;
+        }
+
+        .value-item-description {
+            font-size: 17px;
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        /* Value stack CTA */
+        .value-stack-cta {
+            text-align: center;
+            padding: 80px 48px var(--section-padding);
+            background: white;
+        }
+
+        .value-stack-cta .btn-vip {
+            margin-bottom: 20px;
+        }
+
+        .value-stack-cta-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto 16px;
+        }
+
+        /* ================================================================
+           SECTION 5: PRICE REVEAL - VALUE TOWER
+
+           SIGNATURE MOMENT #3: Values stack up like a tower,
+           visually dwarfing the price. Shows investment vs return.
+           ================================================================ */
+
+        .price-reveal-section {
+            padding: var(--section-padding) 48px;
+            background: var(--vip-rich-brown);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-reveal-section .texture-grain {
+            opacity: 0.05;
+        }
+
+        /* Decorative background elements */
+        .price-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+        }
+
+        .price-blob-1 {
+            top: -20%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(212, 165, 116, 0.15);
+        }
+
+        .price-blob-2 {
+            bottom: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(139, 79, 92, 0.1);
+        }
+
+        .price-reveal-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .price-reveal-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .price-reveal-eyebrow {
+            color: var(--vip-gold);
+            margin-bottom: 16px;
+        }
+
+        .price-reveal-headline {
+            font-size: 48px;
+            color: var(--text-on-dark);
+            margin-bottom: 16px;
+        }
+
+        .price-reveal-subhead {
+            font-size: 18px;
+            color: rgba(250, 248, 246, 0.7);
+        }
+
+        /* Value tower visualization */
+        .value-tower {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 48px;
+        }
+
+        .value-tower-item {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            border-radius: 12px;
+            padding: 20px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .value-tower-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--vip-gold);
+            transform: translateX(8px);
+        }
+
+        .value-tower-item-name {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: var(--text-on-dark);
+            font-size: 16px;
+        }
+
+        .value-tower-item-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--teal-accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .value-tower-item-icon svg {
+            width: 16px;
+            height: 16px;
+            color: white;
+        }
+
+        .value-tower-item-value {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--vip-gold);
+        }
+
+        /* Total value display */
+        .value-total {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 28px;
+            background: rgba(212, 165, 116, 0.15);
+            border: 2px solid var(--vip-gold);
+            border-radius: 12px;
+            margin-bottom: 32px;
+        }
+
+        .value-total-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-on-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .value-total-amount {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--vip-gold);
+        }
+
+        /* Price card at bottom of tower */
+        .price-card-final {
+            background: white;
+            border-radius: 24px;
+            padding: 48px;
+            text-align: center;
+            box-shadow: var(--shadow-golden);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-card-final::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--vip-burgundy), var(--vip-gold), var(--vip-burgundy));
+        }
+
+        .price-card-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--teal-accent);
+            margin-bottom: 16px;
+        }
+
+        .price-card-label svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .price-card-amount {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 80px;
+            font-weight: 700;
+            color: var(--vip-burgundy);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .price-card-savings {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .price-card-savings strong {
+            color: var(--teal-accent);
+        }
+
+        .price-card-cta {
+            margin-bottom: 20px;
+        }
+
+        .price-card-cta .btn-vip {
+            min-width: 280px;
+        }
+
+        .price-card-microcopy {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* ================================================================
+           SECTION 6: FINAL CTA - FULL BLEED IMMERSIVE
+           ================================================================ */
+
+        .final-cta-section {
+            padding: var(--section-padding) 48px;
+            background: linear-gradient(135deg, var(--vip-cream) 0%, var(--vip-warm-bg) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta-blob {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 60%);
+            border-radius: 50%;
+        }
+
+        .final-cta-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .final-cta-eyebrow {
+            color: var(--vip-burgundy);
+            margin-bottom: 20px;
+        }
+
+        .final-cta-headline {
+            font-size: 48px;
+            margin-bottom: 24px;
+        }
+
+        .final-cta-body {
+            font-size: 18px;
+            color: var(--text-body);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        /* ================================================================
+           RESPONSIVE STYLES
+           ================================================================ */
+
+        @media (max-width: 1024px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                max-width: 500px;
+            }
+
+            .receipt-card {
+                transform: none;
+                order: 1;
+            }
+
+            .golden-ticket {
+                order: 0;
+            }
+
+            .value-item {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .value-item:nth-child(even) {
+                direction: ltr;
+            }
+
+            .value-item-visual {
+                min-height: 300px;
+            }
+
+            .value-item-content {
+                padding: 48px 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 80px;
+            }
+
+            .hero-headline {
+                font-size: 40px;
+            }
+
+            .hero-content {
+                padding: 48px 24px;
+            }
+
+            .hero-video-section {
+                padding: 48px 24px;
+            }
+
+            .hero-benefits {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .benefit-pill {
+                width: 100%;
+                max-width: 360px;
+            }
+
+            .comparison-section {
+                padding: 80px 24px;
+            }
+
+            .comparison-headline {
+                font-size: 36px;
+            }
+
+            .golden-ticket {
+                padding: 32px 24px;
+            }
+
+            .ticket-title {
+                font-size: 24px;
+            }
+
+            .ticket-price {
+                font-size: 44px;
+            }
+
+            .value-stack-header {
+                padding: 80px 24px 48px;
+            }
+
+            .value-stack-headline {
+                font-size: 36px;
+            }
+
+            .value-item-content {
+                padding: 40px 24px;
+            }
+
+            .value-item-title {
+                font-size: 26px;
+            }
+
+            .value-number {
+                font-size: 120px;
+            }
+
+            .price-reveal-section {
+                padding: 80px 24px;
+            }
+
+            .price-reveal-headline {
+                font-size: 36px;
+            }
+
+            .price-card-amount {
+                font-size: 56px;
+            }
+
+            .final-cta-section {
+                padding: 80px 24px;
+            }
+
+            .final-cta-headline {
+                font-size: 36px;
+            }
+
+            .journey-bar-inner {
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+
+            .journey-line {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-headline {
+                font-size: 32px;
+            }
+
+            .hero-badge {
+                font-size: 10px;
+                padding: 8px 16px;
+            }
+
+            .btn-vip {
+                padding: 16px 32px;
+                font-size: 15px;
+                width: 100%;
+            }
+
+            .comparison-headline {
+                font-size: 30px;
+            }
+
+            .comparison-subhead {
+                font-size: 20px;
+            }
+
+            .receipt-card {
+                padding: 20px 16px;
+            }
+
+            .ticket-price {
+                font-size: 36px;
+            }
+
+            .value-stack-headline {
+                font-size: 30px;
+            }
+
+            .value-item-title {
+                font-size: 24px;
+            }
+
+            .price-reveal-headline {
+                font-size: 30px;
+            }
+
+            .price-card-final {
+                padding: 32px 20px;
+            }
+
+            .price-card-amount {
+                font-size: 48px;
+            }
+
+            .value-total-amount {
+                font-size: 24px;
+            }
+
+            .final-cta-headline {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ================================================================
+         SECTION 1: JOURNEY BAR
+
+         CREATIVE: Styled as a "journey progress" showing where they are
+         in their decision, not just an urgency warning
+         ================================================================ -->
+    <div class="journey-bar">
+        <div class="journey-bar-inner">
+            <div class="journey-step completed">
+                <span class="journey-dot completed"></span>
+                <span>Registered</span>
+            </div>
+            <span class="journey-line"></span>
+            <div class="journey-step current">
+                <span class="journey-dot current"></span>
+                <span>Choose Experience</span>
+            </div>
+            <span class="journey-line pending"></span>
+            <div class="journey-step upcoming">
+                <span class="journey-dot upcoming"></span>
+                <span>Start Day 1</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================================
+         SECTION 2: HERO - SPLIT REALITY
+
+         SIGNATURE MOMENT #1: Hero creates emotional resonance
+         about the contrast between staying stuck vs becoming visible
+         ================================================================ -->
+    <section class="hero-split">
+        <div class="texture-grain"></div>
+        <div class="hero-blob-1"></div>
+        <div class="hero-blob-2"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4L2 9.4h7.6z"/>
+                </svg>
+                VIP EXPERIENCE
+            </div>
+
+            <h1 class="hero-headline">
+                VIP is how you stop collecting information
+                <span class="hero-headline-accent">and start becoming visible.</span>
+            </h1>
+
+            <p class="hero-subhead">
+                If you know you tend to fall off, overthink, or get overwhelmed, VIP keeps you steady. Calm system. Clear steps. Real support.
+            </p>
+
+            <p class="hero-body">
+                You do not need more motivation. You need a container that makes finishing feel normal. VIP is for the women who are done with forcing "masculine" hustle, but still want real results. We build the garden. The right people start noticing you.
+            </p>
+
+            <!-- CREATIVE: Benefits as floating pills instead of boring bullets -->
+            <div class="hero-benefits">
+                <div class="benefit-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M8 12l2 2 4-4"/>
+                    </svg>
+                    <span>Faster clarity when you get stuck</span>
+                </div>
+                <div class="benefit-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M8 12l2 2 4-4"/>
+                    </svg>
+                    <span>Support so you do not spiral alone</span>
+                </div>
+                <div class="benefit-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M8 12l2 2 4-4"/>
+                    </svg>
+                    <span>Tools so you do not start from scratch every day</span>
+                </div>
+                <div class="benefit-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M8 12l2 2 4-4"/>
+                    </svg>
+                    <span>A pace you can actually keep</span>
+                </div>
+            </div>
+
+            <div class="hero-ctas">
+                <a href="#upgrade" class="btn-vip">Upgrade to VIP</a>
+                <button class="btn-ghost">No thanks, keep my free seat</button>
+            </div>
+
+            <p class="hero-microcopy">
+                VIP closes when Day 1 starts. If you are a finisher, you will be glad you did this now.
+            </p>
+        </div>
+
+        <!-- Video Section -->
+        <div class="hero-video-section">
+            <div class="video-container">
+                <div class="video-frame">
+                    <div class="video-placeholder">
+                        <div class="video-play-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 3: COMPARISON - RECEIPT VS GOLDEN TICKET
+
+         SIGNATURE MOMENT #2: FREE styled as a small faded receipt,
+         VIP styled as a luxurious golden ticket. Instant visual hierarchy
+         through scale and treatment, not just color.
+         ================================================================ -->
+    <section class="comparison-section">
+        <div class="texture-grain"></div>
+
+        <div class="comparison-header">
+            <p class="eyebrow comparison-eyebrow">CHOOSE YOUR PATH</p>
+            <h2 class="comparison-headline">Choose your experience.</h2>
+            <p class="comparison-subhead script-elegant">Free is access. VIP is completion.</p>
+            <p class="comparison-body">
+                Free is great if you already know you will show up, take notes, and implement. VIP is for everyone else who wants support, speed, and certainty.
+            </p>
+        </div>
+
+        <div class="comparison-grid">
+            <!-- FREE: Styled as a small receipt -->
+            <div class="receipt-card">
+                <div class="receipt-header">
+                    <p class="receipt-title">Free Ticket</p>
+                    <p class="receipt-price">$0</p>
+                </div>
+                <div class="receipt-items">
+                    <div class="receipt-item included">
+                        <span class="receipt-item-icon">✓</span>
+                        <span>Live sessions</span>
+                    </div>
+                    <div class="receipt-item included">
+                        <span class="receipt-item-icon">✓</span>
+                        <span>Workbook</span>
+                    </div>
+                    <div class="receipt-item excluded">
+                        <span class="receipt-item-icon">✗</span>
+                        <span>Recordings (limited)</span>
+                    </div>
+                    <div class="receipt-item excluded">
+                        <span class="receipt-item-icon">✗</span>
+                        <span>Templates/tools</span>
+                    </div>
+                    <div class="receipt-item excluded">
+                        <span class="receipt-item-icon">✗</span>
+                        <span>Support/Q&A</span>
+                    </div>
+                    <div class="receipt-item excluded">
+                        <span class="receipt-item-icon">○</span>
+                        <span>Basic reminders</span>
+                    </div>
+                    <div class="receipt-item excluded">
+                        <span class="receipt-item-icon">✗</span>
+                        <span>Implementation help</span>
+                    </div>
+                </div>
+                <div class="receipt-footer">
+                    <button class="receipt-decline">Keep free ticket</button>
+                </div>
+            </div>
+
+            <!-- VIP: Styled as a golden ticket -->
+            <div class="golden-ticket">
+                <span class="ticket-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4L2 9.4h7.6z"/>
+                    </svg>
+                    COMPLETE VIP EXPERIENCE
+                </span>
+
+                <div class="ticket-header">
+                    <h3 class="ticket-title">Complete VIP Experience</h3>
+                    <p class="ticket-price">[VIP_PRICE]</p>
+                    <p class="ticket-price-note">Small price. Big difference in follow-through.</p>
+                </div>
+
+                <div class="ticket-features">
+                    <div class="ticket-feature">
+                        <span class="ticket-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M5 12l5 5L20 7"/>
+                            </svg>
+                        </span>
+                        <span>Live sessions + Workbook</span>
+                    </div>
+                    <div class="ticket-feature">
+                        <span class="ticket-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M5 12l5 5L20 7"/>
+                            </svg>
+                        </span>
+                        <span><strong>Recordings</strong> (organized, easy to find)</span>
+                    </div>
+                    <div class="ticket-feature">
+                        <span class="ticket-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M5 12l5 5L20 7"/>
+                            </svg>
+                        </span>
+                        <span><strong>Templates/tools</strong> (so you do not start from zero)</span>
+                    </div>
+                    <div class="ticket-feature">
+                        <span class="ticket-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M5 12l5 5L20 7"/>
+                            </svg>
+                        </span>
+                        <span><strong>Support/Q&A</strong> (ask questions, get unstuck)</span>
+                    </div>
+                    <div class="ticket-feature">
+                        <span class="ticket-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M5 12l5 5L20 7"/>
+                            </svg>
+                        </span>
+                        <span><strong>Accountability reminders</strong> (finish what you start)</span>
+                    </div>
+                    <div class="ticket-feature">
+                        <span class="ticket-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M5 12l5 5L20 7"/>
+                            </svg>
+                        </span>
+                        <span><strong>Implementation help</strong> (turn ideas into posts, offers, actions)</span>
+                    </div>
+                </div>
+
+                <div class="ticket-cta">
+                    <a href="#upgrade" class="btn-vip">Yes, I want the VIP Experience</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="comparison-cta">
+            <a href="#upgrade" class="btn-vip">Upgrade to VIP</a>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 4: VALUE STACK - MAGAZINE SPREAD STYLE
+
+         CREATIVE: Each component gets a full-width dramatic treatment
+         with alternating asymmetric layouts. Forces engagement.
+         ================================================================ -->
+    <section class="value-stack-section">
+        <div class="value-stack-header">
+            <span class="value-stack-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                    <path d="M12 2v20M2 12h20"/>
+                </svg>
+                VIP ACCESS UNLOCKED
+            </span>
+            <h2 class="value-stack-headline">Everything you get inside VIP.</h2>
+            <p class="value-stack-subhead">Built for follow-through. Not for information hoarding.</p>
+        </div>
+
+        <!-- Item 1 -->
+        <div class="value-item">
+            <div class="value-item-content">
+                <div class="value-item-number">1</div>
+                <h3 class="value-item-title">VIP Implementation Pack</h3>
+                <p class="value-item-outcome">You do not start from scratch.</p>
+                <p class="value-item-description">
+                    Templates for the key exercises, fill-in prompts for clarity and positioning, simple checklist per day
+                </p>
+            </div>
+            <div class="value-item-visual">
+                <span class="value-number">1</span>
+                <div class="value-mockup">
+                    <span class="value-mockup-text">[INSERT MOCKUP]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="value-item">
+            <div class="value-item-content">
+                <div class="value-item-number">2</div>
+                <h3 class="value-item-title">VIP Office Hours (Live Q&A)</h3>
+                <p class="value-item-outcome">You get unstuck fast.</p>
+                <p class="value-item-description">
+                    Ask your question live, get a clear next step, save hours of spiraling
+                </p>
+            </div>
+            <div class="value-item-visual">
+                <span class="value-number">2</span>
+                <div class="value-mockup">
+                    <span class="value-mockup-text">[INSERT MOCKUP]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="value-item">
+            <div class="value-item-content">
+                <div class="value-item-number">3</div>
+                <h3 class="value-item-title">Recording Vault (Organized)</h3>
+                <p class="value-item-outcome">You can catch up without stress.</p>
+                <p class="value-item-description">
+                    Replays in one place, time-stamped highlights, "if you're behind, watch this" guide
+                </p>
+            </div>
+            <div class="value-item-visual">
+                <span class="value-number">3</span>
+                <div class="value-mockup">
+                    <span class="value-mockup-text">[INSERT MOCKUP]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="value-item">
+            <div class="value-item-content">
+                <div class="value-item-number">4</div>
+                <h3 class="value-item-title">Daily Accountability Nudges</h3>
+                <p class="value-item-outcome">You show up even when life is busy.</p>
+                <p class="value-item-description">
+                    Short reminders, one small action per day, completion-focused prompts
+                </p>
+            </div>
+            <div class="value-item-visual">
+                <span class="value-number">4</span>
+                <div class="value-mockup">
+                    <span class="value-mockup-text">[INSERT MOCKUP]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="value-item">
+            <div class="value-item-content">
+                <div class="value-item-number">5</div>
+                <h3 class="value-item-title">Content Conversion Mini Library</h3>
+                <p class="value-item-outcome">You post with purpose.</p>
+                <p class="value-item-description">
+                    Views vs followers vs clients examples, hook testing prompts, simple iteration tracker
+                </p>
+            </div>
+            <div class="value-item-visual">
+                <span class="value-number">5</span>
+                <div class="value-mockup">
+                    <span class="value-mockup-text">[INSERT MOCKUP]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="value-item">
+            <div class="value-item-content">
+                <div class="value-item-number">6</div>
+                <h3 class="value-item-title">Story to Positioning Worksheet</h3>
+                <p class="value-item-outcome">Turn your story into your unfair advantage.</p>
+                <p class="value-item-description">
+                    Find your angle, make it clear not dramatic, translate it into content themes
+                </p>
+            </div>
+            <div class="value-item-visual">
+                <span class="value-number">6</span>
+                <div class="value-mockup">
+                    <span class="value-mockup-text">[INSERT MOCKUP]</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="value-stack-cta">
+            <a href="#upgrade" class="btn-vip">Upgrade to VIP</a>
+            <p class="value-stack-cta-text">
+                VIP closes when Day 1 starts. Upgrade now so you start Day 1 with everything ready.
+            </p>
+            <button class="btn-ghost">No thanks, keep my free seat</button>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 5: PRICE REVEAL - VALUE TOWER
+
+         SIGNATURE MOMENT #3: Values stack up visually,
+         then price is revealed as dramatically smaller than total value.
+         ================================================================ -->
+    <section class="price-reveal-section" id="upgrade">
+        <div class="texture-grain"></div>
+        <div class="price-blob price-blob-1"></div>
+        <div class="price-blob price-blob-2"></div>
+
+        <div class="price-reveal-inner">
+            <div class="price-reveal-header">
+                <p class="eyebrow price-reveal-eyebrow">YOUR INVESTMENT</p>
+                <h2 class="price-reveal-headline">What you're really getting.</h2>
+                <p class="price-reveal-subhead">
+                    This is not about "more lessons." It's about removing the hidden effort that makes people quit.
+                </p>
+            </div>
+
+            <!-- Value Tower - values stack up visually -->
+            <div class="value-tower">
+                <div class="value-tower-item">
+                    <div class="value-tower-item-name">
+                        <span class="value-tower-item-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M9 9h6M9 13h6M9 17h4"/>
+                            </svg>
+                        </span>
+                        <span>VIP Implementation Pack</span>
+                    </div>
+                    <span class="value-tower-item-value">$197 value</span>
+                </div>
+                <div class="value-tower-item">
+                    <div class="value-tower-item-name">
+                        <span class="value-tower-item-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </span>
+                        <span>VIP Office Hours (Live Q&A)</span>
+                    </div>
+                    <span class="value-tower-item-value">$297 value</span>
+                </div>
+                <div class="value-tower-item">
+                    <div class="value-tower-item-name">
+                        <span class="value-tower-item-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="M8 10l4 3 4-3"/>
+                            </svg>
+                        </span>
+                        <span>Recording Vault (Organized)</span>
+                    </div>
+                    <span class="value-tower-item-value">$147 value</span>
+                </div>
+                <div class="value-tower-item">
+                    <div class="value-tower-item-name">
+                        <span class="value-tower-item-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                                <path d="M13.73 21a2 2 0 01-3.46 0"/>
+                            </svg>
+                        </span>
+                        <span>Daily Accountability Nudges</span>
+                    </div>
+                    <span class="value-tower-item-value">$97 value</span>
+                </div>
+                <div class="value-tower-item">
+                    <div class="value-tower-item-name">
+                        <span class="value-tower-item-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                                <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+                            </svg>
+                        </span>
+                        <span>Content Conversion Mini Library</span>
+                    </div>
+                    <span class="value-tower-item-value">$127 value</span>
+                </div>
+                <div class="value-tower-item">
+                    <div class="value-tower-item-name">
+                        <span class="value-tower-item-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4L2 9.4h7.6z"/>
+                            </svg>
+                        </span>
+                        <span>Story to Positioning Worksheet</span>
+                    </div>
+                    <span class="value-tower-item-value">$97 value</span>
+                </div>
+            </div>
+
+            <!-- Total value -->
+            <div class="value-total">
+                <span class="value-total-label">Total Value</span>
+                <span class="value-total-amount">$962</span>
+            </div>
+
+            <!-- Price card - dramatically smaller than value -->
+            <div class="price-card-final">
+                <div class="price-card-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4L2 9.4h7.6z"/>
+                    </svg>
+                    VIP Experience
+                </div>
+                <div class="price-card-amount">[VIP_PRICE]</div>
+                <p class="price-card-savings">
+                    Save over <strong>$465</strong> when you upgrade today
+                </p>
+                <div class="price-card-cta">
+                    <a href="#" class="btn-vip">Yes, upgrade me to VIP</a>
+                </div>
+                <button class="btn-ghost">No thanks, I'll do the free version</button>
+                <p class="price-card-microcopy">
+                    VIP closes when Day 1 starts. No pressure. Just choose your experience.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 6: FINAL CTA - FULL BLEED IMMERSIVE
+         ================================================================ -->
+    <section class="final-cta-section">
+        <div class="final-cta-blob"></div>
+        <div class="final-cta-inner">
+            <p class="eyebrow final-cta-eyebrow">READY TO FINISH WHAT YOU START?</p>
+            <h2 class="final-cta-headline">This is your moment to choose completion.</h2>
+            <p class="final-cta-body">
+                VIP is the container that makes finishing feel normal. Not more content. Just the right support at the right time.
+            </p>
+            <div class="final-cta-buttons">
+                <a href="#" class="btn-vip">Yes, upgrade me to VIP</a>
+                <button class="btn-ghost">No thanks, I'll keep my free seat</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
