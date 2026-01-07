@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Experience | Q1 Personal Brand System</title>
+    <meta name="description" content="Upgrade to VIP for the complete support system that makes finishing feel normal. Templates, Q&A, recordings, and accountability.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ================================================================
+           CREATIVE CONCEPT: "The Transformation Theater"
+
+           This page is designed as a VISUAL JOURNEY from "stuck" to "visible"
+           Not sections stacked - a cinematic experience with dramatic moments.
+
+           5 SIGNATURE MOMENTS:
+           1. Split-screen diagonal hero (stuck vs visible)
+           2. Scale-contrast comparison (tiny FREE vs immersive VIP)
+           3. Theatrical price reveal with spotlight
+           4. Winding path components (journey, not list)
+           5. Hand-drawn editorial accents throughout
+           ================================================================ */
+
+        :root {
+            /* CREATIVE CHOICE: Richer, more dramatic color palette */
+            --bg-cream: #FAF7F4;
+            --bg-warm: #F5EDE5;
+            --bg-blush: #FCF0EC;
+            --bg-dark: #2D2420;
+            --bg-dark-warm: #3D322C;
+
+            /* Text with more contrast */
+            --text-dark: #1A1614;
+            --text-body: #4A4340;
+            --text-muted: #8A8280;
+            --text-light: #FAF8F6;
+
+            /* Accent colors - more vibrant */
+            --accent-rose: #C4626A;
+            --accent-rose-deep: #A04850;
+            --accent-teal: #2A7C7C;
+            --accent-gold: #D4A574;
+            --accent-gold-light: #E8C9A8;
+            --accent-lavender: #9B7EC8;
+
+            /* Strategic shadows */
+            --shadow-soft: 0 4px 20px rgba(45, 36, 32, 0.08);
+            --shadow-medium: 0 8px 40px rgba(45, 36, 32, 0.12);
+            --shadow-dramatic: 0 20px 60px rgba(45, 36, 32, 0.2);
+            --shadow-glow-rose: 0 8px 32px rgba(196, 98, 106, 0.25);
+        }
+
+        /* ================================================================
+           BASE RESET
+           ================================================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-body);
+            font-size: 17px;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ================================================================
+           SIGNATURE MOMENT #1: SPLIT-SCREEN DIAGONAL HERO
+
+           CREATIVE CHOICE: Instead of a boring centered hero, we create
+           a dramatic diagonal split. The left represents "stuck" (muted),
+           right represents "visible" (vibrant). The diagonal cut creates
+           visual tension and movement.
+           ================================================================ */
+
+        .hero-theater {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* FLAIR: Paper texture overlay for warmth */
+        .hero-theater::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* The diagonal split background */
+        .hero-split-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        /* Left side: "Stuck" feeling - muted, cramped */
+        .hero-split-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 55%;
+            height: 100%;
+            background: linear-gradient(135deg, #EDE5DF 0%, #E5DCD5 100%);
+            clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
+        }
+
+        /* FLAIR: Subtle diagonal lines pattern on left (represents confusion) */
+        .hero-split-left::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 40px,
+                rgba(139, 79, 92, 0.03) 40px,
+                rgba(139, 79, 92, 0.03) 41px
+            );
+        }
+
+        /* Right side: "Visible" feeling - vibrant, expansive */
+        .hero-split-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--bg-blush) 0%, var(--bg-cream) 100%);
+            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        /* FLAIR: Soft radial glow on right side (represents warmth/success) */
+        .hero-split-right::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 20;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        /* CREATIVE: The "stuck" side content */
+        .hero-stuck {
+            opacity: 0.7;
+            transform: scale(0.95);
+        }
+
+        .stuck-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            text-transform: lowercase;
+            letter-spacing: 1px;
+        }
+
+        .stuck-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #7A706A;
+            line-height: 1.4;
+            position: relative;
+        }
+
+        /* FLAIR: Hand-drawn strikethrough effect */
+        .stuck-text::after {
+            content: '';
+            position: absolute;
+            left: -5%;
+            top: 50%;
+            width: 110%;
+            height: 3px;
+            background: var(--accent-rose);
+            opacity: 0.6;
+            transform: rotate(-2deg);
+        }
+
+        /* CREATIVE: The "visible" side - main hero content */
+        .hero-visible {
+            padding-left: 40px;
+        }
+
+        /* FLAIR: VIP badge with hand-drawn border effect */
+        .vip-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent-teal);
+            color: var(--text-light);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 6px;
+            margin-bottom: 24px;
+            position: relative;
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* FLAIR: Hand-drawn arrow pointing to badge */
+        .vip-badge::before {
+            content: '';
+            position: absolute;
+            left: -60px;
+            top: 50%;
+            width: 50px;
+            height: 2px;
+            background: var(--accent-gold);
+            transform: translateY(-50%);
+        }
+
+        .vip-badge::after {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-left: 10px solid var(--accent-gold);
+            transform: translateY(-50%);
+        }
+
+        .hero-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 600;
+            line-height: 1.15;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
+
+        .headline-accent {
+            display: block;
+            color: var(--accent-rose);
+            position: relative;
+        }
+
+        /* FLAIR: Gold brush stroke underline */
+        .headline-accent::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 4px;
+            width: 100%;
+            height: 12px;
+            background: linear-gradient(90deg, var(--accent-gold-light) 0%, transparent 100%);
+            opacity: 0.5;
+            z-index: -1;
+            transform: skewX(-5deg);
+        }
+
+        .hero-subhead {
+            font-size: 18px;
+            color: var(--text-body);
+            margin-bottom: 32px;
+            max-width: 480px;
+        }
+
+        /* CREATIVE: Benefit pills with hand-drawn check marks */
+        .hero-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 40px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 16px;
+            color: var(--text-body);
+        }
+
+        /* FLAIR: Hand-drawn style checkmark */
+        .benefit-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .benefit-check svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--text-light);
+            stroke-width: 3;
+            fill: none;
+        }
+
+        /* FLAIR: Subtle ink splatter behind some checks */
+        .benefit-check.has-splatter::before {
+            content: '';
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background: radial-gradient(circle, rgba(42, 124, 124, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-rose);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 20px 48px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-glow-rose);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-rose-deep);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(196, 98, 106, 0.35);
+        }
+
+        .decline-link {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color 0.2s;
+        }
+
+        .decline-link:hover {
+            color: var(--text-body);
+        }
+
+        .hero-microcopy {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 24px;
+        }
+
+        /* ================================================================
+           PROGRESS STRIP - Floating above hero
+           ================================================================ */
+        .progress-strip {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(250, 247, 244, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 202, 194, 0.3);
+            padding: 14px 24px;
+            z-index: 100;
+        }
+
+        .progress-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .progress-text {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--bg-dark);
+            letter-spacing: 0.5px;
+        }
+
+        .progress-dots {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .progress-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #D4CAC2;
+        }
+
+        .progress-dot.active {
+            background: var(--accent-rose);
+            box-shadow: 0 0 0 3px rgba(196, 98, 106, 0.2);
+        }
+
+        .progress-dot.current {
+            background: var(--accent-teal);
+            box-shadow: 0 0 0 3px rgba(42, 124, 124, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* ================================================================
+           SIGNATURE MOMENT #2: SCALE-CONTRAST COMPARISON
+
+           CREATIVE CHOICE: Instead of two equal cards, FREE is a tiny
+           receipt in the corner while VIP is an IMMERSIVE full spread.
+           The contrast in SIZE creates instant visual hierarchy.
+           ================================================================ */
+
+        .comparison-theater {
+            padding: 120px 48px;
+            background: var(--bg-warm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* FLAIR: Decorative dot pattern */
+        .comparison-theater::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 1px 1px, rgba(139, 79, 92, 0.03) 1px, transparent 0);
+            background-size: 32px 32px;
+            pointer-events: none;
+        }
+
+        .comparison-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 80px;
+            position: relative;
+        }
+
+        .comparison-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .comparison-subhead {
+            font-size: 18px;
+            color: var(--text-body);
+        }
+
+        /* FLAIR: Hand-drawn annotation */
+        .annotation {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 16px;
+            color: var(--accent-rose);
+            position: absolute;
+            transform: rotate(-5deg);
+        }
+
+        .annotation.top-right {
+            top: -20px;
+            right: -40px;
+        }
+
+        /* The dramatic scale contrast layout */
+        .comparison-scale {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* FREE card: TINY receipt style */
+        .free-receipt {
+            background: #FDFCFB;
+            border: 1px dashed #D4CAC2;
+            border-radius: 8px;
+            padding: 24px 20px;
+            max-width: 240px;
+            position: relative;
+            transform: rotate(-2deg);
+            box-shadow: var(--shadow-soft);
+            opacity: 0.85;
+        }
+
+        /* FLAIR: "Receipt" torn edge at bottom */
+        .free-receipt::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 16px;
+            background:
+                linear-gradient(-45deg, transparent 33.333%, #FDFCFB 33.333%, #FDFCFB 66.667%, transparent 66.667%),
+                linear-gradient(45deg, transparent 33.333%, #FDFCFB 33.333%, #FDFCFB 66.667%, transparent 66.667%);
+            background-size: 12px 100%;
+        }
+
+        .free-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .free-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #9A918B;
+            margin-bottom: 16px;
+        }
+
+        .free-features {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .free-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .free-feature.included .feature-icon {
+            color: var(--accent-teal);
+        }
+
+        .free-feature.excluded .feature-icon {
+            color: #C4BAB2;
+        }
+
+        .free-feature.excluded span {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        .free-cta {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px dashed #E8E0DA;
+        }
+
+        /* VIP card: IMMERSIVE editorial spread */
+        .vip-spread {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-dramatic);
+            position: relative;
+            transform: rotate(1deg);
+        }
+
+        /* FLAIR: Gold accent border */
+        .vip-spread::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--accent-gold) 0%, var(--accent-gold-light) 50%, var(--accent-gold) 100%);
+        }
+
+        .vip-spread-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .vip-left {
+            padding: 60px 48px;
+            background: linear-gradient(180deg, #FDFBF9 0%, #FAF7F4 100%);
+        }
+
+        .vip-badge-large {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--text-light);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .vip-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .vip-price-display {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--accent-rose);
+            margin-bottom: 16px;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* FLAIR: Hand-drawn circle around price */
+        .vip-price-display::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -20px;
+            right: -20px;
+            bottom: -10px;
+            border: 2px solid var(--accent-gold);
+            border-radius: 50%;
+            opacity: 0.4;
+            transform: rotate(-3deg);
+        }
+
+        .vip-tagline {
+            font-size: 16px;
+            color: var(--text-body);
+            margin-bottom: 32px;
+        }
+
+        .vip-features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .vip-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 15px;
+            color: var(--text-dark);
+        }
+
+        .vip-feature-icon {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--accent-teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .vip-feature-icon svg {
+            width: 12px;
+            height: 12px;
+            stroke: white;
+            stroke-width: 3;
+        }
+
+        .vip-feature strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .vip-right {
+            padding: 60px 48px;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .vip-right-headline {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 28px;
+            margin-bottom: 24px;
+            line-height: 1.4;
+        }
+
+        .vip-right-body {
+            font-size: 16px;
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .vip-cta-area {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-primary-light {
+            background: white;
+            color: var(--bg-dark);
+        }
+
+        .btn-primary-light:hover {
+            background: var(--accent-gold-light);
+        }
+
+        .vip-decline {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 13px;
+        }
+
+        .vip-decline:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* ================================================================
+           SIGNATURE MOMENT #3: THEATRICAL PRICE REVEAL
+
+           CREATIVE CHOICE: Full-bleed dark section with spotlight effect.
+           The price isn't just displayed - it EMERGES dramatically.
+           ================================================================ */
+
+        .price-theater {
+            background: var(--bg-dark);
+            padding: 140px 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* FLAIR: Spotlight gradient effect */
+        .price-theater::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.08) 0%, transparent 50%);
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        /* FLAIR: Subtle grain texture */
+        .price-theater::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+            pointer-events: none;
+        }
+
+        .price-theater-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-eyebrow {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 24px;
+        }
+
+        .price-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 120px;
+            font-weight: 700;
+            color: white;
+            line-height: 1;
+            margin-bottom: 24px;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* FLAIR: Decorative flourishes around price */
+        .price-main::before,
+        .price-main::after {
+            content: '✦';
+            position: absolute;
+            top: 50%;
+            font-size: 24px;
+            color: var(--accent-gold);
+            transform: translateY(-50%);
+        }
+
+        .price-main::before {
+            left: -60px;
+        }
+
+        .price-main::after {
+            right: -60px;
+        }
+
+        .price-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 16px;
+        }
+
+        .price-body {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 48px;
+        }
+
+        .price-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .price-microcopy {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            font-style: italic;
+        }
+
+        /* ================================================================
+           SIGNATURE MOMENT #4: WINDING PATH COMPONENTS
+
+           CREATIVE CHOICE: Instead of boring numbered cards, components
+           are stops on a visual journey. Alternating sides with a
+           connecting path creates forward momentum.
+           ================================================================ */
+
+        .journey-section {
+            padding: 120px 48px;
+            background: var(--bg-cream);
+            position: relative;
+        }
+
+        .journey-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 100px;
+        }
+
+        .journey-badge {
+            display: inline-block;
+            background: var(--accent-rose);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .journey-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 44px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .journey-subhead {
+            font-size: 17px;
+            color: var(--text-body);
+        }
+
+        .journey-path {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* FLAIR: The winding path line */
+        .journey-path::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg,
+                var(--accent-gold-light) 0%,
+                var(--accent-gold) 50%,
+                var(--accent-rose) 100%
+            );
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .journey-stop {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .journey-stop:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Alternating layout */
+        .journey-stop:nth-child(even) .stop-content {
+            order: 3;
+            text-align: left;
+        }
+
+        .journey-stop:nth-child(even) .stop-visual {
+            order: 1;
+        }
+
+        .journey-stop:nth-child(odd) .stop-content {
+            text-align: right;
+        }
+
+        /* The numbered marker in the center */
+        .stop-marker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            background: white;
+            border: 3px solid var(--accent-gold);
+            border-radius: 50%;
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--accent-rose);
+            box-shadow: var(--shadow-medium);
+            position: relative;
+            z-index: 10;
+        }
+
+        .stop-content {
+            padding: 32px;
+        }
+
+        .stop-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--accent-teal);
+            margin-bottom: 8px;
+        }
+
+        .stop-outcome {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--accent-rose);
+            margin-bottom: 12px;
+        }
+
+        .stop-description {
+            font-size: 16px;
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        .stop-visual {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            text-align: center;
+        }
+
+        .stop-visual-placeholder {
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--bg-warm) 0%, var(--bg-blush) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .journey-cta {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 60px;
+            border-top: 1px solid rgba(212, 165, 116, 0.3);
+        }
+
+        .journey-cta-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ================================================================
+           SIGNATURE MOMENT #5: FINAL CTA - The Commitment Moment
+           ================================================================ */
+
+        .final-commitment {
+            padding: 140px 48px;
+            background: linear-gradient(180deg, var(--bg-warm) 0%, var(--bg-cream) 100%);
+            text-align: center;
+            position: relative;
+        }
+
+        /* FLAIR: Decorative top border pattern */
+        .final-commitment::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent 0%, var(--accent-gold) 50%, transparent 100%);
+        }
+
+        .final-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .final-eyebrow {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-teal);
+            margin-bottom: 24px;
+        }
+
+        .final-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .final-body {
+            font-size: 18px;
+            color: var(--text-body);
+            line-height: 1.8;
+            margin-bottom: 48px;
+        }
+
+        .final-cta-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .final-cta-group .btn-primary {
+            padding: 22px 64px;
+            font-size: 17px;
+        }
+
+        /* ================================================================
+           RESPONSIVE STYLES
+           ================================================================ */
+
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 120px 32px 80px;
+            }
+
+            .hero-stuck {
+                display: none;
+            }
+
+            .hero-visible {
+                padding-left: 0;
+                text-align: center;
+            }
+
+            .hero-headline {
+                font-size: 42px;
+            }
+
+            .vip-badge::before,
+            .vip-badge::after {
+                display: none;
+            }
+
+            .hero-benefits {
+                align-items: center;
+            }
+
+            .hero-split-left {
+                display: none;
+            }
+
+            .hero-split-right {
+                width: 100%;
+                clip-path: none;
+            }
+
+            .comparison-scale {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .free-receipt {
+                max-width: 100%;
+                transform: none;
+            }
+
+            .vip-spread {
+                transform: none;
+            }
+
+            .vip-spread-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .vip-right {
+                padding: 48px 32px;
+            }
+
+            .journey-path::before {
+                left: 24px;
+            }
+
+            .journey-stop {
+                grid-template-columns: 48px 1fr;
+                gap: 24px;
+            }
+
+            .journey-stop .stop-marker {
+                width: 48px;
+                height: 48px;
+                font-size: 18px;
+            }
+
+            .journey-stop:nth-child(even) .stop-content,
+            .journey-stop:nth-child(odd) .stop-content {
+                order: 2;
+                text-align: left;
+            }
+
+            .journey-stop .stop-visual {
+                display: none;
+            }
+
+            .price-main {
+                font-size: 72px;
+            }
+
+            .price-main::before,
+            .price-main::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-theater {
+                min-height: auto;
+            }
+
+            .hero-content {
+                padding: 100px 20px 60px;
+            }
+
+            .hero-headline {
+                font-size: 34px;
+            }
+
+            .hero-subhead {
+                font-size: 16px;
+            }
+
+            .comparison-theater,
+            .price-theater,
+            .journey-section,
+            .final-commitment {
+                padding: 80px 20px;
+            }
+
+            .comparison-headline,
+            .journey-headline,
+            .final-headline {
+                font-size: 32px;
+            }
+
+            .vip-left {
+                padding: 40px 24px;
+            }
+
+            .vip-title {
+                font-size: 28px;
+            }
+
+            .vip-price-display {
+                font-size: 40px;
+            }
+
+            .vip-price-display::after {
+                display: none;
+            }
+
+            .price-main {
+                font-size: 56px;
+            }
+
+            .price-subtitle {
+                font-size: 20px;
+            }
+
+            .journey-header {
+                margin-bottom: 60px;
+            }
+
+            .stop-title {
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-headline {
+                font-size: 28px;
+            }
+
+            .comparison-headline,
+            .journey-headline,
+            .final-headline {
+                font-size: 26px;
+            }
+
+            .btn-primary {
+                width: 100%;
+                padding: 18px 32px;
+            }
+
+            .progress-strip {
+                padding: 10px 16px;
+            }
+
+            .progress-text {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ================================================================
+         PROGRESS STRIP - Shows journey state
+         ================================================================ -->
+    <div class="progress-strip">
+        <div class="progress-inner">
+            <span class="progress-text">Your registration isn't complete yet</span>
+            <div class="progress-dots">
+                <span class="progress-dot active"></span>
+                <span class="progress-dot current"></span>
+                <span class="progress-dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================================
+         SIGNATURE MOMENT #1: SPLIT-SCREEN DIAGONAL HERO
+
+         The page opens with dramatic tension: left side shows the
+         "stuck" state (muted, crossed out), right side shows the
+         "visible" future (vibrant, expansive). This IS the comparison.
+         ================================================================ -->
+    <section class="hero-theater">
+        <div class="hero-split-bg">
+            <div class="hero-split-left"></div>
+            <div class="hero-split-right"></div>
+        </div>
+
+        <div class="hero-content">
+            <!-- Left: The "Stuck" State (crossed out) -->
+            <div class="hero-stuck">
+                <p class="stuck-label">without VIP...</p>
+                <p class="stuck-text">
+                    Collecting information.<br>
+                    Starting over every day.<br>
+                    Spiraling alone.<br>
+                    Hoping motivation shows up.
+                </p>
+            </div>
+
+            <!-- Right: The "Visible" Future -->
+            <div class="hero-visible">
+                <div class="vip-badge">VIP EXPERIENCE</div>
+
+                <h1 class="hero-headline">
+                    VIP is how you stop collecting information
+                    <span class="headline-accent">and start becoming visible.</span>
+                </h1>
+
+                <p class="hero-subhead">
+                    If you know you tend to fall off, overthink, or get overwhelmed, VIP keeps you steady. Calm system. Clear steps. Real support.
+                </p>
+
+                <div class="hero-benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-check has-splatter">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        </span>
+                        <span>Faster clarity when you get stuck</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-check">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        </span>
+                        <span>Support so you do not spiral alone</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-check has-splatter">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        </span>
+                        <span>Tools so you do not start from scratch every day</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-check">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        </span>
+                        <span>A pace you can actually keep</span>
+                    </div>
+                </div>
+
+                <div class="hero-cta-group">
+                    <a href="#upgrade" class="btn-primary">Upgrade to VIP</a>
+                    <button class="decline-link">No thanks, keep my free seat</button>
+                </div>
+
+                <p class="hero-microcopy">
+                    VIP closes when Day 1 starts. If you are a finisher, you will be glad you did this now.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         SIGNATURE MOMENT #2: SCALE-CONTRAST COMPARISON
+
+         CREATIVE CHOICE: FREE is a tiny receipt. VIP is an immersive
+         editorial spread. The SIZE difference creates instant hierarchy.
+         ================================================================ -->
+    <section class="comparison-theater">
+        <div class="comparison-header">
+            <h2 class="comparison-headline">Choose your experience.</h2>
+            <p class="comparison-subhead">Free is access. VIP is completion.</p>
+            <span class="annotation top-right">← this changes everything</span>
+        </div>
+
+        <div class="comparison-scale">
+            <!-- TINY: Free Receipt -->
+            <div class="free-receipt">
+                <p class="free-label">Free</p>
+                <p class="free-price">$0</p>
+                <div class="free-features">
+                    <div class="free-feature included">
+                        <span class="feature-icon">✓</span>
+                        <span>Live sessions</span>
+                    </div>
+                    <div class="free-feature included">
+                        <span class="feature-icon">✓</span>
+                        <span>Workbook</span>
+                    </div>
+                    <div class="free-feature excluded">
+                        <span class="feature-icon">✗</span>
+                        <span>Recordings</span>
+                    </div>
+                    <div class="free-feature excluded">
+                        <span class="feature-icon">✗</span>
+                        <span>Templates</span>
+                    </div>
+                    <div class="free-feature excluded">
+                        <span class="feature-icon">✗</span>
+                        <span>Support/Q&A</span>
+                    </div>
+                    <div class="free-feature excluded">
+                        <span class="feature-icon">✗</span>
+                        <span>Accountability</span>
+                    </div>
+                </div>
+                <div class="free-cta">
+                    <button class="decline-link">Keep free ticket</button>
+                </div>
+            </div>
+
+            <!-- IMMERSIVE: VIP Editorial Spread -->
+            <div class="vip-spread">
+                <div class="vip-spread-inner">
+                    <div class="vip-left">
+                        <span class="vip-badge-large">Complete VIP Experience</span>
+                        <h3 class="vip-title">Everything you need to finish.</h3>
+                        <div class="vip-price-display">[VIP_PRICE]</div>
+                        <p class="vip-tagline">Small price. Big difference in follow-through.</p>
+
+                        <div class="vip-features-list">
+                            <div class="vip-feature">
+                                <span class="vip-feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                                </span>
+                                <span><strong>Live sessions</strong> + all replays organized</span>
+                            </div>
+                            <div class="vip-feature">
+                                <span class="vip-feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                                </span>
+                                <span><strong>Templates/tools</strong> so you do not start from zero</span>
+                            </div>
+                            <div class="vip-feature">
+                                <span class="vip-feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                                </span>
+                                <span><strong>Support/Q&A</strong> — ask questions, get unstuck</span>
+                            </div>
+                            <div class="vip-feature">
+                                <span class="vip-feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                                </span>
+                                <span><strong>Accountability nudges</strong> to finish what you start</span>
+                            </div>
+                            <div class="vip-feature">
+                                <span class="vip-feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                                </span>
+                                <span><strong>Implementation help</strong> — turn ideas into action</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vip-right">
+                        <p class="vip-right-headline">
+                            "You do not need more motivation. You need a container that makes finishing feel normal."
+                        </p>
+                        <p class="vip-right-body">
+                            VIP is for the women who are done with forcing "masculine" hustle, but still want real results. We build the garden. The right people start noticing you.
+                        </p>
+                        <div class="vip-cta-area">
+                            <a href="#upgrade" class="btn-primary btn-primary-light">Yes, I want the VIP Experience</a>
+                            <button class="decline-link vip-decline">No thanks, I'll do the free version</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         SIGNATURE MOMENT #3: THEATRICAL PRICE REVEAL
+
+         Full-bleed dark section. The price doesn't just appear —
+         it emerges from a spotlight with decorative flourishes.
+         ================================================================ -->
+    <section class="price-theater" id="upgrade">
+        <div class="price-theater-content">
+            <p class="price-eyebrow">Q1 Personal Brand System</p>
+            <div class="price-main">[VIP_PRICE]</div>
+            <p class="price-subtitle">Small price. Big difference in follow-through.</p>
+            <p class="price-body">
+                This is not about "more lessons." It's about removing the hidden effort that makes people quit. You can stay free. Or you can choose the version of you that finishes.
+            </p>
+            <div class="price-cta">
+                <a href="#" class="btn-primary">Yes, upgrade me to VIP</a>
+                <button class="decline-link" style="color: rgba(255,255,255,0.5);">No thanks, I'll do the free version</button>
+            </div>
+            <p class="price-microcopy">
+                VIP closes when Day 1 starts. No pressure. Just choose your experience.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         SIGNATURE MOMENT #4: WINDING PATH COMPONENTS
+
+         Instead of boring cards, each VIP component is a "stop"
+         on a visual journey. The winding path creates forward momentum.
+         ================================================================ -->
+    <section class="journey-section">
+        <div class="journey-header">
+            <span class="journey-badge">VIP Access Unlocked</span>
+            <h2 class="journey-headline">Everything you get inside VIP.</h2>
+            <p class="journey-subhead">Built for follow-through. Not for information hoarding.</p>
+        </div>
+
+        <div class="journey-path">
+            <!-- Stop 1: Implementation Pack -->
+            <div class="journey-stop">
+                <div class="stop-content">
+                    <h3 class="stop-title">VIP Implementation Pack</h3>
+                    <p class="stop-outcome">You do not start from scratch.</p>
+                    <p class="stop-description">
+                        Templates for the key exercises, fill-in prompts for clarity and positioning, simple checklist per day
+                    </p>
+                </div>
+                <div class="stop-marker">1</div>
+                <div class="stop-visual">
+                    <div class="stop-visual-placeholder">[INSERT MOCKUP]</div>
+                </div>
+            </div>
+
+            <!-- Stop 2: Office Hours -->
+            <div class="journey-stop">
+                <div class="stop-visual">
+                    <div class="stop-visual-placeholder">[INSERT MOCKUP]</div>
+                </div>
+                <div class="stop-marker">2</div>
+                <div class="stop-content">
+                    <h3 class="stop-title">VIP Office Hours (Live Q&A)</h3>
+                    <p class="stop-outcome">You get unstuck fast.</p>
+                    <p class="stop-description">
+                        Ask your question live, get a clear next step, save hours of spiraling
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stop 3: Recording Vault -->
+            <div class="journey-stop">
+                <div class="stop-content">
+                    <h3 class="stop-title">Recording Vault (Organized)</h3>
+                    <p class="stop-outcome">You can catch up without stress.</p>
+                    <p class="stop-description">
+                        Replays in one place, time-stamped highlights, "if you're behind, watch this" guide
+                    </p>
+                </div>
+                <div class="stop-marker">3</div>
+                <div class="stop-visual">
+                    <div class="stop-visual-placeholder">[INSERT MOCKUP]</div>
+                </div>
+            </div>
+
+            <!-- Stop 4: Daily Accountability -->
+            <div class="journey-stop">
+                <div class="stop-visual">
+                    <div class="stop-visual-placeholder">[INSERT MOCKUP]</div>
+                </div>
+                <div class="stop-marker">4</div>
+                <div class="stop-content">
+                    <h3 class="stop-title">Daily Accountability Nudges</h3>
+                    <p class="stop-outcome">You show up even when life is busy.</p>
+                    <p class="stop-description">
+                        Short reminders, one small action per day, completion-focused prompts
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stop 5: Content Library -->
+            <div class="journey-stop">
+                <div class="stop-content">
+                    <h3 class="stop-title">Content Conversion Mini Library</h3>
+                    <p class="stop-outcome">You post with purpose.</p>
+                    <p class="stop-description">
+                        Views vs followers vs clients examples, hook testing prompts, simple iteration tracker
+                    </p>
+                </div>
+                <div class="stop-marker">5</div>
+                <div class="stop-visual">
+                    <div class="stop-visual-placeholder">[INSERT MOCKUP]</div>
+                </div>
+            </div>
+
+            <!-- Stop 6: Story Worksheet -->
+            <div class="journey-stop">
+                <div class="stop-visual">
+                    <div class="stop-visual-placeholder">[INSERT MOCKUP]</div>
+                </div>
+                <div class="stop-marker">6</div>
+                <div class="stop-content">
+                    <h3 class="stop-title">Story to Positioning Worksheet</h3>
+                    <p class="stop-outcome">Turn your story into your unfair advantage.</p>
+                    <p class="stop-description">
+                        Find your angle, make it clear not dramatic, translate it into content themes
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="journey-cta">
+            <p class="journey-cta-text">
+                VIP closes when Day 1 starts. Upgrade now so you start Day 1 with everything ready.
+            </p>
+            <a href="#upgrade" class="btn-primary">Upgrade to VIP</a>
+            <br><br>
+            <button class="decline-link">No thanks, keep my free seat</button>
+        </div>
+    </section>
+
+    <!-- ================================================================
+         SIGNATURE MOMENT #5: FINAL COMMITMENT
+         ================================================================ -->
+    <section class="final-commitment">
+        <div class="final-inner">
+            <p class="final-eyebrow">Ready to finish what you start?</p>
+            <h2 class="final-headline">This is your moment to choose completion.</h2>
+            <p class="final-body">
+                VIP is the container that makes finishing feel normal. Not more content. Just the right support at the right time.
+            </p>
+            <div class="final-cta-group">
+                <a href="#upgrade" class="btn-primary">Yes, upgrade me to VIP</a>
+                <button class="decline-link">No thanks, I'll keep my free seat</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
