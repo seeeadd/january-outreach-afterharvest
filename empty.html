@@ -3,9 +3,2723 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>The Unrecognizable 3-Day Reset Challenge</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           CSS VARIABLES - DESIGN SYSTEM
+           ======================================== */
+        :root {
+            /* Background Colors */
+            --bg-primary: #FDFBF7;
+            --bg-secondary: #F5F0EB;
+            --bg-dark: #1A1A1A;
+            --bg-accent: #6D28D9;
+
+            /* Purple Palette */
+            --purple-primary: #8B5CF6;
+            --purple-dark: #6D28D9;
+            --purple-light: rgba(139, 92, 246, 0.1);
+
+            /* Accent Colors */
+            --gold-accent: #F59E0B;
+            --success: #10B981;
+            --danger: #EF4444;
+            --coral: #E85A7A;
+            --teal: #2D7A75;
+            --teal-dark: #1E6B66;
+
+            /* Text Colors */
+            --text-dark: #1A1A1A;
+            --text-body: #4B5563;
+            --text-muted: #9CA3AF;
+            --text-on-dark: #FFFFFF;
+
+            /* Border */
+            --border-light: rgba(139, 92, 246, 0.15);
+            --border-gray: #E5E7EB;
+
+            /* Typography */
+            --font-display: "Cormorant Garamond", Georgia, serif;
+            --font-headline: "Satoshi", "General Sans", system-ui, sans-serif;
+            --font-body: "Inter", "Outfit", system-ui, sans-serif;
+
+            /* Spacing */
+            --section-padding: 100px;
+            --section-padding-mobile: 64px;
+            --container-max: 1320px;
+            --container-padding: 48px;
+            --container-padding-mobile: 24px;
+            --content-max: 680px;
+            --headline-max: 960px;
+        }
+
+        /* ========================================
+           BASE STYLES & RESET
+           ======================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-body);
+            background-color: var(--bg-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Container */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--container-padding-mobile);
+            }
+        }
+
+        /* Section Base */
+        .section {
+            padding: var(--section-padding) 0;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: var(--section-padding-mobile) 0;
+            }
+        }
+
+        /* ========================================
+           TYPOGRAPHY UTILITIES
+           ======================================== */
+        .eyebrow {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--purple-primary);
+        }
+
+        .headline-xl {
+            font-family: var(--font-headline);
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--text-dark);
+        }
+
+        .headline-lg {
+            font-family: var(--font-headline);
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--text-dark);
+        }
+
+        .headline-md {
+            font-family: var(--font-headline);
+            font-size: 44px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .script-text {
+            font-family: var(--font-display);
+            font-style: italic;
+        }
+
+        .script-accent {
+            font-family: var(--font-display);
+            font-style: italic;
+            color: var(--purple-primary);
+        }
+
+        .highlight-yellow {
+            background: #FEF3C7;
+            padding: 0 4px;
+        }
+
+        @media (max-width: 768px) {
+            .headline-xl {
+                font-size: 36px;
+            }
+            .headline-lg {
+                font-size: 32px;
+            }
+            .headline-md {
+                font-size: 28px;
+            }
+        }
+
+        /* ========================================
+           COMPONENT: PRIMARY CTA BUTTON
+           ======================================== */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            min-width: 280px;
+            height: 64px;
+            padding: 0 32px;
+            background: var(--coral);
+            color: white;
+            font-family: var(--font-headline);
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(232, 90, 122, 0.3), 0 8px 24px rgba(232, 90, 122, 0.15);
+            transition: all 0.2s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(232, 90, 122, 0.35), 0 12px 32px rgba(232, 90, 122, 0.2);
+            background: #d64d6a;
+        }
+
+        .cta-button .arrow-icon {
+            width: 24px;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cta-button .arrow-icon svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* ========================================
+           COMPONENT: COUNTDOWN BOX
+           ======================================== */
+        .countdown-container {
+            display: flex;
+            gap: 12px;
+        }
+
+        .countdown-box {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .countdown-box.light {
+            background: var(--bg-secondary);
+        }
+
+        .countdown-box .number {
+            font-family: var(--font-headline);
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            line-height: 1;
+        }
+
+        .countdown-box.light .number {
+            color: var(--text-dark);
+        }
+
+        .countdown-box .label {
+            font-size: 10px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.5px;
+        }
+
+        .countdown-box.light .label {
+            color: var(--text-muted);
+        }
+
+        /* ========================================
+           SECTION 1: TOP BAR (URGENCY STRIP)
+           ======================================== */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            background: var(--purple-dark);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .top-bar-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .live-badge {
+            background: var(--purple-primary);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .date-pill {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .top-bar .countdown-box {
+            width: 48px;
+            height: 48px;
+        }
+
+        .top-bar .countdown-box .number {
+            font-size: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                height: 100px;
+                padding: 12px 0;
+            }
+
+            .top-bar .container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .top-bar-left {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .top-bar-text {
+                font-size: 12px;
+            }
+        }
+
+        /* Spacer for fixed top bar */
+        .top-bar-spacer {
+            height: 72px;
+        }
+
+        @media (max-width: 768px) {
+            .top-bar-spacer {
+                height: 100px;
+            }
+        }
+
+        /* ========================================
+           SECTION 2: HERO
+           ======================================== */
+        .hero {
+            min-height: calc(100vh - 72px);
+            background: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 55% 45%;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-media {
+            position: relative;
+        }
+
+        .hero-video-frame {
+            width: 420px;
+            max-width: 100%;
+            border-radius: 16px;
+            border: 4px solid var(--purple-primary);
+            transform: rotate(-3deg);
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.2), 0 16px 48px rgba(0, 0, 0, 0.1);
+            background: var(--bg-secondary);
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Decorative biology spheres */
+        .sphere {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .sphere-1 {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle at 30% 30%, var(--purple-light), transparent);
+            top: -20px;
+            right: 20px;
+        }
+
+        .sphere-2 {
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle at 30% 30%, rgba(245, 158, 11, 0.1), transparent);
+            bottom: 40px;
+            left: -20px;
+        }
+
+        .hero-content {
+            max-width: 560px;
+        }
+
+        .hero-eyebrow {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--purple-primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .hero-headline {
+            font-family: var(--font-headline);
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .hero-headline .script-text {
+            color: var(--purple-primary);
+        }
+
+        .hero-subheadline {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 24px;
+            color: #6B7280;
+            margin-bottom: 24px;
+        }
+
+        .hero-body {
+            font-size: 18px;
+            color: var(--text-body);
+            margin-bottom: 32px;
+            max-width: 520px;
+        }
+
+        .hero-microcopy {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-muted);
+            max-width: 400px;
+        }
+
+        @media (max-width: 992px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-media {
+                order: -1;
+                display: flex;
+                justify-content: center;
+            }
+
+            .hero-video-frame {
+                width: 100%;
+                max-width: 400px;
+                transform: rotate(0);
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-headline {
+                font-size: 36px;
+            }
+
+            .hero-subheadline {
+                font-size: 20px;
+            }
+
+            .hero-body,
+            .hero-microcopy {
+                max-width: 100%;
+            }
+        }
+
+        /* ========================================
+           SECTION 3: IS THIS PERFECT FOR YOU?
+           ======================================== */
+        .qualifier-section {
+            background: var(--bg-primary);
+        }
+
+        .qualifier-section .container {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .qualifier-photo {
+            position: relative;
+        }
+
+        .qualifier-photo img {
+            width: 380px;
+            max-width: 100%;
+            border-radius: 24px;
+            transform: rotate(2deg);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .qualifier-photo-placeholder {
+            width: 380px;
+            max-width: 100%;
+            aspect-ratio: 3/4;
+            border-radius: 24px;
+            transform: rotate(2deg);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .qualifier-annotation {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 18px;
+            color: var(--purple-primary);
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        .qualifier-content .eyebrow {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-body);
+            text-transform: none;
+            letter-spacing: 0;
+            margin-bottom: 8px;
+        }
+
+        .qualifier-content .headline-lg .script-accent {
+            font-size: inherit;
+        }
+
+        .qualifier-content .subheadline {
+            font-size: 18px;
+            color: var(--text-body);
+            margin: 24px 0 32px;
+            line-height: 1.7;
+        }
+
+        .qualifier-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .qualifier-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 16px;
+            font-size: 18px;
+            color: var(--text-body);
+        }
+
+        .qualifier-list li strong {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .checkbox-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background: var(--purple-primary);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .checkbox-icon svg {
+            width: 14px;
+            height: 14px;
+            color: white;
+        }
+
+        .qualifier-closing {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 20px;
+            color: var(--purple-primary);
+            margin-top: 24px;
+        }
+
+        @media (max-width: 992px) {
+            .qualifier-section .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .qualifier-photo {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .qualifier-photo-placeholder {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+
+        /* ========================================
+           SECTION 4: PUT YOUR NAME DOWN
+           ======================================== */
+        .colored-section {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+            color: white;
+        }
+
+        .colored-section .container {
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .colored-section .headline-md {
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .colored-section .subheadline {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 48px;
+        }
+
+        .lists-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .list-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: left;
+        }
+
+        .list-card h4 {
+            font-family: var(--font-headline);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .list-card ul {
+            list-style: none;
+        }
+
+        .list-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: var(--text-body);
+        }
+
+        .check-icon {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .x-icon {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--danger);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .check-icon svg,
+        .x-icon svg {
+            width: 12px;
+            height: 12px;
+            color: white;
+        }
+
+        .micro-proof {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .lists-container {
+                grid-template-columns: 1fr;
+            }
+
+            .colored-section .headline-md {
+                font-size: 28px;
+            }
+        }
+
+        /* ========================================
+           SECTION 5: SOCIAL PROOF TICKER
+           ======================================== */
+        .ticker-section {
+            background: var(--bg-secondary);
+            height: 56px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker-track {
+            display: flex;
+            animation: ticker 40s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 32px;
+            height: 56px;
+            white-space: nowrap;
+        }
+
+        .ticker-avatar {
+            width: 32px;
+            height: 32px;
+            background: var(--purple-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--purple-primary);
+            font-weight: 600;
+        }
+
+        .ticker-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-body);
+        }
+
+        .ticker-text .highlight {
+            color: var(--purple-primary);
+        }
+
+        .ticker-time {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .ticker-check {
+            width: 18px;
+            height: 18px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ticker-check svg {
+            width: 10px;
+            height: 10px;
+            color: white;
+        }
+
+        /* Gradient fades */
+        .ticker-section::before,
+        .ticker-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .ticker-section::before {
+            left: 0;
+            background: linear-gradient(to right, var(--bg-secondary), transparent);
+        }
+
+        .ticker-section::after {
+            right: 0;
+            background: linear-gradient(to left, var(--bg-secondary), transparent);
+        }
+
+        /* ========================================
+           SECTION 6: FOUNDER STORY
+           ======================================== */
+        .founder-section {
+            background: var(--bg-primary);
+        }
+
+        .founder-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 64px;
+        }
+
+        .founder-intro .eyebrow {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 24px;
+            color: var(--purple-primary);
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .founder-intro .headline-lg {
+            margin-top: 8px;
+        }
+
+        .founder-content {
+            display: grid;
+            grid-template-columns: 55% 45%;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .founder-story .letter-opening {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 22px;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
+
+        .founder-story p {
+            font-size: 18px;
+            color: var(--text-body);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .founder-story .highlight-yellow {
+            background: #FEF3C7;
+            padding: 2px 6px;
+        }
+
+        .photo-collage {
+            position: relative;
+            min-height: 500px;
+        }
+
+        .collage-item {
+            position: absolute;
+            background: white;
+            padding: 8px;
+            border-radius: 4px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .collage-item img {
+            border-radius: 2px;
+        }
+
+        .collage-placeholder {
+            width: 200px;
+            height: 150px;
+            background: var(--bg-secondary);
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        .collage-item:nth-child(1) {
+            top: 0;
+            left: 20px;
+            transform: rotate(-5deg);
+        }
+
+        .collage-item:nth-child(2) {
+            top: 80px;
+            right: 0;
+            transform: rotate(3deg);
+        }
+
+        .collage-item:nth-child(3) {
+            bottom: 100px;
+            left: 40px;
+            transform: rotate(2deg);
+        }
+
+        .collage-item:nth-child(4) {
+            bottom: 20px;
+            right: 40px;
+            transform: rotate(-3deg);
+        }
+
+        .pull-quote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 28px;
+            color: var(--purple-primary);
+            padding: 24px 0;
+            border-left: 4px solid var(--purple-primary);
+            padding-left: 24px;
+            margin: 32px 0;
+        }
+
+        @media (max-width: 992px) {
+            .founder-content {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-collage {
+                display: flex;
+                overflow-x: auto;
+                gap: 16px;
+                min-height: auto;
+                padding: 16px 0;
+            }
+
+            .collage-item {
+                position: relative;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                transform: none !important;
+                flex-shrink: 0;
+            }
+        }
+
+        /* ========================================
+           SECTION 7: MILESTONE PROOF CARD
+           ======================================== */
+        .milestone-section {
+            background: var(--bg-primary);
+            padding: 80px 0;
+        }
+
+        .milestone-card {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--bg-dark);
+            border-radius: 28px;
+            padding: 64px;
+            text-align: center;
+            box-shadow: 0 16px 64px rgba(0, 0, 0, 0.2);
+        }
+
+        .milestone-card .eyebrow {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--purple-primary);
+            margin-bottom: 16px;
+        }
+
+        .milestone-stat {
+            font-family: var(--font-headline);
+            font-size: 96px;
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .milestone-subtext {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 24px;
+        }
+
+        .milestone-body {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .milestone-kicker {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 20px;
+            color: var(--gold-accent);
+        }
+
+        .milestone-cta {
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .milestone-card {
+                padding: 40px 24px;
+                margin: 0 16px;
+                border-radius: 20px;
+            }
+
+            .milestone-stat {
+                font-size: 64px;
+            }
+        }
+
+        /* ========================================
+           SECTION 8: BENEFITS VS WITHOUT
+           ======================================== */
+        .comparison-section {
+            background: var(--bg-primary);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .comparison-card {
+            padding: 32px;
+            border-radius: 20px;
+        }
+
+        .comparison-card.benefits {
+            background: var(--teal);
+            color: white;
+        }
+
+        .comparison-card.without {
+            background: white;
+            border: 1px solid var(--border-gray);
+        }
+
+        .comparison-card h3 {
+            font-family: var(--font-headline);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.4;
+        }
+
+        .comparison-card.benefits h3 {
+            color: white;
+        }
+
+        .comparison-card.without h3 {
+            color: var(--text-dark);
+        }
+
+        .comparison-card ul {
+            list-style: none;
+        }
+
+        .comparison-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+        .comparison-card.benefits li {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .comparison-card.without li {
+            color: var(--text-body);
+        }
+
+        .benefit-check {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .benefit-check svg {
+            width: 14px;
+            height: 14px;
+            color: white;
+        }
+
+        .without-x {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background: var(--coral);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .without-x svg {
+            width: 12px;
+            height: 12px;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+
+        /* ========================================
+           SECTION 9: 3-DAY CURRICULUM CARDS
+           ======================================== */
+        .curriculum-section {
+            background: var(--bg-secondary);
+        }
+
+        .curriculum-section .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 64px;
+        }
+
+        .day-card {
+            background: var(--bg-primary);
+            border: 2px dashed var(--border-gray);
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 32px;
+            display: grid;
+            grid-template-columns: 65% 35%;
+            gap: 32px;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Notebook spine effect */
+        .day-card::before {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 20px;
+            bottom: 20px;
+            width: 2px;
+            background: repeating-linear-gradient(
+                to bottom,
+                var(--border-gray) 0,
+                var(--border-gray) 8px,
+                transparent 8px,
+                transparent 16px
+            );
+        }
+
+        .day-card-content {
+            padding-left: 24px;
+        }
+
+        .day-tab {
+            display: inline-block;
+            background: var(--teal);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-family: var(--font-headline);
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .day-date {
+            display: inline-block;
+            background: var(--bg-secondary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--text-body);
+            margin-left: 12px;
+        }
+
+        .day-card h3 {
+            font-family: var(--font-headline);
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin: 16px 0;
+        }
+
+        .day-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .day-bullets {
+            list-style: none;
+        }
+
+        .day-bullets li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: var(--text-body);
+        }
+
+        .bullet-number {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background: var(--purple-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .day-mockup {
+            display: flex;
+            justify-content: center;
+        }
+
+        .mockup-placeholder {
+            width: 200px;
+            height: 300px;
+            background: var(--bg-secondary);
+            border-radius: 24px;
+            transform: rotate(3deg);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        @media (max-width: 992px) {
+            .day-card {
+                grid-template-columns: 1fr;
+            }
+
+            .day-card::before {
+                display: none;
+            }
+
+            .day-card-content {
+                padding-left: 0;
+            }
+
+            .day-mockup {
+                display: none;
+            }
+        }
+
+        /* ========================================
+           SECTION 10: URGENCY SECTION
+           ======================================== */
+        .urgency-section {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .urgency-section .container {
+            max-width: 800px;
+        }
+
+        .urgency-badge {
+            display: inline-block;
+            background: var(--bg-dark);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .urgency-section .headline-md {
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .urgency-section .body-text {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .urgency-cta {
+            margin-bottom: 32px;
+        }
+
+        .urgency-cta .cta-button {
+            min-width: 300px;
+        }
+
+        .urgency-countdown {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .urgency-countdown .countdown-box {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .trust-strip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .avatar-stack {
+            display: flex;
+        }
+
+        .avatar-stack .avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--purple-light);
+            border: 2px solid white;
+            border-radius: 50%;
+            margin-left: -12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--purple-primary);
+            font-weight: 600;
+        }
+
+        .avatar-stack .avatar:first-child {
+            margin-left: 0;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 4px;
+        }
+
+        .star-rating svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--gold-accent);
+        }
+
+        .trust-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .urgency-section .headline-md {
+                font-size: 28px;
+            }
+
+            .urgency-cta .cta-button {
+                min-width: 100%;
+            }
+        }
+
+        /* ========================================
+           SECTION 11: PROOF WALL
+           ======================================== */
+        .proof-section {
+            background: var(--bg-primary);
+        }
+
+        .proof-section .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 64px;
+        }
+
+        .proof-section .headline-md {
+            color: var(--text-dark);
+        }
+
+        .proof-section .headline-md .script-accent {
+            text-decoration: underline;
+            text-decoration-color: var(--purple-primary);
+            text-underline-offset: 4px;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .proof-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .proof-card:nth-child(odd) {
+            transform: rotate(-1deg);
+        }
+
+        .proof-card:nth-child(even) {
+            transform: rotate(1deg);
+        }
+
+        .proof-screenshot {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        .proof-quote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 16px;
+            color: var(--text-dark);
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .proof-rating {
+            display: flex;
+            gap: 2px;
+        }
+
+        .proof-rating svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--gold-accent);
+        }
+
+        @media (max-width: 1200px) {
+            .proof-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .proof-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .proof-card {
+                transform: none !important;
+            }
+        }
+
+        /* ========================================
+           SECTION 12: BEFORE/AFTER TRANSFORMATION
+           ======================================== */
+        .transformation-section {
+            background: var(--bg-secondary);
+        }
+
+        .transformation-section .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 48px;
+        }
+
+        .transformation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .transform-card {
+            border-radius: 24px;
+            padding: 40px 32px;
+            position: relative;
+        }
+
+        .transform-card.before {
+            background: white;
+            border: 2px solid var(--border-gray);
+        }
+
+        .transform-card.after {
+            background: linear-gradient(135deg, #E8F5F4 0%, #D1FAE5 100%);
+            border: 2px solid var(--success);
+        }
+
+        .transform-card h3 {
+            font-family: var(--font-headline);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.4;
+        }
+
+        .transform-card.before h3 {
+            color: var(--danger);
+        }
+
+        .transform-card.after h3 {
+            color: var(--success);
+        }
+
+        .transform-card ul {
+            list-style: none;
+        }
+
+        .transform-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 16px;
+            color: var(--text-body);
+        }
+
+        .transform-illustration {
+            width: 100%;
+            height: 200px;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .transform-card.after .transform-illustration {
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .transition-arrow {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .transition-text {
+            font-family: var(--font-headline);
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .transition-text .from {
+            color: var(--danger);
+        }
+
+        .transition-text .arrow {
+            color: var(--text-muted);
+            margin: 0 12px;
+        }
+
+        .transition-text .to {
+            color: var(--success);
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .transformation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           SECTION 13: FINAL CLOSE
+           ======================================== */
+        .final-section {
+            background: #FDF2F4;
+            text-align: center;
+        }
+
+        .final-section .container {
+            max-width: 700px;
+        }
+
+        .final-section .eyebrow {
+            font-size: 18px;
+            color: var(--text-body);
+            margin-bottom: 8px;
+        }
+
+        .final-headline {
+            margin-bottom: 48px;
+        }
+
+        .final-headline .once {
+            font-family: var(--font-headline);
+            font-size: 80px;
+            font-weight: 800;
+            color: var(--coral);
+            display: block;
+            line-height: 1;
+        }
+
+        .final-headline .rest {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 36px;
+            color: var(--text-dark);
+        }
+
+        .value-props {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .value-prop {
+            padding: 16px 24px;
+            border-radius: 12px;
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 18px;
+            color: var(--text-dark);
+        }
+
+        .value-prop.yellow {
+            background: #FEF3C7;
+        }
+
+        .value-prop.blue {
+            background: #E0F2FE;
+        }
+
+        .value-prop.pink {
+            background: #FCE7F3;
+        }
+
+        .final-arrow {
+            margin-bottom: 16px;
+        }
+
+        .final-arrow svg {
+            width: 48px;
+            height: 48px;
+            color: var(--coral);
+            transform: rotate(90deg);
+        }
+
+        .final-section .cta-button {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        @media (max-width: 768px) {
+            .final-headline .once {
+                font-size: 56px;
+            }
+
+            .final-headline .rest {
+                font-size: 24px;
+            }
+
+            .value-props {
+                flex-direction: column;
+            }
+        }
+
+        /* ========================================
+           SECTION 14: FOOTER
+           ======================================== */
+        .footer {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-gray);
+            padding: 48px 0;
+            text-align: center;
+        }
+
+        .footer-signature {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 32px;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .footer-copyright {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* ========================================
+           ANIMATIONS
+           ======================================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Staggered animations for sections */
+        .section {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0s; }
+        .section:nth-child(2) { animation-delay: 0.1s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+
+        /* SVG Icons inline */
+        .icon-check {
+            display: inline-block;
+        }
+
+        .icon-x {
+            display: inline-block;
+        }
+
+        .icon-arrow {
+            display: inline-block;
+        }
+
+        .icon-star {
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <!-- SECTION 1: TOP BAR (URGENCY STRIP) -->
+    <header class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <span class="top-bar-text">We Are Starting Day 1 On:</span>
+                <span class="live-badge">Live Event</span>
+                <span class="date-pill">January 15, 2026 @ 7PM EST</span>
+            </div>
+            <div class="countdown-container">
+                <div class="countdown-box">
+                    <span class="number" id="days">03</span>
+                    <span class="label">Days</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="number" id="hours">12</span>
+                    <span class="label">Hrs</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="number" id="minutes">45</span>
+                    <span class="label">Min</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="top-bar-spacer"></div>
+
+    <!-- SECTION 2: HERO -->
+    <section class="hero section">
+        <div class="container">
+            <div class="hero-media">
+                <div class="sphere sphere-1"></div>
+                <div class="sphere sphere-2"></div>
+                <div class="hero-video-frame">
+                    [Video Preview]
+                </div>
+            </div>
+            <div class="hero-content">
+                <p class="hero-eyebrow">Give Me Just 3 Days & I'll Show You...</p>
+                <h1 class="hero-headline">
+                    In 3 Days, You'll Install The Biological Software For <span class="script-text">'Model Tier'</span> Aesthetics And Infinite Energy
+                </h1>
+                <p class="hero-subheadline">Even If You Think Eating Butter Is 'Unhealthy.'</p>
+                <p class="hero-body">For Just 60 Minutes A Day...</p>
+                <button class="cta-button">
+                    <span class="arrow-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </span>
+                    Click Right Here To Save Your Free Spot
+                </button>
+                <p class="hero-microcopy">GET SPOT INSTANTLY! By entering your details, you agree to receive promotional messages. You can unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: IS THIS PERFECT FOR YOU? -->
+    <section class="qualifier-section section">
+        <div class="container">
+            <div class="qualifier-photo">
+                <div class="qualifier-photo-placeholder">[Photo of Duru]</div>
+                <p class="qualifier-annotation">That's me! →</p>
+            </div>
+            <div class="qualifier-content">
+                <p class="eyebrow">Is The 'Unrecognizable' 3-Day Reset</p>
+                <h2 class="headline-lg"><span class="script-accent">Perfect</span> For You?</h2>
+                <p class="subheadline">YES! This radical departure from the mainstream is especially for you if...</p>
+                <ul class="qualifier-list">
+                    <li>
+                        <span class="checkbox-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </span>
+                        <span>You're tired of feeling <strong>bloated, inflamed, and exhausted</strong> despite "doing everything right"</span>
+                    </li>
+                    <li>
+                        <span class="checkbox-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </span>
+                        <span>You want to <strong>look younger, feel lighter,</strong> and have energy that lasts all day</span>
+                    </li>
+                    <li>
+                        <span class="checkbox-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </span>
+                        <span>You're ready to <strong>challenge everything you've been told</strong> about nutrition</span>
+                    </li>
+                    <li>
+                        <span class="checkbox-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </span>
+                        <span>You believe <strong>your body is capable of more</strong> than what you're currently experiencing</span>
+                    </li>
+                    <li>
+                        <span class="checkbox-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </span>
+                        <span>You want a <strong>simple, actionable plan</strong> that actually works</span>
+                    </li>
+                </ul>
+                <p class="qualifier-closing">If you nodded or said 'yes' to any of the above, you're in the right place...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: PUT YOUR NAME DOWN -->
+    <section class="colored-section section">
+        <div class="container">
+            <h2 class="headline-md">Put Your Name Down (FOR FREE) Today...</h2>
+            <p class="subheadline">...and I'll show you step-by-step over the next three days...</p>
+
+            <div class="lists-container">
+                <div class="list-card">
+                    <h4>What You'll Do:</h4>
+                    <ul>
+                        <li>
+                            <span class="check-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </span>
+                            <span>Learn the exact foods that heal your metabolism</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </span>
+                            <span>Implement simple daily protocols for lasting energy</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </span>
+                            <span>Transform your relationship with food forever</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-card">
+                    <h4>This Is NOT:</h4>
+                    <ul>
+                        <li>
+                            <span class="x-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </span>
+                            <span>Another restrictive diet that leaves you hungry</span>
+                        </li>
+                        <li>
+                            <span class="x-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </span>
+                            <span>Expensive supplements or complicated meal plans</span>
+                        </li>
+                        <li>
+                            <span class="x-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </span>
+                            <span>Generic advice you've heard a thousand times</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="cta-button">
+                <span class="arrow-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </span>
+                Yes! Save My Free Spot Now
+            </button>
+
+            <p class="micro-proof">"This challenge changed everything I thought I knew about health." — Sarah M.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 5: SOCIAL PROOF TICKER -->
+    <div class="ticker-section">
+        <div class="ticker-track">
+            <div class="ticker-item">
+                <div class="ticker-avatar">JM</div>
+                <span class="ticker-text"><span class="highlight">Jessica M.</span> registered for the Challenge</span>
+                <span class="ticker-time">2 min ago</span>
+                <span class="ticker-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">AT</div>
+                <span class="ticker-text"><span class="highlight">Amanda T.</span> joined Day 1</span>
+                <span class="ticker-time">5 min ago</span>
+                <span class="ticker-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">RK</div>
+                <span class="ticker-text"><span class="highlight">Rachel K.</span> signed up for Free Challenge</span>
+                <span class="ticker-time">8 min ago</span>
+                <span class="ticker-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">MC</div>
+                <span class="ticker-text"><span class="highlight">Michelle C.</span> registered for the Challenge</span>
+                <span class="ticker-time">12 min ago</span>
+                <span class="ticker-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">LB</div>
+                <span class="ticker-text"><span class="highlight">Lauren B.</span> joined Day 1</span>
+                <span class="ticker-time">15 min ago</span>
+                <span class="ticker-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">KH</div>
+                <span class="ticker-text"><span class="highlight">Katie H.</span> signed up for Free Challenge</span>
+                <span class="ticker-time">18 min ago</span>
+                <span class="ticker-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                </span>
+            </div>
+            <!-- Duplicate items for seamless loop -->
+            <div class="ticker-item">
+                <div class="ticker-avatar">JM</div>
+                <span class="ticker-text"><span class="highlight">Jessica M.</span> registered for the Challenge</span>
+                <span class="ticker-time">2 min ago</span>
+                <span class="ticker-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">AT</div>
+                <span class="ticker-text"><span class="highlight">Amanda T.</span> joined Day 1</span>
+                <span class="ticker-time">5 min ago</span>
+                <span class="ticker-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">RK</div>
+                <span class="ticker-text"><span class="highlight">Rachel K.</span> signed up for Free Challenge</span>
+                <span class="ticker-time">8 min ago</span>
+                <span class="ticker-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">MC</div>
+                <span class="ticker-text"><span class="highlight">Michelle C.</span> registered for the Challenge</span>
+                <span class="ticker-time">12 min ago</span>
+                <span class="ticker-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">LB</div>
+                <span class="ticker-text"><span class="highlight">Lauren B.</span> joined Day 1</span>
+                <span class="ticker-time">15 min ago</span>
+                <span class="ticker-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="ticker-item">
+                <div class="ticker-avatar">KH</div>
+                <span class="ticker-text"><span class="highlight">Katie H.</span> signed up for Free Challenge</span>
+                <span class="ticker-time">18 min ago</span>
+                <span class="ticker-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M5 13l4 4L19 7"/>
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 6: FOUNDER STORY -->
+    <section class="founder-section section">
+        <div class="container">
+            <div class="founder-intro">
+                <p class="eyebrow">From 'Inflamed & Confused' To</p>
+                <h2 class="headline-lg">The Bio-Hacked Standard of Beauty</h2>
+            </div>
+
+            <div class="founder-content">
+                <div class="founder-story">
+                    <p class="letter-opening">Dear Future Bio-Hacker:</p>
+                    <p>I know exactly where you are right now. Because I was there too.</p>
+                    <p>I spent years following all the "expert" advice — eating low-fat, counting calories, pushing through exhaustion at the gym — and I had <span class="highlight-yellow">nothing to show for it except inflammation, brain fog, and frustration.</span></p>
+                    <p>The turning point came when I discovered that <strong>everything I'd been taught about nutrition was designed to keep me sick, tired, and dependent on a broken system.</strong></p>
+
+                    <blockquote class="pull-quote">
+                        "The moment I stopped fighting my biology and started working with it, everything changed."
+                    </blockquote>
+
+                    <p>Within weeks of implementing what I now call the "Biological Software Reset," my skin cleared, my energy skyrocketed, and I dropped the stubborn weight that had plagued me for years.</p>
+                    <p>But here's what really shocked me: <span class="highlight-yellow">the changes weren't just physical.</span> My mind was clearer. My mood stabilized. I felt like I was finally operating at my full potential.</p>
+                </div>
+
+                <div class="photo-collage">
+                    <div class="collage-item">
+                        <div class="collage-placeholder">[Photo 1]</div>
+                    </div>
+                    <div class="collage-item">
+                        <div class="collage-placeholder">[Photo 2]</div>
+                    </div>
+                    <div class="collage-item">
+                        <div class="collage-placeholder">[Photo 3]</div>
+                    </div>
+                    <div class="collage-item">
+                        <div class="collage-placeholder">[Photo 4]</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: MILESTONE PROOF CARD -->
+    <section class="milestone-section">
+        <div class="milestone-card">
+            <p class="eyebrow">Fast Forward To Today</p>
+            <div class="milestone-stat">480,000+</div>
+            <p class="milestone-subtext">Followers Across Platforms</p>
+            <p class="milestone-body">
+                What started as my personal health journey has transformed into a movement.
+                Hundreds of thousands of people are now waking up to the truth about what
+                their bodies actually need to thrive.
+            </p>
+            <p class="milestone-kicker">Here's the kicker — you can experience the same transformation in just 3 days.</p>
+        </div>
+        <div class="milestone-cta" style="text-align: center; margin-top: 40px;">
+            <button class="cta-button">
+                <span class="arrow-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </span>
+                Join The Movement — It's Free
+            </button>
+        </div>
+    </section>
+
+    <!-- SECTION 8: BENEFITS VS WITHOUT -->
+    <section class="comparison-section section">
+        <div class="container">
+            <div class="comparison-grid">
+                <div class="comparison-card benefits">
+                    <h3>Just imagine waking up 6 months from now... You'll Have:</h3>
+                    <ul>
+                        <li>
+                            <span class="benefit-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </span>
+                            <span>Radiant, glowing skin that people constantly compliment</span>
+                        </li>
+                        <li>
+                            <span class="benefit-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </span>
+                            <span>Boundless energy from morning to night without crashes</span>
+                        </li>
+                        <li>
+                            <span class="benefit-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </span>
+                            <span>A lean, toned physique that feels effortless to maintain</span>
+                        </li>
+                        <li>
+                            <span class="benefit-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </span>
+                            <span>Mental clarity and focus you haven't felt in years</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="comparison-card without">
+                    <h3>All without needing:</h3>
+                    <ul>
+                        <li>
+                            <span class="without-x">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </span>
+                            <span>Expensive supplements or magic pills</span>
+                        </li>
+                        <li>
+                            <span class="without-x">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </span>
+                            <span>Hours of grueling exercise every day</span>
+                        </li>
+                        <li>
+                            <span class="without-x">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </span>
+                            <span>Restrictive diets that leave you hungry and miserable</span>
+                        </li>
+                        <li>
+                            <span class="without-x">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </span>
+                            <span>Willpower or motivation (the system does the work)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: 3-DAY CURRICULUM CARDS -->
+    <section class="curriculum-section section">
+        <div class="container">
+            <div class="section-header">
+                <p class="eyebrow">Your 3-Day Transformation</p>
+                <h2 class="headline-lg">Here's Exactly What You'll Learn</h2>
+            </div>
+
+            <!-- Day 1 -->
+            <div class="day-card">
+                <div class="day-card-content">
+                    <span class="day-tab">DAY 1</span>
+                    <span class="day-date">January 15 @ 7PM EST</span>
+                    <h3>The Metabolic Reset Protocol</h3>
+                    <h4>What You'll Learn:</h4>
+                    <ul class="day-bullets">
+                        <li>
+                            <span class="bullet-number">1</span>
+                            <span>The #1 food destroying your metabolism (it's not sugar)</span>
+                        </li>
+                        <li>
+                            <span class="bullet-number">2</span>
+                            <span>Why counting calories is keeping you stuck</span>
+                        </li>
+                        <li>
+                            <span class="bullet-number">3</span>
+                            <span>The "ancestral eating" framework for rapid fat loss</span>
+                        </li>
+                        <li>
+                            <span class="bullet-number">4</span>
+                            <span>How to eat MORE and weigh LESS</span>
+                        </li>
+                        <li>
+                            <span class="bullet-number">5</span>
+                            <span>Your Day 1 action plan (takes 10 minutes)</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="day-mockup">
+                    <div class="mockup-placeholder">[Day 1 Mockup]</div>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="day-card">
+                <div class="day-card-content">
+                    <span class="day-tab">DAY 2</span>
+                    <span class="day-date">January 16 @ 7PM EST</span>
+                    <h3>The Energy Optimization System</h3>
+                    <h4>What You'll Learn:</h4>
+                    <ul class="day-bullets">
+                        <li>
+                            <span class="bullet-number">1</span>
+                            <span>The morning ritual that 10x's your energy</span>
+                        </li>
+                        <li>
+                            <span class="bullet-number">2</span>
+                            <span>Why you're tired (and it's not lack of sleep)</span>
+                        </li>
+                        <li>
+                            <span class="bullet-number">3</span>
+                            <span>The mineral deficiency 90% of women have</span>
+                        </li>
+                        <li>
+                            <span class="bullet-number">4</span>
+                            <span>How to eliminate afternoon crashes forever</span>
+                        </li>
+                        <li>
+                            <span class="bullet-number">5</span>
+                            <span>The "cellular hydration" technique</span>
+                        </li>
+                        <li>
+                            <span class="bullet-number">6</span>
+                            <span>Your Day 2 energy protocol</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="day-mockup">
+                    <div class="mockup-placeholder">[Day 2 Mockup]</div>
+                </div>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="day-card">
+                <div class="day-card-content">
+                    <span class="day-tab">DAY 3</span>
+                    <span class="day-date">January 17 @ 7PM EST</span>
+                    <h3>The Aesthetics Activation Code</h3>
+                    <h4>What You'll Learn:</h4>
+                    <ul class="day-bullets">
+                        <li>
+                            <span class="bullet-number">1</span>
+                            <span>The foods that create "model tier" skin</span>
+                        </li>
+                        <li>
+                            <span class="bullet-number">2</span>
+                            <span>How to reduce bloating in 24 hours</span>
+                        </li>
+                        <li>
+                            <span class="bullet-number">3</span>
+                            <span>The anti-aging protocol used by biohackers</span>
+                        </li>
+                        <li>
+                            <span class="bullet-number">4</span>
+                            <span>Your personalized 90-day transformation roadmap</span>
+                        </li>
+                        <li>
+                            <span class="bullet-number">5</span>
+                            <span>BONUS: The exact shopping list I use weekly</span>
+                        </li>
+                        <li>
+                            <span class="bullet-number">6</span>
+                            <span>BONUS: Access to our private community</span>
+                        </li>
+                        <li>
+                            <span class="bullet-number">7</span>
+                            <span>Special announcement for challenge graduates</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="day-mockup">
+                    <div class="mockup-placeholder">[Day 3 Mockup]</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: URGENCY SECTION -->
+    <section class="urgency-section section">
+        <div class="container">
+            <span class="urgency-badge">Limited Spots Available</span>
+            <h2 class="headline-md">But Quick Heads-Up! We're Filling Up Fast!</h2>
+            <p class="body-text">
+                We're limited on our virtual room bandwidth, so we can only accept a certain number
+                of participants for this round. Once we hit capacity, registration closes.
+            </p>
+
+            <div class="urgency-cta">
+                <button class="cta-button">
+                    <span class="arrow-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </span>
+                    Secure Your Free Spot Before It's Gone
+                </button>
+            </div>
+
+            <div class="urgency-countdown">
+                <div class="countdown-box">
+                    <span class="number">03</span>
+                    <span class="label">Days</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="number">12</span>
+                    <span class="label">Hrs</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="number">45</span>
+                    <span class="label">Min</span>
+                </div>
+            </div>
+
+            <div class="trust-strip">
+                <div class="avatar-stack">
+                    <div class="avatar">JM</div>
+                    <div class="avatar">AT</div>
+                    <div class="avatar">RK</div>
+                    <div class="avatar">MC</div>
+                    <div class="avatar">LB</div>
+                </div>
+                <div class="star-rating">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <span class="trust-text">Join 900+ Students</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 11: PROOF WALL -->
+    <section class="proof-section section">
+        <div class="container">
+            <div class="section-header">
+                <p class="eyebrow">What Happens When You Finally Take Action</p>
+                <h2 class="headline-md">What your <span class="script-accent">soon-to-be</span> circle is saying:</h2>
+            </div>
+
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <div class="proof-screenshot">[Screenshot 1]</div>
+                    <p class="proof-quote">"I lost 8 lbs in the first week without feeling hungry once!"</p>
+                    <div class="proof-rating">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-screenshot">[Screenshot 2]</div>
+                    <p class="proof-quote">"My skin is literally glowing. People keep asking what I'm doing different."</p>
+                    <div class="proof-rating">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-screenshot">[Screenshot 3]</div>
+                    <p class="proof-quote">"Finally found something that actually works and is sustainable!"</p>
+                    <div class="proof-rating">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-screenshot">[Screenshot 4]</div>
+                    <p class="proof-quote">"The energy I have now is unreal. I feel 10 years younger!"</p>
+                    <div class="proof-rating">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 12: BEFORE/AFTER TRANSFORMATION -->
+    <section class="transformation-section section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="headline-lg">This Could Be YOU in 90 Days...</h2>
+                <p style="font-size: 20px; color: var(--text-body); margin-top: 16px;">You're about to go from THIS... to THAT!</p>
+            </div>
+
+            <div class="transformation-grid">
+                <div class="transform-card before">
+                    <div class="transform-illustration">[Before Illustration]</div>
+                    <h3>BEFORE this challenge: struggling & stuck...</h3>
+                    <ul>
+                        <li>
+                            <span class="without-x">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </span>
+                            <span>Waking up exhausted no matter how much you sleep</span>
+                        </li>
+                        <li>
+                            <span class="without-x">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </span>
+                            <span>Feeling bloated and uncomfortable in your clothes</span>
+                        </li>
+                        <li>
+                            <span class="without-x">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </span>
+                            <span>Brain fog that makes focusing impossible</span>
+                        </li>
+                        <li>
+                            <span class="without-x">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </span>
+                            <span>Trying diet after diet with no lasting results</span>
+                        </li>
+                        <li>
+                            <span class="without-x">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </span>
+                            <span>Skin issues, inflammation, and hormonal chaos</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="transform-card after">
+                    <div class="transform-illustration">[After Illustration]</div>
+                    <h3>AFTER this challenge: thriving and free!</h3>
+                    <ul>
+                        <li>
+                            <span class="check-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </span>
+                            <span>Bounding out of bed with natural energy</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </span>
+                            <span>Flat stomach and comfortable in anything you wear</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </span>
+                            <span>Crystal-clear thinking and laser focus</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </span>
+                            <span>A sustainable approach that becomes second nature</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </span>
+                            <span>Glowing skin and balanced hormones</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </span>
+                            <span>Confidence that radiates from the inside out</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="transition-arrow">
+                <p class="transition-text">
+                    <span class="from">struggling</span>
+                    <span class="arrow">→</span>
+                    <span class="to">THRIVING</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 13: FINAL CLOSE -->
+    <section class="final-section section">
+        <div class="container">
+            <p class="eyebrow">This is A</p>
+            <div class="final-headline">
+                <span class="once">ONCE</span>
+                <span class="rest">-In-A-Lifetime Challenge</span>
+            </div>
+
+            <div class="value-props">
+                <div class="value-prop yellow">3 Days of Live Training</div>
+                <div class="value-prop blue">Actionable Protocols</div>
+                <div class="value-prop pink">Community Support</div>
+            </div>
+
+            <div class="final-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M5 12l7 7 7-7"/>
+                </svg>
+            </div>
+
+            <button class="cta-button">
+                <span class="arrow-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </span>
+                Yes! I'm Ready To Transform My Life
+            </button>
+        </div>
+    </section>
+
+    <!-- SECTION 14: FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-signature">xoxo, Duru</p>
+            <p class="footer-copyright">&copy; 2026 Duru Bilimlier. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Countdown Timer Script -->
+    <script>
+        // Set the target date (adjust as needed)
+        const targetDate = new Date('January 15, 2026 19:00:00 EST').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            // Update all countdown displays
+            document.querySelectorAll('#days, .countdown-box .number').forEach((el, i) => {
+                if (el.parentElement.querySelector('.label')?.textContent === 'Days') {
+                    el.textContent = String(days).padStart(2, '0');
+                }
+            });
+
+            // Simple update for the top bar countdown
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+
+            if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+            if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+            if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+        }
+
+        // Update every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
 </body>
 </html>
