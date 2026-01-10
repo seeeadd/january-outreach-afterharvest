@@ -1,0 +1,2043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 2026 Model Aesthetic Protocol - 3-Day Challenge</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           CSS VARIABLES - DESIGN SYSTEM
+           ======================================== */
+        :root {
+            /* Primary Colors */
+            --violet: #8B5CF6;
+            --violet-light: #A78BFA;
+            --violet-dark: #7C3AED;
+            --violet-glow: rgba(139, 92, 246, 0.15);
+
+            /* Backgrounds */
+            --white: #FFFFFF;
+            --off-white: #FAFAFA;
+            --light-gray: #F5F5F7;
+
+            /* Text Colors */
+            --text-dark: #1A1A1A;
+            --text-gray: #6B7280;
+            --text-light: #9CA3AF;
+            --text-body: #4B5563;
+
+            /* Accents */
+            --coral: #F472B6;
+            --green: #10B981;
+
+            /* Typography */
+            --font-display: "Outfit", system-ui, sans-serif;
+            --font-body: "DM Sans", system-ui, sans-serif;
+            --font-script: "Cormorant Garamond", Georgia, serif;
+
+            /* Layout */
+            --container-max: 1200px;
+            --container-padding: 48px;
+            --container-padding-mobile: 24px;
+            --section-padding: 100px;
+            --section-padding-mobile: 64px;
+            --content-max: 680px;
+            --card-radius: 16px;
+            --button-radius: 12px;
+        }
+
+        /* ========================================
+           BASE STYLES & RESET
+           ======================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-body);
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding-top: 52px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 44px;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Container */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--container-padding-mobile);
+            }
+        }
+
+        /* Section Base */
+        .section {
+            padding: var(--section-padding) 0;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: var(--section-padding-mobile) 0;
+            }
+        }
+
+        /* ========================================
+           SECTION 1: STICKY COUNTDOWN BAR
+           ======================================== */
+        .countdown-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 52px;
+            background: linear-gradient(90deg, #7C3AED, #8B5CF6);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            z-index: 1000;
+        }
+
+        .countdown-bar__left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .countdown-bar__badge {
+            background: var(--white);
+            color: var(--violet);
+            font-family: var(--font-display);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 6px 10px;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .countdown-bar__date-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .countdown-bar__date {
+            color: var(--white);
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .countdown-bar__right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .countdown-box {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .countdown-box__number {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1;
+        }
+
+        .countdown-box__label {
+            font-size: 9px;
+            font-weight: 500;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            line-height: 1;
+            margin-top: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .countdown-bar {
+                height: 44px;
+                padding: 0 16px;
+            }
+
+            .countdown-bar__date-label {
+                display: none;
+            }
+
+            .countdown-box {
+                width: 32px;
+                height: 32px;
+            }
+
+            .countdown-box__number {
+                font-size: 14px;
+            }
+
+            .countdown-box__label {
+                font-size: 8px;
+            }
+        }
+
+        /* ========================================
+           SECTION 2: HERO
+           ======================================== */
+        .hero {
+            background: var(--white);
+            padding: 80px 0 100px;
+            overflow: hidden;
+        }
+
+        .hero__container {
+            display: grid;
+            grid-template-columns: 55% 45%;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero__content {
+            max-width: 600px;
+        }
+
+        .hero__eyebrow {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--violet);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .hero__headline {
+            font-family: var(--font-display);
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
+
+        .hero__highlight {
+            background: var(--violet-glow);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--violet);
+        }
+
+        .hero__subheadline {
+            font-size: 20px;
+            line-height: 1.5;
+            color: var(--text-gray);
+            margin-bottom: 24px;
+        }
+
+        .hero__body {
+            font-size: 17px;
+            color: var(--text-body);
+            margin-bottom: 32px;
+        }
+
+        .hero__microcopy {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 16px;
+            max-width: 400px;
+        }
+
+        .hero__visual {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Glass Spheres */
+        .glass-spheres {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glass-sphere {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(167, 139, 250, 0.4), rgba(139, 92, 246, 0.2));
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+        }
+
+        .glass-sphere--large {
+            width: 280px;
+            height: 280px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.7;
+        }
+
+        .glass-sphere--medium {
+            width: 200px;
+            height: 200px;
+            top: 20%;
+            right: 10%;
+            opacity: 0.6;
+        }
+
+        .glass-sphere--small {
+            width: 140px;
+            height: 140px;
+            bottom: 15%;
+            left: 15%;
+            opacity: 0.8;
+        }
+
+        .glass-sphere::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(139, 92, 246, 0.15), transparent 70%);
+            filter: blur(30px);
+            z-index: -1;
+        }
+
+        @media (max-width: 1024px) {
+            .hero__container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero__visual {
+                order: -1;
+                height: 280px;
+            }
+
+            .glass-sphere--large {
+                width: 200px;
+                height: 200px;
+            }
+
+            .glass-sphere--medium {
+                width: 140px;
+                height: 140px;
+            }
+
+            .glass-sphere--small {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 0 64px;
+            }
+
+            .hero__headline {
+                font-size: 36px;
+            }
+
+            .hero__subheadline {
+                font-size: 18px;
+            }
+        }
+
+        /* ========================================
+           COMPONENT: PRIMARY CTA BUTTON
+           ======================================== */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            min-width: 280px;
+            height: 60px;
+            padding: 0 32px;
+            background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+            color: white;
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: var(--button-radius);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 32px rgba(139, 92, 246, 0.4);
+        }
+
+        .cta-button--light {
+            background: var(--white);
+            color: var(--violet);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button--light:hover {
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-button__arrow {
+            width: 16px;
+            height: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .cta-button {
+                width: 100%;
+                min-width: unset;
+            }
+        }
+
+        /* ========================================
+           SECTION 3: IS THIS PERFECT FOR YOU
+           ======================================== */
+        .perfect-for-you {
+            background: var(--light-gray);
+        }
+
+        .perfect-for-you__container {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .perfect-for-you__image-wrapper {
+            position: relative;
+        }
+
+        .perfect-for-you__image {
+            width: 360px;
+            max-width: 100%;
+            border-radius: var(--card-radius);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+            transform: rotate(-2deg);
+        }
+
+        .perfect-for-you__annotation {
+            position: absolute;
+            font-family: var(--font-script);
+            font-style: italic;
+            font-size: 15px;
+            color: var(--violet);
+            white-space: nowrap;
+        }
+
+        .perfect-for-you__annotation--1 {
+            top: -20px;
+            right: -30px;
+            transform: rotate(5deg);
+        }
+
+        .perfect-for-you__annotation--2 {
+            bottom: 20%;
+            right: -60px;
+            transform: rotate(-3deg);
+        }
+
+        .perfect-for-you__annotation--3 {
+            bottom: -20px;
+            left: 20%;
+            transform: rotate(2deg);
+        }
+
+        .perfect-for-you__label {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+        }
+
+        .perfect-for-you__headline {
+            font-family: var(--font-display);
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
+
+        .perfect-for-you__headline .script-accent {
+            font-family: var(--font-script);
+            font-style: italic;
+            color: var(--violet);
+        }
+
+        .perfect-for-you__intro {
+            font-size: 17px;
+            color: var(--text-body);
+            margin-bottom: 32px;
+        }
+
+        .qualifier-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .qualifier-list__item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            font-size: 17px;
+            color: var(--text-body);
+        }
+
+        .qualifier-list__item strong {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .checkmark-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background: var(--violet);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .checkmark-icon svg {
+            width: 14px;
+            height: 14px;
+            stroke: white;
+            stroke-width: 2.5;
+            fill: none;
+        }
+
+        @media (max-width: 1024px) {
+            .perfect-for-you__container {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .perfect-for-you__image-wrapper {
+                text-align: center;
+            }
+
+            .perfect-for-you__image {
+                width: 240px;
+                margin: 0 auto;
+            }
+
+            .perfect-for-you__annotation {
+                display: inline-block;
+                position: relative;
+                top: auto;
+                right: auto;
+                bottom: auto;
+                left: auto;
+                transform: none;
+                margin: 8px 16px;
+            }
+
+            .perfect-for-you__headline {
+                font-size: 36px;
+            }
+        }
+
+        /* ========================================
+           SECTION 4: PUT YOUR NAME DOWN (VIOLET)
+           ======================================== */
+        .violet-cta {
+            background: linear-gradient(180deg, #7C3AED, #8B5CF6);
+            color: var(--white);
+        }
+
+        .violet-cta__headline {
+            font-family: var(--font-display);
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .violet-cta__subheadline {
+            font-size: 18px;
+            text-align: center;
+            opacity: 0.9;
+            margin-bottom: 48px;
+        }
+
+        .violet-cta__cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto 48px;
+        }
+
+        .violet-cta__card {
+            background: var(--white);
+            border-radius: var(--card-radius);
+            padding: 32px;
+        }
+
+        .violet-cta__card-title {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .benefit-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .benefit-list__item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--text-body);
+        }
+
+        .benefit-list__item--positive .list-icon {
+            background: var(--violet);
+        }
+
+        .benefit-list__item--negative .list-icon {
+            background: rgba(244, 114, 182, 0.15);
+        }
+
+        .benefit-list__item--negative .list-icon svg {
+            stroke: var(--coral);
+        }
+
+        .list-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .list-icon svg {
+            width: 12px;
+            height: 12px;
+            stroke: white;
+            stroke-width: 2.5;
+            fill: none;
+        }
+
+        .violet-cta__button-wrapper {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .violet-cta__headline {
+                font-size: 32px;
+            }
+
+            .violet-cta__cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           SECTION 5: FOUNDER STORY
+           ======================================== */
+        .founder-story {
+            background: var(--white);
+        }
+
+        .founder-story__container {
+            max-width: var(--content-max);
+            margin: 0 auto;
+        }
+
+        .founder-story__script-intro {
+            font-family: var(--font-script);
+            font-style: italic;
+            font-size: 28px;
+            color: var(--violet);
+            margin-bottom: 32px;
+        }
+
+        .founder-story__salutation {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
+
+        .founder-story__content {
+            position: relative;
+        }
+
+        .founder-story__image {
+            float: right;
+            width: 300px;
+            margin: 0 0 24px 32px;
+            border-radius: var(--card-radius);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        }
+
+        .founder-story__text {
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--text-body);
+        }
+
+        .founder-story__text p {
+            margin-bottom: 20px;
+        }
+
+        .founder-story__text strong {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .founder-story__pullquote {
+            font-family: var(--font-script);
+            font-style: italic;
+            font-size: 26px;
+            color: var(--violet);
+            border-left: 4px solid var(--violet);
+            padding-left: 24px;
+            margin: 40px 0;
+            clear: both;
+        }
+
+        @media (max-width: 768px) {
+            .founder-story__script-intro {
+                font-size: 24px;
+            }
+
+            .founder-story__image {
+                float: none;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto 24px;
+            }
+
+            .founder-story__pullquote {
+                font-size: 22px;
+            }
+        }
+
+        /* ========================================
+           SECTION 6: PROOF MILESTONE
+           ======================================== */
+        .proof-milestone {
+            background: var(--light-gray);
+        }
+
+        .proof-milestone__card {
+            max-width: 520px;
+            margin: 0 auto 48px;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 48px 32px;
+            text-align: center;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .proof-milestone__label {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--violet);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+        }
+
+        .proof-milestone__number {
+            font-family: var(--font-display);
+            font-size: 64px;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .proof-milestone__sublabel {
+            font-size: 18px;
+            color: var(--text-gray);
+        }
+
+        .proof-milestone__content {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .proof-milestone__text {
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--text-body);
+            margin-bottom: 24px;
+        }
+
+        .proof-milestone__highlight {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--violet);
+        }
+
+        .proof-milestone__bullets {
+            list-style: none;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+            text-align: left;
+            margin-top: 24px;
+        }
+
+        .proof-milestone__bullets li {
+            font-size: 17px;
+            color: var(--text-body);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .proof-milestone__bullets li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--violet);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .proof-milestone__number {
+                font-size: 48px;
+            }
+
+            .proof-milestone__highlight {
+                font-size: 24px;
+            }
+        }
+
+        /* ========================================
+           SECTION 7: BENEFITS VS WITHOUT
+           ======================================== */
+        .benefits-comparison {
+            background: var(--white);
+        }
+
+        .benefits-comparison__intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 48px;
+        }
+
+        .benefits-comparison__headline {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .benefits-comparison__cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto 48px;
+        }
+
+        .comparison-card {
+            background: var(--white);
+            border-radius: var(--card-radius);
+            padding: 32px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .comparison-card--positive {
+            border-top: 4px solid var(--violet);
+        }
+
+        .comparison-card--negative {
+            border-top: 4px solid var(--text-light);
+        }
+
+        .comparison-card__title {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .comparison-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .comparison-list__item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--text-body);
+        }
+
+        .benefits-comparison__closing {
+            text-align: center;
+            font-size: 17px;
+            color: var(--text-body);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .benefits-comparison__cards {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-comparison__headline {
+                font-size: 28px;
+            }
+        }
+
+        /* ========================================
+           SECTION 8: WHAT HAPPENS IN 3 DAYS
+           ======================================== */
+        .three-days {
+            background: var(--white);
+        }
+
+        .three-days__header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .three-days__headline {
+            font-family: var(--font-display);
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .three-days__cards {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .day-card {
+            background: var(--light-gray);
+            border-radius: var(--card-radius);
+            padding: 32px;
+        }
+
+        .day-card__header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .day-card__badge {
+            background: var(--violet);
+            color: var(--white);
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 100px;
+            text-transform: uppercase;
+        }
+
+        .day-card__date {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-gray);
+        }
+
+        .day-card__title {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .day-card__list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .day-card__item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--text-body);
+        }
+
+        .day-card__number {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background: var(--violet);
+            color: var(--white);
+            border-radius: 50%;
+            font-family: var(--font-display);
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .three-days__headline {
+                font-size: 32px;
+            }
+
+            .day-card {
+                padding: 20px;
+            }
+        }
+
+        /* ========================================
+           SECTION 9: SOCIAL PROOF WALL
+           ======================================== */
+        .social-proof {
+            background: var(--light-gray);
+        }
+
+        .social-proof__header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .social-proof__headline {
+            font-family: var(--font-display);
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .testimonial-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            margin-bottom: 64px;
+        }
+
+        .testimonial-row:nth-child(even) {
+            direction: rtl;
+        }
+
+        .testimonial-row:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .client-win {
+            text-align: center;
+        }
+
+        .client-win__label {
+            font-family: var(--font-script);
+            font-style: italic;
+            font-size: 36px;
+            color: var(--text-dark);
+            margin-bottom: -8px;
+        }
+
+        .client-win__title {
+            font-family: var(--font-display);
+            font-size: 72px;
+            font-weight: 800;
+            color: var(--violet);
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+
+        .client-win__results {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .client-win__result {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .client-win__result span {
+            color: var(--violet);
+        }
+
+        .testimonial-screenshot {
+            border-radius: var(--card-radius);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+            transform: rotate(2deg);
+        }
+
+        .testimonial-row:nth-child(even) .testimonial-screenshot {
+            transform: rotate(-2deg);
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-row {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .testimonial-row:nth-child(even) {
+                direction: ltr;
+            }
+
+            .client-win__title {
+                font-size: 56px;
+            }
+
+            .social-proof__headline {
+                font-size: 32px;
+            }
+
+            .testimonial-screenshot {
+                transform: none;
+            }
+
+            .testimonial-row:nth-child(even) .testimonial-screenshot {
+                transform: none;
+            }
+        }
+
+        /* ========================================
+           SECTION 10: URGENCY & FINAL CTA
+           ======================================== */
+        .urgency-cta {
+            background: linear-gradient(180deg, #7C3AED, #8B5CF6);
+            color: var(--white);
+        }
+
+        .urgency-cta__badge {
+            display: inline-block;
+            background: var(--white);
+            color: var(--violet);
+            font-family: var(--font-display);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .urgency-cta__header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .urgency-cta__headline {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .urgency-cta__subheadline {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .urgency-cta__countdown {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .urgency-countdown-box {
+            width: 64px;
+            height: 64px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .urgency-countdown-box__number {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .urgency-countdown-box__label {
+            font-size: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+
+        .urgency-cta__cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 800px;
+            margin: 0 auto 48px;
+        }
+
+        .before-after-card {
+            background: var(--white);
+            border-radius: var(--card-radius);
+            padding: 32px;
+        }
+
+        .before-after-card--before {
+            border-top: 4px solid var(--coral);
+        }
+
+        .before-after-card--after {
+            border-top: 4px solid var(--green);
+        }
+
+        .before-after-card__title {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .before-after-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .before-after-list__item {
+            font-size: 15px;
+            color: var(--text-body);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .urgency-cta__signoff {
+            text-align: center;
+            font-family: var(--font-script);
+            font-style: italic;
+            font-size: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .urgency-cta__headline {
+                font-size: 28px;
+            }
+
+            .urgency-cta__cards {
+                grid-template-columns: 1fr;
+            }
+
+            .urgency-countdown-box {
+                width: 56px;
+                height: 56px;
+            }
+
+            .urgency-countdown-box__number {
+                font-size: 24px;
+            }
+        }
+
+        /* ========================================
+           SECTION 11: FOOTER
+           ======================================== */
+        .footer {
+            background: var(--white);
+            padding: 48px 0;
+            text-align: center;
+        }
+
+        .footer__name {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
+
+        .footer__social {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .footer__social-link {
+            color: var(--text-gray);
+            transition: color 0.2s ease;
+        }
+
+        .footer__social-link:hover {
+            color: var(--violet);
+        }
+
+        .footer__social-link svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .footer__copyright {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* ========================================
+           UTILITY CLASSES
+           ======================================== */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-0 { margin-bottom: 0; }
+        .mb-16 { margin-bottom: 16px; }
+        .mb-24 { margin-bottom: 24px; }
+        .mb-32 { margin-bottom: 32px; }
+        .mb-48 { margin-bottom: 48px; }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================
+         SECTION 1: STICKY COUNTDOWN BAR
+         ======================================== -->
+    <div class="countdown-bar">
+        <div class="countdown-bar__left">
+            <span class="countdown-bar__badge">Live Workshop</span>
+            <div>
+                <div class="countdown-bar__date-label">We are starting Day 1 on:</div>
+                <div class="countdown-bar__date">Mon, Jan 26 @ 7pm EST</div>
+            </div>
+        </div>
+        <div class="countdown-bar__right">
+            <div class="countdown-box">
+                <span class="countdown-box__number" id="countdown-days">00</span>
+                <span class="countdown-box__label">DD</span>
+            </div>
+            <div class="countdown-box">
+                <span class="countdown-box__number" id="countdown-hours">00</span>
+                <span class="countdown-box__label">HH</span>
+            </div>
+            <div class="countdown-box">
+                <span class="countdown-box__number" id="countdown-minutes">00</span>
+                <span class="countdown-box__label">MM</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         SECTION 2: HERO
+         ======================================== -->
+    <section class="hero section">
+        <div class="container hero__container">
+            <div class="hero__content">
+                <p class="hero__eyebrow">Give Me Just 3 Days & I'll Show You...</p>
+                <h1 class="hero__headline">
+                    HOW TO UNLOCK <span class="hero__highlight">'MODEL AESTHETICS'</span> NATURALLY USING THE PRIMAL PROTOCOL
+                </h1>
+                <p class="hero__subheadline">
+                    So You Can Get The 'Snatched' Waist, Clear Skin, & Natural Contour You Want &mdash; Without Starving, Counting Calories, or Eating 'Rabbit Food' Ever Again.
+                </p>
+                <p class="hero__body">
+                    For Just 90 Minutes A Day Over The Next 3 Days...
+                </p>
+                <a href="#register" class="cta-button">
+                    <svg class="cta-button__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 8h10M9 4l4 4-4 4"/>
+                    </svg>
+                    Click Right Here to Save Your Free Spot
+                </a>
+                <p class="hero__microcopy">
+                    GET SPOT INSTANTLY! By entering your details you agree to receive emails about the workshop and related content.
+                </p>
+            </div>
+            <div class="hero__visual">
+                <div class="glass-spheres">
+                    <div class="glass-sphere glass-sphere--large"></div>
+                    <div class="glass-sphere glass-sphere--medium"></div>
+                    <div class="glass-sphere glass-sphere--small"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 3: IS THIS PERFECT FOR YOU
+         ======================================== -->
+    <section class="perfect-for-you section">
+        <div class="container perfect-for-you__container">
+            <div class="perfect-for-you__image-wrapper">
+                <img src="https://placehold.co/360x480/F5F5F7/8B5CF6?text=Duru+Photo" alt="Duru Bilimlier" class="perfect-for-you__image">
+                <span class="perfect-for-you__annotation perfect-for-you__annotation--1">That's me!!</span>
+                <span class="perfect-for-you__annotation perfect-for-you__annotation--2">One spot for me!</span>
+                <span class="perfect-for-you__annotation perfect-for-you__annotation--3">YES please</span>
+            </div>
+            <div class="perfect-for-you__content">
+                <p class="perfect-for-you__label">Is The 3-Day '2026 Model Aesthetic Protocol'</p>
+                <h2 class="perfect-for-you__headline">
+                    <span class="script-accent">Perfect</span> For You?
+                </h2>
+                <p class="perfect-for-you__intro">
+                    YES! This controversial workshop is especially for you if...
+                </p>
+                <ul class="qualifier-list">
+                    <li class="qualifier-list__item">
+                        <span class="checkmark-icon">
+                            <svg viewBox="0 0 14 14"><path d="M2 7l4 4 6-8"/></svg>
+                        </span>
+                        <span>You've tried <strong>every diet</strong> &mdash; keto, paleo, calorie counting &mdash; and still feel stuck in the same body</span>
+                    </li>
+                    <li class="qualifier-list__item">
+                        <span class="checkmark-icon">
+                            <svg viewBox="0 0 14 14"><path d="M2 7l4 4 6-8"/></svg>
+                        </span>
+                        <span>You're tired of feeling <strong>bloated, inflamed, and puffy</strong> no matter how "healthy" you eat</span>
+                    </li>
+                    <li class="qualifier-list__item">
+                        <span class="checkmark-icon">
+                            <svg viewBox="0 0 14 14"><path d="M2 7l4 4 6-8"/></svg>
+                        </span>
+                        <span>You want to look <strong>naturally snatched</strong> without surgery, fillers, or extreme measures</span>
+                    </li>
+                    <li class="qualifier-list__item">
+                        <span class="checkmark-icon">
+                            <svg viewBox="0 0 14 14"><path d="M2 7l4 4 6-8"/></svg>
+                        </span>
+                        <span>You're ready to <strong>stop obsessing</strong> over food and finally have a healthy relationship with eating</span>
+                    </li>
+                    <li class="qualifier-list__item">
+                        <span class="checkmark-icon">
+                            <svg viewBox="0 0 14 14"><path d="M2 7l4 4 6-8"/></svg>
+                        </span>
+                        <span>You want <strong>clear, glowing skin</strong> without expensive products or treatments</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 4: PUT YOUR NAME DOWN (VIOLET)
+         ======================================== -->
+    <section class="violet-cta section">
+        <div class="container">
+            <h2 class="violet-cta__headline">Put Your Name Down (FOR FREE) Today...</h2>
+            <p class="violet-cta__subheadline">...and I'll show you step-by-step how to transform your body naturally</p>
+
+            <div class="violet-cta__cards">
+                <div class="violet-cta__card">
+                    <h3 class="violet-cta__card-title">What You're Getting:</h3>
+                    <ul class="benefit-list">
+                        <li class="benefit-list__item benefit-list__item--positive">
+                            <span class="list-icon">
+                                <svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6"/></svg>
+                            </span>
+                            <span>The exact inflammation-fighting protocol that transformed my body</span>
+                        </li>
+                        <li class="benefit-list__item benefit-list__item--positive">
+                            <span class="list-icon">
+                                <svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6"/></svg>
+                            </span>
+                            <span>My "Model Aesthetics" nutrition framework (no calorie counting)</span>
+                        </li>
+                        <li class="benefit-list__item benefit-list__item--positive">
+                            <span class="list-icon">
+                                <svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6"/></svg>
+                            </span>
+                            <span>Live Q&A sessions where I answer your specific questions</span>
+                        </li>
+                        <li class="benefit-list__item benefit-list__item--positive">
+                            <span class="list-icon">
+                                <svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6"/></svg>
+                            </span>
+                            <span>A supportive community of women on the same journey</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="violet-cta__card">
+                    <h3 class="violet-cta__card-title">This Is Not:</h3>
+                    <ul class="benefit-list">
+                        <li class="benefit-list__item benefit-list__item--negative">
+                            <span class="list-icon">
+                                <svg viewBox="0 0 12 12"><path d="M2 2l8 8M10 2l-8 8"/></svg>
+                            </span>
+                            <span>Another restrictive diet that makes you feel deprived</span>
+                        </li>
+                        <li class="benefit-list__item benefit-list__item--negative">
+                            <span class="list-icon">
+                                <svg viewBox="0 0 12 12"><path d="M2 2l8 8M10 2l-8 8"/></svg>
+                            </span>
+                            <span>A quick fix or "detox" that doesn't last</span>
+                        </li>
+                        <li class="benefit-list__item benefit-list__item--negative">
+                            <span class="list-icon">
+                                <svg viewBox="0 0 12 12"><path d="M2 2l8 8M10 2l-8 8"/></svg>
+                            </span>
+                            <span>Generic advice you can find anywhere online</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="violet-cta__button-wrapper">
+                <a href="#register" class="cta-button cta-button--light">
+                    <svg class="cta-button__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 8h10M9 4l4 4-4 4"/>
+                    </svg>
+                    Save My Free Spot Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 5: FOUNDER STORY
+         ======================================== -->
+    <section class="founder-story section">
+        <div class="container founder-story__container">
+            <p class="founder-story__script-intro">From 'Healthy & Puffy' to Naturally Snatched</p>
+            <p class="founder-story__salutation">Dear Friend,</p>
+
+            <div class="founder-story__content">
+                <img src="https://placehold.co/300x400/F5F5F7/8B5CF6?text=Duru+Story" alt="Duru's transformation" class="founder-story__image">
+
+                <div class="founder-story__text">
+                    <p>
+                        A few years ago, I was doing everything "right." I ate clean, worked out religiously, counted every calorie, and followed every health trend that promised results.
+                    </p>
+                    <p>
+                        But when I looked in the mirror, I still saw the same <strong>puffy face, bloated stomach, and dull skin</strong>. I was "healthy" by conventional standards, but I didn't look or feel the way I wanted.
+                    </p>
+                    <p>
+                        Everything changed when I discovered what was actually causing my inflammation and started eating in alignment with my body's primal needs.
+                    </p>
+                </div>
+
+                <blockquote class="founder-story__pullquote">
+                    "I didn't need to eat less. I needed to eat differently."
+                </blockquote>
+
+                <div class="founder-story__text">
+                    <p>
+                        Within weeks, the puffiness started to melt away. My skin cleared up. My waist looked more defined without a single crunch. And for the first time, I understood what it meant to feel <strong>truly healthy</strong>.
+                    </p>
+                    <p>
+                        Now I've helped thousands of women experience the same transformation &mdash; and I want to show you exactly how it works.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 6: PROOF MILESTONE
+         ======================================== -->
+    <section class="proof-milestone section">
+        <div class="container">
+            <div class="proof-milestone__card">
+                <p class="proof-milestone__label">Fast Forward to Today</p>
+                <p class="proof-milestone__number">480,000+</p>
+                <p class="proof-milestone__sublabel">followers across platforms</p>
+            </div>
+
+            <div class="proof-milestone__content">
+                <p class="proof-milestone__text">
+                    What started as my personal journey has turned into a movement of women reclaiming their health and transforming their bodies naturally.
+                </p>
+                <p class="proof-milestone__text">
+                    Here's the kicker: You can do this <span class="proof-milestone__highlight">10X faster</span> than I did.
+                </p>
+                <p class="proof-milestone__text">
+                    Because I've already made all the mistakes, done all the research, and distilled everything into a simple 3-day protocol.
+                </p>
+                <p class="proof-milestone__text"><strong>Just imagine...</strong></p>
+                <ul class="proof-milestone__bullets">
+                    <li>Waking up with a visibly flatter stomach</li>
+                    <li>Seeing your natural bone structure emerge</li>
+                    <li>Finally understanding what foods work for YOUR body</li>
+                    <li>Having energy that lasts all day without caffeine crashes</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 7: BENEFITS VS WITHOUT
+         ======================================== -->
+    <section class="benefits-comparison section">
+        <div class="container">
+            <div class="benefits-comparison__intro">
+                <h2 class="benefits-comparison__headline">
+                    JUST IMAGINE waking up a few months from now inside a body that:
+                </h2>
+            </div>
+
+            <div class="benefits-comparison__cards">
+                <div class="comparison-card comparison-card--positive">
+                    <h3 class="comparison-card__title">You'll Experience:</h3>
+                    <ul class="comparison-list">
+                        <li class="comparison-list__item">
+                            <span class="checkmark-icon">
+                                <svg viewBox="0 0 14 14"><path d="M2 7l4 4 6-8"/></svg>
+                            </span>
+                            <span>Naturally defined facial features without fillers</span>
+                        </li>
+                        <li class="comparison-list__item">
+                            <span class="checkmark-icon">
+                                <svg viewBox="0 0 14 14"><path d="M2 7l4 4 6-8"/></svg>
+                            </span>
+                            <span>A snatched waist that shows your natural curves</span>
+                        </li>
+                        <li class="comparison-list__item">
+                            <span class="checkmark-icon">
+                                <svg viewBox="0 0 14 14"><path d="M2 7l4 4 6-8"/></svg>
+                            </span>
+                            <span>Clear, glowing skin that turns heads</span>
+                        </li>
+                        <li class="comparison-list__item">
+                            <span class="checkmark-icon">
+                                <svg viewBox="0 0 14 14"><path d="M2 7l4 4 6-8"/></svg>
+                            </span>
+                            <span>Boundless energy without stimulants</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="comparison-card comparison-card--negative">
+                    <h3 class="comparison-card__title">All without needing...</h3>
+                    <ul class="comparison-list">
+                        <li class="comparison-list__item">
+                            <span class="list-icon" style="background: rgba(244, 114, 182, 0.15);">
+                                <svg viewBox="0 0 12 12" style="stroke: var(--coral);"><path d="M2 2l8 8M10 2l-8 8"/></svg>
+                            </span>
+                            <span>Expensive supplements or "miracle" products</span>
+                        </li>
+                        <li class="comparison-list__item">
+                            <span class="list-icon" style="background: rgba(244, 114, 182, 0.15);">
+                                <svg viewBox="0 0 12 12" style="stroke: var(--coral);"><path d="M2 2l8 8M10 2l-8 8"/></svg>
+                            </span>
+                            <span>Hours of intense exercise every day</span>
+                        </li>
+                        <li class="comparison-list__item">
+                            <span class="list-icon" style="background: rgba(244, 114, 182, 0.15);">
+                                <svg viewBox="0 0 12 12" style="stroke: var(--coral);"><path d="M2 2l8 8M10 2l-8 8"/></svg>
+                            </span>
+                            <span>Starving yourself or feeling deprived</span>
+                        </li>
+                        <li class="comparison-list__item">
+                            <span class="list-icon" style="background: rgba(244, 114, 182, 0.15);">
+                                <svg viewBox="0 0 12 12" style="stroke: var(--coral);"><path d="M2 2l8 8M10 2l-8 8"/></svg>
+                            </span>
+                            <span>Complicated meal plans or calorie tracking</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="benefits-comparison__closing">
+                All you need to do is dedicate <strong>90 minutes a day</strong> for the next 3 days to discover exactly how to make this your reality.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 8: WHAT HAPPENS IN 3 DAYS
+         ======================================== -->
+    <section class="three-days section">
+        <div class="container">
+            <div class="three-days__header">
+                <h2 class="three-days__headline">What Happens in the 3-Day Challenge</h2>
+            </div>
+
+            <div class="three-days__cards">
+                <!-- Day 1 -->
+                <div class="day-card">
+                    <div class="day-card__header">
+                        <span class="day-card__badge">Day 1</span>
+                        <span class="day-card__date">Monday, January 26</span>
+                    </div>
+                    <h3 class="day-card__title">The Inflammation Audit: Discover What's Really Causing Your Puffiness</h3>
+                    <ul class="day-card__list">
+                        <li class="day-card__item">
+                            <span class="day-card__number">1</span>
+                            <span>Identify the hidden inflammatory foods sabotaging your results</span>
+                        </li>
+                        <li class="day-card__item">
+                            <span class="day-card__number">2</span>
+                            <span>Learn the "Primal Audit" technique to assess your current state</span>
+                        </li>
+                        <li class="day-card__item">
+                            <span class="day-card__number">3</span>
+                            <span>Understand why "healthy" foods might be making you puffy</span>
+                        </li>
+                        <li class="day-card__item">
+                            <span class="day-card__number">4</span>
+                            <span>Create your personalized inflammation elimination plan</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="day-card">
+                    <div class="day-card__header">
+                        <span class="day-card__badge">Day 2</span>
+                        <span class="day-card__date">Tuesday, January 27</span>
+                    </div>
+                    <h3 class="day-card__title">The Nutrient Density Lab: Master the Foods That Transform Your Body</h3>
+                    <ul class="day-card__list">
+                        <li class="day-card__item">
+                            <span class="day-card__number">1</span>
+                            <span>Discover the "Model Plate" formula for every meal</span>
+                        </li>
+                        <li class="day-card__item">
+                            <span class="day-card__number">2</span>
+                            <span>Learn which foods naturally contour your face and body</span>
+                        </li>
+                        <li class="day-card__item">
+                            <span class="day-card__number">3</span>
+                            <span>Master protein timing for optimal results</span>
+                        </li>
+                        <li class="day-card__item">
+                            <span class="day-card__number">4</span>
+                            <span>Build your "Primal Kitchen" shopping list</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="day-card">
+                    <div class="day-card__header">
+                        <span class="day-card__badge">Day 3</span>
+                        <span class="day-card__date">Wednesday, January 28</span>
+                    </div>
+                    <h3 class="day-card__title">The Lifestyle Installation: Lock In Your Results Forever</h3>
+                    <ul class="day-card__list">
+                        <li class="day-card__item">
+                            <span class="day-card__number">1</span>
+                            <span>Install the daily habits that maintain your transformation</span>
+                        </li>
+                        <li class="day-card__item">
+                            <span class="day-card__number">2</span>
+                            <span>Learn my "80/20 Freedom Formula" for social situations</span>
+                        </li>
+                        <li class="day-card__item">
+                            <span class="day-card__number">3</span>
+                            <span>Discover how to accelerate results with simple lifestyle tweaks</span>
+                        </li>
+                        <li class="day-card__item">
+                            <span class="day-card__number">4</span>
+                            <span>Create your personalized 30-day action plan</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 9: SOCIAL PROOF WALL
+         ======================================== -->
+    <section class="social-proof section">
+        <div class="container">
+            <div class="social-proof__header">
+                <h2 class="social-proof__headline">Real Results from Real Women</h2>
+            </div>
+
+            <!-- Testimonial Row 1 -->
+            <div class="testimonial-row">
+                <div class="client-win">
+                    <p class="client-win__label">Client</p>
+                    <p class="client-win__title">WIN</p>
+                    <ul class="client-win__results">
+                        <li class="client-win__result"><span>30 POUNDS</span> LOST</li>
+                        <li class="client-win__result"><span>CLEAR SKIN</span> ACHIEVED</li>
+                        <li class="client-win__result"><span>ENERGY</span> RESTORED</li>
+                    </ul>
+                </div>
+                <img src="https://placehold.co/480x360/F5F5F7/8B5CF6?text=Testimonial+Screenshot" alt="Client testimonial" class="testimonial-screenshot">
+            </div>
+
+            <!-- Testimonial Row 2 -->
+            <div class="testimonial-row">
+                <div class="client-win">
+                    <p class="client-win__label">Client</p>
+                    <p class="client-win__title">WIN</p>
+                    <ul class="client-win__results">
+                        <li class="client-win__result"><span>PERIOD</span> REGAINED</li>
+                        <li class="client-win__result"><span>BLOATING</span> GONE</li>
+                        <li class="client-win__result"><span>CONFIDENCE</span> BACK</li>
+                    </ul>
+                </div>
+                <img src="https://placehold.co/480x360/F5F5F7/8B5CF6?text=Testimonial+Screenshot" alt="Client testimonial" class="testimonial-screenshot">
+            </div>
+
+            <!-- Testimonial Row 3 -->
+            <div class="testimonial-row">
+                <div class="client-win">
+                    <p class="client-win__label">Client</p>
+                    <p class="client-win__title">WIN</p>
+                    <ul class="client-win__results">
+                        <li class="client-win__result"><span>FACIAL</span> DEFINITION</li>
+                        <li class="client-win__result"><span>15 POUNDS</span> DOWN</li>
+                        <li class="client-win__result"><span>GLOWING</span> SKIN</li>
+                    </ul>
+                </div>
+                <img src="https://placehold.co/480x360/F5F5F7/8B5CF6?text=Testimonial+Screenshot" alt="Client testimonial" class="testimonial-screenshot">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 10: URGENCY & FINAL CTA
+         ======================================== -->
+    <section class="urgency-cta section" id="register">
+        <div class="container">
+            <div class="urgency-cta__header">
+                <span class="urgency-cta__badge">Limited Spots Available</span>
+                <h2 class="urgency-cta__headline">But Quick Heads-Up! We're Filling Up Fast!</h2>
+                <p class="urgency-cta__subheadline">
+                    We're limited on our virtual room bandwidth, so once the spots are gone, registration closes until the next challenge.
+                </p>
+                <a href="#" class="cta-button">
+                    <svg class="cta-button__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 8h10M9 4l4 4-4 4"/>
+                    </svg>
+                    Save My Free Spot Now
+                </a>
+                <div class="urgency-cta__countdown">
+                    <div class="urgency-countdown-box">
+                        <span class="urgency-countdown-box__number" id="urgency-days">00</span>
+                        <span class="urgency-countdown-box__label">Days</span>
+                    </div>
+                    <div class="urgency-countdown-box">
+                        <span class="urgency-countdown-box__number" id="urgency-hours">00</span>
+                        <span class="urgency-countdown-box__label">Hours</span>
+                    </div>
+                    <div class="urgency-countdown-box">
+                        <span class="urgency-countdown-box__number" id="urgency-mins">00</span>
+                        <span class="urgency-countdown-box__label">Mins</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="urgency-cta__cards">
+                <div class="before-after-card before-after-card--before">
+                    <h3 class="before-after-card__title">BEFORE this challenge:</h3>
+                    <ul class="before-after-list">
+                        <li class="before-after-list__item">
+                            <span class="list-icon" style="background: rgba(244, 114, 182, 0.15);">
+                                <svg viewBox="0 0 12 12" style="stroke: var(--coral);"><path d="M2 2l8 8M10 2l-8 8"/></svg>
+                            </span>
+                            <span>Confused about what to eat for your goals</span>
+                        </li>
+                        <li class="before-after-list__item">
+                            <span class="list-icon" style="background: rgba(244, 114, 182, 0.15);">
+                                <svg viewBox="0 0 12 12" style="stroke: var(--coral);"><path d="M2 2l8 8M10 2l-8 8"/></svg>
+                            </span>
+                            <span>Struggling with bloating and inflammation</span>
+                        </li>
+                        <li class="before-after-list__item">
+                            <span class="list-icon" style="background: rgba(244, 114, 182, 0.15);">
+                                <svg viewBox="0 0 12 12" style="stroke: var(--coral);"><path d="M2 2l8 8M10 2l-8 8"/></svg>
+                            </span>
+                            <span>Feeling stuck in the same body</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="before-after-card before-after-card--after">
+                    <h3 class="before-after-card__title">AFTER this challenge:</h3>
+                    <ul class="before-after-list">
+                        <li class="before-after-list__item">
+                            <span class="checkmark-icon" style="background: var(--green);">
+                                <svg viewBox="0 0 14 14"><path d="M2 7l4 4 6-8"/></svg>
+                            </span>
+                            <span>Clear roadmap to your dream body</span>
+                        </li>
+                        <li class="before-after-list__item">
+                            <span class="checkmark-icon" style="background: var(--green);">
+                                <svg viewBox="0 0 14 14"><path d="M2 7l4 4 6-8"/></svg>
+                            </span>
+                            <span>Understanding exactly what causes your puffiness</span>
+                        </li>
+                        <li class="before-after-list__item">
+                            <span class="checkmark-icon" style="background: var(--green);">
+                                <svg viewBox="0 0 14 14"><path d="M2 7l4 4 6-8"/></svg>
+                            </span>
+                            <span>Equipped with tools for lasting transformation</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="urgency-cta__signoff">xoxo, Duru</p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 11: FOOTER
+         ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__name">DURU BILIMLIER</p>
+            <div class="footer__social">
+                <a href="#" class="footer__social-link" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="#" class="footer__social-link" aria-label="TikTok">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                    </svg>
+                </a>
+                <a href="#" class="footer__social-link" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                    </svg>
+                </a>
+            </div>
+            <p class="footer__copyright">Copyright 2026 Duru Bilimlier. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         COUNTDOWN TIMER JAVASCRIPT
+         ======================================== -->
+    <script>
+        // Set the target date: January 26, 2026, 7:00 PM EST
+        const targetDate = new Date('2026-01-26T19:00:00-05:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            // Calculate days, hours, minutes
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            // Format with leading zeros
+            const formatNumber = (num) => num.toString().padStart(2, '0');
+
+            // Update sticky bar countdown
+            document.getElementById('countdown-days').textContent = formatNumber(days);
+            document.getElementById('countdown-hours').textContent = formatNumber(hours);
+            document.getElementById('countdown-minutes').textContent = formatNumber(minutes);
+
+            // Update urgency section countdown
+            document.getElementById('urgency-days').textContent = formatNumber(days);
+            document.getElementById('urgency-hours').textContent = formatNumber(hours);
+            document.getElementById('urgency-mins').textContent = formatNumber(minutes);
+
+            // If countdown is finished
+            if (distance < 0) {
+                document.getElementById('countdown-days').textContent = '00';
+                document.getElementById('countdown-hours').textContent = '00';
+                document.getElementById('countdown-minutes').textContent = '00';
+                document.getElementById('urgency-days').textContent = '00';
+                document.getElementById('urgency-hours').textContent = '00';
+                document.getElementById('urgency-mins').textContent = '00';
+            }
+        }
+
+        // Initial call
+        updateCountdown();
+
+        // Update every minute
+        setInterval(updateCountdown, 60000);
+    </script>
+
+</body>
+</html>
